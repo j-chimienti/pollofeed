@@ -17,6 +17,7 @@
     <session id="1724430321">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -30,7 +31,7 @@
           <entry key="html" value="3" />
           <entry key="js" value="18" />
           <entry key="json" value="1" />
-          <entry key="jsx" value="15" />
+          <entry key="jsx" value="16" />
           <entry key="mongo" value="1" />
           <entry key="sh" value="6" />
           <entry key="yml" value="12" />
@@ -43,7 +44,7 @@
           <entry key="Dockerfile" value="7" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="1" />
-          <entry key="JSX Harmony" value="15" />
+          <entry key="JSX Harmony" value="16" />
           <entry key="JavaScript" value="16" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Scratch" value="2" />
@@ -58,7 +59,7 @@
           <entry key="gitignore" value="15" />
           <entry key="js" value="571" />
           <entry key="json" value="136" />
-          <entry key="jsx" value="1451" />
+          <entry key="jsx" value="1532" />
           <entry key="sh" value="20" />
           <entry key="yml" value="454" />
         </counts>
@@ -69,7 +70,7 @@
           <entry key="Bash" value="20" />
           <entry key="Dockerfile" value="228" />
           <entry key="JSON" value="136" />
-          <entry key="JSX Harmony" value="1451" />
+          <entry key="JSX Harmony" value="1532" />
           <entry key="JavaScript" value="554" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
@@ -103,21 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/admin/router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="162" column="108" selection-start-line="162" selection-start-column="108" selection-end-line="162" selection-end-column="108" />
-              <caret line="168" column="91" selection-start-line="168" selection-start-column="91" selection-end-line="168" selection-end-column="91" />
+            <state relative-caret-position="141">
+              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -163,6 +154,7 @@
       <find>Li</find>
       <find>.update</find>
       <find>getHostName</find>
+      <find>redirect</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/</dir>
@@ -324,12 +316,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549162505437</updated>
-      <workItem from="1549162506684" duration="19912000" />
+      <workItem from="1549162506684" duration="20573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19912000" />
+    <option name="totallyTimeSpent" value="20573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1242" height="777" extended-state="0" />
@@ -352,7 +344,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.35333332" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.49583334" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,13 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/orders/dao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/admin/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -583,11 +568,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/orders/dao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="162" column="108" selection-start-line="162" selection-start-column="108" selection-end-line="162" selection-end-column="108" />
-          <caret line="168" column="91" selection-start-line="168" selection-start-column="91" selection-end-line="168" selection-end-column="91" />
+        <state relative-caret-position="141">
+          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

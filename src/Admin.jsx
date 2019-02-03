@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Admin.css'
 import NavLinks from "./NavLinks";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -15,7 +15,6 @@ class Admin extends React.Component {
         result: null,
         webcamLink: null,
         webgpioLink: null,
-        redirect: false,
         pendingOrders: null,
         latestOrder: null,
         todayOrders: null,
@@ -122,21 +121,16 @@ class Admin extends React.Component {
 
         return fetch(host + 'admin/logout', {method: 'POST'})
             .then(() => {
-                this.setState({
-                    redirect: true
-                })
+                this.props.history.push('/')
             })
     }
 
 
     render() {
 
-        const {pi_ip, redirect, pendingOrders, latestOrder, todayOrders, orderCount} = this.state;
+        const {pi_ip, pendingOrders, latestOrder, todayOrders, orderCount} = this.state;
 
-        if (redirect) {
 
-            return <Redirect to="/login"/>
-        }
         return (
             <div className={'admin bg-dark'}>
 
@@ -146,7 +140,8 @@ class Admin extends React.Component {
                             className={'nav-link'}
                             onClick={this.logout}
                         >
-                            logout
+                            <i className={'fa fa-user-o'}></i>
+                            Logout
                         </button>
                     </NavLinks>
                 </div>
@@ -167,19 +162,18 @@ class Admin extends React.Component {
                 )}
 
                 <div className={'row d-flex justify-content-between align-items-center my-3'}>
-                    <div className={'col'}>Pending
-                        Orders={pendingOrders && Array.isArray(pendingOrders) && pendingOrders.length}</div>
-                    <div className={'col'}>
-                       {latestOrder && latestOrder.id && <Link to={'/order/id/' + latestOrder.id}>
+                    {pendingOrders && Array.isArray(pendingOrders) && <div className={'col'}>Pending
+                        Orders={pendingOrders.length}</div>
+                    }
+                    {latestOrder && latestOrder.id && <div className={'col'}>
+                        <Link to={'/order/id/' + latestOrder.id}>
                             Latest Order
-                        </Link>}
-                    </div>
-                    <div className={'col'}>Today's
-                        Orders={todayOrders && Array.isArray(todayOrders) && todayOrders.length}</div>
+                        </Link>
+                    </div>}
+                    {todayOrders && Array.isArray(todayOrders) && <div className={'col'}>Today's
+                        Orders={todayOrders.length}</div>}
                     <div className={'col'}>Total Orders={orderCount}</div>
                 </div>
-
-
             </div>
 
         );
