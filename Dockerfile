@@ -1,8 +1,9 @@
 FROM node:carbon
+MAINTAINER joe chimienti <jchimien@gmail.com>
 WORKDIR /usr/src/app/pollofeed
-COPY package*.json ./
-RUN npm install
+COPY package.json yarn.lock ./
+RUN yarn
 COPY . .
-RUN npm run build
+RUN yarn run build
 EXPOSE ${APP_PORT}
 CMD node bin/www.js
