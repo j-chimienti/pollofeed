@@ -3,14 +3,14 @@ services:
     db:
       container_name: db
       image: mongo
-      deploy:
-        resources:
-          limits:
-            cpus: "0.1"
-            memory: "500M"
-          reservations:
-            cpus: "0.01"
-            memory: "126M"
+#      deploy:
+#        resources:
+#          limits:
+#            cpus: "0.1"
+#            memory: "500M"
+#          reservations:
+#            cpus: "0.01"
+#            memory: "126M"
 
       volumes:
         - /mongo/data/pollofeed:/data/db
@@ -31,15 +31,15 @@ services:
       container_name: pollofeed
       build: .
       restart: unless-stopped
-      deploy:
-        replicas: 5
-        resources:
-          reservations:
-            cpus: "0.01"
-            memory: "126M"
-          limits:
-            cpus: "0.1"
-            memory: "256M"
+#      deploy:
+#        replicas: 5
+#        resources:
+#          reservations:
+#            cpus: "0.01"
+#            memory: "126M"
+#          limits:
+#            cpus: "0.1"
+#            memory: "256M"
       depends_on:
       - db
       networks:
