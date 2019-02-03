@@ -8,7 +8,6 @@ import {Link, Redirect} from "react-router-dom";
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 
-
 class Admin extends React.Component {
 
     state = {
@@ -42,7 +41,7 @@ class Admin extends React.Component {
         ]).then(() => {
 
             this.hnInterval = setInterval(async () => {
-                await this.getHostName()
+                return await this.getHostName()
             }, 1000 * 30)
         })
     }
@@ -59,7 +58,7 @@ class Admin extends React.Component {
             fetch(`${host}orders/pending`, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/today`, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/count`, {credentials: "include"}).then(response => response.json()),
-        ]).then(([latestOrder, pendingOrders, today, count] )=> {
+        ]).then(([latestOrder, pendingOrders, today, count]) => {
 
             console.log(latestOrder, pendingOrders, today, count)
 
@@ -112,6 +111,7 @@ class Admin extends React.Component {
 
 
     }
+
     openWebgpio() {
 
         const webgpio = window.open(this.state.webgpioLink, '_blank', 'right=0,width=500,height=500')
@@ -129,53 +129,55 @@ class Admin extends React.Component {
     }
 
 
-
     render() {
 
-        const {pi_ip, webcamLink, webgpioLink, redirect ,pendingOrders, latestOrder, todayOrders, orderCount} = this.state;
+        const {pi_ip, redirect, pendingOrders, latestOrder, todayOrders, orderCount} = this.state;
 
         if (redirect) {
 
-            return <Redirect to="/login" />
+            return <Redirect to="/login"/>
         }
         return (
-             <div className={'admin bg-dark text-center'}>
-                 <NavLinks>
-                     <button
-                         className={'nav-link'}
-                         onClick={this.logout}
-                     >
-                         logout
-                     </button>
-                 </NavLinks>
+            <div className={'admin bg-dark'}>
 
-                     <div className={'row d-flex justify-content-around align-items-center my-3'}>
-                         <button className={'btn'} onClick={this.openWebgpio.bind(this)}>
-                             Feeder
-                         </button>
-                         <button className={'btn'} onClick={this.openWebcam.bind(this)}>
-                             Webcam
-                         </button>
-                     </div>
-                 {!pi_ip && (
-                     <div className={'admin d-flex flex-column justify-content-center align-items-center'}>
-                         <div className={'donut'}>
-                         </div>
-                     </div>
-                 )}
+                <div className={'row d-flex justify-content-around align-items-center my-3'}>
+                    <NavLinks>
+                        <button
+                            className={'nav-link'}
+                            onClick={this.logout}
+                        >
+                            logout
+                        </button>
+                    </NavLinks>
+                </div>
 
-                 <div className={'row d-flex justify-content-between align-items-center'}>
-                     <div className={'col'}>Pending Orders={pendingOrders && Array.isArray(pendingOrders) && pendingOrders.length}</div>
-                     <div className={'col'}>
-                         <Link to={'/order/id/' + latestOrder.id}>
-                             Latest Order
-                         </Link>
-                     </div>
-                     <div className={'col'}>Today's Orders={todayOrders && Array.isArray(todayOrders) && todayOrders.length}</div>
-                     <div className={'col'}>Total Orders={orderCount}</div>
-                 </div>
+                <div className={'row d-flex justify-content-around align-items-center my-3'}>
+                    <button className={'btn'} onClick={this.openWebgpio.bind(this)}>
+                        Feeder
+                    </button>
+                    <button className={'btn'} onClick={this.openWebcam.bind(this)}>
+                        Webcam
+                    </button>
+                </div>
+                {!pi_ip && (
+                    <div className={'admin d-flex flex-column justify-content-center align-items-center my-3'}>
+                        <div className={'donut'}>
+                        </div>
+                    </div>
+                )}
 
-
+                <div className={'row d-flex justify-content-between align-items-center my-3'}>
+                    <div className={'col'}>Pending
+                        Orders={pendingOrders && Array.isArray(pendingOrders) && pendingOrders.length}</div>
+                    <div className={'col'}>
+                       {latestOrder && latestOrder.id && <Link to={'/order/id/' + latestOrder.id}>
+                            Latest Order
+                        </Link>}
+                    </div>
+                    <div className={'col'}>Today's
+                        Orders={todayOrders && Array.isArray(todayOrders) && todayOrders.length}</div>
+                    <div className={'col'}>Total Orders={orderCount}</div>
+                </div>
 
 
             </div>

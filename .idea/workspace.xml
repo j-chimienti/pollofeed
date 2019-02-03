@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/admin/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/admin/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/dao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -61,7 +58,7 @@
           <entry key="gitignore" value="15" />
           <entry key="js" value="571" />
           <entry key="json" value="136" />
-          <entry key="jsx" value="1429" />
+          <entry key="jsx" value="1451" />
           <entry key="sh" value="20" />
           <entry key="yml" value="454" />
         </counts>
@@ -72,7 +69,7 @@
           <entry key="Bash" value="20" />
           <entry key="Dockerfile" value="228" />
           <entry key="JSON" value="136" />
-          <entry key="JSX Harmony" value="1429" />
+          <entry key="JSX Harmony" value="1451" />
           <entry key="JavaScript" value="554" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
@@ -118,8 +115,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="170" column="41" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
+            <state relative-caret-position="278">
+              <caret line="162" column="108" selection-start-line="162" selection-start-column="108" selection-end-line="162" selection-end-column="108" />
+              <caret line="168" column="91" selection-start-line="168" selection-start-column="91" selection-end-line="168" selection-end-column="91" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -160,11 +158,11 @@
       <find>request</find>
       <find>node-fetch</find>
       <find>include:</find>
-      <find>getHostName</find>
       <find>console</find>
       <find>.collect</find>
       <find>Li</find>
       <find>.update</find>
+      <find>getHostName</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/</dir>
@@ -326,12 +324,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549162505437</updated>
-      <workItem from="1549162506684" duration="19776000" />
+      <workItem from="1549162506684" duration="19912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19776000" />
+    <option name="totallyTimeSpent" value="19912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1242" height="777" extended-state="0" />
@@ -354,7 +352,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.44333333" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.35333332" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,8 +585,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="170" column="41" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
+        <state relative-caret-position="278">
+          <caret line="162" column="108" selection-start-line="162" selection-start-column="108" selection-end-line="162" selection-end-column="108" />
+          <caret line="168" column="91" selection-start-line="168" selection-start-column="91" selection-end-line="168" selection-end-column="91" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
