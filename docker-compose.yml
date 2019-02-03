@@ -11,7 +11,6 @@ services:
 #          reservations:
 #            cpus: "0.01"
 #            memory: "126M"
-
       volumes:
         - /mongo/data/pollofeed:/data/db
       env_file:
