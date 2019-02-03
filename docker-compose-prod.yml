@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.1'
 services:
     db:
       container_name: db
@@ -13,23 +13,15 @@ services:
       networks:
       - pollofeed
     pollofeed_app:
-      healthcheck:
-        test: "CMD curl -f http://localhost:${APP_PORT}/health || exit 1"
-        interval: 30s
-        timeout: 2s
-        retries: 3
-        start_period: 60s
       container_name: pollofeed
+      deploy:
+        replicas: 5
+        resources:
+          limit:
+            cpu: 0.1
+            memory: 100M
       build: .
       restart: unless-stopped
-#      deploy:
-#        replicas: 5
-#        resources:
-#          limit:
-#            cpu: 0.1
-#            memory: 100M
-      depends_on:
-      - db
       networks:
       - pollofeed
       - generated_default

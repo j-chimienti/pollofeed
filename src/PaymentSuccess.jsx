@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Modal from "react-modal";
-import {downloadObjectAsJson} from "./utils";
 import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
 import {Link} from "react-router-dom";
@@ -18,6 +16,10 @@ class PaymentSuccess extends React.Component {
 
     }
 
+
+    orderCompleteCountdownInterval = null
+    orderUpdateDataInterval = null
+
     constructor(props) {
         super(props);
         this.startCountdown = this.startCountdown.bind(this);
@@ -27,7 +29,7 @@ class PaymentSuccess extends React.Component {
 
     componentDidMount() {
 
-        this.interval = setInterval(async () => {
+        this.orderUpdateDataInterval = setInterval(async () => {
 
             if (this.props.inv && this.props.inv.status === 'paid') {
 
@@ -52,7 +54,8 @@ class PaymentSuccess extends React.Component {
     }
 
     componentWillUnmount() {
-        clearInterval(this.interval);
+        clearInterval(this.orderUpdateDataInterval);
+        clearInterval(this.orderCompleteCountdownInterval)
     }
 
     componentDidUpdate(prevProps) {
@@ -73,7 +76,7 @@ class PaymentSuccess extends React.Component {
     startCountdown() {
 
 
-        this.cd = setInterval(() => {
+        this.orderCompleteCountdownInterval = setInterval(() => {
 
             if (this.state.estimatedVideoTime > 0) {
 
@@ -89,14 +92,16 @@ class PaymentSuccess extends React.Component {
     }
 
     render() {
-        const {inv, pendingOrders} = this.props;
+        const {inv, pendingOrders, history} = this.props;
+
+        const {estimatedVideoTime} = this.state;
 
 
         return (
             <div className={'w-100 h-100 container'}>
                 <button
                     className={'d-block my-3 btn btn-default btn-sm ml-auto'}
-                    onClick={() => this.props.history.push('/')}>
+                    onClick={() => history.push('/')}>
                     <i className={'fa fa-close'}>
                     </i>
                 </button>
@@ -126,8 +131,8 @@ class PaymentSuccess extends React.Component {
                           <span className="small">
                               The order should take ~
                               <span
-                                  className={this.state.estimatedVideoTime > 0 ? 'text-monospace' : 'text-monospace text-warning'}>
-                                  {this.state.estimatedVideoTime >= 9 ? this.state.estimatedVideoTime : '0' + this.state.estimatedVideoTime}
+                                  className={estimatedVideoTime > 0 ? 'text-monospace' : 'text-monospace text-warning'}>
+                                  {estimatedVideoTime >= 9 ? estimatedVideoTime : '0' + estimatedVideoTime}
                                   </span>
                               seconds to process, and video will load in page.</span>
                           </span>
@@ -141,8 +146,6 @@ class PaymentSuccess extends React.Component {
                           </span>
                     )}
                 </h3>}
-
-
                 <div className={'row'}>
                     {inv && inv.video && <VideoDisplay video={inv.video}/>}
                 </div>

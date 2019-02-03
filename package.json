@@ -10,12 +10,10 @@
     "basic-auth": "^2.0.1",
     "body-parser": "latest",
     "compression": "^1.7.3",
-    "connect-mongo": "^2.0.1",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
     "dotenv": "^6.1.0",
     "express": "~4.16.0",
-    "express-session": "^1.15.6",
     "fmtbtc": "^0.0.3",
     "helmet": "^3.15.0",
     "http-errors": "~1.6.2",
@@ -34,16 +32,14 @@
     "socket.io": "^2.2.0",
     "socket.io-client": "latest",
     "tsscmp": "^1.0.6",
-    "twitter": "^1.7.1",
-    "uuid": "^3.3.2",
-    "validator": "10.11.0"
+    "twitter": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:fix": "eslint --fix",
+    "lint:fix": "eslint --fix --ext .jsx,.js src lib",
     "be": "node bin/www.js",
     "be:dev": "NODE_ENV=development nodemon --ignore src bin/www"
   },
@@ -55,5 +51,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
 }
