@@ -140,29 +140,23 @@ class Admin extends React.Component {
         }
         return (
              <div className={'admin bg-dark text-center'}>
-                 <NavLinks/>
-                 <button
-                     className={'d-block mx-auto'}
-                     onClick={this.logout}
-                 >
-                     logout
-                 </button>
-                 <p>
-                     <button className={'btn'} onClick={this.openWebgpio.bind(this)}>
-                         Feeder
-                         <small>
-                             {webgpioLink}
-                         </small>
+                 <NavLinks>
+                     <button
+                         className={'nav-link'}
+                         onClick={this.logout}
+                     >
+                         logout
                      </button>
-                 </p>
-                 <p>
-                     <button className={'btn'} onClick={this.openWebcam.bind(this)}>
-                         Webcam
-                         <small>
-                             {webcamLink}
-                         </small>
-                     </button>
-                 </p>
+                 </NavLinks>
+
+                     <div className={'row d-flex justify-content-between align-items-center'}>
+                         <button className={'btn'} onClick={this.openWebgpio.bind(this)}>
+                             Feeder
+                         </button>
+                         <button className={'btn'} onClick={this.openWebcam.bind(this)}>
+                             Webcam
+                         </button>
+                     </div>
                  {!pi_ip && (
                      <div className={'admin d-flex flex-column justify-content-center align-items-center'}>
                          <div className={'donut'}>
@@ -171,7 +165,7 @@ class Admin extends React.Component {
                  )}
 
                  <div className={'row d-flex justify-content-between'}>
-                     <div className={'col'}>Pending Orders={pendingOrders}</div>
+                     <div className={'col'}>Pending Orders={pendingOrders && Array.isArray(pendingOrders) && pendingOrders.length}</div>
                      <div className={'col'}>Latest Order={JSON.stringify(latestOrder, null, 4)}</div>
                      <div className={'col'}>Today's Orders={todayOrders && Array.isArray(todayOrders) && todayOrders.length}</div>
                      <div className={'col'}>Total Orders={orderCount}</div>

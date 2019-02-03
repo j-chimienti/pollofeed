@@ -146,9 +146,14 @@ class PaymentSuccess extends React.Component {
                           </span>
                     )}
                 </h3>}
-                <div className={'row'}>
-                    {inv && inv.video && <VideoDisplay video={inv.video}/>}
-                </div>
+
+               { inv && inv.video && <div className={'row my-3'}>
+                    <div className={'col-sm-8 mx-auto'}  style={{maxWidth: '700px'}}>
+                        <div className={'embed-responsive embed-responsive-4by3'}>
+                            <VideoDisplay video={inv.video}/>
+                        </div>
+                    </div>
+                </div>}
 
             </div>
         );

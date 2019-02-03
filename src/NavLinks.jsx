@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
-function NavLinks(props) {
+function NavLinks({children}) {
     return (
-        <div className={'row d-flex flex-column text-white'}>
+        <div className={'row d-flex text-white'}>
             <Link to="/">Home</Link>
             <Link to="/admin">Admin</Link>
+            {children}
         </div>
     )
 }

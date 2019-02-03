@@ -10,10 +10,12 @@ export default class Login extends Component {
         super(props)
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            loginAttempts: 0
         };
 
         this.onSubmit = this.onSubmit.bind(this);
+        this.incLoginAttempts = this.incLoginAttempts.bind(this);
     }
 
     handleInputChange = (event) => {
@@ -22,12 +24,28 @@ export default class Login extends Component {
             [name]: value
         });
     }
+
+    incLoginAttempts() {
+
+        return this.setState({
+            loginAttempts: this.state.loginAttempts + 1
+        })
+    }
     onSubmit = (event) => {
         event.preventDefault();
+        this.incLoginAttempts();
+        const {email, password, loginAttempts} = this.state;
+
+        if (loginAttempts > 3) {
+
+            alert('too many attempts')
+            return this.props.history.push('/')
+        }
+
         return fetch(`${host}admin/login`, {
             method: 'POST',
             credentials: "include",
-            body: JSON.stringify(this.state),
+            body: JSON.stringify({email, password}),
             headers: {
                 'Content-Type': 'application/json',
                 // 'Access-Control-Allow-Origin': "http://localhost:4321"
@@ -35,7 +53,6 @@ export default class Login extends Component {
         })
             .then(res => {
 
-                console.log('lr', res);
                 if (res.status === 200) {
                     this.props.history.push('/admin');
                 } else {
@@ -58,6 +75,17 @@ export default class Login extends Component {
                 </Link>
                 <h1 className={'mb-2'}>Login Below!</h1>
                 <form onSubmit={this.onSubmit} className={'text-center'}>
+                    <div className={'input-group'} style={{maxWidth: '300px'}}>
+                        <input
+                            type="text"
+                            name="username"
+                            className={'form-control'}
+                            placeholder="Enter username"
+                            value={this.state.username}
+                            onChange={this.handleInputChange}
+                            required
+                        />
+                    </div>
                     <div className={'input-group'} style={{maxWidth: '300px'}}>
                         <input
                             type="password"

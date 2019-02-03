@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoDisplay from "./VideoDisplay";
+import DownloadInvoice from "./DownloadInvoice";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -9,7 +10,7 @@ class OrderInfo extends React.Component {
 
 
     state = {
-        order: {},
+        inv: {},
         refreshingData: false
     }
 
@@ -37,16 +38,16 @@ class OrderInfo extends React.Component {
         return this.setState({
             refreshingData: true,
         }, () => {
-            return this._getOrderInfo().then(order => {
+            return this._getOrderInfo().then(inv => {
                 this.setState({
-                    order,
+                    inv,
                 })
             }).catch(console.error)
-                .finally(() => {
-                    this.setState({
-                        refreshingData: false
-                    })
+            .finally(() => {
+                this.setState({
+                    refreshingData: false
                 })
+            })
         })
 
     }
@@ -66,7 +67,7 @@ class OrderInfo extends React.Component {
 
     render() {
 
-        const {order} = this.state;
+        const {inv} = this.state;
 
         return (
             <div className={'container'}>
@@ -76,25 +77,30 @@ class OrderInfo extends React.Component {
                     Refresh Data
                 </button>
 
-                {order.video && (
+                <h1>Invoice: {inv.id}</h1>
+                <h5>Status: {inv.status}</h5>
+                <p>{inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}</p>
+
+                {<p>
+                    Paid At= {inv && inv.paid_at ?  new Date(inv.paid_at * 1000) : 'not paid'}
+                </p>}
+
+                {inv.video && (
                     <div className={'row'}>
                         <div className={'col-sm-8 mx-auto'} style={{maxWidth: '700px'}}>
                             <div className={'embed-responsive embed-responsive-4by3'}>
-                                <VideoDisplay video={order.video}/>
+                                <VideoDisplay video={inv.video}/>
                             </div>
                         </div>
                     </div>
                 )}
+                <div className={'row my-2'}>
+                    <textarea
+                        style={{maxWidth: '500px'}}
+                        className={'form-control'}
+                        readOnly={'readonly'} value={JSON.stringify(inv, null, 4)}>
 
-                <div className={'row'}>
-                    <div className={'col-sm-10'} style={{maxWidth: '600px'}}>
-                        <textarea rows={10}
-                                  className={'form-control'}
-                                  readOnly={true}
-                                  value={JSON.stringify(order, null, 4)}
-                        >
-                        </textarea>
-                    </div>
+                    </textarea>
                 </div>
 
             </div>

@@ -29,11 +29,11 @@ app.use('/orders', orderRouter)
 app.use('/admin', adminRouter)
 
 
-app.get(['health', 'healthCheck'], (_, res) => res.sendStatus(200))
+app.options(['health', 'healthCheck'], (_, res) => res.sendStatus(200))
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(path.join(__dirname, 'build')))
-	app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'build', 'index.html')))
+	app.get('*', (_, res) => res.sendFile(path.join(__dirname, 'build', 'index.html')))
 }
 
 
