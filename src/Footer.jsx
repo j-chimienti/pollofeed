@@ -26,20 +26,20 @@ function Footer() {
                 </div>
                 <div className={'w-100'}>
                     <p>
-                        <a href="https://twitter.com/pollofeed" target="_blank">
+                        <a href="https://twitter.com/pollofeed" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-twitter">
                             </i>
                             @pollofeed
                         </a>
                     </p>
                     <p>
-                        <a href="https://github.com/j-chimienti/pollofeed" target="_blank">
+                        <a href="https://github.com/j-chimienti/pollofeed" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-github">
                             </i>
                         </a>
                     </p>
                     <p>
-                        <a href="https://btcpal.online" target="_blank">
+                        <a href="https://btcpal.online" target="_blank" rel="noopener noreferrer">
                             btcpal.online
                             <small>
                                 payment server

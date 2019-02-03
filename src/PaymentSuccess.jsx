@@ -135,7 +135,7 @@ class PaymentSuccess extends React.Component {
                     {inv && inv.state === 'complete' && (
                         <span className={'d-flex justify-content-between align-items-center'}>
                               <span className={'text-success'}>Status: Complete</span>
-                              <a href={inv.video} title={inv.video} target={'_blank'}>
+                              <a href={inv.video} title={inv.video} target={'_blank'} rel="noopener noreferrer">
                                   {inv.video}
                               </a>
                           </span>
