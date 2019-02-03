@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="" />
+    <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playbook/roles/pollofeed/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/playbook/roles/pollofeed/tasks/main.yml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -22,7 +26,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="4" />
-          <entry key="development" value="1" />
+          <entry key="development" value="2" />
           <entry key="env" value="5" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="3" />
@@ -30,19 +34,19 @@
           <entry key="json" value="1" />
           <entry key="mongo" value="1" />
           <entry key="sh" value="6" />
-          <entry key="yml" value="7" />
+          <entry key="yml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="7" />
+          <entry key=".env file" value="8" />
           <entry key="Bash" value="6" />
           <entry key="Dockerfile" value="4" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="10" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="YAML" value="7" />
+          <entry key="YAML" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -51,7 +55,7 @@
           <entry key="env" value="5" />
           <entry key="gitignore" value="15" />
           <entry key="js" value="3" />
-          <entry key="json" value="55" />
+          <entry key="json" value="59" />
           <entry key="jsx" value="4" />
           <entry key="sh" value="20" />
           <entry key="yml" value="26" />
@@ -62,7 +66,7 @@
           <entry key=".env file" value="5" />
           <entry key="Bash" value="20" />
           <entry key="Dockerfile" value="109" />
-          <entry key="JSON" value="55" />
+          <entry key="JSON" value="59" />
           <entry key="JSX Harmony" value="4" />
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -78,11 +82,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="38" column="11" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="11" />
+            <state relative-caret-position="254">
+              <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/playbook/roles/pollofeed/tasks/main.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="22" selection-start-line="22" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env.development">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="37" selection-start-line="37" selection-end-line="37" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -112,8 +134,8 @@
         <option value="$PROJECT_DIR$/redeploy.sh" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/bin/www.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/playbook/roles/pollofeed/tasks/main.yml" />
       </list>
     </option>
@@ -244,19 +266,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549162505437</updated>
-      <workItem from="1549162506684" duration="4638000" />
+      <workItem from="1549162506684" duration="5077000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4638000" />
+    <option name="totallyTimeSpent" value="5077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1242" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17416666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17416666" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" />
       <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
@@ -271,7 +294,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.475" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.41833332" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,13 +331,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env.mongo">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env.development">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="37" selection-start-line="37" selection-end-line="37" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -384,13 +400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playbook/roles/pollofeed/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" selection-start-line="7" selection-start-column="1" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -398,10 +407,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env.development">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="37" selection-start-line="37" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="11" />
+        <state relative-caret-position="254">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbook/roles/pollofeed/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="22" selection-start-line="22" selection-end-line="31" />
         </state>
       </provider>
     </entry>

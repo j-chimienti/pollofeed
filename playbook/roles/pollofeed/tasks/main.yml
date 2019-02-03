@@ -20,12 +20,12 @@
 #    src: ../../../../.env.mongo
 #    dest: "./{{APP_DIR}}/.env.mongo"
 #
-#- name: down
-#  command: docker-compose down
-#  args:
-#    chdir: "./{{APP_DIR}}"
-#
-#- name: up
-#  command: docker-compose up --build -d
-#  args:
-#    chdir: "./{{APP_DIR}}"
+- name: down
+  command: docker-compose down
+  args:
+    chdir: "./{{APP_DIR}}"
+
+- name: up
+  command: docker-compose up --build -d
+  args:
+    chdir: "./{{APP_DIR}}"

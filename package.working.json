@@ -35,6 +35,9 @@
     "uuid": "^3.3.2",
     "validator": "10.11.0"
   },
+  "devDependencies": {
+    "terser": "3.14.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
