@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Admin.css'
 import NavLinks from "./NavLinks";
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -149,7 +149,7 @@ class Admin extends React.Component {
                      </button>
                  </NavLinks>
 
-                     <div className={'row d-flex justify-content-between align-items-center'}>
+                     <div className={'row d-flex justify-content-around align-items-center my-3'}>
                          <button className={'btn'} onClick={this.openWebgpio.bind(this)}>
                              Feeder
                          </button>
@@ -164,9 +164,13 @@ class Admin extends React.Component {
                      </div>
                  )}
 
-                 <div className={'row d-flex justify-content-between'}>
+                 <div className={'row d-flex justify-content-between align-items-center'}>
                      <div className={'col'}>Pending Orders={pendingOrders && Array.isArray(pendingOrders) && pendingOrders.length}</div>
-                     <div className={'col'}>Latest Order={JSON.stringify(latestOrder, null, 4)}</div>
+                     <div className={'col'}>
+                         <Link to={'/order/id/' + latestOrder.id}>
+                             Latest Order
+                         </Link>
+                     </div>
                      <div className={'col'}>Today's Orders={todayOrders && Array.isArray(todayOrders) && todayOrders.length}</div>
                      <div className={'col'}>Total Orders={orderCount}</div>
                  </div>
