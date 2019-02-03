@@ -12,6 +12,14 @@
     src: ../../../../.env
     dest: "./{{APP_DIR}}/.env"
 
+
+- name: copy env file (mongo)
+  tags:
+    copy_env_file
+  copy:
+    src: ../../../../.env.mongo
+    dest: "./{{APP_DIR}}/.env.mongo"
+
 - name: down
   command: docker-compose down
   args:
