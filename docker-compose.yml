@@ -14,7 +14,7 @@ services:
       - pollofeed
     pollofeed_app:
       healthcheck:
-        test: "CMD curl -f http://localhost:${APP_PORT}/health || exit 1"
+        test: "CMD curl -f http://localhost:${APP_PORT} || exit 1"
         interval: 30s
         timeout: 2s
         retries: 3
