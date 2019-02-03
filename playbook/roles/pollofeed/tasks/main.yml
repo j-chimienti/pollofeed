@@ -1,0 +1,23 @@
+---
+- name: fetch latest git version
+  git:
+    repo: "https://github.com/j-chimienti/pollofeed.git"
+    update: yes
+    dest: "./{{APP_DIR}}"
+
+- name: copy env file
+  tags:
+    copy_env_file
+  copy:
+    src: ../../../../.env
+    dest: "./{{APP_DIR}}/.env"
+
+- name: down
+  command: docker-compose down
+  args:
+    chdir: "./{{APP_DIR}}"
+
+- name: up
+  command: docker-compose up --build -d
+  args:
+    chdir: "./{{APP_DIR}}"

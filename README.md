@@ -1,68 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Lightning Charge API example
 
-## Available Scripts
+Why Use
 
-In the project directory, you can run:
+This repo includes automated playbooks to install a btcpayserver instance, and deploy app
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+This app is also an example of how to handle a BTCPAYServer payment
 
-### `npm test`
+Say you have btcpayserver running at example.com
+and if you set env vars VIRTUAL_HOST and LETSENCRYPT_HOST to store.example.com
+it will automatically register certificate for subdomain name.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Simply add A name to dns (todo: make automated playbook)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+**API charge Flow**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Invoice sent to your BTCPayServer
+1. redirect / callback urls back to app and order stored in db
+1. call BTCPayServer to verify that order is paid
+1. do the things
 
-### `npm run eject`
+**Prerequisites:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. [btcpayserver](https://github.com/btcpayserver/btcpayserver)
+1. domain name 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**How to Use**
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. install btcpayserver
+1. Make a copy of our .env.sample and rename it to .env:
+1. in btcpayserver server run `docker network ls` and save result to BTCPAY_NETWORK env file
+Update this file with your preferences.
+1. register A name with dns
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```angular2html
+APP_PORT=6666
+APP_SECRET=secret
+NODE_ENV=development
+MONGO_URI=mongodb://un:pw@<CONTAINER_NAME>:<CONTAINER_PORT | 27017>/<DB | admin>
+DB_NAME=tic-tac-toe
+BTCPAY_HOST=btcpal.online
+BTCPAY_STORE_ID=3KfndflaskfmvngrdflkdjfiYsna4LgsL2Lixvo
+CALLBACK_HOST=tictactoe.btcpal.online
+VIRTUAL_HOST=tictactoe.btcpal.online
+LETSENCRYPT_HOST=tictactoe.btcpal.online
+LETSENCRYPT_EMAIL=addr@gmail.com
+# id for item in store
+MONGO_INITDB_ROOT_USERNAME=un
+# MONGO_INITDB_DATABASE
+# /docker-entrypoint-initdb.d/*.js
+MONGO_INITDB_ROOT_PASSWORD=pw
+choiceKey=tic-tac-toe
+BTCPAY_API_KEY=apikey
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+run 
+    bash run.sh
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+stop 
 
-### Code Splitting
+    bash stop.sh
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+restart
 
-### Analyzing the Bundle Size
+    bash restart.sh
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+### Automated Deploys
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+see [Playbook readme](playbook/README.md)

@@ -1,0 +1,23 @@
+---
+- hosts: btcpayserver
+  #remote_user: joe
+  become: yes
+  become_user: root
+  #  become_method: su
+  # environment:
+  gather_facts: yes
+  roles:
+#    - {
+#      role: kamaln7.swapfile,
+#      swapfile_size: 4G,
+#      swapfile_swappiness: 10,
+#      swapfile_location: /swap.img
+#    }
+#    - {
+#      role: "nickjj.docker",
+#      tags: "docker",
+#      docker_version: "18.03.0",
+#      docker_compose_version: "1.20.1"
+#    }
+    - pollofeed
+
