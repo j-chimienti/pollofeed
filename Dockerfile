@@ -1,4 +1,4 @@
-FROM node:carbon-jessie
+FROM node:carbon
 MAINTAINER joe chimienti <jchimien@gmail.com>
 WORKDIR /usr/src/app/pollofeed
 COPY package.json yarn.lock ./

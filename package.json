@@ -2,7 +2,10 @@
   "name": "pollofeed",
   "version": "0.1.0",
   "homepage": "https://pollofeed.com",
-  "private": true,
+  "maintainers": [
+    "joe chimienti <jchimien@gmail.com"
+  ],
+  "private": false,
   "dependencies": {
     "basic-auth": "^2.0.1",
     "body-parser": "latest",
