@@ -31,22 +31,18 @@ class PaymentSuccess extends React.Component {
 
         this.orderUpdateDataInterval = setInterval(async () => {
 
-            if (this.props.inv && this.props.inv.status === 'paid') {
+            if (this.props.inv && !this.props.inv.complete) {
 
-                if (!this.props.inv.complete) {
+                return await Promise.all([
 
-                    return Promise.all([
-                        this.props.getPendingOrders(),
-                        fetch(`${host}orders/id/${this.props.inv.id}`)
-                            .then(response => response.json())
-                            .then(order => {
-                                Object.assign(order, {state: order.acknowledged ? 'feeding' : 'new'})
-                                this.props.updateInv(order);
-                            })
-                    ])
+                    fetch(`${host}orders/id/${this.props.inv.id}`)
+                        .then(response => response.json())
+                        .then(order => {
+                            this.props.updateInv(order);
+                        }),
+                    this.props.getPendingOrders()
 
-                }
-
+                ])
             }
 
 
@@ -62,7 +58,7 @@ class PaymentSuccess extends React.Component {
 
         const {inv} = this.props;
 
-        if (inv && inv.state === 'feeding' && inv.state !== prevProps.inv.state) {
+        if (inv.acknowledged === true && prevProps.inv.acknowledged === false) {
 
             this.setState({
                 estimatedVideoTime: 35
@@ -105,15 +101,15 @@ class PaymentSuccess extends React.Component {
                     <i className={'fa fa-home'}>
                     </i>
                 </button>
-                <div className="mb-1 d-flex justify-content-between align-items-center">
+                <div className="my-3 d-flex justify-content-between align-items-center">
                     <h5>Thank you for the order</h5>
                     <Link to={`/order/id/${inv.id}`}>
                         Invoice Page
                     </Link>
                     <span>{inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}</span>
                 </div>
-                {inv && inv.state && <h3>
-                    {inv && inv.state === 'new' && (
+                {inv && inv.rhash && inv.status === 'paid' && <h3>
+                    {inv && inv.acknowledged && !inv.complete && (
 
                         <div>
                             <p>Status: Submitted</p>
@@ -122,7 +118,7 @@ class PaymentSuccess extends React.Component {
                             </p>
                         </div>
                     )}
-                    {inv && inv.state === 'feeding' && (
+                    {inv && inv.acknowledged && !inv.complete && (
 
                         <span className={'d-flex justify-content-between align-items-center'}>
                             <span>Status:
@@ -132,12 +128,12 @@ class PaymentSuccess extends React.Component {
                               The order should take ~
                               <span
                                   className={estimatedVideoTime > 0 ? 'text-monospace' : 'text-monospace text-warning'}>
-                                  {estimatedVideoTime >= 9 ? estimatedVideoTime : '0' + estimatedVideoTime}
+                                  {estimatedVideoTime}
                                   </span>
                               seconds to process, and video will load in page.</span>
                           </span>
                     )}
-                    {inv && inv.state === 'complete' && (
+                    {inv && inv.complete && (
                         <span className={'d-flex justify-content-between align-items-center'}>
                             <span>
                                 Status:
@@ -150,8 +146,8 @@ class PaymentSuccess extends React.Component {
                     )}
                 </h3>}
 
-               { inv && inv.video && <div className={'row my-3'}>
-                    <div className={'col-sm-8 mx-auto'}  style={{maxWidth: '700px'}}>
+                {inv && inv.video && <div className={'row my-3'}>
+                    <div className={'col-sm-8 mx-auto'} style={{maxWidth: '700px'}}>
                         <div className={'embed-responsive embed-responsive-4by3'}>
                             <VideoDisplay video={inv.video}/>
                         </div>

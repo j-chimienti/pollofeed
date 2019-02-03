@@ -73,6 +73,9 @@ class App extends Component {
 
     updateInv(inv) {
 
+
+
+
         return this.setState({
             inv: {
                 ...this.state.inv,
@@ -185,11 +188,11 @@ class App extends Component {
 
             _state = {
                 ..._state,
-                inv: {...this.state.inv, ...order, state: 'complete'}
+                inv: {...this.state.inv, ...order, state: 'complete', complete: true}
             }
 
         }
-        this.setState({
+        return this.setState({
             ...this.state,
             ..._state,
         })
@@ -210,6 +213,7 @@ class App extends Component {
                     ...this.state.inv,
                     state: 'feeding',
                     acknowledged: true,
+                    complete: false
                 },
                 paymentSuccessModelOpen: true
 
@@ -223,12 +227,12 @@ class App extends Component {
 
     handleOrderSuccess(inv) {
 
-        console.log('hos', inv)
         return this.setState({
             ...this.state,
             inv: {
                 ...this.state.inv,
                 ...inv,
+                acknowledged: false,
                 state: 'new'
             },
             orderState: 'new',
