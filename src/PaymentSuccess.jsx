@@ -7,12 +7,16 @@ import {Link} from "react-router-dom";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
+const _throttle = require('lodash/throttle');
+
+
 class PaymentSuccess extends React.Component {
 
 
     state = {
 
         estimatedVideoTime: null,
+        refreshingData: false,
 
     }
 
@@ -23,6 +27,8 @@ class PaymentSuccess extends React.Component {
     constructor(props) {
         super(props);
         this.startCountdown = this.startCountdown.bind(this);
+        this.getOrderInfo = this.getOrderInfo.bind(this);
+        this.throttledOrderInfo = this.throttledOrderInfo.bind(this);
 
     }
 
@@ -87,10 +93,41 @@ class PaymentSuccess extends React.Component {
 
     }
 
+    getOrderInfo() {
+
+        const {inv} = this.props;
+
+        return this.setState({
+            refreshingData: true,
+        }, () => {
+            return fetch(`${host}orders/id/${inv.id}`)
+                .then(response => response.json()).then(inv => {
+
+                    this.props.updateInv(inv);
+                    return this.setState({
+                        refreshingData: false
+                    })
+                }).catch(err => {
+                    this.setState({
+                        err,
+                        refreshingData: false
+                    })
+                })
+
+        })
+
+    }
+
+
+    throttledOrderInfo() {
+
+        return _throttle(() => this.getOrderInfo(), 1000);
+    }
+
     render() {
         const {inv, pendingOrders, history} = this.props;
 
-        const {estimatedVideoTime} = this.state;
+        const {estimatedVideoTime, refreshingData} = this.state;
 
 
         return (
@@ -106,6 +143,11 @@ class PaymentSuccess extends React.Component {
                     <Link to={`/order/id/${inv.id}`}>
                         Invoice Page
                     </Link>
+                    <button className={'btn'} onClick={() => this.throttledOrderInfo()}>
+                        <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
+                        </i>
+                        Refresh Data
+                    </button>
                     <span>{inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}</span>
                 </div>
                 {inv && inv.rhash && inv.status === 'paid' && <h3>
