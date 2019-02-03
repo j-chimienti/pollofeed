@@ -34,7 +34,6 @@ services:
       - pollofeed
       - generated_default
       env_file:
-      - .env.mongo
       - .env
       environment:
         MONGO_URI: "mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@db/admin"

@@ -102,18 +102,16 @@ class PaymentSuccess extends React.Component {
                 <button
                     className={'d-block my-3 btn btn-default btn-sm ml-auto'}
                     onClick={() => history.push('/')}>
-                    <i className={'fa fa-close'}>
+                    <i className={'fa fa-home'}>
                     </i>
                 </button>
                 <div className="mb-1 d-flex justify-content-between align-items-center">
-                    <h2>Thank you for the order</h2>
+                    <h5>Thank you for the order</h5>
+                    <Link to={`/order/id/${inv.id}`}>
+                        Invoice Page
+                    </Link>
                     <span>{inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}</span>
                 </div>
-                <p>
-                    <Link to={`/order/id/${inv.id}`}>
-                        Info page
-                    </Link>
-                </p>
                 {inv && inv.state && <h3>
                     {inv && inv.state === 'new' && (
 
@@ -127,7 +125,9 @@ class PaymentSuccess extends React.Component {
                     {inv && inv.state === 'feeding' && (
 
                         <span className={'d-flex justify-content-between align-items-center'}>
-                              <span className={'text-info'}>Status: Feeding</span>
+                            <span>Status:
+                              <span className={'text-info'}>Feeding</span>
+                            </span>
                           <span className="small">
                               The order should take ~
                               <span
@@ -139,9 +139,12 @@ class PaymentSuccess extends React.Component {
                     )}
                     {inv && inv.state === 'complete' && (
                         <span className={'d-flex justify-content-between align-items-center'}>
-                              <span className={'text-success'}>Status: Complete</span>
+                            <span>
+                                Status:
+                              <span className={'text-success'}>Complete</span>
+                            </span>
                               <a href={inv.video} title={inv.video} target={'_blank'} rel="noopener noreferrer">
-                                  {inv.video}
+                                  Video Link
                               </a>
                           </span>
                     )}
