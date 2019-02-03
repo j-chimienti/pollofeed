@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom'
 function NavLinks({children}) {
     return (
         <div className={'row d-flex text-white'}>
-            <Link to="/">Home</Link>
             <Link to="/admin">Admin</Link>
             {children}
         </div>

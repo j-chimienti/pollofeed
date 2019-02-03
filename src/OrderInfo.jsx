@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
+import {Link} from "react-router-dom";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -80,13 +81,20 @@ class OrderInfo extends React.Component {
 
         return (
             <div className={'container'}>
-                <button className={'d-block my-4 btn'} onClick={this.throttledOrderInfo}>
-                    <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
-                    </i>
-                    Refresh Data
-                </button>
 
-                <h3>Invoice: {inv.id}</h3>
+                <div className={'row d-flex justify-content-around my-4 px-2'}>
+                    <button className={'btn'} onClick={() => this.throttledOrderInfo()}>
+                        <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
+                        </i>
+                        Refresh Data
+                    </button>
+
+                    <Link to={'/'}>
+                        <i className={'fa fa-home'}></i>
+                    </Link>
+
+                </div>
+                    <h3>Invoice: {inv.id}</h3>
                 <h5>
                     Status: {inv.status}
                     {inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}

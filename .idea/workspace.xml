@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OrderInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PaymentSuccess.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentSuccess.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,7 +30,7 @@
           <entry key="html" value="3" />
           <entry key="js" value="15" />
           <entry key="json" value="1" />
-          <entry key="jsx" value="10" />
+          <entry key="jsx" value="11" />
           <entry key="mongo" value="1" />
           <entry key="sh" value="6" />
           <entry key="yml" value="12" />
@@ -47,7 +43,7 @@
           <entry key="Dockerfile" value="7" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="1" />
-          <entry key="JSX Harmony" value="10" />
+          <entry key="JSX Harmony" value="11" />
           <entry key="JavaScript" value="13" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Scratch" value="2" />
@@ -62,7 +58,7 @@
           <entry key="gitignore" value="15" />
           <entry key="js" value="402" />
           <entry key="json" value="136" />
-          <entry key="jsx" value="1228" />
+          <entry key="jsx" value="1349" />
           <entry key="sh" value="20" />
           <entry key="yml" value="285" />
         </counts>
@@ -73,7 +69,7 @@
           <entry key="Bash" value="20" />
           <entry key="Dockerfile" value="228" />
           <entry key="JSON" value="136" />
-          <entry key="JSX Harmony" value="1228" />
+          <entry key="JSX Harmony" value="1349" />
           <entry key="JavaScript" value="385" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
@@ -90,22 +86,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NavLinks.jsx">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PaymentSuccess.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="103" column="26" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="24">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -113,32 +97,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/OrderInfo.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="107" column="34" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
+            <state relative-caret-position="586">
+              <caret line="85" column="84" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="84" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="n#!!block;n#throttledOrderInfo#0;n#OrderInfo#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5567">
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -314,12 +277,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549162505437</updated>
-      <workItem from="1549162506684" duration="15748000" />
+      <workItem from="1549162506684" duration="16246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15748000" />
+    <option name="totallyTimeSpent" value="16246000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1242" height="777" extended-state="0" />
@@ -342,7 +305,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.3475" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.32916668" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,24 +473,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NavLinks.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -540,10 +489,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5567">
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="161">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -557,13 +504,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/NavLinks.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderInfo.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="107" column="34" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
+        <state relative-caret-position="586">
+          <caret line="85" column="84" selection-start-line="85" selection-start-column="66" selection-end-line="85" selection-end-column="84" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="n#!!block;n#throttledOrderInfo#0;n#OrderInfo#0" />
           </folding>
         </state>
       </provider>
