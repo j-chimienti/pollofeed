@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/dao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DownloadInvoice.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/DownloadInvoice.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PaymentSuccess.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentSuccess.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SocketController.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SocketController.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,7 +17,7 @@
     <session id="1724430321">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.6" value="2" />
@@ -138,7 +130,7 @@
         <entry file="file://$PROJECT_DIR$/src/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -224,9 +216,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="38" />
+    <option name="x" value="225" />
     <option name="y" value="23" />
-    <option name="width" value="1242" />
+    <option name="width" value="1055" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectView">
@@ -337,16 +329,15 @@
       <workItem from="1549217314154" duration="1751000" />
       <workItem from="1549221650147" duration="756000" />
       <workItem from="1549408059276" duration="445000" />
-      <workItem from="1549459502229" duration="2656000" />
+      <workItem from="1549459502229" duration="3949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27182000" />
+    <option name="totallyTimeSpent" value="28475000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="23" width="1242" height="777" extended-state="0" />
-    <editor active="true" />
+    <frame x="625" y="23" width="655" height="777" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.17416666" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -365,7 +356,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.3075" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.9526917" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,7 +626,7 @@
     <entry file="file://$PROJECT_DIR$/src/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
