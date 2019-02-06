@@ -108,7 +108,10 @@ class OrderInfo extends React.Component {
                 </div>
                     <h3>Invoice: {id}</h3>
                 <h5>
-                    Status: {inv.status}
+                    Status:
+                    {inv.complete && <span className={'text-warning ml-3'}>Complete</span> }
+                    {!inv.complete && inv.acknowledged && <span className={'text-warning ml-3'}>Feeding</span> }
+                    {!inv.complete && !inv.acknowledged && inv.status === 'paid' && <span className={'text-warning ml-3'}>Processing</span> }
                 </h5>
 
                 {/*<p>*/}

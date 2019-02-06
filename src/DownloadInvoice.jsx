@@ -24,7 +24,7 @@ function downloadInv(inv) {
 
 function DownloadInvoice({inv}) {
     return (
-       <button className={'btn btn-primary'}
+       <button className={'btn btn-warning'}
                onClick={() => downloadInv(inv)}
        >
            <i

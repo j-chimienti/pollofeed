@@ -24,6 +24,12 @@ class Home extends React.Component {
 
     componentDidMount() {
 
+
+        // test
+        // setTimeout(() => {
+        //     this.props.history.push('/order/paid')
+        // }, 2000)
+
     }
 
 

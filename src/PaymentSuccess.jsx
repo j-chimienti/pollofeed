@@ -123,7 +123,9 @@ class PaymentSuccess extends React.Component {
     render() {
         const {inv, pendingOrders, history} = this.props;
 
-        const {estimatedVideoTime, refreshingData} = this.state;
+        let {estimatedVideoTime, refreshingData} = this.state;
+
+        estimatedVideoTime = 30
 
 
         return (
@@ -131,7 +133,7 @@ class PaymentSuccess extends React.Component {
 
                 <div className={'row my-3 d-flex justify-content-end align-items-center'}>
                     <button
-                        className={'btn btn-default'}
+                        className={'btn btn-warning'}
                         onClick={() => history.push('/')}>
                         <i className={'fa fa-home'}>
                         </i>
@@ -156,9 +158,9 @@ class PaymentSuccess extends React.Component {
 
                 {inv && !inv.acknowledged && inv.status === 'paid' && (
                     <div>
-                        <h3>
-                            Payment success
-                        </h3>
+                        <h5>Status:
+                              <span className={'text-warning ml-3'}>Paid / Processing</span>
+                            </h5>
                         <p>Pending orders=
                             <span className={'mx-1 text-monospace'}>{pendingOrders.length}</span>
                         </p>
@@ -168,21 +170,22 @@ class PaymentSuccess extends React.Component {
 
 
 
-                {inv && inv.status === 'paid' && <h3>
-                    {inv && inv.acknowledged && !inv.complete && (
+                {inv && inv.status === 'paid' && <div>
+                    {1 && (
 
-                        <span className={'d-flex justify-content-between align-items-center'}>
-                            <span>Status:
-                              <span className={'text-info'}>Feeding</span>
-                            </span>
-                          <span className="small">
+                        <div>
+                            <h5>Status:
+                              <span className={'text-info ml-3'}>Feeding</span>
+                            </h5>
+                          <p className="small">
                               The order should take ~
                               <span
-                                  className={estimatedVideoTime > 0 ? 'text-monospace' : 'text-monospace text-warning'}>
+                                  className={estimatedVideoTime > 0 ? 'text-monospace mr-1' : 'text-monospace mr-1 text-warning'}>
                                   {estimatedVideoTime}
                                   </span>
-                              seconds to process, and video will load in page.</span>
-                          </span>
+                              seconds to process, and video will load in page.
+                          </p>
+                          </div>
                     )}
                     {inv.complete && (
                         <span className={'d-flex justify-content-between align-items-center'}>
@@ -192,7 +195,7 @@ class PaymentSuccess extends React.Component {
                             </span>
                           </span>
                     )}
-                </h3>}
+                </div>}
 
 
                 {inv && inv.video && <div className={'row my-3'}>
