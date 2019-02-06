@@ -84,7 +84,6 @@ class Home extends Component {
                         Pollo Feed
                         <i className={'fa fa-bolt ml-3'}></i>
                     </h1>
-                    <hr/>
                     <p className={'small font-weight-light text-muted mb-1'}>
                         Bitcoin Lightning Powered Chicken Feeder
                     </p>
@@ -96,7 +95,7 @@ class Home extends Component {
                     </button>
                     <OrderStatus orderState={orderState} inv={inv}/>
                     <div className={'row my-3'}>
-                        <div className={'col-sm-8 mx-auto'} style={{maxWidth: '700px'}}>
+                        <div className={'col-sm-8 mx-auto'} style={{maxWidth: '680px'}}>
                             <div className={'embed-responsive embed-responsive-4by3'}>
                                 <VideoDisplay video={video}/>
                             </div>

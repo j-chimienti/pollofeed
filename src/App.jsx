@@ -87,10 +87,10 @@ class App extends Component {
 
         this.getLatestOrder()
 
-        // test
         // setTimeout(() => {
         //     this.setState({
-        //         inv: testInvoice
+        //         inv: testInvoice,
+        //         latestOrder: testInvoice
         //     })
         // }, 1000)
 
