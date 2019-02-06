@@ -4,6 +4,7 @@ import OrderStatus from "./OrderStatus";
 import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
 import Footer from "./Footer";
+
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 class Home extends React.Component {
@@ -39,7 +40,6 @@ class Home extends React.Component {
     }
 
 
-
     // post a new invoice request from lighting client BE
     async postOrder() {
 
@@ -59,43 +59,50 @@ class Home extends React.Component {
             })
 
     }
+
     render() {
         const {
-            orderState, completed_at, video, inv} = this.props;
+            orderState, completed_at, video, inv
+        } = this.props;
 
         const {submittingLightningInvoice} = this.state;
 
 
         return (
-                    <div className={'App'}>
+            <div className={'App'}>
 
 
-                        <header className="App-header">
-                            <h1 className={'App-title pt-3'}>Pollo Feed</h1>
-                            <p className={'small font-weight-light text-muted mb-1'}>
-                                Bitcoin Lightning Powered Chicken Feeder
-                            </p>
-                            <button
-                                onClick={this.handlePostOrder}
-                                type="submit"
-                                className="d-block btn mx-auto btn-feed btn-warning font-weight-bold text-gray text-uppercase d-flex justify-content-center">
-                                {submittingLightningInvoice ? (<div className={'donut'}></div>) : 'Feed'}
-                            </button>
-                            <OrderStatus orderState={orderState} inv={inv}/>
-                            <div className={'row my-3'}>
-                               <div className={'col-sm-8 mx-auto'}  style={{maxWidth: '700px'}}>
-                                   <div className={'embed-responsive embed-responsive-4by3'}>
-                                       <VideoDisplay video={video}/>
-                                   </div>
-                               </div>
+                <header className="App-header">
+                    <h1 className={'App-title pt-3 text-warning'}>
+                        <i className={'fa fa-bolt mr-3'}></i>
+                        Pollo Feed
+                        <i className={'fa fa-bolt ml-3'}></i>
+                    </h1>
+                    <hr/>
+                    <p className={'small font-weight-light text-muted mb-1'}>
+                        Bitcoin Lightning Powered Chicken Feeder
+                    </p>
+                    <button
+                        onClick={this.handlePostOrder}
+                        type="submit"
+                        className="d-block btn mx-auto btn-feed btn-warning font-weight-bold text-gray text-uppercase d-flex justify-content-center">
+                        {submittingLightningInvoice ? (<div className={'donut'}></div>) : 'Feed'}
+                    </button>
+                    <OrderStatus orderState={orderState} inv={inv}/>
+                    <div className={'row my-3'}>
+                        <div className={'col-sm-8 mx-auto'} style={{maxWidth: '700px'}}>
+                            <div className={'embed-responsive embed-responsive-4by3'}>
+                                <VideoDisplay video={video}/>
                             </div>
-                            {completed_at && <p className={'mx-auto text-muted small font-weight-light'}>
-                                Last Fed @ {new Date(completed_at).toLocaleString()}
-                            </p>}
-                            {inv && inv.status === 'paid' && <p><DownloadInvoice inv={inv}/></p>}
-                        </header>
-                        <Footer/>
+                        </div>
                     </div>
+                    {completed_at && <p className={'mx-auto text-muted small font-weight-light'}>
+                        Last Fed @ {new Date(completed_at).toLocaleString()}
+                    </p>}
+                    {inv && inv.status === 'paid' && <p><DownloadInvoice inv={inv}/></p>}
+                </header>
+                <Footer/>
+            </div>
         );
     }
 }

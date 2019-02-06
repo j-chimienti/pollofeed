@@ -15,6 +15,15 @@ body {
 
 }
 
+a:visited {
+    color: rgb(206, 154, 18) !important;
+}
+.text-warning {
+    color: #ffc107!important;
+}
+a {
+    color: rgb(246, 194, 68);
+}
 
 
 
