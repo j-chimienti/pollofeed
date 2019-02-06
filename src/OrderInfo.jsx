@@ -1,8 +1,7 @@
 import React from 'react';
 import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
-import {Link} from "react-router-dom";
-
+import PropTypes from 'prop-types';
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 const _throttle = require('lodash/throttle');
@@ -11,7 +10,6 @@ class OrderInfo extends React.Component {
 
 
     state = {
-        inv: {},
         err: null,
         refreshingData: false
     }
@@ -21,7 +19,7 @@ class OrderInfo extends React.Component {
         super(props);
         this.getOrderInfo = this.getOrderInfo.bind(this);
         this._getOrderInfo = this._getOrderInfo.bind(this);
-        this.throttledOrderInfo = this.throttledOrderInfo.bind(this);
+        this.throttledOrderInfo = _throttle(this.getOrderInfo, 1000);
 
     }
 
@@ -57,10 +55,6 @@ class OrderInfo extends React.Component {
     }
 
 
-    throttledOrderInfo() {
-
-        return _throttle(() => this.getOrderInfo(), 1000);
-    }
 
     _getOrderInfo() {
 
@@ -71,33 +65,50 @@ class OrderInfo extends React.Component {
             alert('invalid request')
         }
         return fetch(`${host}orders/id/${id}`)
-            .then(response => response.json())
+            .then(response => response.json()).then(inv => {
+
+                this.props.updateInv(inv);
+            }).catch(err => {
+                this.setState({
+                    err,
+                    refreshingData: false
+                })
+            })
 
     }
 
+
     render() {
 
-        const {inv, refreshingData} = this.state;
+        const {refreshingData} = this.state;
+        const {inv} = this.props;
+        const {id} = this.props.match.params;
+
+        if (!inv) {
+
+            return null;
+        }
 
         return (
             <div className={'container'}>
 
-                <div className={'row d-flex justify-content-around my-4 px-2'}>
-                    <button className={'btn'} onClick={() => this.throttledOrderInfo()}>
+                <div className={'row my-3 d-flex justify-content-end align-items-center'}>
+                    <button
+                        className={'btn btn-default'}
+                        onClick={() => this.props.history.push('/')}>
+                        <i className={'fa fa-home'}>
+                        </i>
+                    </button>
+                    <button className={'btn'} onClick={this.throttledOrderInfo}>
                         <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
                         </i>
                         Refresh Data
                     </button>
-
-                    <Link to={'/'}>
-                        <i className={'fa fa-home'}></i>
-                    </Link>
-
+                    {inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}
                 </div>
-                    <h3>Invoice: {inv.id}</h3>
+                    <h3>Invoice: {id}</h3>
                 <h5>
                     Status: {inv.status}
-                    {inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}
                 </h5>
 
                 {/*<p>*/}
@@ -127,7 +138,10 @@ class OrderInfo extends React.Component {
     }
 }
 
-OrderInfo.propTypes = {};
+OrderInfo.propTypes = {
+    updateInv: PropTypes.func.isRequired,
+    inv: PropTypes.object.isRequired
+};
 OrderInfo.defaultProps = {};
 
 export default OrderInfo

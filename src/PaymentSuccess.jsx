@@ -28,31 +28,30 @@ class PaymentSuccess extends React.Component {
         super(props);
         this.startCountdown = this.startCountdown.bind(this);
         this.getOrderInfo = this.getOrderInfo.bind(this);
-        this.throttledOrderInfo = this.throttledOrderInfo.bind(this);
-
+        this.throttledOrderInfo = _throttle(this.getOrderInfo, 1000);
     }
 
 
     componentDidMount() {
 
-        this.orderUpdateDataInterval = setInterval(async () => {
-
-            if (this.props.inv && !this.props.inv.complete) {
-
-                return await Promise.all([
-
-                    fetch(`${host}orders/id/${this.props.inv.id}`)
-                        .then(response => response.json())
-                        .then(order => {
-                            this.props.updateInv(order);
-                        }),
-                    this.props.getPendingOrders()
-
-                ])
-            }
-
-
-        }, 1000 * 5)
+        // this.orderUpdateDataInterval = setInterval(async () => {
+        //
+        //     if (this.props.inv && !this.props.inv.complete) {
+        //
+        //         return await Promise.all([
+        //
+        //             fetch(`${host}orders/id/${this.props.inv.id}`)
+        //                 .then(response => response.json())
+        //                 .then(order => {
+        //                     this.props.updateInv(order);
+        //                 }),
+        //             this.props.getPendingOrders()
+        //
+        //         ])
+        //     }
+        //
+        //
+        // }, 1000 * 5)
     }
 
     componentWillUnmount() {
@@ -119,10 +118,7 @@ class PaymentSuccess extends React.Component {
     }
 
 
-    throttledOrderInfo() {
 
-        return _throttle(() => this.getOrderInfo(), 1000);
-    }
 
     render() {
         const {inv, pendingOrders, history} = this.props;
@@ -132,34 +128,47 @@ class PaymentSuccess extends React.Component {
 
         return (
             <div className={'w-100 h-100 container'}>
-                <button
-                    className={'d-block my-3 btn btn-default btn-sm ml-auto'}
-                    onClick={() => history.push('/')}>
-                    <i className={'fa fa-home'}>
-                    </i>
-                </button>
-                <div className="my-3 d-flex justify-content-between align-items-center">
-                    <h5>Thank you for the order</h5>
-                    <Link to={`/order/id/${inv.id}`}>
-                        Invoice Page
-                    </Link>
-                    <button className={'btn'} onClick={() => this.throttledOrderInfo()}>
+
+                <div className={'row my-3 d-flex justify-content-end align-items-center'}>
+                    <button
+                        className={'btn btn-default'}
+                        onClick={() => history.push('/')}>
+                        <i className={'fa fa-home'}>
+                        </i>
+                    </button>
+                    <button className={'btn'} onClick={this.throttledOrderInfo}>
                         <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
                         </i>
                         Refresh Data
                     </button>
-                    <span>{inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}</span>
+                    {inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}
                 </div>
-                {inv && inv.rhash && inv.status === 'paid' && <h3>
-                    {inv && inv.acknowledged && !inv.complete && (
+                <h1>Thank you for the order</h1>
 
-                        <div>
-                            <p>Status: Submitted</p>
-                            <p>Pending orders=
-                                <span className={'mx-1 text-monospace'}>{pendingOrders.length}</span>
-                            </p>
-                        </div>
-                    )}
+
+
+                <h5>
+                    You can view your order any time and the link below
+                </h5>
+                <Link to={`/order/id/${inv.id}`}>
+                    {window.location.href + `/order/id/${inv.id}`}
+                </Link>
+
+                {inv && !inv.acknowledged && inv.status === 'paid' && (
+                    <div>
+                        <h3>
+                            Payment success
+                        </h3>
+                        <p>Pending orders=
+                            <span className={'mx-1 text-monospace'}>{pendingOrders.length}</span>
+                        </p>
+                    </div>
+                )}
+
+
+
+
+                {inv && inv.status === 'paid' && <h3>
                     {inv && inv.acknowledged && !inv.complete && (
 
                         <span className={'d-flex justify-content-between align-items-center'}>
@@ -175,18 +184,16 @@ class PaymentSuccess extends React.Component {
                               seconds to process, and video will load in page.</span>
                           </span>
                     )}
-                    {inv && inv.complete && (
+                    {inv.complete && (
                         <span className={'d-flex justify-content-between align-items-center'}>
                             <span>
                                 Status:
                               <span className={'text-success'}>Complete</span>
                             </span>
-                              <a href={inv.video} title={inv.video} target={'_blank'} rel="noopener noreferrer">
-                                  Video Link
-                              </a>
                           </span>
                     )}
                 </h3>}
+
 
                 {inv && inv.video && <div className={'row my-3'}>
                     <div className={'col-sm-8 mx-auto'} style={{maxWidth: '700px'}}>

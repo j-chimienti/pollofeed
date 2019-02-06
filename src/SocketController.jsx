@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import io from 'socket.io-client'
 
 
-
 class SocketController extends Component {
 
     constructor(props) {
@@ -19,43 +18,21 @@ class SocketController extends Component {
 
     initSocket() {
 
-        const { handleOrderProcessing, handleOrderComplete} = this.props
+        const {handleOrderProcessing, handleOrderComplete} = this.props
 
-        this.socket.on('connect', (data) => {
-            // this.socket.emit('join', orderId);
-        })
 
-        this.socket.on('ORDER_PROCESSING', data => {
+        this.socket.on('ORDER_COMPLETE', handleOrderComplete)
 
-            // console.log('ORDER_PROCESSING', data)
-            handleOrderProcessing(data)
-        })
 
-        this.socket.on('ORDER_COMPLETE', order => {
-            // console.log('ORDER_COMPLETE', order)
-
-            handleOrderComplete(order)
-
-        })
-
-        this.socket.on('ORDER_ERROR', data => {
-            // console.error(data)
-        })
-
-        this.socket.on('FEEDING_CHICKENS', (data) => {
-
-            // updateOrderState('p')
-            // console.log('new order received', new Date().toLocaleTimeString(), data)
-
-            this.props.handleOrderProcessing(data)
-        })
+        this.socket.on('FEEDING_CHICKENS', handleOrderProcessing)
 
     }
 
     render() {
         return (
-            <div>
-            </div>
+            <span>
+
+            </span>
         )
     }
 }

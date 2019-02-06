@@ -11,30 +11,30 @@ import SocketController from './SocketController'
 import OrderInfo from './OrderInfo'
 
 let testInvoice = {
-    '_id': '5c534620c60159000662214c',
-    'feed': false,
-    'acknowledged': true,
-    'video': 'https://s3.amazonaws.com/pollofeed/QvAW9szz8PFGVBXED7sAy.mp4',
-    'complete': false,
-    'updated_at': '2019-01-31T19:02:27.555Z',
-    'completed_at': '2019-01-31T19:02:27.555Z',
-    'id': 'QvAW9szz8PFGVBXED7sAy',
-    'status': 'UNPAID',
-    'msatoshi': '1',
-    'quoted_currency': null,
-    'quoted_amount': null,
-    'rhash': 'c6ad46b4ca648421ad79e4b927d467367818bb1950cdff1c7dc3f9a20f5ac9f7',
-    'payreq': 'lnbc10p1pw9x3smpp5c6k5ddx2vjzzrtteujuj04r8xeup3wce2rxl78rac0u6yr66e8msdp52phkcmr0vejk2epq95s8qcteyp6x7grxv4jkggrrdp5kx6m9deesxqzjccqp2rzjqw4vhgzrxts7s9u6rwz284mrrfrg79wr3myca0d6ll3qlrxhtl7quzy0yuqq35sqqyqqqqlgqqqqqqgqjqzmhxzmtj9arz4um4dqwa3txe8ymp6ylp3hmpseuk9eae4q828dep4fak5j90330w74hrtmqelz4wp4g4kxyk6fn8xkfjumntvg4a0uqps3v5xs',
-    'pay_index': 24,
-    'description': 'Pollofeed - pay to feed chickens',
-    'metadata': {'source': 'pollofeed.com'},
-    'created_at': Date.now() || 1548961307,
-    'expires_at': parseInt((Date.now() / 1000)  + 600) || 1548961907,
-    'paid_at': 1548961312,
-    'msatoshi_received': '1',
-    'state': 'new'
+    "_id": "5c55ef6c5fcc840006e5164f",
+    "feed": false,
+    "acknowledged": false,
+    //"video": "https://s3.amazonaws.com/pollofeed/6922lEmDooq_GOEAV0Vkv.mp4",
+    video: null,
+    "complete": false,
+    "updated_at": "2019-02-02T19:29:25.179Z",
+    "completed_at": "2019-02-02T19:29:25.179Z",
+    "id": "6922lEmDooq_GOEAV0Vkv",
+    "status": "paid",
+    "msatoshi": "1000",
+    "quoted_currency": null,
+    "quoted_amount": null,
+    "rhash": "ce5d6a17be78fb4117901c4db9efdc60cf3022ee8835a40b9d72574e40588ab1",
+    "payreq": "lnbc10n1pw9tmmfpp5eewk59a70ra5z9usr3xmnm7uvr8nqghw3q66gzuawft5uszc32csdp52phkcmr0vejk2epq95s8qcteyp6x7grxv4jkggrrdp5kx6m9deesxqzjccqp2rzjqvn8nlkpyyl9kz3rupnvqxwhhxgmjhrwf55gq6u7h5fk970rya6u7zy095qqr3gqqqqqqq05qqqqraqqjqcymvnnyhy64v4engxv84ws4x2d8h0z6vd5g8np5gnxk4c48xgpljhcf275q0hx2wzt6dvuycgtxvzduccu7lhdwewc4nq5vxp63sr0gq02ue3s",
+    "pay_index": 91,
+    "description": "Pollofeed - pay to feed chickens",
+    "metadata": {"source": "pollofeed.com"},
+    "created_at": 1549135721,
+    "expires_at": 1549136321,
+    "paid_at": 1549135724,
+    "msatoshi_received": "1000",
+    "state": "complete"
 }
-
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 const initState = {
@@ -55,7 +55,6 @@ const initState = {
 class App extends Component {
 
 
-
     constructor(props) {
         super(props)
         this.getLatestOrder = this.getLatestOrder.bind(this)
@@ -71,9 +70,8 @@ class App extends Component {
     }
 
 
+
     updateInv(inv) {
-
-
 
 
         return this.setState({
@@ -110,7 +108,6 @@ class App extends Component {
     }
 
 
-
     async getPendingOrders() {
 
         const orders = await fetch(`${host}orders/pending`).then(response => response.json())
@@ -130,24 +127,20 @@ class App extends Component {
 
     async getTodaysOrders() {
 
-        const orders = await fetch(`${host}orders/today`).then(response => response.json())
+        return fetch(`${host}orders/today`)
+            .then(response => response.json())
+            .then(todaysOrders =>
+                this.setState({
+                    todaysOrders
+                })
+            )
             .catch(err => {
                 console.error(err)
-
                 return false
             })
-
-        if (orders) {
-
-            this.setState({
-                todaysOrders: orders
-            })
-        }
     }
 
     handleNewOrder(inv) {
-
-
 
         return this.setState({
             ...this.state,
@@ -243,7 +236,7 @@ class App extends Component {
     render() {
 
 
-        const {pendingOrders,  latestOrder: {completed_at}, inv, orderState, video} = this.state
+        const {pendingOrders, latestOrder: {completed_at}, inv, orderState, video} = this.state
 
         return (
             <div>
@@ -253,32 +246,36 @@ class App extends Component {
                 />
                 <BrowserRouter>
                     <Switch>
-                        <Route path={'/order/id/:id'} component={OrderInfo}/>
+                        <Route path={'/order/id/:id'}
+                               render={props =>
+                                   <OrderInfo {...props} inv={inv} updateInv={this.updateInv}/>
+                               }
+                        />
                         <Route exact path={'/order/new'} render={props =>
                             <NewOrder  {...props} inv={inv} handleOrderSuccess={this.handleOrderSuccess}/>
                         }
                         />
                         <Route path={'/order/paid'}
-                            exact
-                            render={props => {
-                                return <PaymentSuccess {...props}
-                                    updateInv={this.updateInv}
-                                    inv={inv}
-                                    getPendingOrders={this.getPendingOrders}
-                                    pendingOrders={pendingOrders}
-                                />
-                            }}
+                               exact
+                               render={props => {
+                                   return <PaymentSuccess {...props}
+                                                          updateInv={this.updateInv}
+                                                          inv={inv}
+                                                          getPendingOrders={this.getPendingOrders}
+                                                          pendingOrders={pendingOrders}
+                                   />
+                               }}
                         />
 
                         <Route path="/" exact
-                            render={(props) => <Home
-                                {...props}
-                                handleNewOrder={this.handleNewOrder}
-                                orderState={orderState}
-                                completed_at={completed_at}
-                                video={video}
-                                inv={inv}
-                            />}
+                               render={(props) => <Home
+                                   {...props}
+                                   handleNewOrder={this.handleNewOrder}
+                                   orderState={orderState}
+                                   completed_at={completed_at}
+                                   video={video}
+                                   inv={inv}
+                               />}
                         />
                         <Route path={'/admin'} component={withAuth(Admin)}/>
                         <Route path="/login" component={Login}/>
