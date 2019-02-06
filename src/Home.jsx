@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import OrderStatus from "./OrderStatus";
 import VideoDisplay from "./VideoDisplay";
@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
-class Home extends React.Component {
+class Home extends Component {
 
     state = {
 

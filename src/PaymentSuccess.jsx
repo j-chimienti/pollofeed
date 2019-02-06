@@ -123,10 +123,7 @@ class PaymentSuccess extends React.Component {
     render() {
         const {inv, pendingOrders, history} = this.props;
 
-        let {estimatedVideoTime, refreshingData} = this.state;
-
-        estimatedVideoTime = 30
-
+        const {estimatedVideoTime, refreshingData} = this.state;
 
         return (
             <div className={'w-100 h-100 container'}>
