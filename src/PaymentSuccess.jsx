@@ -34,24 +34,24 @@ class PaymentSuccess extends React.Component {
 
     componentDidMount() {
 
-        // this.orderUpdateDataInterval = setInterval(async () => {
-        //
-        //     if (this.props.inv && !this.props.inv.complete) {
-        //
-        //         return await Promise.all([
-        //
-        //             fetch(`${host}orders/id/${this.props.inv.id}`)
-        //                 .then(response => response.json())
-        //                 .then(order => {
-        //                     this.props.updateInv(order);
-        //                 }),
-        //             this.props.getPendingOrders()
-        //
-        //         ])
-        //     }
-        //
-        //
-        // }, 1000 * 5)
+        this.orderUpdateDataInterval = setInterval(async () => {
+
+            if (this.props.inv && !this.props.inv.complete) {
+
+                return await Promise.all([
+
+                    fetch(`${host}orders/id/${this.props.inv.id}`)
+                        .then(response => response.json())
+                        .then(order => {
+                            this.props.updateInv(order);
+                        }),
+                    this.props.getPendingOrders()
+
+                ])
+            }
+
+
+        }, 1000 * 5)
     }
 
     componentWillUnmount() {
