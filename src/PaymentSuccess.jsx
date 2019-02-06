@@ -167,7 +167,7 @@ class PaymentSuccess extends React.Component {
 
 
 
-                {inv && inv.status === 'paid' && <div>
+                {inv && inv.status === 'paid' && !inv.complete && inv.acknowledged && <div>
                     {1 && (
 
                         <div>

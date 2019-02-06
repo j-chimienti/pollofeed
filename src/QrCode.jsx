@@ -37,14 +37,6 @@ class QrCode extends Component {
 
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-
-    }
-
     componentDidUpdate(prevProps, prevState) {
 
     }
@@ -63,8 +55,7 @@ class QrCode extends Component {
         }
         return (
             <div>
-
-                <img className="d-block w-100 my-3" src={qr}/>
+                <img className="d-block w-100 my-3" src={qr} alt={''}/>
             </div>
         );
     }
