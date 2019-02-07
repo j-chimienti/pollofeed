@@ -5,12 +5,14 @@
 
 .App-header {
 
-    background-image: url(./assets/barn.jpeg);
+    background: #282c34;
     height: 100vh;
-    /* Create the parallax scrolling effect */
+    /* Create the parallax scrolling effect
+    background-image: url(./assets/barn.jpeg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    */
     background-size: cover;
     font-size: calc(10px + 2vmin);
     color: var(--light);

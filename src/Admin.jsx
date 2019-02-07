@@ -137,7 +137,7 @@ class Admin extends React.Component {
                 <div className={'row d-flex justify-content-around align-items-center my-3'}>
                     <NavLinks>
                         <button
-                            className={'nav-link'}
+                            className={'btn btn-light'}
                             onClick={this.logout}
                         >
                             <i className={'fa fa-user-o'}></i>
@@ -147,10 +147,10 @@ class Admin extends React.Component {
                 </div>
 
                 <div className={'row d-flex justify-content-around align-items-center my-3'}>
-                    <button className={'btn'} onClick={this.openWebgpio.bind(this)}>
+                    <button className={'btn btn-warning'} onClick={this.openWebgpio.bind(this)}>
                         Feeder
                     </button>
-                    <button className={'btn'} onClick={this.openWebcam.bind(this)}>
+                    <button className={'btn btn-warning'} onClick={this.openWebcam.bind(this)}>
                         Webcam
                     </button>
                 </div>
