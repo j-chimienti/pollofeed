@@ -72,4 +72,4 @@ restart
 
 ### Automated Deploys
 
-see [Playbook readme](playbook/README.md)
+see [Playbook readme](playbooks/README.md)

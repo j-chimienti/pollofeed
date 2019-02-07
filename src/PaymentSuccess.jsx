@@ -118,8 +118,6 @@ class PaymentSuccess extends React.Component {
     }
 
 
-
-
     render() {
         const {inv, pendingOrders, history} = this.props;
 
@@ -144,8 +142,6 @@ class PaymentSuccess extends React.Component {
                 </div>
                 <h1>Thank you for the order</h1>
 
-
-
                 <h5>
                     You can view your order any time and the link below
                 </h5>
@@ -156,33 +152,29 @@ class PaymentSuccess extends React.Component {
                 {inv && !inv.acknowledged && inv.status === 'paid' && (
                     <div>
                         <h5>Status:
-                              <span className={'text-warning ml-3'}>Paid / Processing</span>
-                            </h5>
+                            <span className={'text-warning ml-3'}>Paid / Processing</span>
+                        </h5>
                         <p>Pending orders=
                             <span className={'mx-1 text-monospace'}>{pendingOrders.length}</span>
                         </p>
                     </div>
                 )}
-
-
-
-
                 {inv && inv.status === 'paid' && !inv.complete && inv.acknowledged && <div>
                     {1 && (
 
                         <div>
                             <h5>Status:
-                              <span className={'text-info ml-3'}>Feeding</span>
+                                <span className={'text-info ml-3'}>Feeding</span>
                             </h5>
-                          <p className="small">
-                              The order should take ~
-                              <span
-                                  className={estimatedVideoTime > 0 ? 'text-monospace mr-1' : 'text-monospace mr-1 text-warning'}>
+                            <p className="small">
+                                The order should take ~
+                                <span
+                                    className={estimatedVideoTime > 0 ? 'text-monospace mr-1' : 'text-monospace mr-1 text-warning'}>
                                   {estimatedVideoTime}
                                   </span>
-                              seconds to process, and video will load in page.
-                          </p>
-                          </div>
+                                seconds to process, and video will load in page.
+                            </p>
+                        </div>
                     )}
                     {inv.complete && (
                         <span className={'d-flex justify-content-between align-items-center'}>
@@ -193,8 +185,6 @@ class PaymentSuccess extends React.Component {
                           </span>
                     )}
                 </div>}
-
-
                 {inv && inv.video && <div className={'row my-3'}>
                     <div className={'col-sm-8 mx-auto'} style={{maxWidth: '700px'}}>
                         <div className={'embed-responsive embed-responsive-4by3'}>
