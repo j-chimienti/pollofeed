@@ -133,20 +133,27 @@ class PaymentSuccess extends React.Component {
                         <i className={'fa fa-home'}>
                         </i>
                     </button>
-                    <button className={'btn'} onClick={this.throttledOrderInfo}>
-                        <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
-                        </i>
-                        Refresh Data
-                    </button>
-                    {inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}
+
+
                 </div>
-                <h1>Thank you for the order</h1>
+                <h1>
+                    Thank you for the order
+                    <small>
+                        <button className={'btn btn-sm btn-default'} onClick={this.throttledOrderInfo}>
+                            <i className={refreshingData ? 'mr-1 fa fa-refresh fa-spin' : 'mr-1 fa fa-refresh'}>
+                            </i>
+                            Refresh Data
+                        </button>
+                        {inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}
+                    </small>
+
+                </h1>
 
                 <h5>
                     You can view your order any time and the link below
                 </h5>
                 <Link to={`/order/id/${inv.id}`}>
-                    {window.location.href + `/order/id/${inv.id}`}
+                    {window.location.origin + `/order/id/${inv.id}`}
                 </Link>
 
                 {inv && !inv.acknowledged && inv.status === 'paid' && (
