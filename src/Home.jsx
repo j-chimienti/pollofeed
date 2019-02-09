@@ -90,7 +90,7 @@ class Home extends Component {
                         <button
                             onClick={this.handlePostOrder}
                             type="submit"
-                            className="btn btn-block mx-auto mb-3 btn-feed btn-warning font-weight-bold text-gray text-uppercase d-flex justify-content-center">
+                            className="btn mx-auto mb-3 btn-feed btn-warning font-weight-bold text-gray text-uppercase d-flex justify-content-center">
                             {submittingLightningInvoice ? (<div className={'donut'}></div>) : 'Feed'}
                         </button>
                     <OrderStatus orderState={orderState} inv={inv}/>
