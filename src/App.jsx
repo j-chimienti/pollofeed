@@ -14,7 +14,8 @@ let testInvoice = {
     "_id": "5c55ef6c5fcc840006e5164f",
     "feed": false,
     "acknowledged": false,
-    "video": "https://s3.amazonaws.com/pollofeed/6922lEmDooq_GOEAV0Vkv.mp4",
+    //"video": "https://s3.amazonaws.com/pollofeed/6922lEmDooq_GOEAV0Vkv.mp4",
+    "video": "https://s3.amazonaws.com/pollofeed/Q8dS1invH1YdLrEE9zjaQ.mp4",
     //video: null,
     "complete": false,
     "updated_at": "2019-02-02T19:29:25.179Z",
@@ -85,14 +86,15 @@ class App extends Component {
 
     componentDidMount() {
 
-        this.getLatestOrder()
+        //this.getLatestOrder()
 
-        // setTimeout(() => {
-        //     this.setState({
-        //         inv: testInvoice,
-        //         latestOrder: testInvoice
-        //     })
-        // }, 1000)
+        setTimeout(() => {
+            this.setState({
+                inv: testInvoice,
+                latestOrder: testInvoice,
+                video: testInvoice.video
+            })
+        }, 1000)
 
 
     }
