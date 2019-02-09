@@ -174,6 +174,16 @@ class Admin extends React.Component {
                         Orders={todayOrders.length}</div>}
                     <div className={'col'}>Total Orders={orderCount}</div>
                 </div>
+
+                <div className={'row'}>
+                    <iframe
+                        src="https://metabase.btcpal.online/public/dashboard/da57a6d3-e919-4514-aaf5-57a02f5785cb"
+                        frameBorder="0"
+                        width="800"
+                        height="600"
+                        allowTransparency
+                    ></iframe>
+                </div>
             </div>
 
         );

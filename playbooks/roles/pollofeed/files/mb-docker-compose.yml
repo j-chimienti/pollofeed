@@ -1,0 +1,19 @@
+version: '3.4'
+services:
+  metabase:
+    container_name: metabase_pollofeed
+    networks:
+      - generated_default
+    image: metabase/metabase
+    ports:
+      - "8788:3000"
+    environment:
+      VIRTUAL_HOST: metabase.btcpal.online
+      LETSENCRYPT_HOST: metabase.btcpal.online
+      LETSENCRYPT_EMAIL: jchimien@gmail.com
+      VIRTUAL_PORT: 8788
+    restart: always
+networks:
+  generated_default:
+    external:
+      name: generated_default
