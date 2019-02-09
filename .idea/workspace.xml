@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/playbooks/roles/pollofeed/files/mb-docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test.tweet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/twitter/ctl.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/twitter/ctl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,19 +18,20 @@
     <session id="1724430321">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -44,10 +41,10 @@
           <entry key="development" value="5" />
           <entry key="env" value="10" />
           <entry key="gitignore" value="4" />
-          <entry key="html" value="4" />
+          <entry key="html" value="5" />
           <entry key="js" value="34" />
           <entry key="json" value="1" />
-          <entry key="jsx" value="37" />
+          <entry key="jsx" value="39" />
           <entry key="md" value="1" />
           <entry key="mongo" value="3" />
           <entry key="sh" value="10" />
@@ -60,9 +57,9 @@
           <entry key="Bash" value="10" />
           <entry key="CSS" value="4" />
           <entry key="Dockerfile" value="7" />
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="JSON" value="1" />
-          <entry key="JSX Harmony" value="37" />
+          <entry key="JSX Harmony" value="39" />
           <entry key="JavaScript" value="32" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
@@ -77,10 +74,10 @@
           <entry key="development" value="15" />
           <entry key="env" value="144" />
           <entry key="gitignore" value="15" />
-          <entry key="html" value="37" />
+          <entry key="html" value="38" />
           <entry key="js" value="1861" />
           <entry key="json" value="136" />
-          <entry key="jsx" value="4105" />
+          <entry key="jsx" value="4216" />
           <entry key="md" value="22" />
           <entry key="sh" value="21" />
           <entry key="yml" value="807" />
@@ -92,9 +89,9 @@
           <entry key="Bash" value="21" />
           <entry key="CSS" value="67" />
           <entry key="Dockerfile" value="228" />
-          <entry key="HTML" value="37" />
+          <entry key="HTML" value="38" />
           <entry key="JSON" value="136" />
-          <entry key="JSX Harmony" value="4105" />
+          <entry key="JSX Harmony" value="4216" />
           <entry key="JavaScript" value="1844" />
           <entry key="Markdown" value="22" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -104,7 +101,7 @@
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="15" />
+          <entry key="ESLintLanguageService" value="16" />
         </counts>
       </usages-collector>
     </session>
@@ -112,18 +109,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env.development">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="95" selection-start-line="20" selection-start-column="95" selection-end-line="20" selection-end-column="108" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PaymentSuccess.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
+            <state relative-caret-position="3910">
               <caret line="174" column="33" selection-start-line="172" selection-start-column="27" selection-end-line="174" selection-end-column="33" />
             </state>
           </provider>
@@ -141,17 +129,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="979">
+            <state relative-caret-position="1012">
               <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="62" column="77" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
+            <state relative-caret-position="1150">
+              <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="177" column="125" selection-start-line="177" selection-start-column="125" selection-end-line="177" selection-end-column="125" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NavLinks.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -198,6 +204,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -268,7 +275,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Footer.jsx" />
         <option value="$PROJECT_DIR$/redeploy.sh" />
-        <option value="$PROJECT_DIR$/src/Admin.jsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/config.yml" />
         <option value="$PROJECT_DIR$/src/PaymentSuccess.jsx" />
@@ -277,6 +283,8 @@
         <option value="$PROJECT_DIR$/tests/test.tweet.js" />
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/files/mb-docker-compose.yml" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/embed.html" />
+        <option value="$PROJECT_DIR$/src/Admin.jsx" />
       </list>
     </option>
   </component>
@@ -435,18 +443,19 @@
       <workItem from="1549665495505" duration="599000" />
       <workItem from="1549671575909" duration="952000" />
       <workItem from="1549672875997" duration="1902000" />
-      <workItem from="1549717331439" duration="1493000" />
+      <workItem from="1549717331439" duration="2422000" />
+      <workItem from="1549722082049" duration="145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48807000" />
+    <option name="totallyTimeSpent" value="49881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18066157" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18320611" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -523,13 +532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NavLinks.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -658,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3082">
-          <caret line="139" column="53" selection-start-line="139" selection-start-column="53" selection-end-line="139" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -737,6 +732,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/embed.html" />
+    <entry file="file://$PROJECT_DIR$/src/PaymentSuccess.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3910">
+          <caret line="174" column="33" selection-start-line="172" selection-start-column="27" selection-end-line="174" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pollofeed/files/mb-docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="43" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NavLinks.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.mongo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="91" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
@@ -758,38 +796,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PaymentSuccess.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="174" column="33" selection-start-line="172" selection-start-column="27" selection-end-line="174" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/roles/pollofeed/files/mb-docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="43" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="979">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env.mongo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="91" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="62" column="77" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
+        <state relative-caret-position="416">
+          <caret line="177" column="125" selection-start-line="177" selection-start-column="125" selection-end-line="177" selection-end-column="125" />
         </state>
       </provider>
     </entry>

@@ -120,7 +120,7 @@ class Admin extends React.Component {
     logout() {
 
         return fetch(host + 'admin/logout', {method: 'POST'})
-            .then(() => {
+            .finally(() => {
                 this.props.history.push('/')
             })
     }
@@ -135,7 +135,6 @@ class Admin extends React.Component {
             <div className={'admin bg-dark'}>
 
                 <div className={'row d-flex justify-content-around align-items-center my-3'}>
-                    <NavLinks>
                         <button
                             className={'btn btn-light'}
                             onClick={this.logout}
@@ -143,7 +142,6 @@ class Admin extends React.Component {
                             <i className={'fa fa-user-o'}></i>
                             Logout
                         </button>
-                    </NavLinks>
                 </div>
 
                 <div className={'row d-flex justify-content-around align-items-center my-3'}>
@@ -175,9 +173,9 @@ class Admin extends React.Component {
                     <div className={'col'}>Total Orders={orderCount}</div>
                 </div>
 
-                <div className={'row'}>
+                <div className={'row d-flex justify-content-center align-items-center'}>
                     <iframe
-                        src="https://metabase.btcpal.online/public/dashboard/da57a6d3-e919-4514-aaf5-57a02f5785cb"
+                        src="https://metabase.btcpal.online/public/dashboard/da57a6d3-e919-4514-aaf5-57a02f5785cb#refresh=60&fullscreen&night"
                         frameBorder="0"
                         width="800"
                         height="600"
