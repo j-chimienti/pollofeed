@@ -37,7 +37,7 @@ function Footer() {
                         </div>
                     </a>
                 </div>
-                <div className={'col-sm-4'}>
+                <div className={'col-sm-4 text-dark'}>
                     <p>
                         <a href="https://twitter.com/pollofeed" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-twitter">
@@ -54,7 +54,7 @@ function Footer() {
                     <p>
                         <a href="https://btcpal.online" target="_blank" rel="noopener noreferrer">
                             btcpal.online
-                            <small>
+                            <small className={'text-muted ml-1'}>
                                 payment server
                             </small>
                         </a>
