@@ -7,6 +7,18 @@ function Footer() {
     return (
         <footer className="bg-light p-3 text-dark">
             <div className={'row'}>
+                <div className={'col-sm-4'}>
+                    <h5>Our lightning node</h5>
+                    <p>Open channel with our node:</p>
+                    <p style={{wordBreak: 'break-word'}}>
+                        03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735
+                    </p>
+
+                    <div style={{maxWidth: '400'}}>
+                        <QrCode payreq={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}/>
+                    </div>
+
+                </div>
                 <div
                     className={'col-sm-4'}
                     style={{maxHeight: '30rem', overflowY: 'scroll'}}
@@ -48,19 +60,6 @@ function Footer() {
                         </a>
                     </p>
                 </div>
-                <div className={'col-sm-4'}>
-                    <h5>Our lightning node</h5>
-                    <p>Open channel with our node:</p>
-                    <p style={{wordBreak: 'break-word'}}>
-                        03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735
-                    </p>
-
-                    <div style={{maxWidth: '400'}}>
-                        <QrCode payreq={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}/>
-                    </div>
-
-                </div>
-
             </div>
             <NavLinks/>
 
