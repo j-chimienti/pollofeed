@@ -36,7 +36,7 @@ class Admin extends React.Component {
         return Promise.all([
             this.getHostName(),
             this.updateHostname(),
-            this.fetchOrderData()
+            // this.fetchOrderData()
         ]).then(() => {
 
             this.hnInterval = setInterval(async () => {
@@ -135,13 +135,13 @@ class Admin extends React.Component {
             <div className={'admin bg-dark'}>
 
                 <div className={'row d-flex justify-content-around align-items-center my-3'}>
-                        <button
-                            className={'btn btn-light'}
-                            onClick={this.logout}
-                        >
-                            <i className={'fa fa-user-o'}></i>
-                            Logout
-                        </button>
+                    <button
+                        className={'btn btn-light'}
+                        onClick={this.logout}
+                    >
+                        <i className={'fa fa-user-o'}></i>
+                        Logout
+                    </button>
                 </div>
 
                 <div className={'row d-flex justify-content-around align-items-center my-3'}>
@@ -174,13 +174,23 @@ class Admin extends React.Component {
                 </div>
 
                 <div className={'row d-flex justify-content-center align-items-center'}>
+
+                    <iframe
+                        src="https://metabase.btcpal.online/public/dashboard/c27b809b-cd67-459f-96f5-9aac360c93b0#refresh=60&fullscreen&night"
+                        frameBorder="0" width="100%" height="auto" allowTransparency>
+
+                    </iframe>
+                </div>
+                <div className={'row d-flex justify-content-center align-items-center'}>
                     <iframe
                         src="https://metabase.btcpal.online/public/dashboard/da57a6d3-e919-4514-aaf5-57a02f5785cb#refresh=60&fullscreen&night"
                         frameBorder="0"
-                        width="800"
-                        height="600"
+                        width="100%"
+                        height="auto"
                         allowTransparency
-                    ></iframe>
+                    >
+
+                    </iframe>
                 </div>
             </div>
 
