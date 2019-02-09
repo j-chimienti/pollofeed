@@ -86,15 +86,15 @@ class App extends Component {
 
     componentDidMount() {
 
-        //this.getLatestOrder()
+        this.getLatestOrder()
 
-        setTimeout(() => {
-            this.setState({
-                inv: testInvoice,
-                latestOrder: testInvoice,
-                video: testInvoice.video
-            })
-        }, 1000)
+        // setTimeout(() => {
+        //     this.setState({
+        //         inv: testInvoice,
+        //         latestOrder: testInvoice,
+        //         video: testInvoice.video
+        //     })
+        // }, 1000)
 
 
     }

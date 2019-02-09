@@ -6,7 +6,7 @@
 .App-header {
 
     background: #282c34;
-    height: 100vh;
+    min-height: 100vh;
     /* Create the parallax scrolling effect
     background-image: url(./assets/barn.jpeg);
     background-attachment: fixed;
