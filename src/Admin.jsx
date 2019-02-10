@@ -8,8 +8,8 @@ import {Link} from "react-router-dom";
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 const dashboards = [
-    'e7c1e8ea-4328-42c1-b4f6-d2c59b416645',
-    'd8ff6c36-857d-4a6a-939d-3582ed989050'
+    'fe87f390-8e5d-4b74-bf49-02f9d80697f7',
+    'f34c65bb-2e1d-4fc1-989a-21e0ee6a6c23'
 ]
 
 const urls = dashboards.map(id => {
