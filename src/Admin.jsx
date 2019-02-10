@@ -28,6 +28,10 @@ class Admin extends React.Component {
         this.getHostName = this.getHostName.bind(this)
         this.updateHostname = this.updateHostname.bind(this)
         this.fetchOrderData = this.fetchOrderData.bind(this)
+        this.getHostName = this.getHostName.bind(this)
+        this.openWebcam = this.openWebcam.bind(this)
+        this.openWebgpio = this.openWebgpio.bind(this)
+        this.logout = this.logout.bind(this)
     }
 
 
@@ -159,38 +163,36 @@ class Admin extends React.Component {
                     </div>
                 )}
 
-                <div className={'row d-flex justify-content-between align-items-center my-3'}>
-                    {pendingOrders && Array.isArray(pendingOrders) && <div className={'col'}>Pending
-                        Orders={pendingOrders.length}</div>
-                    }
-                    {latestOrder && latestOrder.id && <div className={'col'}>
-                        <Link to={'/order/id/' + latestOrder.id}>
-                            Latest Order
-                        </Link>
-                    </div>}
-                    {todayOrders && Array.isArray(todayOrders) && <div className={'col'}>Today's
-                        Orders={todayOrders.length}</div>}
-                    <div className={'col'}>Total Orders={orderCount}</div>
-                </div>
+                {/*<div className={'row d-flex justify-content-between align-items-center my-3'}>*/}
+                    {/*{pendingOrders && Array.isArray(pendingOrders) && <div className={'col'}>Pending*/}
+                        {/*Orders={pendingOrders.length}</div>*/}
+                    {/*}*/}
+                    {/*{latestOrder && latestOrder.id && <div className={'col'}>*/}
+                        {/*<Link to={'/order/id/' + latestOrder.id}>*/}
+                            {/*Latest Order*/}
+                        {/*</Link>*/}
+                    {/*</div>}*/}
+                    {/*{todayOrders && Array.isArray(todayOrders) && <div className={'col'}>Today's*/}
+                        {/*Orders={todayOrders.length}</div>}*/}
+                    {/*<div className={'col'}>Total Orders={orderCount}</div>*/}
+                {/*</div>*/}
 
-                <div className={'row d-flex justify-content-center align-items-center'}>
+                <div className={'row d-flex justify-content-center align-items-center'} style={{height: '40vh', maxHeight: '600px', overflowY: 'scroll'}}>
 
-                    <iframe
-                        src="https://metabase.btcpal.online/public/dashboard/c27b809b-cd67-459f-96f5-9aac360c93b0#refresh=60&fullscreen&night"
-                        frameBorder="0" width="100%" height="auto" allowTransparency>
+                    <div className={'col'}>
 
-                    </iframe>
-                </div>
-                <div className={'row d-flex justify-content-center align-items-center'}>
-                    <iframe
-                        src="https://metabase.btcpal.online/public/dashboard/da57a6d3-e919-4514-aaf5-57a02f5785cb#refresh=60&fullscreen&night"
-                        frameBorder="0"
-                        width="100%"
-                        height="auto"
-                        allowTransparency
-                    >
+                        <iframe
+                            src="http://metabase.btcpal.online/public/dashboard/84a5d82c-737b-4fb3-a8ad-121e52ce9cd6#refresh=60&fullscreen&night"
+                            frameBorder="0" width="100%" height="100%" allowTransparency>
+
+                        </iframe>
+                    </div>
+                <div className={'col'}>
+                    <iframe src="http://metabase.btcpal.online/public/dashboard/6795c1d3-6166-46b8-8927-d230ed78ae5f#refresh=60&fullscreen&night"
+                            frameBorder="0" width="100%" height="100%" allowTransparency>
 
                     </iframe>
+                </div>
                 </div>
             </div>
 

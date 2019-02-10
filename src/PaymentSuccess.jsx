@@ -66,7 +66,7 @@ class PaymentSuccess extends React.Component {
         if (inv.acknowledged === true && prevProps.inv.acknowledged === false) {
 
             this.setState({
-                estimatedVideoTime: 35
+                estimatedVideoTime: 30
             }, () => {
                 this.startCountdown();
             })
@@ -139,7 +139,7 @@ class PaymentSuccess extends React.Component {
                 <h1>
                     Thank you for the order
                     <small>
-                        <button className={'btn btn-sm btn-default'} onClick={this.throttledOrderInfo}>
+                        <button className={'btn btn-default mr-1'} onClick={this.throttledOrderInfo}>
                             <i className={refreshingData ? 'mr-1 fa fa-refresh fa-spin' : 'mr-1 fa fa-refresh'}>
                             </i>
                             Refresh Data
