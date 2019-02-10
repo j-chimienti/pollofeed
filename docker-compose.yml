@@ -52,7 +52,7 @@ services:
       - "${APP_PORT}:${APP_PORT}"
     metabase:
       volumes:
-      - /metabase-data:/metabase-data
+      - ~/metabase-data:/metabase-data
       container_name: metabase_pollofeed
       networks:
       - pollofeed

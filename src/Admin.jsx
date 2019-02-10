@@ -49,7 +49,7 @@ class Admin extends React.Component {
         return Promise.all([
             this.getHostName(),
             this.updateHostname(),
-            // this.fetchOrderData()
+            this.fetchOrderData()
         ]).then(() => {
 
             this.hnInterval = setInterval(async () => {
@@ -157,14 +157,7 @@ class Admin extends React.Component {
                     </button>
                 </div>
 
-                <div className={'row d-flex justify-content-around align-items-center my-3'}>
-                    <button className={'btn btn-warning'} onClick={this.openWebgpio.bind(this)}>
-                        Feeder
-                    </button>
-                    <button className={'btn btn-warning'} onClick={this.openWebcam.bind(this)}>
-                        Webcam
-                    </button>
-                </div>
+
                 {!pi_ip && (
                     <div className={'admin d-flex flex-column justify-content-center align-items-center my-3'}>
                         <div className={'donut'}>
@@ -172,19 +165,30 @@ class Admin extends React.Component {
                     </div>
                 )}
 
-                {/*<div className={'row d-flex justify-content-between align-items-center my-3'}>*/}
-                    {/*{pendingOrders && Array.isArray(pendingOrders) && <div className={'col'}>Pending*/}
-                        {/*Orders={pendingOrders.length}</div>*/}
-                    {/*}*/}
-                    {/*{latestOrder && latestOrder.id && <div className={'col'}>*/}
-                        {/*<Link to={'/order/id/' + latestOrder.id}>*/}
-                            {/*Latest Order*/}
-                        {/*</Link>*/}
-                    {/*</div>}*/}
-                    {/*{todayOrders && Array.isArray(todayOrders) && <div className={'col'}>Today's*/}
-                        {/*Orders={todayOrders.length}</div>}*/}
-                    {/*<div className={'col'}>Total Orders={orderCount}</div>*/}
-                {/*</div>*/}
+                {pi_ip && (
+                    <div className={'row d-flex justify-content-around align-items-center my-3'}>
+                        <button className={'btn btn-warning'} onClick={this.openWebgpio.bind(this)}>
+                            Feeder
+                        </button>
+                        <button className={'btn btn-warning'} onClick={this.openWebcam.bind(this)}>
+                            Webcam
+                        </button>
+                    </div>
+                )}
+
+                <div className={'row d-flex justify-content-between align-items-center my-3'}>
+                    {pendingOrders && Array.isArray(pendingOrders) && <div className={'col'}>Pending
+                        Orders={pendingOrders.length}</div>
+                    }
+                    {latestOrder && latestOrder.id && <div className={'col'}>
+                        <Link to={'/order/id/' + latestOrder.id}>
+                            Latest Order
+                        </Link>
+                    </div>}
+                    {todayOrders && Array.isArray(todayOrders) && <div className={'col'}>Today's
+                        Orders={todayOrders.length}</div>}
+                    <div className={'col'}>Total Orders={orderCount}</div>
+                </div>
 
                 <div className={'row d-flex justify-content-center align-items-center'} style={{height: '40vh', maxHeight: '600px', overflowY: 'scroll'}}>
 
