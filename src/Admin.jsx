@@ -7,6 +7,15 @@ import {Link} from "react-router-dom";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
+const dashboards = [
+    'e7c1e8ea-4328-42c1-b4f6-d2c59b416645',
+    'd8ff6c36-857d-4a6a-939d-3582ed989050'
+]
+
+const urls = dashboards.map(id => {
+
+    return `https://metabase.btcpal.online/public/dashboard/${id}#refresh=60&fullscreen&night`
+});
 
 class Admin extends React.Component {
 
@@ -182,14 +191,14 @@ class Admin extends React.Component {
                     <div className={'col'}>
 
                         <iframe
-                            src="http://metabase.btcpal.online/public/dashboard/e7c1e8ea-4328-42c1-b4f6-d2c59b416645#refresh=60&fullscreen&night"
+                            src={urls[0]}
                             frameBorder="0" width="100%" height="100%" allowTransparency>
 
                         </iframe>
 
                     </div>
                 <div className={'col'}>
-                    <iframe src="http://metabase.btcpal.online/public/dashboard/d8ff6c36-857d-4a6a-939d-3582ed989050#refresh=60&fullscreen&night"
+                    <iframe src={urls[1]}
                             frameBorder="0" width="100%" height="100%" allowTransparency>
 
                     </iframe>
