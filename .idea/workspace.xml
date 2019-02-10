@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="" />
+    <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -36,21 +38,21 @@
           <entry key="Dockerfile" value="7" />
           <entry key="css" value="6" />
           <entry key="development" value="6" />
-          <entry key="env" value="12" />
+          <entry key="env" value="13" />
           <entry key="gitignore" value="4" />
           <entry key="html" value="5" />
           <entry key="js" value="35" />
           <entry key="json" value="1" />
           <entry key="jsx" value="46" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
           <entry key="mongo" value="3" />
           <entry key="sh" value="11" />
-          <entry key="yml" value="22" />
+          <entry key="yml" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="21" />
+          <entry key=".env file" value="22" />
           <entry key="Bash" value="11" />
           <entry key="CSS" value="6" />
           <entry key="Dockerfile" value="7" />
@@ -58,10 +60,10 @@
           <entry key="JSON" value="1" />
           <entry key="JSX Harmony" value="46" />
           <entry key="JavaScript" value="33" />
-          <entry key="Markdown" value="1" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Scratch" value="2" />
-          <entry key="YAML" value="22" />
+          <entry key="YAML" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -74,7 +76,7 @@
           <entry key="html" value="38" />
           <entry key="js" value="2116" />
           <entry key="json" value="136" />
-          <entry key="jsx" value="4652" />
+          <entry key="jsx" value="4654" />
           <entry key="md" value="22" />
           <entry key="sh" value="27" />
           <entry key="yml" value="920" />
@@ -88,7 +90,7 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="38" />
           <entry key="JSON" value="136" />
-          <entry key="JSX Harmony" value="4652" />
+          <entry key="JSX Harmony" value="4654" />
           <entry key="JavaScript" value="2099" />
           <entry key="Markdown" value="22" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -114,11 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+            <state relative-caret-position="317">
+              <caret line="186" column="23" selection-start-line="186" selection-start-column="23" selection-end-line="186" selection-end-column="23" />
               <folding>
                 <element signature="n#!!block;n#componentDidMount#0;n#Admin#0" />
                 <element signature="n#!!block;n#componentWillUnmount#0;n#Admin#0" />
@@ -133,7 +135,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="58" column="83" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="634">
@@ -235,8 +246,8 @@
         <option value="$PROJECT_DIR$/src/Footer.jsx" />
         <option value="$PROJECT_DIR$/src/PaymentSuccess.jsx" />
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/files/mb-docker-compose.yml" />
-        <option value="$PROJECT_DIR$/src/Admin.jsx" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/src/Admin.jsx" />
       </list>
     </option>
   </component>
@@ -286,21 +297,6 @@
               <item name="playbooks" type="462c0819:PsiDirectoryNode" />
               <item name="roles" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -322,14 +318,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/playbooks/roles" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -406,18 +403,18 @@
       <workItem from="1549717331439" duration="2422000" />
       <workItem from="1549722082049" duration="1656000" />
       <workItem from="1549745894015" duration="5044000" />
-      <workItem from="1549800211490" duration="3268000" />
+      <workItem from="1549800211490" duration="3920000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59704000" />
+    <option name="totallyTimeSpent" value="60356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26378286" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26378286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -434,7 +431,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.49448684" />
+      <window_info anchor="right" id="Terminal" order="3" weight="0.49448684" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +451,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/docker-compose-prod.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
@@ -724,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.development">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -742,23 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="141" column="48" selection-start-line="141" selection-start-column="48" selection-end-line="141" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
-          <folding>
-            <element signature="n#!!block;n#componentDidMount#0;n#Admin#0" />
-            <element signature="n#!!block;n#componentWillUnmount#0;n#Admin#0" />
-            <element signature="n#!!block;n#fetchOrderData#0;n#Admin#0" />
-            <element signature="n#!!block;n#updateHostname#0;n#Admin#0" />
-            <element signature="n#!!block;n#getHostName#0;n#Admin#0" />
-            <element signature="n#!!block;n#openWebcam#0;n#Admin#0" />
-            <element signature="n#!!block;n#openWebgpio#0;n#Admin#0" />
-            <element signature="n#!!block;n#logout#0;n#Admin#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -779,6 +751,50 @@
           <folding>
             <element signature="e#29#442#0" />
             <element signature="e#468#634#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/configmetabase/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/configmetabase/vars/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/configmetabase/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="58" column="83" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="186" column="23" selection-start-line="186" selection-start-column="23" selection-end-line="186" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!block;n#componentDidMount#0;n#Admin#0" />
+            <element signature="n#!!block;n#componentWillUnmount#0;n#Admin#0" />
+            <element signature="n#!!block;n#fetchOrderData#0;n#Admin#0" />
+            <element signature="n#!!block;n#updateHostname#0;n#Admin#0" />
+            <element signature="n#!!block;n#getHostName#0;n#Admin#0" />
+            <element signature="n#!!block;n#openWebcam#0;n#Admin#0" />
+            <element signature="n#!!block;n#openWebgpio#0;n#Admin#0" />
+            <element signature="n#!!block;n#logout#0;n#Admin#0" />
           </folding>
         </state>
       </provider>

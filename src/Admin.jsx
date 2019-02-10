@@ -182,13 +182,14 @@ class Admin extends React.Component {
                     <div className={'col'}>
 
                         <iframe
-                            src="https://metabase.btcpal.online/public/dashboard/84a5d82c-737b-4fb3-a8ad-121e52ce9cd6#refresh=60&fullscreen&night"
+                            src="http://metabase.btcpal.online/public/dashboard/e7c1e8ea-4328-42c1-b4f6-d2c59b416645#refresh=60&fullscreen&night"
                             frameBorder="0" width="100%" height="100%" allowTransparency>
 
                         </iframe>
+
                     </div>
                 <div className={'col'}>
-                    <iframe src="https://metabase.btcpal.online/public/dashboard/6795c1d3-6166-46b8-8927-d230ed78ae5f#refresh=60&fullscreen&night"
+                    <iframe src="http://metabase.btcpal.online/public/dashboard/d8ff6c36-857d-4a6a-939d-3582ed989050#refresh=60&fullscreen&night"
                             frameBorder="0" width="100%" height="100%" allowTransparency>
 
                     </iframe>
