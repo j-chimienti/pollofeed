@@ -66,11 +66,9 @@ class Admin extends React.Component {
 
     async fetchOrderData() {
 
-        const getOrdersURI = new URL(`${host}orders`)
-        getOrdersURI.searchParams.set('offset', 0);
 
         Promise.all([
-            fetch(getOrdersURI.href, {credentials: "include"}).then(response => response.json()),
+            fetch(`${host}orders?offset=0`, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/pending`, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/latest`, {credentials: "include"}).then(response => response.json()),
         ]).then(([orders, pendingOrders]) => {
