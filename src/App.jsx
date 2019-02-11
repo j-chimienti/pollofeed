@@ -167,7 +167,7 @@ class App extends Component {
             .then(order => {
                 this.setState({
                     ...this.state,
-                    video: order && order.video || '',
+                    video: order && order.video ? order.video : '',
                     latestOrder: {
                         ...this.state.latestOrder,
                         ...order

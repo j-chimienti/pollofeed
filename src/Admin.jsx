@@ -200,8 +200,8 @@ class Admin extends React.Component {
                         </Link>
                     </div>}
                     {todayOrders && Array.isArray(todayOrders) && <div className={'col'}>Today's
-                        Orders={todayOrders.length}</div>}
-                    <div className={'col'}>Total Orders={orderCount}</div>
+                        Orders = {todayOrders.length}</div>}
+                    <div className={'col'}>Total Orders = {orderCount}</div>
                 </div>
 
                 <div className={'row d-flex justify-content-center align-items-center'} style={{height: '40vh', maxHeight: '600px', overflowY: 'scroll'}}>

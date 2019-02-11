@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/ctl.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/ctl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/orders/dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/dao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/orders/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,9 +46,9 @@
           <entry key="env" value="13" />
           <entry key="gitignore" value="4" />
           <entry key="html" value="5" />
-          <entry key="js" value="42" />
+          <entry key="js" value="43" />
           <entry key="json" value="1" />
-          <entry key="jsx" value="47" />
+          <entry key="jsx" value="49" />
           <entry key="md" value="2" />
           <entry key="mongo" value="3" />
           <entry key="sh" value="11" />
@@ -65,8 +63,8 @@
           <entry key="Dockerfile" value="7" />
           <entry key="HTML" value="5" />
           <entry key="JSON" value="1" />
-          <entry key="JSX Harmony" value="47" />
-          <entry key="JavaScript" value="40" />
+          <entry key="JSX Harmony" value="49" />
+          <entry key="JavaScript" value="41" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Scratch" value="2" />
@@ -81,9 +79,9 @@
           <entry key="env" value="144" />
           <entry key="gitignore" value="15" />
           <entry key="html" value="38" />
-          <entry key="js" value="2516" />
+          <entry key="js" value="2587" />
           <entry key="json" value="136" />
-          <entry key="jsx" value="5307" />
+          <entry key="jsx" value="5327" />
           <entry key="md" value="22" />
           <entry key="sh" value="27" />
           <entry key="yml" value="925" />
@@ -97,8 +95,8 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="38" />
           <entry key="JSON" value="136" />
-          <entry key="JSX Harmony" value="5307" />
-          <entry key="JavaScript" value="2499" />
+          <entry key="JSX Harmony" value="5327" />
+          <entry key="JavaScript" value="2570" />
           <entry key="Markdown" value="22" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
@@ -123,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="196" column="55" selection-start-line="196" selection-start-column="55" selection-end-line="196" selection-end-column="55" />
+            <state relative-caret-position="108">
+              <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
               <folding>
                 <element signature="n#!!block;n#componentWillUnmount#0;n#Admin#0" />
                 <element signature="n#!!block;n#updateHostname#0;n#Admin#0" />
@@ -142,10 +140,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/orders/dao.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="558">
+              <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Home.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="107" column="61" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="169" column="64" selection-start-line="169" selection-start-column="64" selection-end-line="169" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/orders/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1196">
-              <caret line="52" column="20" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="20" />
+            <state relative-caret-position="377">
+              <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
               <folding>
                 <element signature="e#1347#1833#0" />
                 <element signature="e#1893#2706#0" />
@@ -217,6 +242,7 @@
       <find>host</find>
       <find>/pending</find>
       <find>pending</find>
+      <find>latest</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/</dir>
@@ -261,7 +287,6 @@
         <option value="$PROJECT_DIR$/embed.html" />
         <option value="$PROJECT_DIR$/listChannels.sh" />
         <option value="$PROJECT_DIR$/lib/orders/ChickenFeedOrder.js" />
-        <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/Home.jsx" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/Footer.jsx" />
@@ -269,9 +294,10 @@
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/files/mb-docker-compose.yml" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/lib/orders/ctl.js" />
-        <option value="$PROJECT_DIR$/lib/orders/dao.js" />
-        <option value="$PROJECT_DIR$/lib/orders/router.js" />
         <option value="$PROJECT_DIR$/src/Admin.jsx" />
+        <option value="$PROJECT_DIR$/lib/orders/dao.js" />
+        <option value="$PROJECT_DIR$/src/App.jsx" />
+        <option value="$PROJECT_DIR$/lib/orders/router.js" />
       </list>
     </option>
   </component>
@@ -430,12 +456,12 @@
       <workItem from="1549800211490" duration="6878000" />
       <workItem from="1549827014511" duration="5286000" />
       <workItem from="1549843495142" duration="241000" />
-      <workItem from="1549855254830" duration="2416000" />
+      <workItem from="1549855254830" duration="2821000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71257000" />
+    <option name="totallyTimeSpent" value="71662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
@@ -458,7 +484,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.31382528" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.3486005" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,20 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="92" column="61" lean-forward="true" selection-start-line="92" selection-start-column="61" selection-end-line="92" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="88" column="8" lean-forward="true" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.development">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -769,16 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/orders/dao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="e#876#1346#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/orders/ctl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1219">
@@ -786,21 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/orders/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="52" column="20" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="20" />
-          <folding>
-            <element signature="e#1347#1833#0" />
-            <element signature="e#1893#2706#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="196" column="55" selection-start-line="196" selection-start-column="55" selection-end-line="196" selection-end-column="55" />
+        <state relative-caret-position="108">
+          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
           <folding>
             <element signature="n#!!block;n#componentWillUnmount#0;n#Admin#0" />
             <element signature="n#!!block;n#updateHostname#0;n#Admin#0" />
@@ -809,6 +800,38 @@
             <element signature="n#!!block;n#openWebgpio#0;n#Admin#0" />
             <element signature="n#!!block;n#logout#0;n#Admin#0" />
             <element signature="e#5557#6217#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/orders/dao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="70" column="6" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="107" column="61" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="169" column="64" selection-start-line="169" selection-start-column="64" selection-end-line="169" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/orders/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+          <folding>
+            <element signature="e#1347#1833#0" />
+            <element signature="e#1893#2706#0" />
           </folding>
         </state>
       </provider>
