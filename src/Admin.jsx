@@ -65,20 +65,22 @@ class Admin extends React.Component {
 
     async fetchOrderData() {
 
-        Promise.all([
-            fetch(`${host}orders/latest`, {credentials: "include"}).then(response => response.json()),
-            fetch(`${host}orders/pending`, {credentials: "include"}).then(response => response.json()),
-            fetch(`${host}orders/today`, {credentials: "include"}).then(response => response.json()),
-            fetch(`${host}orders/count`, {credentials: "include"}).then(response => response.json()),
-        ]).then(([latestOrder, pendingOrders, today, count]) => {
+        const today  = new Date().toLocaleDateString()
 
-            console.log(latestOrder, pendingOrders, today, count)
+        const getOrdersURI = new URL(`${host}orders`)
+
+        getOrdersURI.searchParams.set('offset', 0);
+
+        Promise.all([
+            fetch(getOrdersURI, {credentials: "include"}).then(response => response.json()),
+            fetch(`${host}orders/pending`, {credentials: "include"}).then(response => response.json()),
+        ]).then(([orders, pendingOrders]) => {
+
+
 
             this.setState({
-                latestOrder,
                 pendingOrders,
-                todayOrders: today,
-                orderCount: count,
+                orders
             })
         }).catch(console.error);
     }
@@ -141,8 +143,18 @@ class Admin extends React.Component {
 
     render() {
 
-        const {pi_ip, pendingOrders, latestOrder, todayOrders, orderCount} = this.state;
+        const {pi_ip, pendingOrders, latestOrder, orders, orderCount} = this.state;
+        const left = new Date(new Date().setHours(0,0,0,0));
+        const right = new Date(new Date().setHours(23, 59, 59, 99))
 
+        const todayOrders = orders.filter(order => {
+
+            const {completed_at} = order;
+
+            const completeTime = new Date(completed_at)
+
+            return left <= completeTime && completeTime <= right
+        })
 
         return (
             <div className={'admin bg-dark'}>
@@ -181,7 +193,9 @@ class Admin extends React.Component {
                         Orders={pendingOrders.length}</div>
                     }
                     {latestOrder && latestOrder.id && <div className={'col'}>
-                        <Link to={'/order/id/' + latestOrder.id}>
+                        <Link
+                            className={'btn btn-primary'}
+                            to={'/order/id/' + latestOrder.id}>
                             Latest Order
                         </Link>
                     </div>}
