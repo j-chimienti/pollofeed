@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './Admin.css'
 import NavLinks from "./NavLinks";
 import {Link} from "react-router-dom";
+import OrderTable from "./OrderTable";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -197,25 +198,9 @@ class Admin extends React.Component {
                     <div className={'col'}>Total Orders = {orders.length}</div>
                 </div>
 
-                {/*<div className={'row d-flex justify-content-center align-items-center'}*/}
-                     {/*style={{height: '40vh', maxHeight: '600px', overflowY: 'scroll'}}>*/}
-
-                    {/*<div className={'col'}>*/}
-
-                        {/*<iframe*/}
-                            {/*src={urls[0]}*/}
-                            {/*frameBorder="0" width="100%" height="100%" allowTransparency>*/}
-
-                        {/*</iframe>*/}
-
-                    {/*</div>*/}
-                    {/*<div className={'col'}>*/}
-                        {/*<iframe src={urls[1]}*/}
-                                {/*frameBorder="0" width="100%" height="100%" allowTransparency>*/}
-
-                        {/*</iframe>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
+                <div className={'row d-flex justify-content-center align-items-center'}>
+                    <OrderTable orders={orders}/>
+                </div>
             </div>
 
         );
