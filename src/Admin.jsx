@@ -71,11 +71,12 @@ class Admin extends React.Component {
             fetch(`${host}orders?offset=0`, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/pending`, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/latest`, {credentials: "include"}).then(response => response.json()),
-        ]).then(([orders, pendingOrders]) => {
+        ]).then(([orders, pendingOrders, latestOrder]) => {
 
 
             this.setState({
                 pendingOrders,
+                latestOrder,
                 orders
             })
         }).catch(console.error);
@@ -200,30 +201,31 @@ class Admin extends React.Component {
                             Latest Order
                         </Link>
                     </div>}
-                    {todayOrders && Array.isArray(todayOrders) && <div className={'col'}>Today's
+                    {todayOrders && Array.isArray(todayOrders) && <div className={'col'}>
+                        Today's
                         Orders = {todayOrders.length}</div>}
-                    <div className={'col'}>Total Orders = {orderCount}</div>
+                    <div className={'col'}>Total Orders = {orders.length}</div>
                 </div>
 
-                <div className={'row d-flex justify-content-center align-items-center'}
-                     style={{height: '40vh', maxHeight: '600px', overflowY: 'scroll'}}>
+                {/*<div className={'row d-flex justify-content-center align-items-center'}*/}
+                     {/*style={{height: '40vh', maxHeight: '600px', overflowY: 'scroll'}}>*/}
 
-                    <div className={'col'}>
+                    {/*<div className={'col'}>*/}
 
-                        <iframe
-                            src={urls[0]}
-                            frameBorder="0" width="100%" height="100%" allowTransparency>
+                        {/*<iframe*/}
+                            {/*src={urls[0]}*/}
+                            {/*frameBorder="0" width="100%" height="100%" allowTransparency>*/}
 
-                        </iframe>
+                        {/*</iframe>*/}
 
-                    </div>
-                    <div className={'col'}>
-                        <iframe src={urls[1]}
-                                frameBorder="0" width="100%" height="100%" allowTransparency>
+                    {/*</div>*/}
+                    {/*<div className={'col'}>*/}
+                        {/*<iframe src={urls[1]}*/}
+                                {/*frameBorder="0" width="100%" height="100%" allowTransparency>*/}
 
-                        </iframe>
-                    </div>
-                </div>
+                        {/*</iframe>*/}
+                    {/*</div>*/}
+                {/*</div>*/}
             </div>
 
         );

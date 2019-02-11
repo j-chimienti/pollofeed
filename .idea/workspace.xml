@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -78,7 +78,7 @@
           <entry key="html" value="38" />
           <entry key="js" value="2663" />
           <entry key="json" value="136" />
-          <entry key="jsx" value="5442" />
+          <entry key="jsx" value="5479" />
           <entry key="md" value="22" />
           <entry key="sh" value="27" />
           <entry key="yml" value="925" />
@@ -92,7 +92,7 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="38" />
           <entry key="JSON" value="136" />
-          <entry key="JSX Harmony" value="5442" />
+          <entry key="JSX Harmony" value="5479" />
           <entry key="JavaScript" value="2646" />
           <entry key="Markdown" value="22" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -121,8 +121,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="143" column="68" lean-forward="true" selection-start-line="143" selection-start-column="68" selection-end-line="143" selection-end-column="68" />
+            <state relative-caret-position="397">
+              <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
               <folding>
                 <element signature="n#!!block;n#componentWillUnmount#0;n#Admin#0" />
                 <element signature="n#!!block;n#updateHostname#0;n#Admin#0" />
@@ -430,15 +430,16 @@
       <workItem from="1549800211490" duration="6878000" />
       <workItem from="1549827014511" duration="5286000" />
       <workItem from="1549843495142" duration="241000" />
-      <workItem from="1549855254830" duration="4688000" />
+      <workItem from="1549855254830" duration="5314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73529000" />
+    <option name="totallyTimeSpent" value="74155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26378286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -457,7 +458,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.27989823" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.13994911" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -791,8 +792,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="143" column="68" lean-forward="true" selection-start-line="143" selection-start-column="68" selection-end-line="143" selection-end-column="68" />
+        <state relative-caret-position="397">
+          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
           <folding>
             <element signature="n#!!block;n#componentWillUnmount#0;n#Admin#0" />
             <element signature="n#!!block;n#updateHostname#0;n#Admin#0" />
