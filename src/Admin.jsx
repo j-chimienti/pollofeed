@@ -76,7 +76,6 @@ class Admin extends React.Component {
         ]).then(([orders, pendingOrders]) => {
 
 
-
             this.setState({
                 pendingOrders,
                 orders
@@ -143,17 +142,22 @@ class Admin extends React.Component {
     render() {
 
         const {pi_ip, pendingOrders, latestOrder, orders, orderCount} = this.state;
-        const left = new Date(new Date().setHours(0,0,0,0));
+        const left = new Date(new Date().setHours(0, 0, 0, 0));
         const right = new Date(new Date().setHours(23, 59, 59, 99))
 
-        const todayOrders = orders.filter(order => {
+        let todayOrders = []
 
-            const {completed_at} = order;
+        if (orders && Array.isArray(orders) && orders.length) {
 
-            const completeTime = new Date(completed_at)
+            todayOrders = orders.filter(order => {
 
-            return left <= completeTime && completeTime <= right
-        })
+                const {completed_at} = order;
+
+                const completeTime = new Date(completed_at)
+
+                return left <= completeTime && completeTime <= right
+            })
+        }
 
         return (
             <div className={'admin bg-dark'}>
@@ -203,7 +207,8 @@ class Admin extends React.Component {
                     <div className={'col'}>Total Orders = {orderCount}</div>
                 </div>
 
-                <div className={'row d-flex justify-content-center align-items-center'} style={{height: '40vh', maxHeight: '600px', overflowY: 'scroll'}}>
+                <div className={'row d-flex justify-content-center align-items-center'}
+                     style={{height: '40vh', maxHeight: '600px', overflowY: 'scroll'}}>
 
                     <div className={'col'}>
 
@@ -214,12 +219,12 @@ class Admin extends React.Component {
                         </iframe>
 
                     </div>
-                <div className={'col'}>
-                    <iframe src={urls[1]}
-                            frameBorder="0" width="100%" height="100%" allowTransparency>
+                    <div className={'col'}>
+                        <iframe src={urls[1]}
+                                frameBorder="0" width="100%" height="100%" allowTransparency>
 
-                    </iframe>
-                </div>
+                        </iframe>
+                    </div>
                 </div>
             </div>
 
