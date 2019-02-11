@@ -7,27 +7,17 @@ import {Link} from "react-router-dom";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
-const dashboards = [
-    'fe87f390-8e5d-4b74-bf49-02f9d80697f7',
-    'f34c65bb-2e1d-4fc1-989a-21e0ee6a6c23'
-]
 
-const urls = dashboards.map(id => {
-
-    return `https://metabase.btcpal.online/public/dashboard/${id}#refresh=60&fullscreen&night`
-});
 
 class Admin extends React.Component {
 
     state = {
         pi_ip: null,
-        result: null,
         webcamLink: null,
         webgpioLink: null,
         pendingOrders: null,
         latestOrder: null,
-        todayOrders: null,
-        orders: null,
+        orders: [],
         orderCount: null
     }
 
@@ -140,7 +130,7 @@ class Admin extends React.Component {
 
     render() {
 
-        const {pi_ip, pendingOrders, latestOrder, orders, orderCount} = this.state;
+        const {pi_ip, pendingOrders, latestOrder, orders} = this.state;
         const left = new Date(new Date().setHours(0, 0, 0, 0));
         const right = new Date(new Date().setHours(23, 59, 59, 99))
 
