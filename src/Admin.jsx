@@ -27,6 +27,7 @@ class Admin extends React.Component {
         pendingOrders: null,
         latestOrder: null,
         todayOrders: null,
+        orders: null,
         orderCount: null
     }
 
@@ -65,15 +66,13 @@ class Admin extends React.Component {
 
     async fetchOrderData() {
 
-        const today  = new Date().toLocaleDateString()
-
         const getOrdersURI = new URL(`${host}orders`)
-
         getOrdersURI.searchParams.set('offset', 0);
 
         Promise.all([
-            fetch(getOrdersURI, {credentials: "include"}).then(response => response.json()),
+            fetch(getOrdersURI.href, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/pending`, {credentials: "include"}).then(response => response.json()),
+            fetch(`${host}orders/latest`, {credentials: "include"}).then(response => response.json()),
         ]).then(([orders, pendingOrders]) => {
 
 
