@@ -58,7 +58,7 @@ class Admin extends React.Component {
     async fetchOrderData() {
 
 
-        Promise.all([
+        return Promise.all([
             fetch(`${host}orders?offset=0`, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/pending`, {credentials: "include"}).then(response => response.json()),
             fetch(`${host}orders/latest`, {credentials: "include"}).then(response => response.json()),

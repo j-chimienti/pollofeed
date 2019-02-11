@@ -4,6 +4,7 @@ import OrderStatus from "./OrderStatus";
 import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
 import Footer from "./Footer";
+import OrderTable from "./OrderTable";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
