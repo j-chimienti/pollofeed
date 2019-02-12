@@ -195,11 +195,11 @@ class Admin extends React.Component {
                     <div className={'col'}>Total Orders = {orders.length}</div>
                 </div>
 
-                <div className={'row d-flex justify-content-center align-items-center'}>
+               {orders && orders.length &&  <div className={'row d-flex justify-content-center align-items-center'}>
                     <div className={'col-md-10'}>
                         <OrderTable orders={orders}/>
                     </div>
-                </div>
+                </div>}
                 {orders && orders.length && <div className={'row d-flex justify-content-center align-items-center'}>
                     <div className={'col-md-10'}>
                         <OrderGraph orders={orders}/>
