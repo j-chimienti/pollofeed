@@ -5,6 +5,7 @@ import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
 import Footer from "./Footer";
 import OrderTable from "./OrderTable";
+import OrderGraph from "./OrderGraph";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -80,6 +81,7 @@ class Home extends Component {
 
 
                 <header className="App-header">
+                    <OrderGraph/>
                         <h1 className={'App-title pt-3 text-warning mb-3'}>
                             <i className={'fa fa-bolt mr-3'}></i>
                             Pollo Feed
@@ -122,7 +124,7 @@ class Home extends Component {
 
 Home.propTypes = {
     orderState: PropTypes.string.isRequired,
-    completed_at: PropTypes.string.isRequired,
+    // completed_at: PropTypes.string.isRequired,
     video: PropTypes.string.isRequired,
     handleNewOrder: PropTypes.func.isRequired,
     // pendingOrders: PropTypes.array.isRequired,

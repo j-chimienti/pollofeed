@@ -5,6 +5,7 @@ import './Admin.css'
 import NavLinks from "./NavLinks";
 import {Link} from "react-router-dom";
 import OrderTable from "./OrderTable";
+import OrderGraph from "./OrderGraph";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -199,7 +200,14 @@ class Admin extends React.Component {
                 </div>
 
                 <div className={'row d-flex justify-content-center align-items-center'}>
-                    <OrderTable orders={orders}/>
+                    <div className={'col-md-10'}>
+                        <OrderTable orders={orders}/>
+                    </div>
+                </div>
+                <div className={'row d-flex justify-content-center align-items-center'}>
+                    <div className={'col-md-10'}>
+                        <OrderGraph orders={orders}/>
+                    </div>
                 </div>
             </div>
 
