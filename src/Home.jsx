@@ -4,8 +4,6 @@ import OrderStatus from "./OrderStatus";
 import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
 import Footer from "./Footer";
-import OrderTable from "./OrderTable";
-import OrderGraph from "./OrderGraph";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -82,9 +80,13 @@ class Home extends Component {
 
                 <header className="App-header">
                         <h1 className={'App-title pt-3 text-warning mb-3'}>
-                            <i className={'fa fa-bolt mr-3'}></i>
+                            <i className={'fa fa-bolt mr-3'}>
+
+                            </i>
                             Pollo Feed
-                            <i className={'fa fa-bolt ml-3'}></i>
+                            <i className={'fa fa-bolt ml-3'}>
+
+                            </i>
                         </h1>
                         <p className={'small font-weight-light text-muted mb-2'}>
                             Bitcoin Lightning Powered Chicken Feeder
