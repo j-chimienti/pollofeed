@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/OrderGraph.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderTable.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -85,7 +80,7 @@
           <entry key="html" value="38" />
           <entry key="js" value="2663" />
           <entry key="json" value="136" />
-          <entry key="jsx" value="7262" />
+          <entry key="jsx" value="7278" />
           <entry key="md" value="22" />
           <entry key="sh" value="27" />
           <entry key="yml" value="925" />
@@ -99,7 +94,7 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="38" />
           <entry key="JSON" value="136" />
-          <entry key="JSX Harmony" value="7262" />
+          <entry key="JSX Harmony" value="7278" />
           <entry key="JavaScript" value="2646" />
           <entry key="Markdown" value="22" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -116,7 +111,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="520">
@@ -160,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5818">
-              <caret line="288" column="74" selection-start-line="288" selection-start-column="74" selection-end-line="288" selection-end-column="74" />
+            <state relative-caret-position="-3375">
+              <caret line="118" column="26" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="26" />
               <folding>
                 <element signature="e#421#1631#0" />
               </folding>
@@ -175,7 +170,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
+            <state relative-caret-position="1773">
               <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
             </state>
           </provider>
@@ -193,9 +188,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>require(&quot;requ</find>
-      <find>request</find>
-      <find>node-fetch</find>
       <find>include:</find>
       <find>console</find>
       <find>.collect</find>
@@ -223,6 +215,9 @@
       <find>latest</find>
       <find>git:</find>
       <find>result</find>
+      <find>todaysOrders</find>
+      <find>getTodaysOrders</find>
+      <find>getPendingOrders</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/</dir>
@@ -275,11 +270,11 @@
         <option value="$PROJECT_DIR$/lib/orders/router.js" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/OrderTable.jsx" />
         <option value="$PROJECT_DIR$/src/Home.jsx" />
         <option value="$PROJECT_DIR$/src/OrderGraph.jsx" />
         <option value="$PROJECT_DIR$/src/Admin.jsx" />
+        <option value="$PROJECT_DIR$/src/App.jsx" />
       </list>
     </option>
   </component>
@@ -416,16 +411,15 @@
       <workItem from="1549843495142" duration="241000" />
       <workItem from="1549855254830" duration="7629000" />
       <workItem from="1549917954451" duration="3446000" />
-      <workItem from="1549933728879" duration="2047000" />
+      <workItem from="1549933728879" duration="2745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81963000" />
+    <option name="totallyTimeSpent" value="82661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26378286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -444,7 +438,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.32654792" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.32654792" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -743,16 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5818">
-          <caret line="288" column="74" selection-start-line="288" selection-start-column="74" selection-end-line="288" selection-end-column="74" />
-          <folding>
-            <element signature="e#421#1631#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderTable.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -762,13 +746,6 @@
             <element signature="e#157#1104#0" />
             <element signature="e#1120#127170#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -794,6 +771,23 @@
             <element signature="n#!!block;n#openWebcam#0;n#Admin#0" />
             <element signature="n#!!block;n#openWebgpio#0;n#Admin#0" />
             <element signature="n#!!block;n#logout#0;n#Admin#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1773">
+          <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3375">
+          <caret line="118" column="26" selection-start-line="118" selection-start-column="10" selection-end-line="118" selection-end-column="26" />
+          <folding>
+            <element signature="e#421#1631#0" />
           </folding>
         </state>
       </provider>

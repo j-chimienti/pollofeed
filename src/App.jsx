@@ -60,7 +60,6 @@ class App extends Component {
         this.getLatestOrder = this.getLatestOrder.bind(this)
         this.handleOrderSuccess = this.handleOrderSuccess.bind(this)
         this.getPendingOrders = this.getPendingOrders.bind(this)
-        this.getTodaysOrders = this.getTodaysOrders.bind(this)
         this.handleOrderProcessing = this.handleOrderProcessing.bind(this)
         this.handleOrderComplete = this.handleOrderComplete.bind(this)
 
