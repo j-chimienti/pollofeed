@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import NavLinks from './NavLinks'
 import QrCode from "./QrCode";
+import Tip from "./Tip";
 
 function Footer() {
     return (
@@ -59,6 +60,11 @@ function Footer() {
                             </small>
                         </a>
                     </p>
+                </div>
+            </div>
+            <div className={'row d-flex justify-content-center align-items-center'}>
+                <div className={'col'} style={{maxWidth: '400px'}}>
+                    <Tip/>
                 </div>
             </div>
             <NavLinks/>

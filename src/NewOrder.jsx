@@ -12,9 +12,6 @@ const formatDur = x => {
     return '' + (h > 0 ? h + ':' : '') + (m < 10 && h > 0 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s
 }
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-
-//Modal.defaultStyles.overlay.backgroundColor = '#282c34';
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -78,7 +75,7 @@ class NewOrder extends React.Component {
     }
 
     render() {
-        const {qr, time} = this.state
+        const {time} = this.state
 
         const {inv: {msatoshi, quoted_currency, quoted_amount, expires_at, payreq}} = this.props
         const CurrencyDisplay = quoted_currency && quoted_currency !== 'BTC' ? <p className="font-weight-light small">
@@ -110,7 +107,7 @@ class NewOrder extends React.Component {
                         <div className="input-group">
                             <input className="form-control" type="text" value={payreq}/>
                             <div className="input-group-append">
-                                <a className="btn btn-primary"
+                                <a className="btn btn-warning"
                                    href={`lightning:${payreq}`}>
                                     <span role={'img'}>⚡</span>
                                 </a>
