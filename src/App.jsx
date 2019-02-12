@@ -47,7 +47,6 @@ const initState = {
 
     },
     pendingOrders: [],
-    todaysOrders: [],
     inv: {},
     orderState: '',
     video: '',
@@ -132,21 +131,6 @@ class App extends Component {
                 pendingOrders: orders
             })
         }
-    }
-
-    async getTodaysOrders() {
-
-        return fetch(`${host}orders/today`)
-            .then(response => response.json())
-            .then(todaysOrders =>
-                this.setState({
-                    todaysOrders
-                })
-            )
-            .catch(err => {
-                console.error(err)
-                return false
-            })
     }
 
     handleNewOrder(inv) {
