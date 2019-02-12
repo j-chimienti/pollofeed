@@ -170,14 +170,6 @@ class Admin extends React.Component {
                 </div>
 
 
-                {!pi_ip && (
-                    <div className={'admin d-flex flex-column justify-content-center align-items-center my-3'}>
-                        <div className={'donut'}>
-                        </div>
-                    </div>
-                )}
-
-
                 <div className={'row d-flex justify-content-between align-items-center my-3'}>
                     {pendingOrders && Array.isArray(pendingOrders) && <div className={'col'}>Pending
                         Orders={pendingOrders.length}</div>

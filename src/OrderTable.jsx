@@ -2667,6 +2667,10 @@ function TableRow( {paid_at, completed_at, status, msatoshi, video}) {
 function OrderTable({orders}) {
 
 
+    if (!orders && Array.isArray(orders) && orders.length) {
+
+        return null;
+    }
     const msatoshis = orders.map(o => o.msatoshi)
 
     const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
