@@ -4,11 +4,6 @@ import c3 from 'c3/c3.min'
 import 'c3/c3.min.css'
 
 class OrderGraph extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-
     componentDidMount() {
 
         this.getGraph()
@@ -26,10 +21,14 @@ class OrderGraph extends Component {
             zoom: {
                 enabled: true
             },
+            subchart: {
+                size: 30,
+                show: true
+            },
             bindto: '#order_graph',
             data: {
+                type: 'spline',
                 x: 'x',
-//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
                 columns: [
                     ['x', ...completed_at],
                     ['pay index', ...pay_index],
@@ -40,7 +39,7 @@ class OrderGraph extends Component {
                 x: {
                     type: 'timeseries',
                     tick: {
-                        format: '%Y-%m-%d-%H:%M'
+                        format: '%Y-%m-%d %H:%M %p'
                     }
                 }
             }
@@ -50,7 +49,7 @@ class OrderGraph extends Component {
 
     render() {
         return (
-           <div className={'jumbotron text-dark'} style={{height: 600}}>
+           <div className={'card text-dark py-3'} style={{height: 600, width: '100%'}}>
                <div id={'order_graph'}>
 
                </div>

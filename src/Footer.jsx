@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import NavLinks from './NavLinks'
 import QrCode from "./QrCode";
+import {Link} from "react-router-dom";
 
 function Footer() {
     return (
@@ -62,7 +62,7 @@ function Footer() {
                 </div>
             </div>
 
-            <NavLinks/>
+            <Link to="/admin">Admin</Link>
 
         </footer>
     )

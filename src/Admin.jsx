@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Admin.css'
-import NavLinks from "./NavLinks";
 import {Link} from "react-router-dom";
 import OrderTable from "./OrderTable";
 import OrderGraph from "./OrderGraph";
@@ -151,7 +150,7 @@ class Admin extends React.Component {
         }
 
         return (
-            <div className={'admin bg-dark'}>
+            <div className={'admin'}>
 
                 <div className={'row d-flex justify-content-around align-items-center py-3'}>
                     <button

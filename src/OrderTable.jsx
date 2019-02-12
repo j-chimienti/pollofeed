@@ -1,51 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactTable from 'react-table'
-import 'react-table/react-table.css'
+
+function TableRow( {paid_at, completed_at, status, msatoshi, video}) {
 
 
+    const processing_time = new Date(completed_at) - new Date(paid_at * 1000)
 
-
-const columns = [
-    {
-        Header: 'Completed At',
-        accessor: 'completed_at',
-        Cell: props => {
-
-
-            return <span>{props.value.toLocaleString()}</span>
-        }
-    },
-    {
-        Header: 'Video',
-        accessor: 'video',
-        Cell: props => <a href={props.value} target={'_blank'}>{props.value}</a>
-    },
-    {
-        Header: 'Processing Time',
-        accessor: 'paid_at',
-        Cell: props => {
-            const {original: {paid_at, completed_at}} = props;
-
-            const processing_time = new Date(completed_at) - new Date(paid_at * 1000)
-            return <span>{parseInt(processing_time / 1000)}</span>
-        }
-    },
-    {
-        Header: 'Status',
-        accessor: 'status'
-    },
-    {
-        Header: 'MSatoshi',
-        accessor: 'msatoshi'
-    },
-    {
-        Header: 'Paid At',
-        accessor: 'paid_at',
-        Cell: props => <span>{new Date(props.value * 1000).toLocaleString()}</span>
-    },
-
-]
+    return <tr>
+        <td>{completed_at.toLocaleString()}</td>
+        <td><a href={video} target={'_blank'}>{video.slice(0, 20)}</a></td>
+        <td>
+            {parseInt(processing_time / 1000)}
+        </td>
+        <td>{status}</td>
+        <td>{msatoshi}</td>
+        <td>{new Date(paid_at * 1000)}</td>
+    </tr>
+}
 
 //
 // const data = [
@@ -2695,16 +2666,38 @@ const columns = [
 
 function OrderTable({orders}) {
 
-    const data = orders.map(order => {
 
-        return {
-            ...order,
-            completed_at: new Date(order.completed_at).toLocaleString()
-        }
-    })
+    const msatoshis = orders.map(o => o.msatoshi)
+
+    const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
+
 
     return (
-        <ReactTable data={data} columns={columns}/>
+        <table className={'table'}>
+            <thead>
+            <tr>
+                <th>Completed At</th>
+                <th>Video</th>
+                <th>Processing Time</th>
+                <th>Status</th>
+                <th>MSatoshi</th>
+                <th>Paid At</th>
+            </tr>
+            </thead>
+            <tbody>
+            {orders.map(order => <TableRow order={order}/>)}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>
+                    Total Satoshi's
+                </td>
+                <td title={`btc: ${msatoshiTotal / 1e12}`}>
+                    {msatoshiTotal / 1000}
+                </td>
+            </tr>
+            </tfoot>
+        </table>
     );
 }
 
