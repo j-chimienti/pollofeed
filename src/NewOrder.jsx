@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Modal from 'react-modal'
 import './Payment.css'
 import {Redirect} from 'react-router-dom'
 import QrCode from "./QrCode";
@@ -14,7 +13,6 @@ const formatDur = x => {
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-Modal.setAppElement('#root')
 
 //Modal.defaultStyles.overlay.backgroundColor = '#282c34';
 
