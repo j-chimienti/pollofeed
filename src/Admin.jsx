@@ -153,13 +153,20 @@ class Admin extends React.Component {
         return (
             <div className={'admin bg-dark'}>
 
-                <div className={'row d-flex justify-content-around align-items-center my-3'}>
+                <div className={'row d-flex justify-content-around align-items-center py-3'}>
                     <button
                         className={'btn btn-light'}
                         onClick={this.logout}
                     >
                         <i className={'fa fa-user-o'}></i>
                         Logout
+                    </button>
+
+                    <button className={'btn btn-warning'} onClick={this.openWebgpio.bind(this)}>
+                        Feeder
+                    </button>
+                    <button className={'btn btn-warning'} onClick={this.openWebcam.bind(this)}>
+                        Webcam
                     </button>
                 </div>
 
@@ -171,16 +178,6 @@ class Admin extends React.Component {
                     </div>
                 )}
 
-                {pi_ip && (
-                    <div className={'row d-flex justify-content-around align-items-center my-3'}>
-                        <button className={'btn btn-warning'} onClick={this.openWebgpio.bind(this)}>
-                            Feeder
-                        </button>
-                        <button className={'btn btn-warning'} onClick={this.openWebcam.bind(this)}>
-                            Webcam
-                        </button>
-                    </div>
-                )}
 
                 <div className={'row d-flex justify-content-between align-items-center my-3'}>
                     {pendingOrders && Array.isArray(pendingOrders) && <div className={'col'}>Pending

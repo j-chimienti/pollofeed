@@ -10,32 +10,6 @@ import NewOrder from './NewOrder'
 import SocketController from './SocketController'
 import OrderInfo from './OrderInfo'
 
-let testInvoice = {
-    "_id": "5c55ef6c5fcc840006e5164f",
-    "feed": false,
-    "acknowledged": false,
-    //"video": "https://s3.amazonaws.com/pollofeed/6922lEmDooq_GOEAV0Vkv.mp4",
-    "video": "https://s3.amazonaws.com/pollofeed/Q8dS1invH1YdLrEE9zjaQ.mp4",
-    //video: null,
-    "complete": false,
-    "updated_at": "2019-02-02T19:29:25.179Z",
-    "completed_at": "2019-02-02T19:29:25.179Z",
-    "id": "6922lEmDooq_GOEAV0Vkv",
-    "status": "paid",
-    "msatoshi": "1000",
-    "quoted_currency": null,
-    "quoted_amount": null,
-    "rhash": "ce5d6a17be78fb4117901c4db9efdc60cf3022ee8835a40b9d72574e40588ab1",
-    "payreq": "lnbc10n1pw9tmmfpp5eewk59a70ra5z9usr3xmnm7uvr8nqghw3q66gzuawft5uszc32csdp52phkcmr0vejk2epq95s8qcteyp6x7grxv4jkggrrdp5kx6m9deesxqzjccqp2rzjqvn8nlkpyyl9kz3rupnvqxwhhxgmjhrwf55gq6u7h5fk970rya6u7zy095qqr3gqqqqqqq05qqqqraqqjqcymvnnyhy64v4engxv84ws4x2d8h0z6vd5g8np5gnxk4c48xgpljhcf275q0hx2wzt6dvuycgtxvzduccu7lhdwewc4nq5vxp63sr0gq02ue3s",
-    "pay_index": 91,
-    "description": "Pollofeed - pay to feed chickens",
-    "metadata": {"source": "pollofeed.com"},
-    "created_at": 1549135721,
-    "expires_at": 1549136321,
-    "paid_at": 1549135724,
-    "msatoshi_received": "1000",
-    "state": "complete"
-}
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 const initState = {
@@ -55,6 +29,8 @@ const initState = {
 class App extends Component {
 
 
+    state = initState
+
     constructor(props) {
         super(props)
         this.getLatestOrder = this.getLatestOrder.bind(this)
@@ -65,7 +41,6 @@ class App extends Component {
 
         this.handleNewOrder = this.handleNewOrder.bind(this)
         this.updateInv = this.updateInv.bind(this)
-        this.state = initState
     }
 
 
@@ -85,15 +60,6 @@ class App extends Component {
     componentDidMount() {
 
         this.getLatestOrder()
-
-        // setTimeout(() => {
-        //     this.setState({
-        //         inv: testInvoice,
-        //         latestOrder: testInvoice,
-        //         video: testInvoice.video
-        //     })
-        // }, 1000)
-
 
     }
 
@@ -118,11 +84,7 @@ class App extends Component {
     async getPendingOrders() {
 
         const orders = await fetch(`${host}orders/pending`).then(response => response.json())
-            .catch(err => {
-                console.error(err)
-
-                return false
-            })
+            .catch(err => {console.error(err); return false})
 
         if (orders) {
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import c3 from 'c3'
+import c3 from 'c3/c3.min'
 import 'c3/c3.min.css'
 
 class OrderGraph extends Component {

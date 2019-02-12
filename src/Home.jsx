@@ -81,7 +81,6 @@ class Home extends Component {
 
 
                 <header className="App-header">
-                    <OrderGraph/>
                         <h1 className={'App-title pt-3 text-warning mb-3'}>
                             <i className={'fa fa-bolt mr-3'}></i>
                             Pollo Feed
