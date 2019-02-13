@@ -24,10 +24,9 @@ function OrderRow({paid_at, completed_at, status, msatoshi, video}) {
 
 
 
-function OrderTable({orders: _orders}) {
+function OrderTable({orders}) {
 
 
-    const orders = _orders
         //.filter(i => i.paid_at && i.completed_at && i.status && i.msatoshi && i.video);
     if (!orders && Array.isArray(orders) && orders.length) {
 

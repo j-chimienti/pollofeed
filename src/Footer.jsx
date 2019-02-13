@@ -38,6 +38,11 @@ function Footer() {
                     </a>
                 </div>
                 <div className={'col-sm-4 text-dark'}>
+                    <a
+                        className={'d-block'}
+                        href={'https://tip.btcpal.online'} target={'_blank'}>
+                        <h5>Tips</h5>
+                    </a>
                     <p>
                         <a href="https://twitter.com/pollofeed" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-twitter">

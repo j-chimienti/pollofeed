@@ -169,9 +169,10 @@ class Admin extends React.Component {
                     </button>
                 </div>
 
-                <div className={'row'}>
-                    <div className={'card bg-warning mx-auto p-3'} style={{width: '30rem', height: '10rem'}}>
+                <div className={'row my-2'}>
+                    <div className={'card bg-warning text-dark mx-auto p-3'} >
 
+                        <p className={'col'}>Total Orders = {orders.length}</p>
                         {todayOrders && Array.isArray(todayOrders) && <p>
                             Today's
                             Orders = {todayOrders.length}</p>}
@@ -181,22 +182,21 @@ class Admin extends React.Component {
                         }
                         {latestOrder && latestOrder.id && <p>
                             <Link
-                                className={'btn btn-primary'}
-                                to={'/order/id/' + latestOrder.id}>
+                                to={'/order/id/' + latestOrder.id}
+                            >
                                 Latest Order
                             </Link>
                         </p>}
-                        <p className={'col'}>Total Orders = {orders.length}</p>
                     </div>
                 </div>
 
 
-               {orders && orders.length &&  <div className={'row d-flex justify-content-center align-items-center'}>
+               {orders && orders.length &&  <div className={'row my-2 d-flex justify-content-center align-items-center'}>
                     <div className={'col-md-10'} style={{maxHeight: 500, overflowY: 'scroll'}}>
                         <OrderTable orders={orders}/>
                     </div>
                 </div>}
-                {orders && orders.length && <div className={'row d-flex justify-content-center align-items-center'}>
+                {orders && orders.length && <div className={'row my-2 d-flex justify-content-center align-items-center'}>
                     <div className={'col-md-10'}>
                         <OrderGraph orders={orders}/>
                     </div>
