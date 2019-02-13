@@ -15,7 +15,10 @@ function OrderRow({paid_at, completed_at, status, msatoshi, video}) {
         </td>
         <td>{status}</td>
         <td className={'text-right'}>{msatoshi.toLocaleString()}</td>
-        <td><a href={video} target={'_blank'}>{video.slice(0, 20)}</a></td>
+        <td><a href={video} target={'_blank'}>
+            <i className="fa fa-video-camera" aria-hidden="true">
+            </i>
+        </a></td>
     </tr>);
 }
 
@@ -41,7 +44,7 @@ function OrderTable({orders: _orders}) {
             <thead>
             <tr>
                 <th>Completed At</th>
-                <th className={'text-right'}>Completion Time</th>
+                <th className={'text-right'}>Seconds to Complete</th>
                 <th>Status</th>
                 <th className={'text-right'}>MSatoshi</th>
                 <th>Video</th>

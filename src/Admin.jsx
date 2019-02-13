@@ -169,26 +169,30 @@ class Admin extends React.Component {
                     </button>
                 </div>
 
+                <div className={'row'}>
+                    <div className={'card bg-warning mx-auto p-3'} style={{width: '30rem', height: '10rem'}}>
 
-                <div className={'row d-flex justify-content-between align-items-center my-3'}>
-                    {pendingOrders && Array.isArray(pendingOrders) && <div className={'col'}>Pending
-                        Orders={pendingOrders.length}</div>
-                    }
-                    {latestOrder && latestOrder.id && <div className={'col'}>
-                        <Link
-                            className={'btn btn-primary'}
-                            to={'/order/id/' + latestOrder.id}>
-                            Latest Order
-                        </Link>
-                    </div>}
-                    {todayOrders && Array.isArray(todayOrders) && <div className={'col'}>
-                        Today's
-                        Orders = {todayOrders.length}</div>}
-                    <div className={'col'}>Total Orders = {orders.length}</div>
+                        {todayOrders && Array.isArray(todayOrders) && <p>
+                            Today's
+                            Orders = {todayOrders.length}</p>}
+
+                        {pendingOrders && Array.isArray(pendingOrders) && <p>Pending
+                            Orders={pendingOrders.length}</p>
+                        }
+                        {latestOrder && latestOrder.id && <p>
+                            <Link
+                                className={'btn btn-primary'}
+                                to={'/order/id/' + latestOrder.id}>
+                                Latest Order
+                            </Link>
+                        </p>}
+                        <p className={'col'}>Total Orders = {orders.length}</p>
+                    </div>
                 </div>
 
+
                {orders && orders.length &&  <div className={'row d-flex justify-content-center align-items-center'}>
-                    <div className={'col-md-10'}>
+                    <div className={'col-md-10'} style={{maxHeight: 500, overflowY: 'scroll'}}>
                         <OrderTable orders={orders}/>
                     </div>
                 </div>}
