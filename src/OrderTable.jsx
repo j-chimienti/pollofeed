@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 
-function OrderRow({paid_at, completed_at, status, msatoshi, video}) {
+function OrderRow({id, paid_at, completed_at, status, msatoshi, video}) {
 
 
     const processing_time = new Date(completed_at) - new Date(paid_at * 1000)
@@ -9,7 +10,9 @@ function OrderRow({paid_at, completed_at, status, msatoshi, video}) {
     const completionTimeKlass = completionSeconds > 90 ? 'text-danger' : completionSeconds > 60 ? 'text-warning' : null
 
     return (<tr>
-        <td>{new Date(completed_at).toLocaleString()}</td>
+        <Link to={`/order/id/${id}`}>
+            <td>{new Date(completed_at).toLocaleString()}</td>
+        </Link>
         <td className={completionTimeKlass + ' text-right'}>
             {completionSeconds.toLocaleString()}
         </td>

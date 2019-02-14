@@ -28,6 +28,9 @@ class OrderGraph extends Component {
             bindto: '#order_graph',
             data: {
                 type: 'spline',
+                // colors: {
+                //     'pay index': 'rgb(255, 193, 7)'
+                // },
                 x: 'x',
                 columns: [
                     ['x', ...completed_at],
@@ -49,7 +52,7 @@ class OrderGraph extends Component {
 
     render() {
         return (
-           <div className={'card text-dark py-3'} style={{height: 600, width: '100%'}}>
+           <div className={'card bg-dark text-light py-3'} style={{height: 600, width: '100%'}}>
                <div id={'order_graph'}>
 
                </div>

@@ -152,47 +152,49 @@ class Admin extends React.Component {
         return (
             <div className={'admin'}>
 
-                <div className={'row d-flex justify-content-around align-items-center py-3'}>
-                    <button
-                        className={'btn btn-light'}
+                <div className={'row d-flex justify-content-end align-items-center py-4 mb-3'}>
+                    <a
                         onClick={this.logout}
                     >
                         <i className={'fa fa-user-o'}></i>
                         Logout
-                    </button>
+                    </a>
 
-                    <button className={'btn btn-warning'} onClick={this.openWebgpio.bind(this)}>
+                    <a onClick={this.openWebgpio.bind(this)}>
                         Feeder
-                    </button>
-                    <button className={'btn btn-warning'} onClick={this.openWebcam.bind(this)}>
+                    </a>
+                    <a onClick={this.openWebcam.bind(this)}>
                         Webcam
-                    </button>
+                    </a>
                 </div>
 
-                <div className={'row my-2'}>
+                <div className={'row mb-3'}>
                     <div className={'card bg-warning text-dark mx-auto p-3'} >
 
-                        <p className={'col'}>Total Orders = {orders.length}</p>
-                        {todayOrders && Array.isArray(todayOrders) && <p>
-                            Today's
-                            Orders = {todayOrders.length}</p>}
+                        <p className={'row d-flex justify-content-around align-items-center'}>
 
-                        {pendingOrders && Array.isArray(pendingOrders) && <p>Pending
-                            Orders={pendingOrders.length}</p>
+                            <span>Total Orders =</span>
+                             <span>{orders.length}</span>
+                            </p>
+                        {todayOrders && Array.isArray(todayOrders) &&
+                        <p className={'row d-flex justify-content-around align-items-center'}>
+                            <span>Today's Orders =</span>
+                             <span>{todayOrders.length}</span>
+                            </p>
                         }
-                        {latestOrder && latestOrder.id && <p>
-                            <Link
-                                to={'/order/id/' + latestOrder.id}
-                            >
-                                Latest Order
-                            </Link>
-                        </p>}
+
+                        {pendingOrders && Array.isArray(pendingOrders) &&
+                        <p className={'row d-flex justify-content-around align-items-center'}>
+                            <span>Pending Orders=</span>
+                             <span>{pendingOrders.length}</span>
+                            </p>
+                        }
                     </div>
                 </div>
 
 
                {orders && orders.length &&  <div className={'row my-2 d-flex justify-content-center align-items-center'}>
-                    <div className={'col-md-10'} style={{maxHeight: 500, overflowY: 'scroll'}}>
+                    <div className={'col-md-10'} style={{maxHeight: 500, maxWidth: 700, overflowY: 'scroll'}}>
                         <OrderTable orders={orders}/>
                     </div>
                 </div>}
