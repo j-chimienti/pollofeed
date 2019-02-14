@@ -1,6 +1,4 @@
-# Pollo Feed
-
-Bitcoin Lightning Powered Chicken Feeder
+# Pollo Feed :zap: <small> Bitcoin Lightning Powered Chicken Feeder</small>
 
 
 ![home](ss1.png)
@@ -8,6 +6,7 @@ Bitcoin Lightning Powered Chicken Feeder
 
 ![pay](ss2.png)
 
+![complete](ss3.png)
 
 run 
     bash run.sh

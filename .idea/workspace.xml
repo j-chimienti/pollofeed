@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ss1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connect.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderTable.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,23 +21,25 @@
     <session id="1724430321">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="32" />
+          <entry key="project.closed" value="34" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="7" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="33" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -52,8 +53,8 @@
           <entry key="html" value="5" />
           <entry key="js" value="45" />
           <entry key="json" value="2" />
-          <entry key="jsx" value="81" />
-          <entry key="md" value="3" />
+          <entry key="jsx" value="82" />
+          <entry key="md" value="4" />
           <entry key="mongo" value="3" />
           <entry key="png" value="3" />
           <entry key="sh" value="12" />
@@ -69,9 +70,9 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="2" />
-          <entry key="JSX Harmony" value="81" />
+          <entry key="JSX Harmony" value="82" />
           <entry key="JavaScript" value="43" />
-          <entry key="Markdown" value="3" />
+          <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Scratch" value="2" />
           <entry key="YAML" value="26" />
@@ -87,8 +88,8 @@
           <entry key="html" value="38" />
           <entry key="js" value="2663" />
           <entry key="json" value="139" />
-          <entry key="jsx" value="9484" />
-          <entry key="md" value="91" />
+          <entry key="jsx" value="9590" />
+          <entry key="md" value="132" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
         </counts>
@@ -101,9 +102,9 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="38" />
           <entry key="JSON" value="139" />
-          <entry key="JSX Harmony" value="9484" />
+          <entry key="JSX Harmony" value="9590" />
           <entry key="JavaScript" value="2646" />
-          <entry key="Markdown" value="91" />
+          <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
           <entry key="YAML" value="925" />
@@ -111,7 +112,7 @@
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="29" />
+          <entry key="ESLintLanguageService" value="31" />
         </counts>
       </usages-collector>
     </session>
@@ -119,22 +120,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OrderTable.jsx">
+        <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OrderGraph.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
-              <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+            <state relative-caret-position="122">
+              <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -142,30 +131,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="156" column="40" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
+            <state relative-caret-position="121">
+              <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#3611#3867#0" />
+                <element signature="e#4627#5572#0" />
+                <element signature="e#5528#5820#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/connect.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -270,8 +241,8 @@
         <option value="$PROJECT_DIR$/src/Footer.jsx" />
         <option value="$PROJECT_DIR$/src/OrderGraph.jsx" />
         <option value="$PROJECT_DIR$/src/OrderGraph.css" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/OrderTable.jsx" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Admin.jsx" />
       </list>
     </option>
@@ -303,6 +274,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -314,7 +286,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,18 +400,20 @@
       <workItem from="1550004029543" duration="3114000" />
       <workItem from="1550075451915" duration="660000" />
       <workItem from="1550085171657" duration="3327000" />
-      <workItem from="1550101431923" duration="1951000" />
+      <workItem from="1550101431923" duration="2894000" />
+      <workItem from="1550149018472" duration="598000" />
+      <workItem from="1550174492090" duration="321000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99156000" />
+    <option name="totallyTimeSpent" value="101018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26802376" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2765055" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -457,7 +430,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.21882951" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.21882951" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -709,35 +682,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/connect.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ss1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ss2.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="46">
-            <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderGraph.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -746,10 +695,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="184">
+            <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderGraph.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+        <state relative-caret-position="162">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -757,19 +716,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connect.sh" />
+    <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="156" column="40" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
+        <state relative-caret-position="121">
+          <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#3611#3867#0" />
+            <element signature="e#4627#5572#0" />
+            <element signature="e#5528#5820#0" />
           </folding>
         </state>
       </provider>

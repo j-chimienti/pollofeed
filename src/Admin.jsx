@@ -5,6 +5,7 @@ import './Admin.css'
 import {Link} from "react-router-dom";
 import OrderTable from "./OrderTable";
 import OrderGraph from "./OrderGraph";
+import _throttle from 'lodash/throttle'
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -33,6 +34,7 @@ class Admin extends React.Component {
         this.openWebcam = this.openWebcam.bind(this)
         this.openWebgpio = this.openWebgpio.bind(this)
         this.logout = this.logout.bind(this)
+        this.throttleRefresh = this.throttleRefresh.bind(this)
     }
 
 
@@ -53,6 +55,23 @@ class Admin extends React.Component {
     componentWillUnmount() {
 
         clearInterval(this.hnInterval)
+    }
+
+    throttleRefresh() {
+
+        _throttle(() => this.refreshData(), 1000)
+    }
+
+    async refreshData() {
+
+        this.setState({
+        refreshing: true
+    }, async () => {
+
+        await this.fetchOrderData();
+        this.setState({refreshing: false})
+    })
+
     }
 
     async fetchOrderData() {
@@ -131,7 +150,7 @@ class Admin extends React.Component {
 
     render() {
 
-        const {pi_ip, pendingOrders, latestOrder, orders} = this.state;
+        const {pendingOrders, orders, refreshingData} = this.state;
         const left = new Date(new Date().setHours(0, 0, 0, 0));
         const right = new Date(new Date().setHours(23, 59, 59, 99))
 
@@ -152,7 +171,13 @@ class Admin extends React.Component {
         return (
             <div className={'admin'}>
 
-                <div className={'row d-flex justify-content-end align-items-center p-4 mb-3'}>
+                <div className={'row d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
+
+                    <a onClick={this.throttleRefresh.bind(this)}>
+                        <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
+
+                        </i>
+                    </a>
                     <a
                         className={'mx-2'} onClick={this.logout}
                     >
@@ -168,42 +193,38 @@ class Admin extends React.Component {
                     </a>
                 </div>
 
-                <div className={'row mb-3'}>
-                    <div className={'card bg-warning text-dark mx-auto p-3'} style={{width: '10rem'}} >
+                {orders && orders.length &&
+                <div>
+                    <div className={'row mb-3'}>
+                    <div className={'card bg-warning text-dark mx-auto p-3'} >
 
-                        <p className={'row d-flex justify-content-around align-items-center'}>
+                        <div className={'row'}>
 
-                            <span>Total Orders </span>
-                             <span className={'text-monospace'}>{orders.length}</span>
-                            </p>
-                        {todayOrders && Array.isArray(todayOrders) &&
-                        <p className={'row d-flex justify-content-around align-items-center'}>
-                            <span>Today's Orders </span>
-                             <span className={'text-monospace'}>{todayOrders.length}</span>
-                            </p>
-                        }
+                            <div className={'col-sm-8'}>Total Orders </div>
+                            <div className={'col-sm-4 text-monospace'}>{orders.length}</div>
+                        </div>
+                        <div className={'row'}>
+                            <div className={'col-sm-8'}>Today's Orders </div>
+                            <div className={'col-sm-4 text-monospace'}>{todayOrders.length}</div>
+                        </div>
 
-                        {pendingOrders && Array.isArray(pendingOrders) &&
-                        <p className={'row d-flex justify-content-around align-items-center'}>
-                            <span>Pending Orders</span>
-                             <span className={'text-monospace'}>{pendingOrders.length}</span>
-                            </p>
-                        }
+                        <div className={'row'}>
+                            <div className={'col-sm-8'}>Pending Orders</div>
+                            <div className={'col-sm-4 text-monospace'}>{pendingOrders.length}</div>
+                        </div>
+                    </div>
+
+                </div>
+                    <div className={'row my-2 d-flex justify-content-center align-items-center'}>
+                    <div className={'col-md-10'} style={{maxHeight: 500, maxWidth: 700, overflowY: 'scroll'}}>
+                    <OrderTable orders={orders}/>
+                    </div>
+                    </div>
+                    <div className={'row my-2 d-flex justify-content-center align-items-center'}>
+                        <div className={'col-md-10'}><OrderGraph orders={orders}/></div>
                     </div>
                 </div>
-
-
-               {orders && orders.length &&  <div className={'row my-2 d-flex justify-content-center align-items-center'}>
-                    <div className={'col-md-10'} style={{maxHeight: 500, maxWidth: 700, overflowY: 'scroll'}}>
-                        <OrderTable orders={orders}/>
-                    </div>
-                </div>}
-                {orders && orders.length && <div className={'row my-2 d-flex justify-content-center align-items-center'}>
-                    <div className={'col-md-10'}>
-                        <OrderGraph orders={orders}/>
-                    </div>
-                </div>}
-            </div>
+                }
 
         );
     }
