@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
+import './OrderGraph.css'
 
 function OrderRow({id, paid_at, completed_at, status, msatoshi, video}) {
 
