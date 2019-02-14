@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ss1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderGraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderGraph.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OrderTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderTable.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -42,7 +44,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="7" />
-          <entry key="css" value="8" />
+          <entry key="css" value="9" />
           <entry key="development" value="6" />
           <entry key="env" value="14" />
           <entry key="example" value="1" />
@@ -50,9 +52,10 @@
           <entry key="html" value="5" />
           <entry key="js" value="45" />
           <entry key="json" value="2" />
-          <entry key="jsx" value="80" />
-          <entry key="md" value="2" />
+          <entry key="jsx" value="81" />
+          <entry key="md" value="3" />
           <entry key="mongo" value="3" />
+          <entry key="png" value="3" />
           <entry key="sh" value="12" />
           <entry key="yml" value="26" />
         </counts>
@@ -61,13 +64,14 @@
         <counts>
           <entry key=".env file" value="23" />
           <entry key="Bash" value="12" />
-          <entry key="CSS" value="8" />
+          <entry key="CSS" value="9" />
           <entry key="Dockerfile" value="7" />
           <entry key="HTML" value="5" />
+          <entry key="Image" value="3" />
           <entry key="JSON" value="2" />
-          <entry key="JSX Harmony" value="80" />
+          <entry key="JSX Harmony" value="81" />
           <entry key="JavaScript" value="43" />
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Scratch" value="2" />
           <entry key="YAML" value="26" />
@@ -76,15 +80,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="228" />
-          <entry key="css" value="113" />
+          <entry key="css" value="146" />
           <entry key="development" value="15" />
           <entry key="env" value="144" />
           <entry key="gitignore" value="15" />
           <entry key="html" value="38" />
           <entry key="js" value="2663" />
           <entry key="json" value="139" />
-          <entry key="jsx" value="9404" />
-          <entry key="md" value="22" />
+          <entry key="jsx" value="9484" />
+          <entry key="md" value="91" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
         </counts>
@@ -93,13 +97,13 @@
         <counts>
           <entry key=".env file" value="159" />
           <entry key="Bash" value="158" />
-          <entry key="CSS" value="113" />
+          <entry key="CSS" value="146" />
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="38" />
           <entry key="JSON" value="139" />
-          <entry key="JSX Harmony" value="9404" />
+          <entry key="JSX Harmony" value="9484" />
           <entry key="JavaScript" value="2646" />
-          <entry key="Markdown" value="22" />
+          <entry key="Markdown" value="91" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
           <entry key="YAML" value="925" />
@@ -114,20 +118,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/OrderGraph.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OrderTable.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="210">
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -136,10 +131,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/OrderGraph.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="875">
+              <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="154" column="92" selection-start-line="154" selection-start-column="92" selection-end-line="154" selection-end-column="92" />
+            <state relative-caret-position="151">
+              <caret line="156" column="40" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#3611#3867#0" />
@@ -152,7 +156,7 @@
         <entry file="file://$PROJECT_DIR$/connect.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -161,7 +165,7 @@
         <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -239,7 +243,6 @@
         <option value="$PROJECT_DIR$/src/DownloadInvoice.jsx" />
         <option value="$PROJECT_DIR$/src/OrderInfo.jsx" />
         <option value="$PROJECT_DIR$/src/QrCode.jsx" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/redeploy.sh" />
         <option value="$PROJECT_DIR$/config.yml" />
         <option value="$PROJECT_DIR$/lib/twitter/ctl.js" />
@@ -265,9 +268,11 @@
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/connect.sh" />
         <option value="$PROJECT_DIR$/src/Footer.jsx" />
+        <option value="$PROJECT_DIR$/src/OrderGraph.jsx" />
+        <option value="$PROJECT_DIR$/src/OrderGraph.css" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/OrderTable.jsx" />
         <option value="$PROJECT_DIR$/src/Admin.jsx" />
-        <option value="$PROJECT_DIR$/src/OrderGraph.jsx" />
       </list>
     </option>
   </component>
@@ -327,15 +332,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Other File Types" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/playbooks/roles" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/playbooks/roles" />
-      <recent name="$PROJECT_DIR$/src/assets" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -424,18 +429,18 @@
       <workItem from="1550004029543" duration="3114000" />
       <workItem from="1550075451915" duration="660000" />
       <workItem from="1550085171657" duration="3327000" />
-      <workItem from="1550101431923" duration="1055000" />
+      <workItem from="1550101431923" duration="1951000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98260000" />
+    <option name="totallyTimeSpent" value="99156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26802376" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.26802376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -452,7 +457,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.36217132" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.21882951" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,41 +477,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/LightningNode.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="186" selection-start-line="15" selection-start-column="186" selection-end-line="15" selection-end-column="186" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DownloadInvoice.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QrCode.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="268">
-            <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -738,42 +712,65 @@
     <entry file="file://$PROJECT_DIR$/connect.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="48" column="32" lean-forward="true" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="154" column="92" selection-start-line="154" selection-start-column="92" selection-end-line="154" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#3611#3867#0" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/ss1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ss2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="46">
+            <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OrderTable.jsx">
+    <entry file="file://$PROJECT_DIR$/src/OrderGraph.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="23">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OrderGraph.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+        <state relative-caret-position="875">
+          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OrderTable.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="156" column="40" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#3611#3867#0" />
+          </folding>
         </state>
       </provider>
     </entry>

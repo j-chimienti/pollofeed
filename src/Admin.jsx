@@ -152,41 +152,41 @@ class Admin extends React.Component {
         return (
             <div className={'admin'}>
 
-                <div className={'row d-flex justify-content-end align-items-center py-4 mb-3'}>
+                <div className={'row d-flex justify-content-end align-items-center p-4 mb-3'}>
                     <a
-                        onClick={this.logout}
+                        className={'mx-2'} onClick={this.logout}
                     >
                         <i className={'fa fa-user-o'}></i>
                         Logout
                     </a>
 
-                    <a onClick={this.openWebgpio.bind(this)}>
+                    <a className={'mx-2'} onClick={this.openWebgpio.bind(this)}>
                         Feeder
                     </a>
-                    <a onClick={this.openWebcam.bind(this)}>
+                    <a className={'mx-2'} onClick={this.openWebcam.bind(this)}>
                         Webcam
                     </a>
                 </div>
 
                 <div className={'row mb-3'}>
-                    <div className={'card bg-warning text-dark mx-auto p-3'} >
+                    <div className={'card bg-warning text-dark mx-auto p-3'} style={{width: '10rem'}} >
 
                         <p className={'row d-flex justify-content-around align-items-center'}>
 
-                            <span>Total Orders =</span>
-                             <span>{orders.length}</span>
+                            <span>Total Orders </span>
+                             <span className={'text-monospace'}>{orders.length}</span>
                             </p>
                         {todayOrders && Array.isArray(todayOrders) &&
                         <p className={'row d-flex justify-content-around align-items-center'}>
-                            <span>Today's Orders =</span>
-                             <span>{todayOrders.length}</span>
+                            <span>Today's Orders </span>
+                             <span className={'text-monospace'}>{todayOrders.length}</span>
                             </p>
                         }
 
                         {pendingOrders && Array.isArray(pendingOrders) &&
                         <p className={'row d-flex justify-content-around align-items-center'}>
-                            <span>Pending Orders=</span>
-                             <span>{pendingOrders.length}</span>
+                            <span>Pending Orders</span>
+                             <span className={'text-monospace'}>{pendingOrders.length}</span>
                             </p>
                         }
                     </div>

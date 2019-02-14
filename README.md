@@ -1,7 +1,12 @@
 # Pollo Feed
 
+Bitcoin Lightning Powered Chicken Feeder
 
 
+![home](ss1.png)
+
+
+![pay](ss2.png)
 
 
 run 

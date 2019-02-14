@@ -11,9 +11,11 @@ function OrderRow({id, paid_at, completed_at, status, msatoshi, video}) {
     const completionTimeKlass = completionSeconds > 90 ? 'text-danger' : completionSeconds > 60 ? 'text-warning' : null
 
     return (<tr>
-        <Link to={`/order/id/${id}`}>
-            <td>{new Date(completed_at).toLocaleString()}</td>
-        </Link>
+        <td>
+            <Link to={`/order/id/${id}`}>
+                {new Date(completed_at).toLocaleString()}
+            </Link>
+        </td>
         <td className={completionTimeKlass + ' text-right'}>
             {completionSeconds.toLocaleString()}
         </td>
@@ -27,11 +29,10 @@ function OrderRow({id, paid_at, completed_at, status, msatoshi, video}) {
 }
 
 
-
 function OrderTable({orders}) {
 
 
-        //.filter(i => i.paid_at && i.completed_at && i.status && i.msatoshi && i.video);
+    //.filter(i => i.paid_at && i.completed_at && i.status && i.msatoshi && i.video);
     if (!orders && Array.isArray(orders) && orders.length) {
 
         return null;
@@ -39,7 +40,6 @@ function OrderTable({orders}) {
     const msatoshis = orders.map(o => parseInt(o.msatoshi))
 
     const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
-
 
 
     return (
