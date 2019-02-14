@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ss3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -45,7 +42,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="7" />
-          <entry key="css" value="9" />
+          <entry key="css" value="10" />
           <entry key="development" value="6" />
           <entry key="env" value="14" />
           <entry key="example" value="1" />
@@ -65,7 +62,7 @@
         <counts>
           <entry key=".env file" value="23" />
           <entry key="Bash" value="12" />
-          <entry key="CSS" value="9" />
+          <entry key="CSS" value="10" />
           <entry key="Dockerfile" value="7" />
           <entry key="HTML" value="5" />
           <entry key="Image" value="3" />
@@ -81,14 +78,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="228" />
-          <entry key="css" value="146" />
+          <entry key="css" value="254" />
           <entry key="development" value="15" />
           <entry key="env" value="144" />
           <entry key="gitignore" value="15" />
           <entry key="html" value="38" />
           <entry key="js" value="2663" />
           <entry key="json" value="139" />
-          <entry key="jsx" value="9590" />
+          <entry key="jsx" value="9940" />
           <entry key="md" value="132" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
@@ -98,11 +95,11 @@
         <counts>
           <entry key=".env file" value="159" />
           <entry key="Bash" value="158" />
-          <entry key="CSS" value="146" />
+          <entry key="CSS" value="254" />
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="38" />
           <entry key="JSON" value="139" />
-          <entry key="JSX Harmony" value="9590" />
+          <entry key="JSX Harmony" value="9940" />
           <entry key="JavaScript" value="2646" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -131,9 +128,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
+            <state relative-caret-position="402">
+              <caret line="225" column="18" selection-start-line="225" selection-start-column="18" selection-end-line="225" selection-end-column="18" />
               <folding>
+                <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#4627#5572#0" />
                 <element signature="e#5528#5820#0" />
               </folding>
@@ -153,7 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>state</find>
       <find>nofic</find>
       <find>Pending</find>
       <find>qr</find>
@@ -183,6 +180,7 @@
       <find>Modal</find>
       <find>orders =</find>
       <find>wid</find>
+      <find>card</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/</dir>
@@ -243,6 +241,7 @@
         <option value="$PROJECT_DIR$/src/OrderGraph.css" />
         <option value="$PROJECT_DIR$/src/OrderTable.jsx" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/Admin.css" />
         <option value="$PROJECT_DIR$/src/Admin.jsx" />
       </list>
     </option>
@@ -402,12 +401,12 @@
       <workItem from="1550085171657" duration="3327000" />
       <workItem from="1550101431923" duration="2894000" />
       <workItem from="1550149018472" duration="598000" />
-      <workItem from="1550174492090" duration="321000" />
+      <workItem from="1550174492090" duration="1349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101018000" />
+    <option name="totallyTimeSpent" value="102046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
@@ -430,7 +429,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.21882951" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.27905005" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,13 +449,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/healthCheck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -727,11 +719,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="192" column="20" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="20" />
+        <state relative-caret-position="402">
+          <caret line="225" column="18" selection-start-line="225" selection-start-column="18" selection-end-line="225" selection-end-column="18" />
           <folding>
+            <element signature="e#0#26#0" expanded="true" />
             <element signature="e#4627#5572#0" />
             <element signature="e#5528#5820#0" />
           </folding>

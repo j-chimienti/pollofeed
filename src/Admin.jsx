@@ -193,8 +193,7 @@ class Admin extends React.Component {
                     </a>
                 </div>
 
-                {orders && orders.length &&
-                <div>
+                {orders && orders.length && <div>
                     <div className={'row mb-3'}>
                     <div className={'card bg-warning text-dark mx-auto p-3'} >
 
@@ -223,8 +222,8 @@ class Admin extends React.Component {
                     <div className={'row my-2 d-flex justify-content-center align-items-center'}>
                         <div className={'col-md-10'}><OrderGraph orders={orders}/></div>
                     </div>
-                </div>
-                }
+                </div>}
+            </div>
 
         );
     }
