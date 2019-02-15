@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Admin.css'
-import {Link} from "react-router-dom";
 import OrderTable from "./OrderTable";
 import OrderGraph from "./OrderGraph";
 import _throttle from 'lodash/throttle'
@@ -26,7 +25,6 @@ class Admin extends React.Component {
     constructor(props) {
 
         super(props);
-
         this.getHostName = this.getHostName.bind(this)
         this.updateHostname = this.updateHostname.bind(this)
         this.fetchOrderData = this.fetchOrderData.bind(this)
@@ -34,7 +32,8 @@ class Admin extends React.Component {
         this.openWebcam = this.openWebcam.bind(this)
         this.openWebgpio = this.openWebgpio.bind(this)
         this.logout = this.logout.bind(this)
-        this.throttleRefresh = this.throttleRefresh.bind(this)
+        this.refreshData = this.refreshData.bind(this)
+        this.throttleRefresh = _throttle(this.refreshData, 1000)
     }
 
 
@@ -200,16 +199,16 @@ class Admin extends React.Component {
                         <div className={'row'}>
 
                             <div className={'col-sm-8'}>Total Orders </div>
-                            <div className={'col-sm-4 text-monospace'}>{orders.length}</div>
+                            <div className={'col-sm-4 text-right text-monospace'}>{orders.length}</div>
                         </div>
                         <div className={'row'}>
                             <div className={'col-sm-8'}>Today's Orders </div>
-                            <div className={'col-sm-4 text-monospace'}>{todayOrders.length}</div>
+                            <div className={'col-sm-4 text-right text-monospace'}>{todayOrders.length}</div>
                         </div>
 
                         <div className={'row'}>
                             <div className={'col-sm-8'}>Pending Orders</div>
-                            <div className={'col-sm-4 text-monospace'}>{pendingOrders.length}</div>
+                            <div className={'col-sm-4 text-right text-monospace'}>{pendingOrders.length}</div>
                         </div>
                     </div>
 
@@ -224,7 +223,6 @@ class Admin extends React.Component {
                     </div>
                 </div>}
             </div>
-
         );
     }
 }

@@ -28,9 +28,9 @@ class OrderGraph extends Component {
             bindto: '#order_graph',
             data: {
                 type: 'spline',
-                // colors: {
-                //     'pay index': 'rgb(255, 193, 7)'
-                // },
+                colors: {
+                    'pay index': 'orange'
+                },
                 x: 'x',
                 columns: [
                     ['x', ...completed_at],
