@@ -173,11 +173,11 @@ class Admin extends React.Component {
 
                 <div className={'row d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
 
-                    <Link to={'/'}>
+                    <Link to={'/'} className={'mx-2'}>
                         <i className={'fa fa-home'}>
                         </i>
                     </Link>
-                    <a onClick={this.throttleRefresh.bind(this)}>
+                    <a onClick={this.throttleRefresh.bind(this)} className={'mx-2'}>
                         <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
 
                         </i>
@@ -203,17 +203,17 @@ class Admin extends React.Component {
 
                         <div className={'row'}>
 
-                            <div className={'col-xs-8'}>Total Orders </div>
-                            <div className={'col-xs-4 text-right text-monospace'}>{orders.length}</div>
+                            <div className={'col-xs-8 font-weight-bold'}>Total Orders </div>
+                            <div className={'col-xs-4 pl-4 text-right text-monospace'}>{orders.length}</div>
                         </div>
                         <div className={'row'}>
-                            <div className={'col-xs-8'}>Today's Orders </div>
-                            <div className={'col-xs-4 text-right text-monospace'}>{todayOrders.length}</div>
+                            <div className={'col-xs-8 font-weight-bold'}>Today's Orders </div>
+                            <div className={'col-xs-4 pl-4 text-right text-monospace'}>{todayOrders.length}</div>
                         </div>
 
                         <div className={'row'}>
-                            <div className={'col-xs-8'}>Pending Orders</div>
-                            <div className={'col-xs-4 text-right text-monospace'}>{pendingOrders.length}</div>
+                            <div className={'col-xs-8 font-weight-bold'}>Pending Orders</div>
+                            <div className={'col-xs-4 pl-4 text-right text-monospace'}>{pendingOrders.length}</div>
                         </div>
                     </div>
 

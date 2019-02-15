@@ -129,10 +129,12 @@ class OrderInfo extends React.Component {
                 )}
                 {inv && inv.id && <div className={'row my-2'}>
                     <textarea
-                        style={{maxWidth: '500px'}}
+                        style={{maxWidth: '500px', whiteSpace: 'pre'}}
                         className={'form-control mx-auto'}
-                        rows={10}
-                        readOnly={'readonly'} value={JSON.stringify(inv, null, 4)}>
+                        rows={15}
+                        disabled
+                        value={JSON.stringify(inv, null, 4)}
+                    >
                     </textarea>
                 </div>}
 
