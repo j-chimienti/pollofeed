@@ -199,21 +199,21 @@ class Admin extends React.Component {
 
                 {orders && orders.length && <div>
                     <div className={'row mb-3'}>
-                    <div className={'card bg-warning text-dark mx-auto p-3'} >
+                    <div className={'card bg-warning text-dark mx-auto p-4'} >
 
                         <div className={'row'}>
 
                             <div className={'col-xs-8 font-weight-bold'}>Total Orders </div>
-                            <div className={'col-xs-4 pl-4 text-right text-monospace'}>{orders.length}</div>
+                            <div className={'col-xs-4 text-right text-monospace'}>{orders.length}</div>
                         </div>
                         <div className={'row'}>
                             <div className={'col-xs-8 font-weight-bold'}>Today's Orders </div>
-                            <div className={'col-xs-4 pl-4 text-right text-monospace'}>{todayOrders.length}</div>
+                            <div className={'col-xs-4 text-right text-monospace'}>{todayOrders.length}</div>
                         </div>
 
                         <div className={'row'}>
                             <div className={'col-xs-8 font-weight-bold'}>Pending Orders</div>
-                            <div className={'col-xs-4 pl-4 text-right text-monospace'}>{pendingOrders.length}</div>
+                            <div className={'col-xs-4 text-right text-monospace'}>{pendingOrders.length}</div>
                         </div>
                     </div>
 

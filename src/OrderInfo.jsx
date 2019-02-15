@@ -81,8 +81,8 @@ class OrderInfo extends React.Component {
     render() {
 
         const {refreshingData} = this.state;
-        const {inv} = this.props;
-        const {id} = this.props.match.params;
+        const {inv, match} = this.props;
+        const {id} = match.params;
 
         if (!inv) {
 
@@ -114,9 +114,6 @@ class OrderInfo extends React.Component {
                     {!inv.complete && !inv.acknowledged && inv.status === 'paid' && <span className={'text-warning ml-3'}>Processing</span> }
                 </h5>
 
-                {/*<p>*/}
-                    {/*Paid At= {inv && inv.paid_at ?  new Date(inv.paid_at * 1000).toLocaleString() : 'not paid'}*/}
-                {/*</p>*/}
 
                 {inv && inv.video && (
                     <div className={'row'}>
