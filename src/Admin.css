@@ -4,13 +4,13 @@
 }
 
 
-.admin-nav-links a {
+.admin-nav-links > a {
 
     cursor: pointer;
     transition: color .2s linear;
 
 }
 
-.admin-nav-links a:hover {
+.admin-nav-links > a:hover {
     color: var(--info);
 }

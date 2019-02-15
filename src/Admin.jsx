@@ -5,6 +5,7 @@ import './Admin.css'
 import OrderTable from "./OrderTable";
 import OrderGraph from "./OrderGraph";
 import _throttle from 'lodash/throttle'
+import {Link} from "react-router-dom";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -172,6 +173,10 @@ class Admin extends React.Component {
 
                 <div className={'row d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
 
+                    <Link to={'/'}>
+                        <i className={'fa fa-home'}>
+                        </i>
+                    </Link>
                     <a onClick={this.throttleRefresh.bind(this)}>
                         <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
 
@@ -198,17 +203,17 @@ class Admin extends React.Component {
 
                         <div className={'row'}>
 
-                            <div className={'col-sm-8'}>Total Orders </div>
-                            <div className={'col-sm-4 text-right text-monospace'}>{orders.length}</div>
+                            <div className={'col-xs-8'}>Total Orders </div>
+                            <div className={'col-xs-4 text-right text-monospace'}>{orders.length}</div>
                         </div>
                         <div className={'row'}>
-                            <div className={'col-sm-8'}>Today's Orders </div>
-                            <div className={'col-sm-4 text-right text-monospace'}>{todayOrders.length}</div>
+                            <div className={'col-xs-8'}>Today's Orders </div>
+                            <div className={'col-xs-4 text-right text-monospace'}>{todayOrders.length}</div>
                         </div>
 
                         <div className={'row'}>
-                            <div className={'col-sm-8'}>Pending Orders</div>
-                            <div className={'col-sm-4 text-right text-monospace'}>{pendingOrders.length}</div>
+                            <div className={'col-xs-8'}>Pending Orders</div>
+                            <div className={'col-xs-4 text-right text-monospace'}>{pendingOrders.length}</div>
                         </div>
                     </div>
 
@@ -220,6 +225,11 @@ class Admin extends React.Component {
                     </div>
                     <div className={'row my-2 d-flex justify-content-center align-items-center'}>
                         <div className={'col-md-10'}><OrderGraph orders={orders}/></div>
+                    </div>
+                </div>}
+                {!orders.length && <div className={'w-100 h-100 d-flex justify-content-center align-items-center'}>
+                    <div className={'donut'}>
+
                     </div>
                 </div>}
             </div>
