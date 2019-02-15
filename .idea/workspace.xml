@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/About.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderInfo.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,7 +50,7 @@
           <entry key="html" value="6" />
           <entry key="js" value="47" />
           <entry key="json" value="2" />
-          <entry key="jsx" value="88" />
+          <entry key="jsx" value="89" />
           <entry key="md" value="4" />
           <entry key="mongo" value="3" />
           <entry key="png" value="3" />
@@ -69,7 +67,7 @@
           <entry key="HTML" value="6" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="2" />
-          <entry key="JSX Harmony" value="88" />
+          <entry key="JSX Harmony" value="89" />
           <entry key="JavaScript" value="45" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="5" />
@@ -87,7 +85,7 @@
           <entry key="html" value="38" />
           <entry key="js" value="2663" />
           <entry key="json" value="139" />
-          <entry key="jsx" value="10736" />
+          <entry key="jsx" value="10794" />
           <entry key="md" value="132" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
@@ -101,7 +99,7 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="38" />
           <entry key="JSON" value="139" />
-          <entry key="JSX Harmony" value="10736" />
+          <entry key="JSX Harmony" value="10794" />
           <entry key="JavaScript" value="2646" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -118,11 +116,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+            <state relative-caret-position="-377">
+              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="203" column="94" selection-start-line="203" selection-start-column="94" selection-end-line="203" selection-end-column="94" />
+              <caret line="208" column="94" selection-start-line="208" selection-start-column="94" selection-end-line="208" selection-end-column="94" />
+              <caret line="213" column="94" selection-start-line="213" selection-start-column="94" selection-end-line="213" selection-end-column="94" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -278,8 +290,8 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/OrderInfo.jsx" />
         <option value="$PROJECT_DIR$/src/About.jsx" />
-        <option value="$PROJECT_DIR$/src/Admin.jsx" />
         <option value="$PROJECT_DIR$/src/Footer.jsx" />
+        <option value="$PROJECT_DIR$/src/Admin.jsx" />
       </list>
     </option>
   </component>
@@ -426,12 +438,12 @@
       <workItem from="1550101431923" duration="2894000" />
       <workItem from="1550149018472" duration="598000" />
       <workItem from="1550174492090" duration="1937000" />
-      <workItem from="1550195918054" duration="3247000" />
+      <workItem from="1550195918054" duration="3617000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105881000" />
+    <option name="totallyTimeSpent" value="106251000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
@@ -743,20 +755,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="207" column="30" lean-forward="true" selection-start-line="207" selection-start-column="30" selection-end-line="207" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-377">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Footer.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Admin.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        <state relative-caret-position="394">
+          <caret line="203" column="94" selection-start-line="203" selection-start-column="94" selection-end-line="203" selection-end-column="94" />
+          <caret line="208" column="94" selection-start-line="208" selection-start-column="94" selection-end-line="208" selection-end-column="94" />
+          <caret line="213" column="94" selection-start-line="213" selection-start-column="94" selection-end-line="213" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

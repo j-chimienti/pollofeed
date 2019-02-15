@@ -17,6 +17,21 @@ function Footer() {
                         <QrCode payreq={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}/>
                     </div>
 
+                    <h5>Need a wallet?</h5>
+                    <ul>
+                        <li>
+                            <a href={'https://bluewallet.io'}>
+                                blue wallet (iOS & Android)
+                            </a>
+
+                        </li>
+                        <li>
+                            <a>
+                                ECLAIR (Android)
+                            </a>
+                        </li>
+                    </ul>
+
                 </div>
                 <div
                     className={'col-sm-4'}
@@ -42,20 +57,7 @@ function Footer() {
                         href={'https://tip.btcpal.online'} target={'_blank'}>
                         <h5>Tips</h5>
                     </a>
-                    <h5>Need a wallet?</h5>
-                    <ul>
-                        <li>
-                            <a href={'https://bluewallet.io'}>
-                                blue wallet (iOS & Android)
-                            </a>
 
-                        </li>
-                        <li>
-                            <a>
-                                ECLAIR (Android)
-                            </a>
-                        </li>
-                    </ul>
                     <p>
                         <a href="https://twitter.com/pollofeed" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-twitter">

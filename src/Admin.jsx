@@ -56,12 +56,6 @@ class Admin extends React.Component {
 
         clearInterval(this.hnInterval)
     }
-
-    throttleRefresh() {
-
-        _throttle(() => this.refreshData(), 1000)
-    }
-
     async refreshData() {
 
         this.setState({
@@ -201,19 +195,19 @@ class Admin extends React.Component {
                     <div className={'row mb-3'}>
                     <div className={'card bg-warning text-dark mx-auto p-4'} >
 
-                        <div className={'row'}>
+                        <div className={'row d-flex justify-content-between align-items-center'}>
 
-                            <div className={'col-xs-8 font-weight-bold'}>Total Orders </div>
-                            <div className={'col-xs-4 text-right text-monospace'}>{orders.length}</div>
+                            <div className={'font-weight-bold'}>Total Orders </div>
+                            <div className={'text-monospace'}>{orders.length}</div>
                         </div>
-                        <div className={'row'}>
-                            <div className={'col-xs-8 font-weight-bold'}>Today's Orders </div>
-                            <div className={'col-xs-4 text-right text-monospace'}>{todayOrders.length}</div>
+                        <div className={'row d-flex justify-content-between align-items-center'}>
+                            <div className={'font-weight-bold'}>Today's Orders </div>
+                            <div className={'text-monospace'}>{todayOrders.length}</div>
                         </div>
 
-                        <div className={'row'}>
-                            <div className={'col-xs-8 font-weight-bold'}>Pending Orders</div>
-                            <div className={'col-xs-4 text-right text-monospace'}>{pendingOrders.length}</div>
+                        <div className={'row d-flex justify-content-between align-items-center'}>
+                            <div className={'font-weight-bold'}>Pending Orders</div>
+                            <div className={'text-monospace'}>{pendingOrders.length}</div>
                         </div>
                     </div>
 
