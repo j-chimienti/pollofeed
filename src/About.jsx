@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 
 function About(props) {
     return (
-        <div>
-            <h3>What</h3>
+        <div className={'container'}>
+            <p>
+                <Link to={'/'}>
+                    <i className={'fa fa-home fa-2x'}></i>
+                </Link>
+            </p>
+            <h3 className={'mt-4'}>What</h3>
             <p>
 
                 Pollo Feed is a automated chicken feeder powered by

@@ -9,6 +9,7 @@ import PaymentSuccess from './PaymentSuccess'
 import NewOrder from './NewOrder'
 import SocketController from './SocketController'
 import OrderInfo from './OrderInfo'
+import About from "./About";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -200,6 +201,7 @@ class App extends Component {
                 />
                 <BrowserRouter>
                     <Switch>
+                        <Route path={'/about'} exact component={About}/>
                         <Route path={'/order/id/:id'}
                                render={props =>
                                    <OrderInfo {...props} inv={inv} updateInv={this.updateInv}/>

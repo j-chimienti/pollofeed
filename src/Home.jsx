@@ -6,6 +6,7 @@ import DownloadInvoice from "./DownloadInvoice";
 import Footer from "./Footer";
 import OrderGraph from "./OrderGraph";
 import OrderTable from "./OrderTable";
+import {Link} from "react-router-dom";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -2751,6 +2752,7 @@ class Home extends Component {
             <div className={'App'}>
 
 
+
                 <header className="App-header">
                         <h1 className={'App-title pt-3 text-warning mb-3'}>
                             <i className={'fa fa-bolt mr-3'}>
@@ -2760,7 +2762,12 @@ class Home extends Component {
                             <i className={'fa fa-bolt ml-3'}>
 
                             </i>
+
                         </h1>
+                    <Link to={'/about'} id={'about-link'}>
+                        <i className={'fa fa-info mr-2'}></i>
+                        About
+                    </Link>
                         <p className={'small font-weight-light text-muted mb-2'}>
                             Bitcoin Lightning Powered Chicken Feeder
                         </p>

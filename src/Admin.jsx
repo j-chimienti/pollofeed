@@ -193,7 +193,7 @@ class Admin extends React.Component {
 
                 {orders && orders.length && <div>
                     <div className={'row mb-3'}>
-                    <div className={'card bg-warning text-dark mx-auto p-4'} >
+                    <div className={'card bg-warning text-dark mx-auto p-4'} style={{width: 200}}>
 
                         <div className={'row d-flex justify-content-between align-items-center'}>
 

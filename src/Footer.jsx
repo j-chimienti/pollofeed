@@ -9,66 +9,58 @@ function Footer() {
             <div className={'row'}>
                 <div className={'col-sm-4'}>
                     <h5>Open channel</h5>
-                    <p style={{wordBreak: 'break-word'}}>
-                        03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735
-                    </p>
+                    <textarea
+                        className={'form-control'}
+                        rows={2}
+                        disabled style={{wordBreak: 'break-word'}} value={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}>
+                    </textarea>
 
-                    <div style={{maxWidth: '400'}}>
+
+                    <div className={'mx-auto'} style={{maxWidth: '300px', height: 'auto'}}>
                         <QrCode payreq={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}/>
                     </div>
 
-                    <h5>Need a wallet?</h5>
-                    <ul>
-                        <li>
-                            <a href={'https://bluewallet.io'}>
-                                blue wallet (iOS & Android)
-                            </a>
 
-                        </li>
-                        <li>
-                            <a>
-                                ECLAIR (Android)
-                            </a>
-                        </li>
-                    </ul>
 
                 </div>
                 <div
                     className={'col-sm-4'}
                     style={{maxHeight: '30rem', overflowY: 'scroll'}}
                 >
-                    <a className="twitter-timeline"
-                        data-lang="en"
-                        style={{width: '100%'}}
-                        href="https://twitter.com/pollofeed?ref_src=twsrc%5Etfw"
-                    >
-                        <div className="text-center">
-                            <div className="loading-container">
-                                <h5>Tweets</h5>
-                                <div className="donut">
-                                </div>
-                            </div>
-                        </div>
+
+                    <a href={'https://yalls.org/wallets/'} target={'_blank'}>
+                        <h5>Need a wallet?</h5>
                     </a>
+
+                    {/*<a className="twitter-timeline"*/}
+                        {/*data-lang="en"*/}
+                        {/*style={{width: '100%'}}*/}
+                        {/*href="https://twitter.com/pollofeed?ref_src=twsrc%5Etfw"*/}
+                    {/*>*/}
+                        {/*<div className="text-center">*/}
+                            {/*<div className="loading-container">*/}
+                                    {/*<i className="fa fa-twitter">*/}
+                                    {/*</i>*/}
+                                    {/*@pollofeed*/}
+                                {/*<br/>*/}
+                                {/*<div className="donut">*/}
+                                {/*</div>*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                    {/*</a>*/}
                 </div>
                 <div className={'col-sm-4 text-dark'}>
                     <a
                         className={'d-block text-dark'}
                         href={'https://tip.btcpal.online'} target={'_blank'}>
-                        <h5>Tips</h5>
+                        <h5>Tips Appreciated 👍</h5>
                     </a>
 
                     <p>
-                        <a href="https://twitter.com/pollofeed" target="_blank" rel="noopener noreferrer">
-                            <i className="fa fa-twitter">
-                            </i>
-                            @pollofeed
-                        </a>
-                    </p>
-                    <p>
                         <a href="https://github.com/j-chimienti/pollofeed" target="_blank" rel="noopener noreferrer">
-                            <i className="fa fa-github">
+                            <i className="fa fa-github fa-2x mr-2">
                             </i>
+                            Repository
                         </a>
                     </p>
                     {/*<p>*/}
