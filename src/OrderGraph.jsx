@@ -52,7 +52,7 @@ class OrderGraph extends Component {
 
     render() {
         return (
-           <div className={'card bg-dark text-light py-3'} style={{height: 600, width: '100%'}}>
+           <div className={'card py-3'} style={{height: 600, width: '100%'}}>
                <div id={'order_graph'}>
 
                </div>
