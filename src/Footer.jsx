@@ -75,9 +75,6 @@ function Footer() {
                     {/*</p>*/}
                 </div>
             </div>
-
-            <Link to="/admin">Admin</Link>
-
         </footer>
     )
 }
