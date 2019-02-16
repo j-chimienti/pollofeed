@@ -7,8 +7,8 @@ function Footer() {
     return (
         <footer className="bg-light p-3 text-dark">
             <div className={'row'}>
-                <div className={'col-sm-4'}>
-                    <h5>Open channel</h5>
+                <div className={'col-sm-4 my-3 my-sm-0'}>
+                    <h5 className={'text-uppercase text-success'}>Open channel</h5>
                     <textarea
                         className={'form-control'}
                         rows={2}
@@ -24,12 +24,12 @@ function Footer() {
 
                 </div>
                 <div
-                    className={'col-sm-4'}
+                    className={'col-sm-4 my-3 my-sm-0'}
                     style={{maxHeight: '30rem', overflowY: 'scroll'}}
                 >
 
                     <a href={'https://yalls.org/wallets/'} target={'_blank'}>
-                        <h5>Need a wallet?</h5>
+                        <h5 className={'text-uppercase'}>Need a wallet?</h5>
                     </a>
 
                     {/*<a className="twitter-timeline"*/}
@@ -49,14 +49,16 @@ function Footer() {
                         {/*</div>*/}
                     {/*</a>*/}
                 </div>
-                <div className={'col-sm-4 text-dark'}>
+                <div className={'col-sm-4 my-3 my-sm-0'}>
+                    <h5 className={'text-uppercase'}>
                     <a
-                        className={'d-block text-dark'}
                         href={'https://tip.btcpal.online'} target={'_blank'}>
-                        <h5>Tips Appreciated 👍</h5>
-                    </a>
+                            <span role={'img'} aria-label={'thumbs up'}>👍</span>
+                            Tips Appreciated
+                        </a>
+                        </h5>
 
-                    <p>
+                    <p className={'my-4 my-sm-1'}>
                         <a href="https://github.com/j-chimienti/pollofeed" target="_blank" rel="noopener noreferrer">
                             <i className="fa fa-github fa-2x mr-2">
                             </i>
