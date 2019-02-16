@@ -4,12 +4,10 @@ import {Link} from "react-router-dom";
 
 function About(props) {
     return (
-        <div className={'container'}>
-            <p>
-                <Link to={'/'}>
+        <div className={'container-fluid'}>
+                <Link to={'/'} className={'small text-muted about-link'}>
                     <i className={'fa fa-home fa-2x'}></i>
                 </Link>
-            </p>
             <h3 className={'mt-4'}>What</h3>
             <p>
 

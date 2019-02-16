@@ -2,6 +2,7 @@ import React from 'react';
 import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 const _throttle = require('lodash/throttle');
@@ -93,20 +94,22 @@ class OrderInfo extends React.Component {
             <div className={'container'}>
 
                 <div className={'row my-3 d-flex justify-content-end align-items-center'}>
-                    <button
-                        className={'btn btn-default'}
-                        onClick={() => this.props.history.push('/')}>
-                        <i className={'fa fa-home'}>
+                    <Link to={'/'}  className={'small text-muted about-link'}>
+                        <i className={'fa fa-info mr-2'}>
+
                         </i>
-                    </button>
-                    <button className={'btn'} onClick={this.throttledOrderInfo}>
-                        <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
-                        </i>
-                        Refresh Data
-                    </button>
-                    {inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}
+                        About
+                    </Link>
                 </div>
-                    <h3>Invoice: {id}</h3>
+
+                    <h3>Invoice: {id}
+                        <button className={'btn btn-default'} onClick={this.throttledOrderInfo}>
+                            <i className={refreshingData ? 'fa fa-refresh mr-2 fa-spin' : 'fa fa-refresh mr-2'}>
+                            </i>
+                            Refresh Data
+                        </button>
+                        {inv && inv.status === 'paid' && <DownloadInvoice inv={inv}/>}
+                    </h3>
                 <h5>
                     Status:
                     {inv.complete && <span className={'text-warning ml-3'}>Complete</span> }

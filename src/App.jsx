@@ -191,7 +191,7 @@ class App extends Component {
     render() {
 
 
-        const {pendingOrders, latestOrder: {completed_at}, inv, orderState, video} = this.state
+        const {pendingOrders, latestOrder, inv, orderState, video} = this.state
 
         return (
             <div>
@@ -228,7 +228,7 @@ class App extends Component {
                                    {...props}
                                    handleNewOrder={this.handleNewOrder}
                                    orderState={orderState}
-                                   completed_at={completed_at}
+                                   latestOrder={latestOrder}
                                    video={video}
                                    inv={inv}
                                />}

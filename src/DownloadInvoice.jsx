@@ -32,7 +32,6 @@ function DownloadInvoice({inv}) {
                className={'fa fa-download mx-2 pointer'}>
 
            </i>
-           Download Order
        </button>
     )
 }
