@@ -43,7 +43,7 @@ function OrderTable({orders}) {
 
 
     return (
-        <table className={'table bg-dark'}>
+        <table className={'table'}>
             <thead>
             <tr>
                 <th>Completed At</th>

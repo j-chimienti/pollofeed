@@ -85,10 +85,6 @@ class Home extends Component {
 
                             </i>
                             Pollo Feed
-                            <i className={'fa fa-bolt ml-3'}>
-
-                            </i>
-
                         </h1>
                     <Link to={'/about'}  className={'small text-muted about-link'}>
                         About
