@@ -36,7 +36,13 @@ class PaymentSuccess extends React.Component {
 
         this.orderUpdateDataInterval = setInterval(async () => {
 
-            if (this.props.inv && !this.props.inv.complete) {
+            const {inv} = this.props;
+
+            if (inv && !inv.complete) {
+
+                if (!inv.acknowledged) {
+
+                }
 
                 return await Promise.all([
 
@@ -45,7 +51,7 @@ class PaymentSuccess extends React.Component {
                         .then(order => {
                             this.props.updateInv(order);
                         }),
-                    this.props.getPendingOrders()
+                    () => !inv.acknowledged && this.props.getPendingOrders()
 
                 ])
             }
