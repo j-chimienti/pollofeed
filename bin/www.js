@@ -54,10 +54,9 @@ global.io = io
 global.io.on('connection', function (socket) {
 
 
-	socket.on('join', orderId => {
-		socket.join(orderId)
-	})
-
+	// socket.on('join', orderId => {
+	// 	socket.join(orderId)
+	// })
 
 })
 

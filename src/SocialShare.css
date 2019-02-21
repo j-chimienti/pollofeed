@@ -1,0 +1,29 @@
+
+.social-icons {
+    position: absolute;
+    left: 0;
+}
+
+.social-share-icon {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+
+.social-share-icon__share-count {
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+.social-share-icon__share-button {
+    cursor: pointer;
+}
+
+.social-share-icon__share-button:hover:not(:active) {
+    opacity: 0.75;
+}
+
+.social-share-icon__custom-icon {
+    width:32px;
+    height:32px;
+}

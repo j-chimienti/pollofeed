@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import VideoDisplay from "./VideoDisplay";
 import DownloadInvoice from "./DownloadInvoice";
 import {Link} from "react-router-dom";
+import SocialShare from "./SocialShare";
 
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
@@ -39,10 +40,6 @@ class PaymentSuccess extends React.Component {
             const {inv} = this.props;
 
             if (inv && !inv.complete) {
-
-                if (!inv.acknowledged) {
-
-                }
 
                 return await Promise.all([
 
@@ -133,14 +130,11 @@ class PaymentSuccess extends React.Component {
             <div className={'w-100 h-100 container'}>
 
                 <div className={'row my-3 d-flex justify-content-end align-items-center'}>
-                    <button
-                        className={'btn btn-warning'}
-                        onClick={() => history.push('/')}>
+
+                    <Link to={'/'} className={'btn btn-warning'}>
                         <i className={'fa fa-home'}>
                         </i>
-                    </button>
-
-
+                    </Link>
                 </div>
                 <h1>
                     Thank you for the order
@@ -199,12 +193,28 @@ class PaymentSuccess extends React.Component {
                     )}
                 </div>}
                 {inv && inv.video && <div className={'row my-3'}>
-                    <div className={'col-sm-8 mx-auto'} style={{maxWidth: '700px'}}>
+                    <span className={'d-none d-md-inline ml-2'}>
+                            <SocialShare
+                                title={'feed chickens through automated chicken feeder, powered by bitcoin lightning payments 🐔⚡'}
+                                hashtags={['#pollofeed']}
+                                klass={'social-icons'}
+
+                            />
+                        </span>
+                    <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
                         <div className={'embed-responsive embed-responsive-4by3'}>
                             <VideoDisplay video={inv.video}/>
                         </div>
                     </div>
                 </div>}
+
+                <div className={'d-inline d-md-none'}>
+                    <SocialShare
+                        title={'feed chickens through automated chicken feeder, powered by bitcoin lightning payments 🐔⚡'}
+                        hashtags={['#pollofeed']}
+                        klass={'d-flex justify-content-center align-items-center'}
+                    />
+                </div>
 
             </div>
         );

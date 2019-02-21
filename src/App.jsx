@@ -61,7 +61,6 @@ class App extends Component {
     componentDidMount() {
 
         this.getLatestOrder()
-
     }
 
     static postData(url = '', data = {}) {

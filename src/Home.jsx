@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import OrderGraph from "./OrderGraph";
 import OrderTable from "./OrderTable";
 import {Link} from "react-router-dom";
+import SocialShare from "./SocialShare";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -28,16 +29,12 @@ class Home extends Component {
 
     componentDidMount() {
 
-
-
     }
 
 
     handlePostOrder(e) {
 
         e && e.preventDefault && e.preventDefault();
-        // fixme: if invoice not expired, use
-
         return this.setState({
             submittingLightningInvoice: true,
         }, () => {
@@ -101,6 +98,16 @@ class Home extends Component {
                     <OrderStatus orderState={orderState} inv={inv}/>
 
                     <div className={'row my-3'}>
+
+                        <span className={'d-none d-md-inline ml-2'}>
+                            <SocialShare
+                                title={'feed chickens through automated chicken feeder, powered by bitcoin lightning payments 🐔⚡'}
+                                hashtags={['#pollofeed']}
+                                klass={'social-icons'}
+
+                            />
+                        </span>
+
                         <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
                             <div className={'embed-responsive embed-responsive-4by3'}>
                                 <VideoDisplay video={video}/>
@@ -108,6 +115,9 @@ class Home extends Component {
                         </div>
 
                     </div>
+
+
+
 
                     {latestOrder && latestOrder.completed_at && (
                         <Link to={'/order/id/' + latestOrder.id}>
@@ -118,6 +128,13 @@ class Home extends Component {
                             </h5>
                         </Link>
                     )}
+                    <div className={'d-inline d-md-none'}>
+                        <SocialShare
+                            title={'feed chickens through automated chicken feeder, powered by bitcoin lightning payments 🐔⚡'}
+                            hashtags={['#pollofeed']}
+                            klass={'d-flex justify-content-center align-items-center'}
+                        />
+                    </div>
 
                 </header>
                 <Footer/>
