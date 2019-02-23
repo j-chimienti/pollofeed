@@ -9,15 +9,21 @@ const helmet = require('helmet')
 const compression = require('compression')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const rateLimit = require("express-rate-limit");
 
 const orderRouter = require('./lib/orders/router')
 
 const app = express()
 
-app.enable('trust proxy')
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 1000,
+})
 
+app.enable('trust proxy')
 app.set('currency', 'BTC')
 app.set('host', '0.0.0.0')
+app.use(limiter)
 app.use(helmet())
 app.use(compression())
 app.use(cors({credentials: true}))
