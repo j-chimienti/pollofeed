@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/admin/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/admin/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/orders/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/router.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -48,7 +49,7 @@
           <entry key="example" value="1" />
           <entry key="gitignore" value="4" />
           <entry key="html" value="10" />
-          <entry key="js" value="58" />
+          <entry key="js" value="59" />
           <entry key="json" value="4" />
           <entry key="jsx" value="114" />
           <entry key="md" value="4" />
@@ -68,7 +69,7 @@
           <entry key="Image" value="3" />
           <entry key="JSON" value="4" />
           <entry key="JSX Harmony" value="114" />
-          <entry key="JavaScript" value="56" />
+          <entry key="JavaScript" value="57" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="Scratch" value="2" />
@@ -83,7 +84,7 @@
           <entry key="env" value="146" />
           <entry key="gitignore" value="15" />
           <entry key="html" value="109" />
-          <entry key="js" value="3172" />
+          <entry key="js" value="3533" />
           <entry key="json" value="286" />
           <entry key="jsx" value="13844" />
           <entry key="md" value="132" />
@@ -100,7 +101,7 @@
           <entry key="HTML" value="109" />
           <entry key="JSON" value="286" />
           <entry key="JSX Harmony" value="13844" />
-          <entry key="JavaScript" value="3155" />
+          <entry key="JavaScript" value="3516" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
@@ -125,13 +126,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/orders/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="128" column="10" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
+            <state relative-caret-position="184">
+              <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-end-line="9" />
               <folding>
+                <element signature="e#631#730#0" />
+                <element signature="e#815#1178#0" />
                 <element signature="e#1516#2005#0" />
+                <element signature="e#2315#3277#0" />
               </folding>
             </state>
           </provider>
@@ -140,8 +144,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="383">
+              <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/admin/router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+              <folding>
+                <element signature="e#313#556#0" />
+                <element signature="e#612#815#0" />
+                <element signature="e#880#1261#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -221,7 +239,6 @@
         <option value="$PROJECT_DIR$/.env.development" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.js" />
         <option value="$PROJECT_DIR$/src/NavLinks.jsx" />
-        <option value="$PROJECT_DIR$/lib/admin/router.js" />
         <option value="$PROJECT_DIR$/src/SocketController.jsx" />
         <option value="$PROJECT_DIR$/src/LightningNode.js" />
         <option value="$PROJECT_DIR$/src/LightningNode.jsx" />
@@ -269,6 +286,7 @@
         <option value="$PROJECT_DIR$/src/NewOrder.jsx" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/lib/orders/router.js" />
+        <option value="$PROJECT_DIR$/lib/admin/router.js" />
       </list>
     </option>
   </component>
@@ -431,12 +449,12 @@
       <workItem from="1550800716197" duration="2378000" />
       <workItem from="1550887642414" duration="2289000" />
       <workItem from="1550919524546" duration="1604000" />
-      <workItem from="1550926941777" duration="4142000" />
+      <workItem from="1550926941777" duration="6246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136679000" />
+    <option name="totallyTimeSpent" value="138783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
@@ -459,7 +477,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.28583544" />
+      <window_info anchor="right" id="Terminal" order="3" weight="0.28583544" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2765055" />
@@ -499,13 +517,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.env.mongo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="91" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.development">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -791,17 +802,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="383">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/orders/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="128" column="10" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
+        <state relative-caret-position="184">
+          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-end-line="9" />
           <folding>
+            <element signature="e#631#730#0" />
+            <element signature="e#815#1178#0" />
             <element signature="e#1516#2005#0" />
+            <element signature="e#2315#3277#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/admin/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="e#313#556#0" />
+            <element signature="e#612#815#0" />
+            <element signature="e#880#1261#0" />
           </folding>
         </state>
       </provider>
