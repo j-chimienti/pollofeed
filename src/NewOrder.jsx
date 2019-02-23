@@ -101,7 +101,9 @@ class NewOrder extends React.Component {
                         <div className={'row d-flex justify-content-between align-items-center'}>
                             <h5>Pay with Lightning</h5>
                             <button onClick={this.goHome} className={'d-block ml-auto btn btn-sm my-4'}>
-                                <i className={'fa fa-close'}></i>
+                                <i className={'fa fa-close fa-2x'}>
+
+                                </i>
                             </button>
                         </div>
                         {CurrencyDisplay}
@@ -131,7 +133,6 @@ class NewOrder extends React.Component {
                                 readOnly="readOnly"
                                 value={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}
                             >
-
                             </textarea>
                         </div>
                     </div>
