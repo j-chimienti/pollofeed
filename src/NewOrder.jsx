@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './Payment.css'
 import {Redirect} from 'react-router-dom'
 import QrCode from "./QrCode";
+import CopyToClipboard from "./CopyToClipboard";
 
 const {msat2sat} = require('fmtbtc')
 
@@ -105,12 +106,16 @@ class NewOrder extends React.Component {
                         </div>
                         {CurrencyDisplay}
                         <div className="input-group">
-                            <input className="form-control" type="text" value={payreq}/>
+                            <input className="form-control" type="text"  readOnly value={payreq} id={'payreq'}/>
                             <div className="input-group-append">
                                 <a className="btn btn-warning"
                                    href={`lightning:${payreq}`}>
                                     <span role={'img'}>⚡</span>
                                 </a>
+
+                            </div>
+                            <div className={'input-group-append'}>
+                                <CopyToClipboard/>
                             </div>
                         </div>
                         <QrCode payreq={payreq}/>
