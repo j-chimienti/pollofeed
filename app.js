@@ -14,6 +14,8 @@ const orderRouter = require('./lib/orders/router')
 
 const app = express()
 
+app.enable('trust proxy')
+
 app.set('currency', 'BTC')
 app.set('host', '0.0.0.0')
 app.use(helmet())
