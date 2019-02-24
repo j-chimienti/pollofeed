@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/ctl.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/ctl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/router.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +17,7 @@
     <session id="1724430321">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="52" />
+          <entry key="project.closed" value="53" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="5" />
@@ -442,16 +439,15 @@
       <workItem from="1550919524546" duration="1604000" />
       <workItem from="1550926941777" duration="6944000" />
       <workItem from="1550944532267" duration="607000" />
-      <workItem from="1550946725614" duration="549000" />
+      <workItem from="1550946725614" duration="1139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140637000" />
+    <option name="totallyTimeSpent" value="141227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27565733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
