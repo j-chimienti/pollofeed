@@ -8,7 +8,6 @@ const logger = require('morgan')
 const helmet = require('helmet')
 const compression = require('compression')
 const bodyParser = require('body-parser')
-const cors = require('cors')
 const rateLimit = require("express-rate-limit");
 
 const orderRouter = require('./lib/orders/router')
@@ -26,10 +25,9 @@ app.set('host', '0.0.0.0')
 app.use(limiter)
 app.use(helmet())
 app.use(compression())
-app.use(cors({credentials: true}))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({strict: true}))
-app.use(logger('dev'))
+app.use(logger('combined'))
 app.use(cookieParser())
 
 
