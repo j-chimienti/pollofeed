@@ -27,11 +27,10 @@ class Admin extends React.Component {
 
         super(props);
         this.getHostName = this.getHostName.bind(this)
+        this.getOrdersOnDate = this.getOrdersOnDate.bind(this)
         this.updateHostname = this.updateHostname.bind(this)
         this.fetchOrderData = this.fetchOrderData.bind(this)
         this.getHostName = this.getHostName.bind(this)
-        this.openWebcam = this.openWebcam.bind(this)
-        this.openWebgpio = this.openWebgpio.bind(this)
         this.logout = this.logout.bind(this)
         this.refreshData = this.refreshData.bind(this)
         this.throttleRefresh = _throttle(this.refreshData, 1000)
@@ -41,21 +40,11 @@ class Admin extends React.Component {
     async componentDidMount() {
 
         return Promise.all([
-            this.getHostName(),
-            this.updateHostname(),
             this.fetchOrderData()
-        ]).then(() => {
-
-            this.hnInterval = setInterval(async () => {
-                return await this.getHostName()
-            }, 1000 * 30)
-        })
+        ])
     }
 
-    componentWillUnmount() {
 
-        clearInterval(this.hnInterval)
-    }
     async refreshData() {
 
         this.setState({
@@ -120,18 +109,6 @@ class Admin extends React.Component {
     }
 
 
-    openWebcam() {
-
-        const webcam = window.open(this.state.webcamLink, '_blank', 'left=0,width=620,height=500')
-
-
-    }
-
-    openWebgpio() {
-
-        const webgpio = window.open(this.state.webgpioLink, '_blank', 'right=0,width=500,height=500')
-
-    }
 
     logout() {
 
@@ -141,29 +118,29 @@ class Admin extends React.Component {
             })
     }
 
+    getOrdersOnDate(date = new Date()) {
+
+        const _date = new Date(date).toLocaleDateString()
+
+        return this.state.orders.filter(order => {
+
+            const {completed_at} = order;
+
+            const completeDate = new Date(completed_at).toLocaleDateString()
+
+            return completeDate === _date;
+        })
+    }
 
     render() {
 
         const {pendingOrders, orders, refreshingData} = this.state;
-        const left = new Date(new Date().setHours(0, 0, 0, 0));
-        const right = new Date(new Date().setHours(23, 59, 59, 99))
 
-        let todayOrders = []
 
-        if (orders && Array.isArray(orders) && orders.length) {
-
-            todayOrders = orders.filter(order => {
-
-                const {completed_at} = order;
-
-                const completeTime = new Date(completed_at)
-
-                return left <= completeTime && completeTime <= right
-            })
-        }
-
+        let todayOrders = this.getOrdersOnDate(new Date())
         return (
             <div className={'admin'}>
+
 
                 <div className={'row d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
 
@@ -183,12 +160,6 @@ class Admin extends React.Component {
                         Logout
                     </a>
 
-                    <a className={'mx-2'} onClick={this.openWebgpio.bind(this)}>
-                        Feeder
-                    </a>
-                    <a className={'mx-2'} onClick={this.openWebcam.bind(this)}>
-                        Webcam
-                    </a>
                 </div>
 
                 {orders && orders.length && <div>

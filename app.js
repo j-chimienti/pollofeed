@@ -6,6 +6,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const helmet = require('helmet')
+const cors = require('cors')
 const compression = require('compression')
 const bodyParser = require('body-parser')
 const rateLimit = require("express-rate-limit");
@@ -22,20 +23,26 @@ const limiter = rateLimit({
 app.enable('trust proxy')
 app.set('currency', 'BTC')
 app.set('host', '0.0.0.0')
+
 app.use(limiter)
 app.use(helmet())
 app.use(compression())
+app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({strict: true}))
+
 app.use(logger('combined'))
-app.use(cookieParser())
+// https://www.npmjs.com/package/csurf
+// app.use(require('csurf')({ cookie: true }))
 
 
 app.use('/orders', orderRouter)
 app.use('/admin', adminRouter)
 
-
-app.options(['health', 'healthCheck'], (_, res) => res.sendStatus(200))
+app.get(['health', 'healthCheck'], rateLimit({
+	windowMs: 1 * 60 * 1000,
+	max: 4,
+}), cors(), (_, res) => res.sendStatus(200))
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(path.join(__dirname, 'build')))
