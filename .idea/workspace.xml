@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,7 +85,7 @@
           <entry key="html" value="109" />
           <entry key="js" value="4043" />
           <entry key="json" value="286" />
-          <entry key="jsx" value="14462" />
+          <entry key="jsx" value="14463" />
           <entry key="md" value="132" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
@@ -100,7 +99,7 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="109" />
           <entry key="JSON" value="286" />
-          <entry key="JSX Harmony" value="14462" />
+          <entry key="JSX Harmony" value="14463" />
           <entry key="JavaScript" value="4026" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -129,8 +128,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="207" column="41" lean-forward="true" selection-start-line="207" selection-start-column="41" selection-end-line="207" selection-end-column="41" />
+            <state relative-caret-position="104">
+              <caret line="206" lean-forward="true" selection-start-line="206" selection-end-line="206" />
             </state>
           </provider>
         </entry>
@@ -408,12 +407,12 @@
       <workItem from="1550988910087" duration="762000" />
       <workItem from="1551036442219" duration="1212000" />
       <workItem from="1551065694182" duration="2859000" />
-      <workItem from="1551217684924" duration="149000" />
+      <workItem from="1551217684924" duration="958000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146209000" />
+    <option name="totallyTimeSpent" value="147018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
@@ -778,8 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="207" column="41" lean-forward="true" selection-start-line="207" selection-start-column="41" selection-end-line="207" selection-end-column="41" />
+        <state relative-caret-position="104">
+          <caret line="206" lean-forward="true" selection-start-line="206" selection-end-line="206" />
         </state>
       </provider>
     </entry>
