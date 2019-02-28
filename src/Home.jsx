@@ -24,6 +24,11 @@ Modal.setAppElement('#root')
 
 export class Home extends Component {
 
+
+    state = {
+        submittingLightningInvoice: false
+    }
+
     constructor(props) {
         super(props);
         this.handlePostOrder = this.handlePostOrder.bind(this);
@@ -52,7 +57,11 @@ export class Home extends Component {
         return fetch(`/orders/invoice`, {method: 'POST'})
             .then(response => response.json())
             .then(inv => {
-                this.props.handleNewOrder(inv);
+                this.setState({
+                    submittingLightningInvoice: false,
+                }, () => {
+                    this.props.handleNewOrder(inv);
+                })
             })
             .catch(err => {
                 return this.setState({
@@ -102,7 +111,9 @@ export class Home extends Component {
                             onClick={this.handlePostOrder}
                             type="submit"
                             className="btn mx-auto mb-3 btn-feed btn-warning font-weight-bold text-gray text-uppercase d-flex justify-content-center">
-                            {submittingLightningInvoice ? (<div className={'donut'}></div>) : 'Feed'}
+                            {submittingLightningInvoice ? (<div className={'donut'}>
+
+                            </div>) : 'Feed'}
                         </button>
                     {paymentSuccess && <div className={'row d-flex'}>
                         <div className={'alert alert-success mx-auto'}>
