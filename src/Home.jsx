@@ -107,7 +107,7 @@ class Home extends Component {
 
                         <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
                             <div className={'embed-responsive embed-responsive-4by3'}>
-                                <iframe src={'https://eef2a2f9.ngrok.io'} width={'640'} height={'480'}>
+                                <iframe src={'https://be1741c5.ngrok.io'} width={'640'} height={'480'}>
                                 </iframe>
                                 {/*<VideoDisplay video={video}/>*/}
                             </div>
