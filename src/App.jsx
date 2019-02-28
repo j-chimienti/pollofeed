@@ -60,7 +60,7 @@ class App extends Component {
 
     componentDidMount() {
 
-        this.getLatestOrder()
+       // this.getLatestOrder()
     }
 
     static postData(url = '', data = {}) {
@@ -200,14 +200,7 @@ class App extends Component {
                 />
                 <BrowserRouter>
                     <Switch>
-                        <Route path={'/twitch'} render={props =>
-                            <div>
-                                <iframe src="https://player.twitch.tv/?channel=pollofeed" frameBorder="0"
-                                        allowFullScreen="true" scrolling="no" height="378" width="620">
 
-                                </iframe>
-                                </div>
-                        } />
                         <Route path={'/about'} exact component={About}/>
                         {/*<Route path={'/order/id/:id'}*/}
                                {/*render={props =>*/}
