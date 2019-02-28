@@ -36,10 +36,6 @@ export class Home extends Component {
 
     }
 
-    componentDidMount() {
-
-    }
-
 
     handlePostOrder(e) {
 
@@ -65,7 +61,7 @@ export class Home extends Component {
             })
             .catch(err => {
                 return this.setState({
-                    formResult: false,
+                    submittingLightningInvoice: false,
                 })
             })
 
@@ -76,9 +72,10 @@ export class Home extends Component {
             inv,
             modalIsOpen,
             closeModal,
-            paymentSuccess,
-            submittingLightningInvoice
+            paymentSuccess
         } = this.props;
+
+        const {submittingLightningInvoice} = this.state;
 
         return (
             <div className={'App'}>

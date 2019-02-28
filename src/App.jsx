@@ -10,9 +10,7 @@ import About from "./About";
 
 const initState = {
     inv: {},
-    orderState: '',
     modalIsOpen: false,
-    submittingLightningInvoice: false,
 }
 
 class App extends Component {
@@ -23,7 +21,6 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.listen = this.listen.bind(this)
-        this.success = this.success.bind(this)
         this.handleNewOrder = this.handleNewOrder.bind(this)
         this.closeModal = this.closeModal.bind(this)
     }
@@ -57,7 +54,6 @@ class App extends Component {
                 ...inv,
             },
             modalIsOpen: true,
-            submittingLightningInvoice: false
         }, () => {
             this.listen(inv.id)
         })
@@ -79,8 +75,15 @@ class App extends Component {
         //.then(response => response.json())
             .then(async (result) => {
 
-                const order = await result.json()
-                return this.success(order)
+                const inv = await result.json()
+                return this.setState({
+                    modalIsOpen: false,
+                    paymentSuccess: true,
+                    inv: {
+                        ...this.state.inv,
+                        ...inv
+                    }
+                })
             })
             .catch(err => {
                     return err.status === 402 ? this.listen(invId)
@@ -93,18 +96,6 @@ class App extends Component {
 
     }
 
-    success(inv) {
-
-        return this.setState({
-            modalIsOpen: false,
-            paymentSuccess: true,
-            inv: {
-                ...this.state.inv,
-                ...inv
-            }
-        })
-
-    }
 
 
     render() {
