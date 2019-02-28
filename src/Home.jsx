@@ -67,11 +67,9 @@ export class Home extends Component {
             inv,
             modalIsOpen,
             closeModal,
-            paymentSuccess
+            paymentSuccess,
+            submittingLightningInvoice
         } = this.props;
-
-        const {submittingLightningInvoice} = this.state;
-
 
         return (
             <div className={'App'}>
