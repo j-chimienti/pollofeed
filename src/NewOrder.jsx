@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './Payment.css'
-import {Redirect} from 'react-router-dom'
 import QrCode from "./QrCode";
 import CopyToClipboard from "./CopyToClipboard";
 
 const {msat2sat} = require('fmtbtc')
+
 
 
 const formatDur = x => {
@@ -14,8 +14,6 @@ const formatDur = x => {
 }
 
 
-const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
-
 
 class NewOrder extends React.Component {
 
@@ -23,52 +21,14 @@ class NewOrder extends React.Component {
     constructor(props) {
         super(props)
 
-        this.goHome = this.goHome.bind(this)
-        this.success = this.success.bind(this)
-        this.listen = this.listen.bind(this)
         this.state = {
             time: Date.now(),
             qr: null,
         }
     }
 
-    goHome() {
-
-        this.props.history.push('/')
-    }
-
-    success(inv) {
-
-        this.props.handleOrderSuccess(inv)
-        this.props.history.push('/')
-        // this.props.history.push('/order/paid')
-    }
-
-    listen(invId) {
-
-        return fetch(`${host}orders/invoice/${invId}/wait`, {method: 'get'})
-        //.then(response => response.json())
-            .then(async (result) => {
-
-                const order = await result.json()
-                return this.success(order)
-            })
-            .catch(err => {
-                    return err.status === 402 ? this.listen(invId)
-                        : err.status === 410 ? false
-                            : err.status === 'abort' ? null
-                                : setTimeout(() => this.listen(invId), 10000)
-                }
-            )
-
-
-    }
-
     async componentDidMount() {
 
-        const {inv: {id}} = this.props
-
-        this.listen(id)
         this.interval = setInterval(() => this.setState({time: Date.now()}), 1000)
     }
 
@@ -79,7 +39,7 @@ class NewOrder extends React.Component {
     render() {
         const {time} = this.state
 
-        const {inv: {msatoshi, quoted_currency, quoted_amount, expires_at, payreq}} = this.props
+        const {inv: {msatoshi, quoted_currency, quoted_amount, expires_at, payreq}, closeModal} = this.props
         const CurrencyDisplay = quoted_currency && quoted_currency !== 'BTC' ? <p className="font-weight-light small">
                 #{quoted_amount} #{quoted_currency} ≈ #{msat2sat(msatoshi, true)} satoshis
             </p>
@@ -92,7 +52,8 @@ class NewOrder extends React.Component {
         if (!(timeLeft > 0)) {
 
 
-            return <Redirect to={'/'}/>
+            closeModal()
+            return null;
         }
         return (
 
@@ -146,7 +107,8 @@ class NewOrder extends React.Component {
 }
 
 NewOrder.propTypes = {
-    inv: PropTypes.object.isRequired
+    inv: PropTypes.object.isRequired,
+    closeModal: PropTypes.func.isRequired,
 }
 NewOrder.defaultProps = {}
 

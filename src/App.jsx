@@ -5,26 +5,13 @@ import withAuth from './withAuth'
 import Admin from './Admin'
 import Login from './Login'
 import Home from './Home'
-import PaymentSuccess from './PaymentSuccess'
-import NewOrder from './NewOrder'
-import SocketController from './SocketController'
-import OrderInfo from './OrderInfo'
 import About from "./About";
 
-const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 const initState = {
-    latestOrder: {
-        video: '',
-        invoiceTime: null,
-        completed_at: null,
-        acknowledged: false
-
-    },
-    pendingOrders: [],
     inv: {},
     orderState: '',
-    video: '',
+    modalIsOpen: false,
 }
 
 class App extends Component {
@@ -34,34 +21,12 @@ class App extends Component {
 
     constructor(props) {
         super(props)
-        this.getLatestOrder = this.getLatestOrder.bind(this)
-        this.handleOrderSuccess = this.handleOrderSuccess.bind(this)
-        this.getPendingOrders = this.getPendingOrders.bind(this)
-        this.handleOrderProcessing = this.handleOrderProcessing.bind(this)
-        this.handleOrderComplete = this.handleOrderComplete.bind(this)
-
+        this.listen = this.listen.bind(this)
+        this.success = this.success.bind(this)
         this.handleNewOrder = this.handleNewOrder.bind(this)
-        this.updateInv = this.updateInv.bind(this)
+        this.closeModal = this.closeModal.bind(this)
     }
 
-
-
-    updateInv(inv) {
-
-
-        return this.setState({
-            inv: {
-                ...this.state.inv,
-                ...inv,
-            }
-        })
-    }
-
-
-    componentDidMount() {
-
-       // this.getLatestOrder()
-    }
 
     static postData(url = '', data = {}) {
 
@@ -81,18 +46,6 @@ class App extends Component {
     }
 
 
-    async getPendingOrders() {
-
-        const orders = await fetch(`${host}orders/pending`).then(response => response.json())
-            .catch(err => {console.error(err); return false})
-
-        if (orders) {
-
-            this.setState({
-                pendingOrders: orders
-            })
-        }
-    }
 
     handleNewOrder(inv) {
 
@@ -102,141 +55,77 @@ class App extends Component {
                 ...this.state.inv,
                 ...inv,
             },
+            modalIsOpen: true
+        }, () => {
+            this.listen(inv.id)
         })
     }
 
-    getLatestOrder() {
 
-        window.fetch(`${host}orders/latest`)
-            .then(response => response.json())
-            .then(order => {
-                this.setState({
-                    ...this.state,
-                    video: order && order.video ? order.video : '',
-                    latestOrder: {
-                        ...this.state.latestOrder,
-                        ...order
-                    }
-                })
+    closeModal() {
+
+        return this.setState({
+            modalIsOpen: false,
+        })
+    }
+
+
+
+    listen(invId) {
+
+        return fetch(`/orders/invoice/${invId}/wait`, {method: 'get'})
+        //.then(response => response.json())
+            .then(async (result) => {
+
+                const order = await result.json()
+                return this.success(order)
             })
-            .catch(console.error)
+            .catch(err => {
+                    return err.status === 402 ? this.listen(invId)
+                        : err.status === 410 ? false
+                            : err.status === 'abort' ? null
+                                : setTimeout(() => this.listen(invId), 10000)
+                }
+            )
+
+
     }
 
-    handleOrderComplete(order) {
-
-
-        let _state = {
-            latestOrder: order,
-            orderState: 'complete',
-            video: order.video,
-        }
-
-        if (this.state.inv && this.state.inv.id === order.id) {
-
-            _state = {
-                ..._state,
-                inv: {...this.state.inv, ...order, state: 'complete', complete: true}
-            }
-
-        }
-        return this.setState({
-            ...this.state,
-            ..._state,
-        })
-    }
-
-    handleOrderProcessing(orderId) {
-
-        let _state = {
-            orderState: 'feeding'
-        }
-
-        if (this.state.inv && this.state.inv.id === orderId) {
-
-
-            _state = {
-                ..._state,
-                inv: {
-                    ...this.state.inv,
-                    state: 'feeding',
-                    acknowledged: true,
-                    complete: false
-                },
-                paymentSuccessModelOpen: true
-
-            }
-        }
-        this.setState({
-            ...this.state,
-            ..._state,
-        })
-    }
-
-    handleOrderSuccess(inv) {
+    success(inv) {
 
         return this.setState({
-            ...this.state,
+            modalIsOpen: false,
+            paymentSuccess: true,
             inv: {
                 ...this.state.inv,
-                ...inv,
-                acknowledged: false,
-                state: 'new'
-            },
-            orderState: 'new',
+                ...inv
+            }
         })
+
     }
 
 
     render() {
 
 
-        const {pendingOrders, latestOrder, inv, orderState, video} = this.state
+        const {inv} = this.state
 
         return (
             <div>
-                <SocketController
-                    handleOrderComplete={this.handleOrderComplete}
-                    handleOrderProcessing={this.handleOrderProcessing}
-                />
                 <BrowserRouter>
                     <Switch>
-
                         <Route path={'/about'} exact component={About}/>
-                        {/*<Route path={'/order/id/:id'}*/}
-                               {/*render={props =>*/}
-                                   {/*<OrderInfo {...props} inv={inv} updateInv={this.updateInv}/>*/}
-                               {/*}*/}
-                        {/*/>*/}
-                        <Route exact path={'/order/new'} render={props =>
-                            <NewOrder  {...props} inv={inv} handleOrderSuccess={this.handleOrderSuccess}/>
-                        }
-                        />
-                        {/*<Route path={'/order/paid'}*/}
-                               {/*exact*/}
-                               {/*render={props => {*/}
-                                   {/*return <PaymentSuccess {...props}*/}
-                                                          {/*updateInv={this.updateInv}*/}
-                                                          {/*inv={inv}*/}
-                                                          {/*getPendingOrders={this.getPendingOrders}*/}
-                                                          {/*pendingOrders={pendingOrders}*/}
-                                   {/*/>*/}
-                               {/*}}*/}
-                        {/*/>*/}
-
                         <Route path="/" exact
                                render={(props) => <Home
                                    {...props}
+                                   {...this.state}
                                    handleNewOrder={this.handleNewOrder}
-                                   orderState={orderState}
-                                   latestOrder={latestOrder}
-                                   video={video}
+                                   closeModal={this.closeModal}
                                    inv={inv}
                                />}
                         />
                         <Route path={'/admin'} component={withAuth(Admin)}/>
                         <Route path="/login" component={Login}/>
-
-
                     </Switch>
                 </BrowserRouter>
 

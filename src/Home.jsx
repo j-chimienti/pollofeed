@@ -1,18 +1,28 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import OrderStatus from "./OrderStatus";
-import VideoDisplay from "./VideoDisplay";
-import DownloadInvoice from "./DownloadInvoice";
 import Footer from "./Footer";
-import OrderGraph from "./OrderGraph";
-import OrderTable from "./OrderTable";
 import {Link} from "react-router-dom";
 import SocialShare from "./SocialShare";
+import NewOrder from "./NewOrder";
+import Modal from "react-modal";
 
-const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 
-class Home extends Component {
+const customStyles = {
+    content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+    }
+};
+
+// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
+Modal.setAppElement('#root')
+
+export class Home extends Component {
 
     state = {
 
@@ -45,14 +55,10 @@ class Home extends Component {
 
     // post a new invoice request from lighting client BE
     async postOrder() {
-
-
-        return fetch(`${host}orders/invoice`, {method: 'POST'})
+        return fetch(`/orders/invoice`, {method: 'POST'})
             .then(response => response.json())
             .then(inv => {
-
                 this.props.handleNewOrder(inv);
-                this.props.history.push('order/new');
             })
             .catch(err => {
                 return this.setState({
@@ -65,7 +71,10 @@ class Home extends Component {
 
     render() {
         const {
-            orderState, latestOrder, video, inv
+            inv,
+            modalIsOpen,
+            closeModal,
+            paymentSuccess
         } = this.props;
 
         const {submittingLightningInvoice} = this.state;
@@ -73,10 +82,22 @@ class Home extends Component {
 
         return (
             <div className={'App'}>
+
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    style={customStyles}
+                    contentLabel="invoice"
+                >
+                    <NewOrder
+                        closeModal={closeModal}
+                        inv={inv}
+                    />
+                </Modal>
+
                 <header className="App-header">
                         <h1 className={'App-title pt-3 text-warning mb-3'}>
                             <i className={'fa fa-bolt mr-3'}>
-
                             </i>
                             Pollo Feed
                         </h1>
@@ -92,8 +113,11 @@ class Home extends Component {
                             className="btn mx-auto mb-3 btn-feed btn-warning font-weight-bold text-gray text-uppercase d-flex justify-content-center">
                             {submittingLightningInvoice ? (<div className={'donut'}></div>) : 'Feed'}
                         </button>
-                    <OrderStatus orderState={orderState} inv={inv}/>
-
+                    {paymentSuccess && <div className={'row'}>
+                        <div className={'alert alert-success'}>
+                            Payment Successful!
+                        </div>
+                    </div>}
                     <div className={'row my-3'}>
 
                         <span className={'d-none d-md-inline ml-2'}>
@@ -107,24 +131,14 @@ class Home extends Component {
 
                         <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
                             <div className={'embed-responsive embed-responsive-4by3'}>
-                                <iframe src={'https://be1741c5.ngrok.io'} width={'640'} height={'480'}>
+                                <iframe src={'https://pollofeed.ngrok.io'} width={'640'} height={'480'}>
                                 </iframe>
-                                {/*<VideoDisplay video={video}/>*/}
                             </div>
                         </div>
 
                     </div>
 
 
-                    {/*{latestOrder && latestOrder.completed_at && (*/}
-                        {/*<Link to={'/order/id/' + latestOrder.id}>*/}
-                            {/*<h5>*/}
-                                {/*<small className={'text-muted small mx-1'}>*/}
-                                    {/*{new Date(latestOrder.completed_at).toLocaleString()}*/}
-                                {/*</small>*/}
-                            {/*</h5>*/}
-                        {/*</Link>*/}
-                    {/*)}*/}
                     <div className={'d-inline d-md-none'}>
                         <SocialShare
                             title={'feed chickens through automated chicken feeder, powered by bitcoin lightning payments 🐔⚡'}
@@ -141,12 +155,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-    orderState: PropTypes.string.isRequired,
-        latestOrder: PropTypes.object,
-    // completed_at: PropTypes.string.isRequired,
-    video: PropTypes.string.isRequired,
     handleNewOrder: PropTypes.func.isRequired,
-    // pendingOrders: PropTypes.array.isRequired,
     inv: PropTypes.object.isRequired,
 };
 
