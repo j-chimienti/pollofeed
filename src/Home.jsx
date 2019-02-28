@@ -110,8 +110,7 @@ class Home extends Component {
 
                         <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
                             <div className={'embed-responsive embed-responsive-4by3'}>
-                                <iframe src={'https://eef2a2f9.ngrok.io'} width={'100%'}>
-
+                                <iframe src={'https://eef2a2f9.ngrok.io'} width={'640'} height={'480'}>
                                 </iframe>
                                 {/*<VideoDisplay video={video}/>*/}
                             </div>
@@ -120,17 +119,15 @@ class Home extends Component {
                     </div>
 
 
-
-
-                    {latestOrder && latestOrder.completed_at && (
-                        <Link to={'/order/id/' + latestOrder.id}>
-                            <h5>
-                                <small className={'text-muted small mx-1'}>
-                                    {new Date(latestOrder.completed_at).toLocaleString()}
-                                </small>
-                            </h5>
-                        </Link>
-                    )}
+                    {/*{latestOrder && latestOrder.completed_at && (*/}
+                        {/*<Link to={'/order/id/' + latestOrder.id}>*/}
+                            {/*<h5>*/}
+                                {/*<small className={'text-muted small mx-1'}>*/}
+                                    {/*{new Date(latestOrder.completed_at).toLocaleString()}*/}
+                                {/*</small>*/}
+                            {/*</h5>*/}
+                        {/*</Link>*/}
+                    {/*)}*/}
                     <div className={'d-inline d-md-none'}>
                         <SocialShare
                             title={'feed chickens through automated chicken feeder, powered by bitcoin lightning payments 🐔⚡'}
