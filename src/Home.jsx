@@ -73,9 +73,6 @@ class Home extends Component {
 
         return (
             <div className={'App'}>
-
-
-
                 <header className="App-header">
                         <h1 className={'App-title pt-3 text-warning mb-3'}>
                             <i className={'fa fa-bolt mr-3'}>
