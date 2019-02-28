@@ -39,7 +39,7 @@ let port = normalizePort(process.env.APP_PORT || '4321')
  */
 let server = http.createServer(app)
 
-let io = require('socket.io')(server)
+//let io = require('socket.io')(server)
 
 
 
@@ -48,17 +48,17 @@ const charge = LnChargeClient(process.env.CHARGE_URL, process.env.CHARGE_TOKEN)
 global.lnCharge = charge
 
 
-global.io = io
+//global.io = io
 
-
-global.io.on('connection', function (socket) {
-
-
-	// socket.on('join', orderId => {
-	// 	socket.join(orderId)
-	// })
-
-})
+//
+// global.io.on('connection', function (socket) {
+//
+//
+// 	// socket.on('join', orderId => {
+// 	// 	socket.join(orderId)
+// 	// })
+//
+// })
 
 /**
  * Listen on provided port, on all network interfaces.

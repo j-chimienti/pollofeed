@@ -133,7 +133,8 @@ export class Home extends Component {
 
                         <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
                             <div className={'embed-responsive embed-responsive-4by3'}>
-                                <iframe src={'https://pollofeed.ngrok.io'} width={'640'} height={'480'}>
+                                <iframe src={'https://pollofeed.ngrok.io'} width={'100%'} height={'480'}>
+                                    <div className={'donut'}></div>
                                 </iframe>
                             </div>
                         </div>
