@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -85,7 +83,7 @@
           <entry key="html" value="116" />
           <entry key="js" value="4052" />
           <entry key="json" value="286" />
-          <entry key="jsx" value="14533" />
+          <entry key="jsx" value="14534" />
           <entry key="md" value="132" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
@@ -99,7 +97,7 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="116" />
           <entry key="JSON" value="286" />
-          <entry key="JSX Harmony" value="14533" />
+          <entry key="JSX Harmony" value="14534" />
           <entry key="JavaScript" value="4035" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -147,7 +145,7 @@
         <entry file="file://$PROJECT_DIR$/src/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="109" column="31" lean-forward="true" selection-start-line="109" selection-start-column="31" selection-end-line="110" selection-end-column="41" />
+              <caret line="109" column="71" selection-start-line="109" selection-start-column="71" selection-end-line="109" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -280,10 +278,10 @@
         <option value="$PROJECT_DIR$/src/Admin.jsx" />
         <option value="$PROJECT_DIR$/src/NewOrder.jsx" />
         <option value="$PROJECT_DIR$/src/App.jsx" />
-        <option value="$PROJECT_DIR$/src/Home.jsx" />
         <option value="$PROJECT_DIR$/vid.html" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/lib/orders/router.js" />
+        <option value="$PROJECT_DIR$/src/Home.jsx" />
       </list>
     </option>
   </component>
@@ -453,16 +451,15 @@
       <workItem from="1551036442219" duration="1212000" />
       <workItem from="1551065694182" duration="2859000" />
       <workItem from="1551217684924" duration="1010000" />
-      <workItem from="1551312262095" duration="1904000" />
+      <workItem from="1551312262095" duration="2158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148974000" />
+    <option name="totallyTimeSpent" value="149228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27565733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -823,7 +820,7 @@
     <entry file="file://$PROJECT_DIR$/src/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="109" column="31" lean-forward="true" selection-start-line="109" selection-start-column="31" selection-end-line="110" selection-end-column="41" />
+          <caret line="109" column="71" selection-start-line="109" selection-start-column="71" selection-end-line="109" selection-end-column="71" />
         </state>
       </provider>
     </entry>
