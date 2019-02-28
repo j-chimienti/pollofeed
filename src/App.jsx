@@ -12,6 +12,7 @@ const initState = {
     inv: {},
     orderState: '',
     modalIsOpen: false,
+    submittingLightningInvoice: false,
 }
 
 class App extends Component {
@@ -55,7 +56,8 @@ class App extends Component {
                 ...this.state.inv,
                 ...inv,
             },
-            modalIsOpen: true
+            modalIsOpen: true,
+            submittingLightningInvoice: false
         }, () => {
             this.listen(inv.id)
         })

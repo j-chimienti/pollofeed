@@ -24,12 +24,6 @@ Modal.setAppElement('#root')
 
 export class Home extends Component {
 
-    state = {
-
-        submittingLightningInvoice: false,
-
-    }
-
     constructor(props) {
         super(props);
         this.handlePostOrder = this.handlePostOrder.bind(this);
@@ -62,7 +56,6 @@ export class Home extends Component {
             })
             .catch(err => {
                 return this.setState({
-                    submittingLightningInvoice: false,
                     formResult: false,
                 })
             })
@@ -113,8 +106,8 @@ export class Home extends Component {
                             className="btn mx-auto mb-3 btn-feed btn-warning font-weight-bold text-gray text-uppercase d-flex justify-content-center">
                             {submittingLightningInvoice ? (<div className={'donut'}></div>) : 'Feed'}
                         </button>
-                    {paymentSuccess && <div className={'row'}>
-                        <div className={'alert alert-success'}>
+                    {paymentSuccess && <div className={'row d-flex'}>
+                        <div className={'alert alert-success mx-auto'}>
                             Payment Successful!
                         </div>
                     </div>}

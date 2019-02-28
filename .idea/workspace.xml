@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -85,7 +87,7 @@
           <entry key="html" value="116" />
           <entry key="js" value="4056" />
           <entry key="json" value="286" />
-          <entry key="jsx" value="15229" />
+          <entry key="jsx" value="15294" />
           <entry key="md" value="132" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
@@ -99,7 +101,7 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="116" />
           <entry key="JSON" value="286" />
-          <entry key="JSX Harmony" value="15229" />
+          <entry key="JSX Harmony" value="15294" />
           <entry key="JavaScript" value="4039" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -128,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-456">
-              <caret line="97" column="26" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="26" />
+            <state relative-caret-position="279">
+              <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -149,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="133" column="72" selection-start-line="133" selection-start-column="72" selection-end-line="133" selection-end-column="72" />
+            <state relative-caret-position="89">
+              <caret line="108" column="108" selection-start-line="108" selection-start-column="108" selection-end-line="108" selection-end-column="108" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -260,8 +262,8 @@
         <option value="$PROJECT_DIR$/vid.html" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/lib/orders/router.js" />
-        <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/NewOrder.jsx" />
+        <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/Home.jsx" />
       </list>
     </option>
@@ -432,12 +434,12 @@
       <workItem from="1551036442219" duration="1212000" />
       <workItem from="1551065694182" duration="2859000" />
       <workItem from="1551217684924" duration="1010000" />
-      <workItem from="1551312262095" duration="5709000" />
+      <workItem from="1551312262095" duration="6798000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152779000" />
+    <option name="totallyTimeSpent" value="153868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
@@ -794,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-456">
-          <caret line="97" column="26" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="26" />
+        <state relative-caret-position="279">
+          <caret line="59" column="45" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -804,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="133" column="72" selection-start-line="133" selection-start-column="72" selection-end-line="133" selection-end-column="72" />
+        <state relative-caret-position="89">
+          <caret line="108" column="108" selection-start-line="108" selection-start-column="108" selection-end-line="108" selection-end-column="108" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
