@@ -40,7 +40,8 @@ class NewOrder extends React.Component {
     success(inv) {
 
         this.props.handleOrderSuccess(inv)
-        this.props.history.push('/order/paid')
+        this.props.history.push('/')
+        // this.props.history.push('/order/paid')
     }
 
     listen(invId) {

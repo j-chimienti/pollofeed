@@ -209,26 +209,26 @@ class App extends Component {
                                 </div>
                         } />
                         <Route path={'/about'} exact component={About}/>
-                        <Route path={'/order/id/:id'}
-                               render={props =>
-                                   <OrderInfo {...props} inv={inv} updateInv={this.updateInv}/>
-                               }
-                        />
+                        {/*<Route path={'/order/id/:id'}*/}
+                               {/*render={props =>*/}
+                                   {/*<OrderInfo {...props} inv={inv} updateInv={this.updateInv}/>*/}
+                               {/*}*/}
+                        {/*/>*/}
                         <Route exact path={'/order/new'} render={props =>
                             <NewOrder  {...props} inv={inv} handleOrderSuccess={this.handleOrderSuccess}/>
                         }
                         />
-                        <Route path={'/order/paid'}
-                               exact
-                               render={props => {
-                                   return <PaymentSuccess {...props}
-                                                          updateInv={this.updateInv}
-                                                          inv={inv}
-                                                          getPendingOrders={this.getPendingOrders}
-                                                          pendingOrders={pendingOrders}
-                                   />
-                               }}
-                        />
+                        {/*<Route path={'/order/paid'}*/}
+                               {/*exact*/}
+                               {/*render={props => {*/}
+                                   {/*return <PaymentSuccess {...props}*/}
+                                                          {/*updateInv={this.updateInv}*/}
+                                                          {/*inv={inv}*/}
+                                                          {/*getPendingOrders={this.getPendingOrders}*/}
+                                                          {/*pendingOrders={pendingOrders}*/}
+                                   {/*/>*/}
+                               {/*}}*/}
+                        {/*/>*/}
 
                         <Route path="/" exact
                                render={(props) => <Home
