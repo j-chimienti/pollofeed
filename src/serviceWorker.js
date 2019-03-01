@@ -78,6 +78,8 @@ function registerValidSW(swUrl, config) {
                             if (config && config.onUpdate) {
                                 config.onUpdate(registration)
                             }
+
+                            window.location.reload(true)
                         } else {
                             // At this point, everything has been precached.
                             // It's the perfect time to display a
@@ -130,6 +132,8 @@ export function unregister() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.ready.then(registration => {
             registration.unregister()
+
+            window.location.reload(true)
         })
     }
 }
