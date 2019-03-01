@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/ordersByDay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mongo/createIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mongo/createIndex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/ChickenFeedOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/ChickenFeedOrder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/dao.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/dao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/orders/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/orders/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -91,7 +83,7 @@
           <entry key="env" value="146" />
           <entry key="gitignore" value="15" />
           <entry key="html" value="116" />
-          <entry key="js" value="5208" />
+          <entry key="js" value="5209" />
           <entry key="json" value="286" />
           <entry key="jsx" value="15462" />
           <entry key="md" value="132" />
@@ -108,7 +100,7 @@
           <entry key="HTML" value="116" />
           <entry key="JSON" value="286" />
           <entry key="JSX Harmony" value="15462" />
-          <entry key="JavaScript" value="5191" />
+          <entry key="JavaScript" value="5192" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
@@ -157,12 +149,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="135" column="39" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+            <state relative-caret-position="397">
+              <caret line="135" column="10" lean-forward="true" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="n#!!block;n#register#0" />
                 <element signature="n#!!block;n#registerValidSW#0" />
+                <element signature="n#!!block;n#checkValidServiceWorker#0" />
               </folding>
             </state>
           </provider>
@@ -494,16 +487,15 @@
       <workItem from="1551365401376" duration="62000" />
       <workItem from="1551376204866" duration="1159000" />
       <workItem from="1551401625402" duration="2018000" />
-      <workItem from="1551470411036" duration="2031000" />
+      <workItem from="1551470411036" duration="2328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162228000" />
+    <option name="totallyTimeSpent" value="162525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27565733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -879,12 +871,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="135" column="39" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
+        <state relative-caret-position="397">
+          <caret line="135" column="10" lean-forward="true" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="n#!!block;n#register#0" />
             <element signature="n#!!block;n#registerValidSW#0" />
+            <element signature="n#!!block;n#checkValidServiceWorker#0" />
           </folding>
         </state>
       </provider>
