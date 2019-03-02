@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,7 +19,7 @@
     <session id="1724430321">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="62" />
+          <entry key="project.closed" value="63" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="7" />
           <entry key="project.open.time.10" value="5" />
@@ -34,15 +36,15 @@
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="9" />
           <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="11" />
+          <entry key="project.open.time.8" value="12" />
           <entry key="project.open.time.9" value="8" />
-          <entry key="project.opened" value="63" />
+          <entry key="project.opened" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Dockerfile" value="7" />
-          <entry key="css" value="17" />
+          <entry key="css" value="19" />
           <entry key="development" value="7" />
           <entry key="env" value="17" />
           <entry key="example" value="1" />
@@ -50,7 +52,7 @@
           <entry key="html" value="12" />
           <entry key="js" value="78" />
           <entry key="json" value="5" />
-          <entry key="jsx" value="121" />
+          <entry key="jsx" value="122" />
           <entry key="md" value="4" />
           <entry key="mongo" value="3" />
           <entry key="png" value="3" />
@@ -62,12 +64,12 @@
         <counts>
           <entry key=".env file" value="27" />
           <entry key="Bash" value="12" />
-          <entry key="CSS" value="17" />
+          <entry key="CSS" value="19" />
           <entry key="Dockerfile" value="7" />
           <entry key="HTML" value="12" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="5" />
-          <entry key="JSX Harmony" value="121" />
+          <entry key="JSX Harmony" value="122" />
           <entry key="JavaScript" value="76" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="5" />
@@ -78,14 +80,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Dockerfile" value="228" />
-          <entry key="css" value="565" />
+          <entry key="css" value="598" />
           <entry key="development" value="15" />
           <entry key="env" value="146" />
           <entry key="gitignore" value="15" />
           <entry key="html" value="116" />
           <entry key="js" value="5209" />
           <entry key="json" value="286" />
-          <entry key="jsx" value="15462" />
+          <entry key="jsx" value="15632" />
           <entry key="md" value="132" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
@@ -95,11 +97,11 @@
         <counts>
           <entry key=".env file" value="161" />
           <entry key="Bash" value="158" />
-          <entry key="CSS" value="565" />
+          <entry key="CSS" value="598" />
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="116" />
           <entry key="JSON" value="286" />
-          <entry key="JSX Harmony" value="15462" />
+          <entry key="JSX Harmony" value="15632" />
           <entry key="JavaScript" value="5192" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -109,7 +111,7 @@
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="59" />
+          <entry key="ESLintLanguageService" value="60" />
         </counts>
       </usages-collector>
     </session>
@@ -129,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/src/App.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="114" column="70" selection-start-line="114" selection-start-column="56" selection-end-line="114" selection-end-column="70" />
+              <caret line="114" column="58" lean-forward="true" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -137,26 +139,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            <state relative-caret-position="426">
+              <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="135" column="10" lean-forward="true" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="n#!!block;n#register#0" />
-                <element signature="n#!!block;n#registerValidSW#0" />
-                <element signature="n#!!block;n#checkValidServiceWorker#0" />
-              </folding>
+            <state relative-caret-position="535">
+              <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -164,7 +160,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-421">
+            <state relative-caret-position="115">
               <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
             </state>
           </provider>
@@ -191,7 +187,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>react-modal</find>
       <find>Modal</find>
       <find>orders =</find>
       <find>wid</find>
@@ -221,6 +216,7 @@
       <find>MONGO_U</find>
       <find>mongoConnect</find>
       <find>reload</find>
+      <find>donut</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/</dir>
@@ -266,7 +262,6 @@
         <option value="$PROJECT_DIR$/src/CopyToClipboard.css" />
         <option value="$PROJECT_DIR$/src/CopyToClipboard.jsx" />
         <option value="$PROJECT_DIR$/public/manifest.json" />
-        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/lib/orders/ctl.js" />
         <option value="$PROJECT_DIR$/lib/admin/router.js" />
@@ -277,13 +272,14 @@
         <option value="$PROJECT_DIR$/src/NewOrder.jsx" />
         <option value="$PROJECT_DIR$/bin/www.js" />
         <option value="$PROJECT_DIR$/src/App.jsx" />
-        <option value="$PROJECT_DIR$/src/Home.jsx" />
         <option value="$PROJECT_DIR$/lib/orders/router.js" />
         <option value="$PROJECT_DIR$/lib/orders/dao.js" />
         <option value="$PROJECT_DIR$/lib/orders/ChickenFeedOrder.js" />
         <option value="$PROJECT_DIR$/lib/mongo/createIndex.js" />
         <option value="$PROJECT_DIR$/bin/ordersByDay.js" />
         <option value="$PROJECT_DIR$/src/serviceWorker.js" />
+        <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/Home.jsx" />
       </list>
     </option>
   </component>
@@ -487,15 +483,17 @@
       <workItem from="1551365401376" duration="62000" />
       <workItem from="1551376204866" duration="1159000" />
       <workItem from="1551401625402" duration="2018000" />
-      <workItem from="1551470411036" duration="2328000" />
+      <workItem from="1551470411036" duration="3823000" />
+      <workItem from="1551505045176" duration="644000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162525000" />
+    <option name="totallyTimeSpent" value="164664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27565733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -514,7 +512,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.3630195" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.1908397" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2765055" />
@@ -704,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/orders/ctl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -777,13 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="150" column="25" lean-forward="true" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.development">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-388" />
@@ -838,6 +822,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/orders/dao.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -845,40 +836,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.jsx">
+    <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="114" column="70" selection-start-line="114" selection-start-column="56" selection-end-line="114" selection-end-column="70" />
+        <state relative-caret-position="351">
+          <caret line="133" column="37" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!block;n#register#0" />
+            <element signature="n#!!block;n#checkValidServiceWorker#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-421">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
+    <entry file="file://$PROJECT_DIR$/src/App.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="135" column="10" lean-forward="true" selection-start-line="135" selection-start-column="10" selection-end-line="135" selection-end-column="10" />
+        <state relative-caret-position="192">
+          <caret line="114" column="58" lean-forward="true" selection-start-line="114" selection-start-column="58" selection-end-line="114" selection-end-column="58" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="n#!!block;n#register#0" />
-            <element signature="n#!!block;n#registerValidSW#0" />
-            <element signature="n#!!block;n#checkValidServiceWorker#0" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
         </state>
       </provider>
     </entry>

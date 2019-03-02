@@ -26,7 +26,7 @@ export class Home extends Component {
 
 
     state = {
-        submittingLightningInvoice: false
+        submittingLightningInvoice: false,
     }
 
     constructor(props) {
@@ -66,6 +66,7 @@ export class Home extends Component {
             })
 
     }
+
 
     render() {
         const {
@@ -129,11 +130,13 @@ export class Home extends Component {
                         </span>
 
                         <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
-                            <div className={'embed-responsive embed-responsive-4by3'}>
-                                <iframe src={'https://pollofeed.ngrok.io'} width={'100%'} height={'480'}>
-                                    <div className={'donut'}></div>
+
+
+                                <iframe
+                                    title={'pollofeed live feed'}
+                                    src={'https://pollofeed.ngrok.io'} width={'100%'} height={'480'} className={'rounded'}>
+
                                 </iframe>
-                            </div>
                         </div>
 
                     </div>

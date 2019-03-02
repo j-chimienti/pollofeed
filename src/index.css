@@ -13,7 +13,7 @@
 .donut {
     display: inline-block;
     border: 4px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #7983ff;
+    border-left-color: var(--warning);
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -28,4 +28,9 @@
 .pointer {
 
     cursor: pointer !important;
+}
+
+
+iframe {
+    border: none;
 }
