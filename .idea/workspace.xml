@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -87,7 +85,7 @@
           <entry key="html" value="116" />
           <entry key="js" value="5209" />
           <entry key="json" value="286" />
-          <entry key="jsx" value="15632" />
+          <entry key="jsx" value="15672" />
           <entry key="md" value="132" />
           <entry key="sh" value="158" />
           <entry key="yml" value="925" />
@@ -101,7 +99,7 @@
           <entry key="Dockerfile" value="228" />
           <entry key="HTML" value="116" />
           <entry key="JSON" value="286" />
-          <entry key="JSX Harmony" value="15632" />
+          <entry key="JSX Harmony" value="15672" />
           <entry key="JavaScript" value="5192" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
@@ -142,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+            <state relative-caret-position="178">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -484,16 +482,15 @@
       <workItem from="1551376204866" duration="1159000" />
       <workItem from="1551401625402" duration="2018000" />
       <workItem from="1551470411036" duration="3823000" />
-      <workItem from="1551505045176" duration="644000" />
+      <workItem from="1551505045176" duration="939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164664000" />
+    <option name="totallyTimeSpent" value="164959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27565733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -512,7 +509,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.1908397" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.38507208" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2765055" />
@@ -874,8 +871,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+        <state relative-caret-position="178">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
         </state>
       </provider>
     </entry>

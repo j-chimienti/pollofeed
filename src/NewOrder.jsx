@@ -62,7 +62,7 @@ class NewOrder extends React.Component {
                     <div className={'mx-auto'} style={{maxWidth: '400px'}}>
                         <div className={'row d-flex justify-content-between align-items-center'}>
                             <h5>Pay with Lightning</h5>
-                            <button onClick={this.goHome} className={'d-block ml-auto btn btn-sm my-4'}>
+                            <button onClick={closeModal} className={'d-block ml-auto btn btn-sm my-4'}>
                                 <i className={'fa fa-close fa-2x'}>
 
                                 </i>
