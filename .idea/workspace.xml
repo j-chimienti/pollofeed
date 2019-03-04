@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/ordersByDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ordersByDay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Admin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderGraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderGraph.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +17,7 @@
     <session id="1724430321">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="65" />
+          <entry key="project.closed" value="66" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="8" />
           <entry key="project.open.time.10" value="6" />
@@ -87,7 +83,7 @@
           <entry key="env" value="146" />
           <entry key="gitignore" value="15" />
           <entry key="html" value="116" />
-          <entry key="js" value="5388" />
+          <entry key="js" value="5439" />
           <entry key="json" value="286" />
           <entry key="jsx" value="16055" />
           <entry key="md" value="132" />
@@ -104,7 +100,7 @@
           <entry key="HTML" value="116" />
           <entry key="JSON" value="286" />
           <entry key="JSX Harmony" value="16055" />
-          <entry key="JavaScript" value="5371" />
+          <entry key="JavaScript" value="5422" />
           <entry key="Markdown" value="132" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="Scratch" value="17" />
@@ -132,8 +128,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/ordersByDay.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+            <state relative-caret-position="515">
+              <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -485,16 +481,15 @@
       <workItem from="1551470411036" duration="3823000" />
       <workItem from="1551505045176" duration="1326000" />
       <workItem from="1551669105915" duration="1526000" />
-      <workItem from="1551706477970" duration="407000" />
+      <workItem from="1551706477970" duration="713000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167279000" />
+    <option name="totallyTimeSpent" value="167585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="23" width="1221" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27565733" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -513,7 +508,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.29262087" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.45122987" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2765055" />
@@ -873,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/ordersByDay.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+        <state relative-caret-position="515">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
         </state>
       </provider>
     </entry>
