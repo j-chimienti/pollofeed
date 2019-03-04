@@ -14,23 +14,15 @@ const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:432
 class Admin extends React.Component {
 
     state = {
-        pi_ip: null,
-        webcamLink: null,
-        webgpioLink: null,
-        pendingOrders: null,
-        latestOrder: null,
         orders: [],
-        orderCount: null
+        refreshing: false,
     }
 
     constructor(props) {
 
         super(props);
-        this.getHostName = this.getHostName.bind(this)
         this.getOrdersOnDate = this.getOrdersOnDate.bind(this)
-        this.updateHostname = this.updateHostname.bind(this)
         this.fetchOrderData = this.fetchOrderData.bind(this)
-        this.getHostName = this.getHostName.bind(this)
         this.logout = this.logout.bind(this)
         this.refreshData = this.refreshData.bind(this)
         this.throttleRefresh = _throttle(this.refreshData, 1000)
@@ -39,9 +31,7 @@ class Admin extends React.Component {
 
     async componentDidMount() {
 
-        return Promise.all([
-            this.fetchOrderData()
-        ])
+        return await this.fetchOrderData()
     }
 
 
@@ -50,9 +40,7 @@ class Admin extends React.Component {
         this.setState({
         refreshing: true
     }, async () => {
-
         await this.fetchOrderData();
-        this.setState({refreshing: false})
     })
 
     }
@@ -60,53 +48,16 @@ class Admin extends React.Component {
     async fetchOrderData() {
 
 
-        return Promise.all([
-            fetch(`${host}orders?offset=0`, {credentials: "include"}).then(response => response.json()),
-            fetch(`${host}orders/pending`, {credentials: "include"}).then(response => response.json()),
-            fetch(`${host}orders/latest`, {credentials: "include"}).then(response => response.json()),
-        ]).then(([orders, pendingOrders, latestOrder]) => {
-
-
-            this.setState({
-                pendingOrders,
-                latestOrder,
-                orders
-            })
+            fetch(`${host}orders?offset=0`, {credentials: "include"})
+                .then(response => response.json())
+                .then(orders => {
+                    this.setState({
+                        orders,
+                        refreshing: false
+                    })
         }).catch(console.error);
     }
 
-    async updateHostname() {
-
-        return window.fetch(`${host}admin/pi/hn`, {credentials: 'include', method: 'GET'})
-            .then(result => {
-                console.log(result.status)
-            }).catch(err => {
-                console.error(err)
-            })
-    }
-
-
-    async getHostName() {
-
-
-        return window.fetch(`${host}admin/pi`, {method: 'POST', credentials: 'include'})
-            .then(response => response.json())
-            .then(result => {
-                const {hostname} = result;
-
-                const pi_ip = hostname.startsWith('http://') ? hostname : 'http://' + hostname
-
-                this.setState({
-                    pi_ip,
-                    webcamLink: `${pi_ip}:8081/`,
-                    webgpioLink: `${pi_ip}:8000/`
-
-                })
-
-            }).catch(err => {
-                console.error(err);
-            })
-    }
 
 
 
@@ -134,7 +85,7 @@ class Admin extends React.Component {
 
     render() {
 
-        const {pendingOrders, orders, refreshingData} = this.state;
+        const {orders, refreshingData} = this.state;
 
 
         let todayOrders = this.getOrdersOnDate(new Date())
@@ -176,10 +127,6 @@ class Admin extends React.Component {
                             <div className={'text-monospace'}>{todayOrders.length}</div>
                         </div>
 
-                        <div className={'row d-flex justify-content-between align-items-center'}>
-                            <div className={'font-weight-bold'}>Pending Orders</div>
-                            <div className={'text-monospace'}>{pendingOrders.length}</div>
-                        </div>
                     </div>
 
                 </div>

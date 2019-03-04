@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import QrCode from "./QrCode";
 import {Link} from "react-router-dom";
 
+const node = '03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8@198.58.99.169:9735'
+
 function Footer() {
     return (
         <footer className="bg-light p-3 text-dark">
@@ -12,12 +14,12 @@ function Footer() {
                     <textarea
                         className={'form-control'}
                         rows={2}
-                        disabled style={{wordBreak: 'break-word'}} value={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}>
+                        disabled style={{wordBreak: 'break-word'}} value={node}>
                     </textarea>
 
 
                     <div className={'mx-auto'} style={{maxWidth: '300px', height: 'auto'}}>
-                        <QrCode payreq={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}/>
+                        <QrCode payreq={node}/>
                     </div>
 
 
