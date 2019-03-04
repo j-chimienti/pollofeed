@@ -54,7 +54,6 @@ class OrderGraph extends Component {
         return (
            <div className={'card py-3'} style={{height: 600, width: '100%'}}>
                <div id={'order_graph'}>
-
                </div>
            </div>
         );

@@ -34,18 +34,17 @@ async function main() {
 
 function getTotals(orders) {
 
-    var sats = 3000;
+    const totalMSats = orders.reduce((accum, order) => {
 
-    var serverCost = (0.06 * 24)
+        const {msatoshi} = order;
 
-    const totalSats = sats * orders.length;
+        return parseInt(msatoshi) + accum;
+    }, 0)
+
+    const totalSats = totalMSats / 1000;
     console.log('orders', orders.length)
-    console.log('sats', totalSats)
-    console.log('BTC', (totalSats / 1e8))
-    const USD = ((totalSats / 1e8) * 3850)
-    console.log('USD', USD.toFixed(2).toLocaleString())
-
-    console.log('profit', (USD - serverCost).toFixed(2).toLocaleString())
+    console.log('sats', totalSats.toLocaleString())
+    return true;
 }
 
 

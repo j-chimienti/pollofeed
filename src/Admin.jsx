@@ -71,16 +71,18 @@ class Admin extends React.Component {
 
     getOrdersOnDate(date = new Date()) {
 
+        return this.state.orders.filter(order => Admin.filterByDate(order, date))
+    }
+
+    static filterByDate = (order, date) => {
+
         const _date = new Date(date).toLocaleDateString()
 
-        return this.state.orders.filter(order => {
+        const {paid_at} = order;
 
-            const {completed_at} = order;
+        const completeDate = new Date(paid_at * 1000).toLocaleDateString()
 
-            const completeDate = new Date(completed_at).toLocaleDateString()
-
-            return completeDate === _date;
-        })
+        return completeDate === _date;
     }
 
     render() {
@@ -89,6 +91,7 @@ class Admin extends React.Component {
 
 
         let todayOrders = this.getOrdersOnDate(new Date())
+        let yesterdayOrders = this.getOrdersOnDate(new Date().getTime() - (86400000))
         return (
             <div className={'admin'}>
 
@@ -125,6 +128,11 @@ class Admin extends React.Component {
                         <div className={'row d-flex justify-content-between align-items-center'}>
                             <div className={'font-weight-bold'}>Today's Orders </div>
                             <div className={'text-monospace'}>{todayOrders.length}</div>
+                        </div>
+
+                        <div className={'row d-flex justify-content-between align-items-center'}>
+                            <div className={'font-weight-bold'}>Yesterday's Orders </div>
+                            <div className={'text-monospace'}>{yesterdayOrders.length}</div>
                         </div>
 
                     </div>
