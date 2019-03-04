@@ -3,32 +3,20 @@ import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import './OrderGraph.css'
 
-function OrderRow({id, paid_at, completed_at, status, msatoshi, video}) {
+function OrderRow({_id, feed, acknowledged, acknowledged_at, complete, id, status, msatoshi, quoted_currency, quoted_amount, rhash, payreq, pay_index, description, metadata, created_at, expires_at, paid_at, msatoshi_received}) {
 
 
-    const processing_time = new Date(completed_at) - new Date(paid_at * 1000)
-    const completionSeconds = parseInt(processing_time / 1000)
-    const completionTimeKlass = completionSeconds > 90 ? 'text-danger' : completionSeconds > 60 ? 'text-warning' : null
-
+    const paidAtTime = new Date(paid_at * 1000)
     return (<tr>
-        <td>
-            <Link to={`/order/id/${id}`}>
-                {new Date(completed_at).toLocaleString()}
-            </Link>
-        </td>
-        <td className={completionTimeKlass + ' text-right'}>
-            {completionSeconds.toLocaleString()}
-        </td>
-        <td className={'text-center text-capitalize'}>{status}</td>
+        <td className={'text-center text-capitalize'}>{paidAtTime.toLocaleString()}</td>
         <td className={'text-right'}>{msatoshi.toLocaleString()}</td>
-        <td className={'text-center'}><a href={video} target={'_blank'}>
-            <i className="fa fa-video-camera" aria-hidden="true">
-            </i>
-        </a></td>
     </tr>);
 }
 
 
+/**
+ * @return {null}
+ */
 function OrderTable({orders}) {
 
 
@@ -46,11 +34,8 @@ function OrderTable({orders}) {
         <table className={'table'}>
             <thead>
             <tr>
-                <th>Completed At</th>
-                <th className={'text-right'}>Seconds</th>
-                <th className={'text-center'}>Status</th>
+                <th className={'text-center'}>Paid At</th>
                 <th className={'text-right'}>MSatoshi</th>
-                <th className={'text-center'}>Video</th>
             </tr>
             </thead>
             <tbody>
