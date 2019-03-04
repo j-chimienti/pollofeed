@@ -14,7 +14,7 @@ class OrderGraph extends Component {
 
 
         const {orders}  = this.props
-        const completed_at = orders.map(o => new Date(o.completed_at))
+        const completed_at = orders.map(o => new Date(o.paid_at * 1000))
         const pay_index = orders.map(o => o.pay_index)
 
         this.chart = c3.generate({
