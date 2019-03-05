@@ -57,7 +57,7 @@ class NewOrder extends React.Component {
         }
         return (
 
-            <div className={'container'}>
+            <div className={'container py-3'} style={{height: '100vh'}}>
                 <div className={'row'}>
                     <div className={'mx-auto'} style={{maxWidth: '400px'}}>
                         <div className={'row d-flex justify-content-between align-items-center'}>

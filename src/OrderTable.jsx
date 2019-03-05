@@ -15,8 +15,8 @@ function OrderRow(
     const klass = (acknowledgedTime - paidAtTime) > (1000 * 10) ? 'text-right text-danger' : 'text-right'
     return (<tr>
         <td className={'text-center text-capitalize'}>{paidAtTime.toLocaleString()}</td>
-        <td className={'text-right'}>{(msatoshi / 1000).toLocaleString()}</td>
         <td className={klass}>{(acknowledgedTime).toLocaleString()}</td>
+        <td className={'text-right'}>{(msatoshi / 1000).toLocaleString()}</td>
     </tr>
     );
 }
@@ -40,8 +40,8 @@ function OrderTable({orders: _orders}) {
             <thead>
             <tr>
                 <th className={'text-center'}>Paid At</th>
-                <th className={'text-right'}>Feed Delay</th>
-                <th className={'text-right'}>MSatoshi</th>
+                <th className={'text-right'}>Fed At</th>
+                <th className={'text-right'}>Satoshi</th>
             </tr>
             </thead>
             <tbody>
