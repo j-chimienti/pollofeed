@@ -17,15 +17,19 @@ function OrderRow(
 }
 
 
-function OrderTable({orders}) {
+function descendingOrders(a,b) {
 
+    return b.paid_at - a.paid_at;
+}
+
+function OrderTable({orders: _orders}) {
+
+    const orders = _orders.sort(descendingOrders)
 
     //.filter(i => i.paid_at && i.completed_at && i.status && i.msatoshi && i.video);
     const msatoshis = orders.map(o => parseInt(o.msatoshi))
 
     const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
-
-
     return (
         <table className={'table'}>
             <thead>
@@ -42,7 +46,7 @@ function OrderTable({orders}) {
                 <td>
                     Total Satoshi's
                 </td>
-                <td title={`btc: ${msatoshiTotal / 1e9}`}>
+                <td title={`btc: ${msatoshiTotal / 1e12}`}>
                     {msatoshiTotal / 1e12}
                 </td>
             </tr>
