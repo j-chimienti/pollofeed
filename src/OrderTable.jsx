@@ -9,9 +9,12 @@ function OrderRow(
 
 
     const paidAtTime = new Date(paid_at * 1000)
+
+    const acknowledgedTime = new Date(acknowledged_at)
     return (<tr>
         <td className={'text-center text-capitalize'}>{paidAtTime.toLocaleString()}</td>
         <td className={'text-right'}>{(msatoshi / 1000).toLocaleString()}</td>
+        <td className={'text-right'}>{((acknowledgedTime - paidAtTime) / 1000).toLocaleString()}</td>
     </tr>
     );
 }
@@ -35,6 +38,7 @@ function OrderTable({orders: _orders}) {
             <thead>
             <tr>
                 <th className={'text-center'}>Paid At</th>
+                <th className={'text-right'}>Feed Delay</th>
                 <th className={'text-right'}>MSatoshi</th>
             </tr>
             </thead>
