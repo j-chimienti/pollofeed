@@ -11,10 +11,12 @@ function OrderRow(
     const paidAtTime = new Date(paid_at * 1000)
 
     const acknowledgedTime = new Date(acknowledged_at)
+
+    const klass = (acknowledgedTime - paidAtTime) > (1000 * 10) ? 'text-right text-danger' : 'text-right'
     return (<tr>
         <td className={'text-center text-capitalize'}>{paidAtTime.toLocaleString()}</td>
         <td className={'text-right'}>{(msatoshi / 1000).toLocaleString()}</td>
-        <td className={'text-right'}>{((acknowledgedTime - paidAtTime) / 1000).toLocaleString()}</td>
+        <td className={klass}>{(acknowledgedTime).toLocaleString()}</td>
     </tr>
     );
 }
