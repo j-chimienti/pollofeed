@@ -1,6 +1,6 @@
 const path = require('path')
 const moment = require('moment')
-
+const http = require('https')
 require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
@@ -16,20 +16,60 @@ async function main() {
 
     global.db = client.db(dbName)
 
-    var yesterday = moment().subtract(1, 'day').toDate()
+    const yesterday = moment().subtract(1, 'day').toDate();
     const todayOrders = await orderDao.getOrdersByDate()
     const yesterDayOrders = await orderDao.getOrdersByDate(yesterday)
 
 
-    getTotals(todayOrders);
-    getTotals(yesterDayOrders);
+    const price = await getBtcPrice()
+    let t = getTotals(todayOrders);
+    let y = getTotals(yesterDayOrders);
 
+
+    t = totalUSD(t, price)
+    y = totalUSD(y, price)
+    console.table([t, y])
     return true;
 
 
 
 
 }
+
+function totalUSD(obj, btcPrice) {
+
+    const {satsoshis} = obj;
+    const btc = satsoshis / 1e8
+
+    const usd = `$${(btc * btcPrice).toFixed(2).toLocaleString()}`
+    return Object.assign(obj, {usd, satsoshis: satsoshis.toLocaleString()})
+
+}
+
+function getBtcPrice() {
+
+    return new Promise((resolve, reject) => {
+        const url = 'https://blockchain.info/ticker';
+
+        http.get(url, res => {
+
+            let result  = ''
+
+            res.on('data', data => result += data)
+
+            res.on('error', err => reject(err))
+
+            res.on('end', () => {
+
+                const json = JSON.parse(result);
+
+                return resolve(json.USD['15m'])
+            })
+        })
+    })
+
+}
+
 
 
 function getTotals(orders) {
@@ -42,9 +82,7 @@ function getTotals(orders) {
     }, 0)
 
     const totalSats = totalMSats / 1000;
-    console.log('orders', orders.length)
-    console.log('sats', totalSats.toLocaleString())
-    return true;
+    return {orders: orders.length, satsoshis: totalSats}
 }
 
 

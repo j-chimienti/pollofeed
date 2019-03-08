@@ -43,7 +43,7 @@ class NewOrder extends React.Component {
         const CurrencyDisplay = quoted_currency && quoted_currency !== 'BTC' ? <p className="font-weight-light small">
                 #{quoted_amount} #{quoted_currency} ≈ #{msat2sat(msatoshi, true)} satoshis
             </p>
-            : <p className="font-weight-light small">{msat2sat(msatoshi, true)} satoshis</p>
+            : <p className="font-weight-light">{msat2sat(msatoshi, true)} satoshis</p>
 
         const timeLeft = expires_at - (time / 1000 | 0)
 
@@ -61,10 +61,8 @@ class NewOrder extends React.Component {
                 <div className={'row'}>
                     <div className={'mx-auto'} style={{maxWidth: '400px'}}>
                         <div className={'row d-flex justify-content-between align-items-center'}>
-                            <h5>Pay with Lightning</h5>
                             <button onClick={closeModal} className={'d-block ml-auto btn btn-sm my-4'}>
                                 <i className={'fa fa-close fa-2x'}>
-
                                 </i>
                             </button>
                         </div>
@@ -72,7 +70,7 @@ class NewOrder extends React.Component {
                         <div className="input-group">
                             <input className="form-control" type="text"  readOnly value={payreq} id={'payreq'}/>
                             <div className="input-group-append">
-                                <a className="btn btn-warning"
+                                <a className="btn btn-warning text-light"
                                    href={`lightning:${payreq}`}>
                                     <span role={'img'}>⚡</span>
                                 </a>
@@ -93,7 +91,7 @@ class NewOrder extends React.Component {
                                 rows={5}
                                 className={'form-control'}
                                 readOnly="readOnly"
-                                value={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8:198.58.99.169:9735'}
+                                value={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8@198.58.99.169:9735'}
                             >
                             </textarea>
                         </div>

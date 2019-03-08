@@ -14,15 +14,16 @@ function About(props) {
                 Pollo Feed is a automated chicken feeder powered by
                 bitcoin lighting payments
             </p>
+
+            <p>
+                There is a live feed of the chickens
+            </p>
             <h3>How?</h3>
             <p>
                 You click Feed to generate lightning invoice
             </p>
             <p>
-                Upon payment, you order is placed, and chickens are fed
-            </p>
-            <p>
-                The video will be loaded in the page for your viewing pleasure
+                Upon payment, you order is placed, the feeder is activated, and chickens are fed
             </p>
         </div>
     );
