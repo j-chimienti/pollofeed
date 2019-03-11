@@ -41,8 +41,15 @@ function totalUSD(obj, btcPrice) {
     const {satsoshis} = obj;
     const btc = satsoshis / 1e8
 
-    const usd = `$${(btc * btcPrice).toFixed(2).toLocaleString()}`
-    return Object.assign(obj, {usd, satsoshis: satsoshis.toLocaleString()})
+    const USD = btc * btcPrice
+    const usd = `$${(USD).toFixed(2).toLocaleString()}`
+
+    const cost = 6 * 24
+    const profit = (USD - (cost / 100)).toLocaleString('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })
+    return Object.assign(obj, {usd, profit, satsoshis: satsoshis.toLocaleString()})
 
 }
 
