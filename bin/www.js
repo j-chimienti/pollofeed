@@ -32,7 +32,7 @@ const dbName = process.env.DB_NAME || 'registration'
 /**
  * Get port from environment and store in Express.
  */
-let port = normalizePort(process.env.APP_PORT || '4321')
+let port = normalizePort(process.env.VIRTUAL_PORT || '4321')
 
 /**
  * Create HTTP server.
