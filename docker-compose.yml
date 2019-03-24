@@ -20,9 +20,8 @@ services:
     - nginxproxy
     env_file:
     - .env
-    - .env.mongo
     environment:
-      MONGO_URI: "mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@db/admin"
+      MONGO_URI: "mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@db/admin"
     ports:
     - "${VIRTUAL_PORT}:${VIRTUAL_PORT}"
 
