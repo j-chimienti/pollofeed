@@ -1,5 +1,5 @@
 ---
-- hosts: btcpayserver
+- hosts: pollofeed
   #remote_user: joe
   become: yes
   become_user: root

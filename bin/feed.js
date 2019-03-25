@@ -16,6 +16,8 @@ async function main() {
 
     global.db = client.db(dbName)
 
+    // await global.db.collection('orders').insertOne({id: "testing", feed: false})
+
     const result = await orderDao.updateTestOrder()
 
     console.log('updated:' , result.lastErrorObject.updatedExisting)
