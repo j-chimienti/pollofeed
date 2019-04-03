@@ -23,25 +23,9 @@ class QrCode extends Component {
         })
     }
 
-    componentWillMount() {
+    async componentDidMount() {
 
-    }
-
-    componentDidMount() {
-
-        this._getQr()
-
-    }
-
-    componentWillReceiveProps(nextProps) {
-
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-
-    }
-
-    componentWillUnmount() {
+        await this._getQr()
 
     }
 

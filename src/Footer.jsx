@@ -54,7 +54,7 @@ function Footer() {
                 <div className={'col-sm-4 my-3 my-sm-0'}>
                     <h5 className={'text-uppercase'}>
                     <a
-                        href={'https://tip.btcpal.online'} target={'_blank'}>
+                        href={'https://tip.pollofeed.com'} target={'_blank'}>
                             <span role={'img'} aria-label={'thumbs up'}>👍</span>
                             Tips Appreciated
                         </a>

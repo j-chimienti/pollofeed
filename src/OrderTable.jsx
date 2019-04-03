@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import './OrderGraph.css'
 
 function OrderRow(
-    {_id, feed, acknowledged, acknowledged_at, complete, id, status, msatoshi, quoted_currency, quoted_amount, rhash, payreq, pay_index, description, metadata, created_at, expires_at, paid_at, msatoshi_received}
+    {paid_at, acknowledged_at, msatoshi}
     ) {
 
 
@@ -27,9 +27,19 @@ function descendingOrders(a,b) {
     return b.paid_at - a.paid_at;
 }
 
+function validOrder(order) {
+    return order &&
+        order.hasOwnProperty('paid_at') &&
+        order.hasOwnProperty('acknowledged_at') &&
+        order.hasOwnProperty('msatoshi')
+
+}
+
 function OrderTable({orders: _orders}) {
 
-    const orders = _orders.sort(descendingOrders)
+    const orders = _orders
+        .filter(validOrder)
+        .sort(descendingOrders)
 
     //.filter(i => i.paid_at && i.completed_at && i.status && i.msatoshi && i.video);
     const msatoshis = orders.map(o => parseInt(o.msatoshi))
