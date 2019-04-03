@@ -1,9 +1,8 @@
 const path = require('path')
-const moment = require('moment')
-const http = require('https')
 require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
+const {getBtcPrice} = require("./btcPrice");
 
 
 async function main() {
@@ -16,25 +15,28 @@ async function main() {
 
     global.db = client.db(dbName)
 
-    const yesterday = moment().subtract(1, 'day').toDate();
+    // const yesterday = moment().subtract(1, 'day').toDate();
     const todayOrders = await orderDao.getOrdersByDate()
-    const yesterDayOrders = await orderDao.getOrdersByDate(yesterday)
+    // const yesterDayOrders = await orderDao.getOrdersByDate(yesterday)
 
 
     const price = await getBtcPrice()
     let t = getTotals(todayOrders);
-    let y = getTotals(yesterDayOrders);
+   // let y = getTotals(yesterDayOrders);
 
 
     t = totalUSD(t, price)
-    y = totalUSD(y, price)
-    console.table([t, y])
+    // y = totalUSD(y, price)
+    console.table([t])
     return true;
 
 
 
 
 }
+
+const serverCostPerDay = (0.03 * 24) + (0.0075 * 24)
+// const serverCostPerDay = (0.015 * 24) + (0.0075 * 24)
 
 function totalUSD(obj, btcPrice) {
 
@@ -44,36 +46,11 @@ function totalUSD(obj, btcPrice) {
     const USD = btc * btcPrice
     const usd = `$${(USD).toFixed(2).toLocaleString()}`
 
-    const cost = 6 * 24
-    const profit = (USD - (cost / 100)).toLocaleString('en-US', {
+    const profit = (USD - serverCostPerDay).toLocaleString('en-US', {
         style: 'currency',
         currency: 'USD'
     })
     return Object.assign(obj, {usd, profit, satsoshis: satsoshis.toLocaleString()})
-
-}
-
-function getBtcPrice() {
-
-    return new Promise((resolve, reject) => {
-        const url = 'https://blockchain.info/ticker';
-
-        http.get(url, res => {
-
-            let result  = ''
-
-            res.on('data', data => result += data)
-
-            res.on('error', err => reject(err))
-
-            res.on('end', () => {
-
-                const json = JSON.parse(result);
-
-                return resolve(json.USD['15m'])
-            })
-        })
-    })
 
 }
 

@@ -1,32 +1,48 @@
 const path = require('path')
-const moment = require('moment')
-const http = require('https')
 require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
-const orderDao = require('../lib/orders/dao')
 
-
-
+const times = process.argv[2] || 1
 
 async function main() {
 
 
-    const client = await mongoConnect()
-    const dbName = process.env.DB_NAME || (console.error('no db'), process.exit(1))
 
-    global.db = client.db(dbName)
 
-    // await global.db.collection('orders').insertOne({id: "testing", feed: false})
 
-    const result = await orderDao.updateTestOrder()
+    const order = {id: "testing"}
 
-    console.log('updated:' , result.lastErrorObject.updatedExisting)
+    await global.db.collection('orders').deleteMany(order)
+    await global.db.collection('orders').insertOne(Object.assign({}, order, {feed: true}))
 
-    return true
+    return new Promise((resolve) => {
 
+        setTimeout(async () => {
+            await global.db.collection('orders').deleteMany(order)
+            resolve(true)
+        }, 5000)
+    })
 
 
 }
 
+async function run() {
+
+    const client = await mongoConnect()
+
+    const dbName = process.env.DB_NAME || (console.error('no db'), process.exit(1))
+
+    global.db = client.db(dbName)
+
+    for (let i = 0; i <= times; i++) {
+        await main()
+
+    }
+
+    process.exit(0)
+
+}
+
+run()
 
 module.exports = main
