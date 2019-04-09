@@ -11,6 +11,7 @@ import About from "./About";
 const initState = {
     inv: {},
     modalIsOpen: false,
+    paymentSuccess: null,
 }
 
 class App extends Component {
@@ -49,13 +50,14 @@ class App extends Component {
 
         return this.setState({
             ...this.state,
+            paymentSuccess: null,
             inv: {
                 ...this.state.inv,
                 ...inv,
             },
             modalIsOpen: true,
-        }, () => {
-            this.listen(inv.id)
+        }, async () => {
+            return this.listen(inv.id)
         })
     }
 

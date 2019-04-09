@@ -2,6 +2,7 @@
   "name": "pollofeed",
   "version": "0.1.0",
   "repository": "https://github.com/j-chimienti/pollofeed",
+  "issues": "https://github.com/j-chimienti/pollofeed/issues",
   "homepage": "https://pollofeed.com",
   "maintainers": [
     "joe chimienti <jchimien@gmail.com>"

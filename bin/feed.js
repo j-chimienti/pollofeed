@@ -2,31 +2,22 @@ const path = require('path')
 require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 
-const times = process.argv[2] || 1
+const times = parseInt(process.argv[2] || 1)
 
-async function main() {
+console.log('times', times)
+
+async function _feed() {
 
 
-
-
-
-    const order = {id: "testing"}
-
-    await global.db.collection('orders').deleteMany(order)
-    await global.db.collection('orders').insertOne(Object.assign({}, order, {feed: true}))
-
-    return new Promise((resolve) => {
-
-        setTimeout(async () => {
-            await global.db.collection('orders').deleteMany(order)
-            resolve(true)
-        }, 5000)
-    })
+    return await global.db.collection('orders').findOneAndUpdate({id: "testing"}, {$set:
+            {feed: true, acknowledged_at: null, msatoshi: 0, paid_at: 1, pay_index: 0}
+            }, {upsert: true})
 
 
 }
 
-async function run() {
+
+async function main() {
 
     const client = await mongoConnect()
 
@@ -34,15 +25,39 @@ async function run() {
 
     global.db = client.db(dbName)
 
-    for (let i = 0; i <= times; i++) {
-        await main()
+    for (let i = 1; i <= times; i++) {
+        setTimeout(async () => {
+
+            const result = await _feed();
+            let c = "???"
+
+            if (result.lastErrorObject.upserted) {
+
+                c = "upserted"
+            }
+
+            else if (result.value.id) {
+
+                c = "updated"
+            }
+            console.log(c.toUpperCase(), new Date().toLocaleTimeString())
+            // console.log(result)
+
+            if (i >= times) {
+
+                console.log('done feeding')
+
+                setTimeout(async () => {
+                    await global.db.collection('orders').deleteMany({id: "testing"})
+                    process.exit(0)
+                }, 7000)
+            }
+        }, i * 1000 * 7)
 
     }
 
-    process.exit(0)
-
 }
 
-run()
+main()
 
 module.exports = main
