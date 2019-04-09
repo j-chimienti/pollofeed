@@ -41,7 +41,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test:fe": "react-scripts test",
+    "test": "node ./node_modules/mocha/bin/mocha --ui bdd",
     "eject": "react-scripts eject",
     "lint:fix": "eslint --fix --ext .jsx,.js src lib",
     "be": "node bin/www.js",
