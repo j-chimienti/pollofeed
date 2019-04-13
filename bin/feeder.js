@@ -1,5 +1,5 @@
 const path = require('path')
-require('dotenv').load({path: path.join('..', '.env.development')})
+require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
@@ -52,6 +52,7 @@ async function main() {
         }
     }
 
+    console.log('feed', feedTimes, date.toLocaleString())
     if (feedTimes > 0) {
 
         feed(feedTimes)
