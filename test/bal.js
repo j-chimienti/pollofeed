@@ -1,12 +1,10 @@
-var fetch = require('node-fetch')
-var addr = ""
-var uri = `https://blockstream.info/api/address/${addr}`
+const fetch = require('node-fetch');
+const addr = "";
+const uri = `https://blockstream.info/api/address/${addr}`;
 
-var twilio = require('../lib/twilio/twilio')
+const twilio = require('../lib/twilio/twilio');
 
-var bal = 0
-
-var interval = null;
+let interval = null;
 
 
 function getBalance(timeout = 1000) {
@@ -22,7 +20,7 @@ function getBalance(timeout = 1000) {
 
                 clearInterval(interval)
 
-                var msg = `Tx received \nSum:\t${funded_txo_sum}\n`
+                const msg = `Tx received \nSum:\t${funded_txo_sum}\n`;
                 twilio.send(msg)
 
                 return result

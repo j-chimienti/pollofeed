@@ -1,6 +1,6 @@
-const t = require('../lib/twitter/ctl')
+const twitter = require('../lib/twitter/ctl')
 const assert = require("assert")
-const {post, postNewOrder, getStatus, deletePost} = t;
+const {post, postNewOrder, getStatus, deletePost} = twitter;
 
 
 function handleErr(err) {
