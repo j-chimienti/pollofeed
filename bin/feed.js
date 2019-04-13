@@ -1,8 +1,3 @@
-const path = require('path')
-require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
-const mongoConnect = require('../lib/mongo/connect').connect
-
-
 
 async function _feed() {
 
@@ -17,11 +12,6 @@ async function _feed() {
 
 async function main(times = 2) {
 
-    const client = await mongoConnect()
-
-    const dbName = process.env.DB_NAME || (console.error('no db'), process.exit(1))
-
-    global.db = client.db(dbName)
 
     for (let i = 1; i <= times; i++) {
         setTimeout(async () => {
