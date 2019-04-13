@@ -59,6 +59,11 @@ async function main() {
         await sendMessage(`fed ${feedTimes} times @ ${new Date().toLocaleString()}`)
 
         process.exit(0)
+    } else {
+
+        console.log('today orders:', numOfOrders)
+
+        process.exit(0)
     }
 
 }
