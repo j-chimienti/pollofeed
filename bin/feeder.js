@@ -52,11 +52,11 @@ async function main() {
         }
     }
 
-    console.log('feed', feedTimes, date.toLocaleString())
+    console.log('feed', hours, feedTimes, date.toLocaleString())
     if (feedTimes > 0) {
 
-        feed(feedTimes)
-        sendMessage(`fed ${feedTimes} times @ ${new Date().toLocaleString()}`)
+        await feed(feedTimes)
+        await sendMessage(`fed ${feedTimes} times @ ${new Date().toLocaleString()}`)
 
         process.exit(0)
     }
