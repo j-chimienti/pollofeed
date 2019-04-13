@@ -5,7 +5,7 @@ const mongoConnect = require('../lib/mongo/connect').connect
 
 
 
-
+// get total balance of all orders
 async function main() {
 
 

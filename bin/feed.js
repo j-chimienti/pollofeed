@@ -2,9 +2,7 @@ const path = require('path')
 require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 
-const times = parseInt(process.argv[2] || 1)
 
-console.log('times', times)
 
 async function _feed() {
 
@@ -17,7 +15,7 @@ async function _feed() {
 }
 
 
-async function main() {
+async function main(times = 2) {
 
     const client = await mongoConnect()
 
@@ -57,7 +55,5 @@ async function main() {
     }
 
 }
-
-main()
 
 module.exports = main
