@@ -20,12 +20,18 @@
 #    src: ../../../../.env.mongo
 #    dest: "./{{APP_DIR}}/.env.mongo"
 #
-- name: down
-  command: docker-compose down
-  args:
-    chdir: "./{{APP_DIR}}"
 
-- name: up
-  command: docker-compose up --build -d
-  args:
-    chdir: "./{{APP_DIR}}"
+
+- name: cron feeder
+  cron:
+    hour: "9,12,15"
+    job: /home/joe/pollofeed/bin/feeder.js
+#- name: down
+#  command: docker-compose down
+#  args:
+#    chdir: "./{{APP_DIR}}"
+#
+#- name: up
+#  command: docker-compose up --build -d
+#  args:
+#    chdir: "./{{APP_DIR}}"

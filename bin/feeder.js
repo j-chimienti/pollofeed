@@ -1,5 +1,5 @@
 const path = require('path')
-require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
+require('dotenv').load({path: path.join('..', '.env.development')})
 
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')

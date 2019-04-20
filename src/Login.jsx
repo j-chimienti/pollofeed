@@ -97,7 +97,7 @@ export default class Login extends Component {
                             required
                         />
                     </div>
-                    <button className={'my-2 btn btn-primary'} type="submit" >
+                    <button className={'my-2 btn btn-block btn-primary'} type="submit" >
                         Login
                     </button>
                 </form>
