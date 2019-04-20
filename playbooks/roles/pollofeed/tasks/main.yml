@@ -25,7 +25,7 @@
 - name: cron feeder
   cron:
     hour: "9,12,15"
-    job: /home/joe/pollofeed/bin/feeder.js
+    job: "node /home/joe/pollofeed/bin/feeder.js"
 #- name: down
 #  command: docker-compose down
 #  args:
