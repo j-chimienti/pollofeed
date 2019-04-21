@@ -1,5 +1,5 @@
 const path = require('path')
-require('dotenv').load({path: path.join('..', '.env.development')})
+require('dotenv').load({path: path.resolve(__dirname, '../.env.development')})
 
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
@@ -52,19 +52,22 @@ async function main() {
         }
     }
 
-    console.log('feed', hours, feedTimes, date.toLocaleString())
+
+    feedTimes = Math.min(5, feedTimes)
     if (feedTimes > 0) {
 
         await feed(feedTimes)
         await sendMessage(`fed ${feedTimes} times @ ${new Date().toLocaleString()}`)
 
-        process.exit(0)
+        console.log("fed: True", feedTimes,new Date().toLocaleString())
     } else {
 
-        console.log('today orders:', numOfOrders)
+        console.log("fed: False")
 
-        process.exit(0)
     }
+
+    console.log(`orders: ${numOfOrders}`)
+    process.exit(0)
 
 }
 
