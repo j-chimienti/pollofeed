@@ -5,33 +5,14 @@
     update: yes
     dest: "./{{APP_DIR}}"
 
-#- name: copy env file
-#  tags:
-#    copy_env_file
-#  copy:
-#    src: ../../../../.env
-#    dest: "./{{APP_DIR}}/.env"
-#
-#
-#- name: copy env file (mongo)
-#  tags:
-#    copy_env_file
-#  copy:
-#    src: ../../../../.env.mongo
-#    dest: "./{{APP_DIR}}/.env.mongo"
-#
 
+- name: cron
+  include: cron.yml
 
-- name: cron feeder
-  cron:
-    hour: "9,12,15"
-    job: "node /home/joe/pollofeed/bin/feeder.js"
-#- name: down
-#  command: docker-compose down
-#  args:
-#    chdir: "./{{APP_DIR}}"
 #
-#- name: up
-#  command: docker-compose up --build -d
-#  args:
-#    chdir: "./{{APP_DIR}}"
+#- name: env files
+#  include: copyEnv.yml
+#
+#
+#- name: reboot
+#  include: reboot.yml

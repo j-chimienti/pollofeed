@@ -1,0 +1,7 @@
+- name: cron feeder
+  cron:
+    name: feed chickens if underfed
+    hour: "9,12,15"
+    minute: 0
+    state: present
+    job: "node /home/joe/pollofeed/bin/feeder.js"
