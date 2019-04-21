@@ -61,8 +61,13 @@ async function main() {
 
     }
 
-    const fedText = shouldFeed && `\tfed: ${feedTimes} times`
-    await send({subject: `feed chickens: ${shouldFeed}${fedText}`})
+    let text = `pollofeed - fed: ${numOfOrders}`
+
+    if (shouldFeed) {
+
+        text += `\t feed: ${feedTimes}`
+    }
+    await send({subject: text})
     console.log(`orders: ${numOfOrders}`)
     process.exit(0)
 

@@ -9,10 +9,12 @@
 - name: cron
   include: cron.yml
 
-#
-#- name: env files
-#  include: copyEnv.yml
-#
-#
-#- name: reboot
-#  include: reboot.yml
+
+- name: env files
+  when: false
+  include: copyEnv.yml
+
+
+- name: reboot
+  when: false
+  include: reboot.yml
