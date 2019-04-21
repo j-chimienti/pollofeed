@@ -53,18 +53,16 @@ async function main() {
 
 
     feedTimes = Math.min(5, feedTimes)
-    if (feedTimes > 0) {
+
+    const shouldFeed = feedTimes > 0
+    if (shouldFeed) {
 
         await feed(feedTimes)
-        await send({subject: "feed chickens check", text: `fed ${feedTimes} times @ ${new Date().toLocaleString()}`})
-
-        console.log("fed: True", feedTimes,new Date().toLocaleString())
-    } else {
-
-        console.log("fed: False")
 
     }
 
+    const fedText = shouldFeed && `\tfed: ${feedTimes} times`
+    await send({subject: `feed chickens: ${shouldFeed}${fedText}`})
     console.log(`orders: ${numOfOrders}`)
     process.exit(0)
 
