@@ -4,8 +4,7 @@ require('dotenv').load({path: path.resolve(__dirname, '../.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
 const feed = require('./feed')
-const sendMessage = require('../lib/twilio/twilio').send
-
+const send = require('../lib/email/email.controller').send
 async function main() {
 
     const client = await mongoConnect()
@@ -57,7 +56,7 @@ async function main() {
     if (feedTimes > 0) {
 
         await feed(feedTimes)
-        await sendMessage(`fed ${feedTimes} times @ ${new Date().toLocaleString()}`)
+        await send({subject: "feed chickens check", text: `fed ${feedTimes} times @ ${new Date().toLocaleString()}`})
 
         console.log("fed: True", feedTimes,new Date().toLocaleString())
     } else {

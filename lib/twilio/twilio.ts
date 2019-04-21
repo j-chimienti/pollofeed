@@ -8,7 +8,7 @@ if (!(accountSid && authToken)) {
 
     throw new Error("missing twilio credentials");
 }
-const client = twilio(accountSid, authToken);
+export const client = twilio(accountSid, authToken);
 
 
 export function send(msg: string | Message) {

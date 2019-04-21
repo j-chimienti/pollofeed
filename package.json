@@ -33,7 +33,7 @@
     "react-dom": "^16.7.0",
     "react-modal": "^3.8.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.5",
+    "react-scripts": "^2.1.8",
     "react-share": "^2.4.0",
     "tsscmp": "^1.0.6",
     "twitter": "^1.7.1"
@@ -59,8 +59,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "marked": "^0.6.2",
     "mocha": "^5.2.0",
     "moment": "^2.24.0",
+    "nodemailer": "^6.1.0",
     "nodemon": "^1.18.9",
     "twilio": "^3.19.0"
   }
