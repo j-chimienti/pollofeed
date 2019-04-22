@@ -2,7 +2,7 @@ const path = require('path')
 require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
-const {getBtcPrice} = require("./btcPrice");
+const {getBtcPrice} = require("../lib/btcPrice");
 
 
 async function main() {

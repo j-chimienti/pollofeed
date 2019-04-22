@@ -1,5 +1,5 @@
 const path = require('path')
-const {getBtcPrice} = require("./btcPrice");
+const {getBtcPrice} = require("../lib/btcPrice");
 require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 
@@ -42,10 +42,13 @@ async function main() {
         style: 'currency',
         currency: 'USD'
     }))
+    return true
 
 
 }
 
 main()
+    .then(() => process.exit(0))
+    .catch(() => process.exit(1))
 
 module.exports = main

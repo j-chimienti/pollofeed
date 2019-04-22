@@ -5,6 +5,9 @@ const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
 const feed = require('./feed')
 const send = require('../lib/email/email.controller').send
+
+const calcFeedTimes = require('./calcFeedTimes')
+
 async function main() {
 
     const client = await mongoConnect()
@@ -13,64 +16,27 @@ async function main() {
     const dbName = process.env.DB_NAME || (console.error('no db'), process.exit(1))
 
     global.db = client.db(dbName)
-    const date = new Date()
-
-    const hours = date.getHours()
 
     const todayOrders = await orderDao.getOrdersByDate()
 
-    const numOfOrders = todayOrders.length
-
-    const thresholds = {
-        "9": 5,
-        "12": 10,
-        "16": 15
-    }
-
-    let feedTimes = 0
-
-    if (hours >= 16) {
-
-        if (numOfOrders < thresholds['16']) {
-
-            feedTimes = thresholds['16'] - numOfOrders
-
-
-        }
-
-    } else if (hours >= 12) {
-        if (numOfOrders < thresholds['12']) {
-            feedTimes = thresholds['12'] - numOfOrders
-        }
-
-    } else if (hours >= 9) {
-        if (numOfOrders < thresholds['9']) {
-
-            feedTimes = thresholds['9'] - numOfOrders
-
-        }
-    }
-
-
-    feedTimes = Math.min(5, feedTimes)
+    const feedTimes = calcFeedTimes(new Date().getHours(), todayOrders.length)
 
     const shouldFeed = feedTimes > 0
-    if (shouldFeed) {
+    if (shouldFeed) await feed(feedTimes)
 
-        await feed(feedTimes)
+    let text = `pollofeed - fed ${todayOrders.length} times today.`
 
-i    }
+    if (shouldFeed) text += `\tjust fed ${feedTimes} times.`
 
-    let text = `pollofeed - fed ${numOfOrders} times today.`
-
-    if (shouldFeed) {i
-
-        text += `\tjust fed ${feedTimes} times.`
-    }
     await send({subject: text})
-    console.log(`orders: ${numOfOrders}`)
+    console.log(`orders: ${todayOrders.length}`)
     process.exit(0)
 
 }
 
+
 main()
+
+module.exports = {
+    main,
+}
