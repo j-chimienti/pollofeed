@@ -59,13 +59,13 @@ async function main() {
 
         await feed(feedTimes)
 
-    }
+i    }
 
-    let text = `pollofeed - fed: ${numOfOrders}`
+    let text = `pollofeed - fed ${numOfOrders} times today.`
 
-    if (shouldFeed) {
+    if (shouldFeed) {i
 
-        text += `\t feed: ${feedTimes}`
+        text += `\tjust fed ${feedTimes} times.`
     }
     await send({subject: text})
     console.log(`orders: ${numOfOrders}`)
