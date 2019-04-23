@@ -28,6 +28,9 @@ export class Home extends Component {
 
     state = {
         submittingLightningInvoice: false,
+        userInput: {
+            feedCount: 1
+        }
     }
 
     constructor(props) {
@@ -77,7 +80,7 @@ export class Home extends Component {
             paymentSuccess
         } = this.props;
 
-        const {submittingLightningInvoice} = this.state;
+        const {submittingLightningInvoice, userInput} = this.state;
 
         return (
             <div className={'App'}>
@@ -114,6 +117,19 @@ export class Home extends Component {
 
                             </div>) : 'Feed'}
                         </button>
+                    {/*<input*/}
+                    {/*    value={userInput.feedCount}*/}
+                    {/*    onChange={e => this.setState({*/}
+                    {/*        ...this.state,*/}
+                    {/*        userInput: {*/}
+                    {/*            ...this.state.userInput,*/}
+                    {/*            feedCount: e.target.value*/}
+                    {/*        }*/}
+                    {/*    })}*/}
+                    {/*    type="number" min={1} max={100} step={1}*/}
+                    {/*    className={'form-control-sm text-monospace'}*/}
+
+                    {/*/>*/}
                     {paymentSuccess && <div className={'row d-flex'}>
                         <div className={'alert alert-success mx-auto'}>
                             Payment Successful!

@@ -1,9 +1,4 @@
-#- name: down
-#  command: docker-compose down
-#  args:
-#    chdir: "./{{APP_DIR}}"
-
-- name: up
+- name: build docker container
   command: docker-compose up --build -d
   args:
     chdir: "./{{APP_DIR}}"

@@ -16,5 +16,5 @@
 
 
 - name: reboot
-  when: true
+  when: false
   include: reboot.yml
