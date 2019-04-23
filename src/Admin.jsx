@@ -17,6 +17,7 @@ class Admin extends React.Component {
     state = {
         orders: [],
         refreshing: false,
+        btc_usd: 5000
     }
 
     constructor(props) {
@@ -30,9 +31,29 @@ class Admin extends React.Component {
     }
 
 
+    async currentExchangeRate() {
+
+        var uri = `https://dev-api.opennode.co/v1/rates`
+
+        fetch(uri, {
+            headers: {
+                accept: "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(result => {
+                return this.setState({btc_usd: result.data.BTCUSD.USD})
+            })
+
+    }
+
+
     async componentDidMount() {
 
-        return await this.fetchOrderData()
+        await Promise.all([
+            this.currentExchangeRate(),
+            this.fetchOrderData()
+        ])
     }
 
 
@@ -88,7 +109,7 @@ class Admin extends React.Component {
 
     render() {
 
-        const {orders, refreshingData} = this.state;
+        const {orders, refreshingData, btc_usd} = this.state;
 
 
         let todayOrders = this.getOrdersOnDate(new Date())
@@ -151,6 +172,12 @@ class Admin extends React.Component {
 
                         {fmt(msatoshiTotal, "msat", "btc")}
                             </div>
+                        </div>
+
+                        <div className={'row'}>
+                            <small className={'text-monospace mx-auto small'}>
+                                {btc_usd.toLocaleString()}
+                            </small>
                         </div>
 
                     </div>

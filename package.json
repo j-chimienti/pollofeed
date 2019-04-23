@@ -4,6 +4,7 @@
   "repository": "https://github.com/j-chimienti/pollofeed",
   "issues": "https://github.com/j-chimienti/pollofeed/issues",
   "homepage": "https://pollofeed.com",
+  "license": "MIT",
   "maintainers": [
     "joe chimienti <jchimien@gmail.com>"
   ],

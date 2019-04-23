@@ -4,16 +4,13 @@ import {fmt} from 'fmtbtc'
 import './OrderGraph.css'
 
 function OrderRow(
-    {paid_at, acknowledged_at, msatoshi}
+    {paid_at, acknowledged_at, msatoshi},
     ) {
 
 
     const paidAtTime = new Date(paid_at * 1000)
 
     const acknowledgedTime = new Date(acknowledged_at)
-
-    const klass = (acknowledgedTime - paidAtTime) > (1000 * 10) ? 'text-right text-danger' : 'text-right'
-
 
     let badge = null
 
@@ -29,14 +26,14 @@ function OrderRow(
     }
 
     return (<tr>
-        <td className={'text-center text-capitalize'}>
+        <td className={'text-left'}>
             {paidAtTime.toLocaleString()}
 
-            <span className={`badge badge-${badge}`}>
+            <span className={`mx-1 badge badge-${badge}`}>
         {(acknowledgedTime - paidAtTime) / 1000}
     </span>
         </td>
-        <td className={'text-right'}>{(msatoshi / 1000).toLocaleString()}</td>
+        <td className={'text-monospace font-weight-bold text-right'}>{(fmt(msatoshi, "msat", "sat")).toLocaleString()}</td>
     </tr>
     );
 }
@@ -55,41 +52,43 @@ function validOrder(order) {
 
 }
 
-function OrderTable({orders: _orders}) {
+function OrderTable ({orders: _orders}) {
 
-    const orders = _orders
-        .filter(validOrder)
-        .sort(descendingOrders)
 
-    //.filter(i => i.paid_at && i.completed_at && i.status && i.msatoshi && i.video);
-    const msatoshis = orders.map(o => parseInt(o.msatoshi))
+        const orders = _orders
+            .filter(validOrder)
+            .sort(descendingOrders)
 
-    const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
-    return (
-        <table className={'table'}>
-            <thead>
-            <tr>
-                <th className={'text-center'}>Paid At</th>
-                <th className={'text-right'}>Satoshi</th>
-            </tr>
-            </thead>
-            <tbody>
-            {orders.map(order => <OrderRow {...order}/>)}
-            </tbody>
-            <tfoot>
-            <tr>
-                <td>
-                    Total Satoshi's
-                </td>
-                <td title={`btc: ${fmt(msatoshiTotal, "msat", "btc")}`}>
-                    {fmt(msatoshiTotal, "msat", "btc")}
-                </td>
-            </tr>
-            </tfoot>
-        </table>
-    );
+        //.filter(i => i.paid_at && i.completed_at && i.status && i.msatoshi && i.video);
+        // const msatoshis = orders.map(o => parseInt(o.msatoshi))
+
+        // const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
+        return (
+            <table className={'table'}>
+                <thead>
+                <tr>
+                    <th className={'text-left'}>Date / Time</th>
+                    <th className={'text-right text-capitalize'}
+                    >Sats</th>
+                </tr>
+                </thead>
+                <tbody>
+                {orders.map(order => <OrderRow {...order}/>)}
+                </tbody>
+                {/*<tfoot>*/}
+                {/*<tr>*/}
+                {/*    <td>*/}
+                {/*        Total Satoshi's*/}
+                {/*    </td>*/}
+                {/*    <td title={`${unit}: ${fmt(msatoshiTotal, "msat", unit)}`}>*/}
+                {/*        {fmt(msatoshiTotal, "msat", unit)}*/}
+                {/*    </td>*/}
+                {/*</tr>*/}
+                {/*</tfoot>*/}
+
+            </table>
+        )
 }
-
 OrderTable.propTypes = {
     orders: PropTypes.array.isRequired
 };
