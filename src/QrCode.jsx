@@ -7,6 +7,7 @@ class QrCode extends Component {
     state = {
         qr: null
     }
+
     constructor(props) {
         super(props);
 
