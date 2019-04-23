@@ -24,7 +24,7 @@ async function main() {
         (msat / 1000) + accum
     , 0)
 
-    console.log('sats', satsTotal)
+    console.log('sats', satsTotal.toLocaleString())
 
     const btcusd = await getBtcPrice()
 

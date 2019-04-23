@@ -1,7 +1,7 @@
-- name: down
-  command: docker-compose down
-  args:
-    chdir: "./{{APP_DIR}}"
+#- name: down
+#  command: docker-compose down
+#  args:
+#    chdir: "./{{APP_DIR}}"
 
 - name: up
   command: docker-compose up --build -d

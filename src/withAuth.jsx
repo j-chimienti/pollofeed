@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Redirect} from 'react-router-dom'
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -29,8 +28,7 @@ export default function withAuth(ComponentToProtect) {
 
                         this.setState({loading: false})
                     } else {
-                        const error = new Error(res.error)
-                        throw error
+                        throw res
                     }
                 })
                 .catch(err => {
@@ -44,9 +42,8 @@ export default function withAuth(ComponentToProtect) {
 
         render() {
             const {loading} = this.state
-            if (loading) {
-                return null
-            }
+            if (loading) return null
+
             return (
                 <React.Fragment>
                     <ComponentToProtect {...this.props} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from "react-router-dom";
+import {fmt} from 'fmtbtc'
 import './OrderGraph.css'
 
 function OrderRow(
@@ -13,9 +13,29 @@ function OrderRow(
     const acknowledgedTime = new Date(acknowledged_at)
 
     const klass = (acknowledgedTime - paidAtTime) > (1000 * 10) ? 'text-right text-danger' : 'text-right'
+
+
+    let badge = null
+
+    if (acknowledgedTime > (paidAtTime + 2000)) {
+
+        badge = "danger"
+    } else if (acknowledgedTime < paidAtTime) {
+
+        badge = "warning"
+    } else {
+
+        badge = "success"
+    }
+
     return (<tr>
-        <td className={'text-center text-capitalize'}>{paidAtTime.toLocaleString()}</td>
-        <td className={klass}>{(acknowledgedTime).toLocaleString()}</td>
+        <td className={'text-center text-capitalize'}>
+            {paidAtTime.toLocaleString()}
+
+            <span className={`badge badge-${badge}`}>
+        {(acknowledgedTime - paidAtTime) / 1000}
+    </span>
+        </td>
         <td className={'text-right'}>{(msatoshi / 1000).toLocaleString()}</td>
     </tr>
     );
@@ -50,7 +70,6 @@ function OrderTable({orders: _orders}) {
             <thead>
             <tr>
                 <th className={'text-center'}>Paid At</th>
-                <th className={'text-right'}>Fed At</th>
                 <th className={'text-right'}>Satoshi</th>
             </tr>
             </thead>
@@ -62,8 +81,8 @@ function OrderTable({orders: _orders}) {
                 <td>
                     Total Satoshi's
                 </td>
-                <td title={`btc: ${msatoshiTotal / 1e12}`}>
-                    {msatoshiTotal / 1e12}
+                <td title={`btc: ${fmt(msatoshiTotal, "msat", "btc")}`}>
+                    {fmt(msatoshiTotal, "msat", "btc")}
                 </td>
             </tr>
             </tfoot>

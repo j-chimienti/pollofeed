@@ -6,6 +6,7 @@ import OrderTable from "./OrderTable";
 import OrderGraph from "./OrderGraph";
 import _throttle from 'lodash/throttle'
 import {Link} from "react-router-dom";
+import {fmt} from "fmtbtc";
 
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
@@ -92,6 +93,11 @@ class Admin extends React.Component {
 
         let todayOrders = this.getOrdersOnDate(new Date())
         let yesterdayOrders = this.getOrdersOnDate(new Date().getTime() - (86400000))
+
+        const msatoshis = orders.map(o => parseInt(o.msatoshi))
+
+        const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
+
         return (
             <div className={'admin'}>
 
@@ -102,15 +108,17 @@ class Admin extends React.Component {
                         <i className={'fa fa-home'}>
                         </i>
                     </Link>
-                    <a onClick={this.throttleRefresh.bind(this)} className={'mx-2'}>
+                    <a onClick={this.throttleRefresh.bind(this)} className={'mx-2 btn btn-sm'}>
                         <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
 
                         </i>
                     </a>
                     <a
-                        className={'mx-2'} onClick={this.logout}
+                        className={'mx-2 btn btn-sm'} onClick={this.logout}
                     >
-                        <i className={'fa fa-user-o'}></i>
+                        <i className={'fa fa-user-o'}>
+
+                        </i>
                         Logout
                     </a>
 
@@ -118,21 +126,31 @@ class Admin extends React.Component {
 
                 {orders && orders.length && <div>
                     <div className={'row mb-3'}>
-                    <div className={'card bg-warning mx-auto p-4'} style={{width: 200}}>
+                    <div className={'col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
 
                         <div className={'row d-flex justify-content-between align-items-center'}>
-
-                            <div className={'font-weight-bold'}>Total Orders </div>
-                            <div className={'text-monospace'}>{orders.length}</div>
-                        </div>
-                        <div className={'row d-flex justify-content-between align-items-center'}>
-                            <div className={'font-weight-bold'}>Today's Orders </div>
+                            <div className={'font-weight-bold'}>Today's Orders</div>
                             <div className={'text-monospace'}>{todayOrders.length}</div>
                         </div>
 
                         <div className={'row d-flex justify-content-between align-items-center'}>
-                            <div className={'font-weight-bold'}>Yesterday's Orders </div>
+                            <div className={'font-weight-bold'}>Yesterday's Orders</div>
                             <div className={'text-monospace'}>{yesterdayOrders.length}</div>
+                        </div>
+                        <div className={'row d-flex justify-content-between align-items-center'}>
+
+                            <div className={'font-weight-bold'}>Total Orders</div>
+                            <div className={'text-monospace'}>{orders.length}</div>
+                        </div>
+
+
+                        <div className={'row d-flex justify-content-between align-items-center'}>
+
+                            <div className={'font-weight-bold'}>Total BTC</div>
+                            <div className={'text-monospace'}>
+
+                        {fmt(msatoshiTotal, "msat", "btc")}
+                            </div>
                         </div>
 
                     </div>
