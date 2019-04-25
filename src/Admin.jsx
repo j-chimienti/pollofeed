@@ -15,7 +15,7 @@ const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:432
 class Admin extends React.Component {
 
     state = {
-        latestOrders: [],
+        orders: [],
         refreshing: false,
         btc_usd: 5000,
         ordersCount: 0
@@ -96,7 +96,7 @@ class Admin extends React.Component {
                 .then(response => response.json())
                 .then(orders => {
                     this.setState({
-                        latestOrders: orders,
+                        orders,
                         refreshing: false
                     })
         }).catch(console.error);
@@ -131,7 +131,7 @@ class Admin extends React.Component {
 
     render() {
 
-        const {latestOrders: orders, refreshingData, btc_usd, ordersCount} = this.state;
+        const {orders, refreshingData, btc_usd, ordersCount} = this.state;
 
         let todayOrders = this.getOrdersOnDate(new Date())
         let yesterdayOrders = this.getOrdersOnDate(new Date().getTime() - (86400000))
