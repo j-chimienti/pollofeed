@@ -1,5 +1,4 @@
 FROM node:carbon
-USER node
 MAINTAINER joe chimienti <jchimien@gmail.com>
 WORKDIR /usr/src/app/pollofeed
 #ARG NODE_ENV=production
@@ -9,4 +8,5 @@ RUN yarn
 COPY . .
 RUN yarn run build
 EXPOSE ${APP_PORT}
+USER node
 CMD node ./bin/www.js
