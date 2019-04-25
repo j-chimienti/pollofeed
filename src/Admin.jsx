@@ -52,7 +52,8 @@ class Admin extends React.Component {
 
         fetch(`/orders/count`, {
             headers: {
-                accept: "application/json"
+                accept: "application/json",
+                credentials: "include"
             }
         })
             .then(res => res.json())
@@ -128,6 +129,7 @@ class Admin extends React.Component {
 
         return completeDate === _date;
     }
+
 
     render() {
 
