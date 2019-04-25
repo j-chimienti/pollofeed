@@ -1,5 +1,5 @@
 const path = require('path')
-require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
+require('dotenv').load({path: path.join('./', '..', '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
 const {getBtcPrice} = require("../lib/btcPrice");
@@ -14,6 +14,8 @@ async function main() {
     const dbName = process.env.DB_NAME || (console.error('no db'), process.exit(1))
 
     global.db = client.db(dbName)
+
+    const count = await orderDao.count()
 
     // const yesterday = moment().subtract(1, 'day').toDate();
     const todayOrders = await orderDao.getOrdersByDate()
