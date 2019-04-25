@@ -29,8 +29,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       # - /data/letsencrypt-nginx-proxy-companion/certs/:/etc/nginx/certs:ro
 
-networks:
-  nginxproxy:
-    external:
-      name: nginxproxy
+#networks:
+#  nginxproxy:
+#    external:
+#      name: nginxproxy
 

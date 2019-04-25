@@ -15,9 +15,10 @@ const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:432
 class Admin extends React.Component {
 
     state = {
-        orders: [],
+        latestOrders: [],
         refreshing: false,
-        btc_usd: 5000
+        btc_usd: 5000,
+        ordersCount: 0
     }
 
     constructor(props) {
@@ -33,7 +34,7 @@ class Admin extends React.Component {
 
     async currentExchangeRate() {
 
-        var uri = `https://dev-api.opennode.co/v1/rates`
+        const uri = `https://dev-api.opennode.co/v1/rates`
 
         fetch(uri, {
             headers: {
@@ -47,12 +48,33 @@ class Admin extends React.Component {
 
     }
 
+    async orderCount() {
+
+        fetch(`/orders/count`, {
+            headers: {
+                accept: "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(result => {
+
+                console.log(result)
+
+                this.setState({
+                    ordersCount: result
+                })
+
+                return result
+            }).catch(console.error)
+    }
+
 
     async componentDidMount() {
 
         await Promise.all([
             this.currentExchangeRate(),
-            this.fetchOrderData()
+            this.fetchOrderData(),
+            this.orderCount()
         ])
     }
 
@@ -74,7 +96,7 @@ class Admin extends React.Component {
                 .then(response => response.json())
                 .then(orders => {
                     this.setState({
-                        orders,
+                        latestOrders: orders,
                         refreshing: false
                     })
         }).catch(console.error);
@@ -109,8 +131,7 @@ class Admin extends React.Component {
 
     render() {
 
-        const {orders, refreshingData, btc_usd} = this.state;
-
+        const {latestOrders: orders, refreshingData, btc_usd, ordersCount} = this.state;
 
         let todayOrders = this.getOrdersOnDate(new Date())
         let yesterdayOrders = this.getOrdersOnDate(new Date().getTime() - (86400000))
@@ -129,7 +150,7 @@ class Admin extends React.Component {
                         <i className={'fa fa-home'}>
                         </i>
                     </Link>
-                    <a onClick={this.throttleRefresh.bind(this)} className={'mx-2 btn btn-sm'}>
+                    <a onClick={this.throttleRefresh} className={'mx-2 btn btn-sm'}>
                         <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
 
                         </i>
@@ -147,7 +168,7 @@ class Admin extends React.Component {
 
                 {orders && orders.length && <div>
                     <div className={'row mb-3'}>
-                    <div className={'col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
+                    <div className={'col-xs-10 col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
 
                         <div className={'row d-flex justify-content-between align-items-center'}>
                             <div className={'font-weight-bold'}>Today's Orders</div>
@@ -161,7 +182,7 @@ class Admin extends React.Component {
                         <div className={'row d-flex justify-content-between align-items-center'}>
 
                             <div className={'font-weight-bold'}>Total Orders</div>
-                            <div className={'text-monospace'}>{orders.length}</div>
+                            <div className={'text-monospace'}>{ordersCount}</div>
                         </div>
 
 

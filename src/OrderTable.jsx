@@ -12,26 +12,22 @@ function OrderRow(
 
     const acknowledgedTime = new Date(acknowledged_at)
 
-    let badge = null
+    let badge = "danger"
 
-    if (acknowledgedTime > (paidAtTime + 2000)) {
-
-        badge = "danger"
-    } else if (acknowledgedTime < paidAtTime) {
+    if (acknowledgedTime < paidAtTime) {
 
         badge = "warning"
-    } else {
+    } else if ((acknowledgedTime - paidAtTime) <= 2000) {
 
         badge = "success"
     }
 
     return (<tr>
         <td className={'text-left'}>
-            {paidAtTime.toLocaleString()}
-
             <span className={`mx-1 badge badge-${badge}`}>
-        {(acknowledgedTime - paidAtTime) / 1000}
-    </span>
+                {(acknowledgedTime - paidAtTime) / 1000}
+            </span>
+            {paidAtTime.toLocaleString()}
         </td>
         <td className={'text-monospace font-weight-bold text-right'}>{(fmt(msatoshi, "msat", "sat")).toLocaleString()}</td>
     </tr>
