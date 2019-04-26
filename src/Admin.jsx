@@ -55,8 +55,8 @@ class Admin extends React.Component {
 
         return await Promise.all([
             this.handleCurrentExchangeRate(),
-            this.fetchOrderData(),
-            this.handleOrderCount()
+            this.handleOrderCount(),
+            this.refreshData()
         ])
     }
 
@@ -108,95 +108,107 @@ class Admin extends React.Component {
 
         const {orders, refreshingData, btc_usd, ordersCount} = this.state;
 
-        let todayOrders = this.getOrdersOnDate(orders, new Date())
-        let yesterdayOrders = this.getOrdersOnDate(orders, new Date().getTime() - (86400000))
+        const Nav = (
+            <div className={'row w-10 h-10 d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
 
-        const msatoshis = orders.map(o => parseInt(o.msatoshi))
+                <Link to={'/'} className={'mx-2 btn btn-secondary'}>
+                    <i className={'fa-2x fa fa-home'}>
+                    </i>
+                </Link>
+                <a onClick={this.refreshData} className={'mx-2 btn btn-secondary btn-sm'}>
+                    <i className={refreshingData ? 'fa-2x fa fa-refresh fa-spin' : 'fa-2x fa fa-refresh'}>
 
-        const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
+                    </i>
+                </a>
+                <a
+                    className={'mx-2 btn btn-sm btn-secondary'}
+                    onClick={this.logout}
+                >
+                    <i className={'fa-2x fa fa-sign-out'}>
 
-        return (
-            <div className={'admin w-100 h-100'}>
+                    </i>
+                </a>
+
+            </div>
+        )
 
 
-                <div className={'row w-10 h-10 d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
+        if (!orders && orders.length) {
 
-                    <Link to={'/'} className={'mx-2 btn btn-secondary'}>
-                        <i className={'fa-2x fa fa-home'}>
-                        </i>
-                    </Link>
-                    <a onClick={this.refreshData} className={'mx-2 btn btn-secondary btn-sm'}>
-                        <i className={refreshingData ? 'fa-2x fa fa-refresh fa-spin' : 'fa-2x fa fa-refresh'}>
-
-                        </i>
-                    </a>
-                    <a
-                        className={'mx-2 btn btn-sm btn-secondary'}
-                        onClick={this.logout}
-                    >
-                        <i className={'fa-2x fa fa-sign-out'}>
-
-                        </i>
-                    </a>
-
-                </div>
-
-                {!orders.length && <div className={'w-90 h-90 d-flex justify-content-center align-items-center'}>
-                    <div className={'donut'}>
+            return (
+                <div className={'admin w-100 h-100'}>
+                    {Nav}
+                    <div className={'w-90 h-90 d-flex justify-content-center align-items-center'}>
+                        <div className={'donut'}>
+                        </div>
                     </div>
-                </div>}
+                </div>
+            )
 
-                {orders && orders.length && <div>
-                    <div className={'row mb-3'}>
-                    <div className={'col-xs-10 col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
+        } else {
 
-                        <div className={'row d-flex justify-content-between align-items-center'}>
-                            <div className={'font-weight-bold'}>Today's Orders</div>
-                            <div className={'text-monospace'}>{todayOrders.length}</div>
+            let todayOrders = this.getOrdersOnDate(orders, new Date())
+            let yesterdayOrders = this.getOrdersOnDate(orders, new Date().getTime() - (86400000))
+
+            const msatoshis = orders.map(o => parseInt(o.msatoshi))
+
+            const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
+
+            return (
+                <div className={'admin w-100 h-100'}>
+
+                    <div>
+                        <div className={'row mb-3'}>
+                            <div className={'col-xs-10 col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
+
+                                <div className={'row d-flex justify-content-between align-items-center'}>
+                                    <div className={'font-weight-bold'}>Today's Orders</div>
+                                    <div className={'text-monospace'}>{todayOrders.length}</div>
+                                </div>
+
+                                <div className={'row d-flex justify-content-between align-items-center'}>
+                                    <div className={'font-weight-bold'}>Yesterday's Orders</div>
+                                    <div className={'text-monospace'}>{yesterdayOrders.length}</div>
+                                </div>
+                                <div className={'row d-flex justify-content-between align-items-center'}>
+
+                                    <div className={'font-weight-bold'}>Total Orders</div>
+                                    <div className={'text-monospace'}>{ordersCount}</div>
+                                </div>
+
+
+                                <div className={'row d-flex justify-content-between align-items-center'}>
+
+                                    <div className={'font-weight-bold'}>Total BTC</div>
+                                    <div className={'text-monospace'}>
+
+                                        {fmt(msatoshiTotal, "msat", "btc")}
+                                    </div>
+                                </div>
+
+                                <div className={'row'}>
+                                    <small className={'text-monospace mx-auto small'}>
+                                        {btc_usd.toLocaleString()}
+                                    </small>
+                                </div>
+
+                            </div>
+
                         </div>
-
-                        <div className={'row d-flex justify-content-between align-items-center'}>
-                            <div className={'font-weight-bold'}>Yesterday's Orders</div>
-                            <div className={'text-monospace'}>{yesterdayOrders.length}</div>
-                        </div>
-                        <div className={'row d-flex justify-content-between align-items-center'}>
-
-                            <div className={'font-weight-bold'}>Total Orders</div>
-                            <div className={'text-monospace'}>{ordersCount}</div>
-                        </div>
-
-
-                        <div className={'row d-flex justify-content-between align-items-center'}>
-
-                            <div className={'font-weight-bold'}>Total BTC</div>
-                            <div className={'text-monospace'}>
-
-                        {fmt(msatoshiTotal, "msat", "btc")}
+                        <div className={'row my-2 d-flex justify-content-center align-items-center'}>
+                            <div className={'col-md-10'} style={{maxHeight: 500, maxWidth: 700, overflowY: 'scroll'}}>
+                                <OrderTable orders={orders}/>
                             </div>
                         </div>
-
-                        <div className={'row'}>
-                            <small className={'text-monospace mx-auto small'}>
-                                {btc_usd.toLocaleString()}
-                            </small>
+                        <div className={'row my-2 d-flex justify-content-center align-items-center'}>
+                            <div className={'col-md-10'}>
+                                <OrderGraph orders={orders}/></div>
                         </div>
-
                     </div>
 
                 </div>
-                    <div className={'row my-2 d-flex justify-content-center align-items-center'}>
-                        <div className={'col-md-10'} style={{maxHeight: 500, maxWidth: 700, overflowY: 'scroll'}}>
-                            <OrderTable orders={orders}/>
-                        </div>
-                    </div>
-                    <div className={'row my-2 d-flex justify-content-center align-items-center'}>
-                        <div className={'col-md-10'}>
-                            <OrderGraph orders={orders}/></div>
-                        </div>
-                    </div>
-                }
-            </div>
-        );
+            );
+        }
     }
 }
 
