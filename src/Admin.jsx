@@ -161,26 +161,21 @@ class Admin extends React.Component {
             return (
                 <div className={'admin w-100 h-100'}>
                     {Nav}
-                    <div>
-                        <div className={'row mb-3'} style={{opacity: refreshingData ? '0.5' : 1}}>
+                    <div style={{opacity: refreshingData ? '0.5' : 1}}>
+                        <div className={'row mb-3'}>
                             <div className={'col-xs-10 col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
-
                                 <div className={'row d-flex justify-content-between align-items-center'}>
                                     <div className={'font-weight-bold'}>Today's Orders</div>
                                     <div className={'text-monospace'}>{todayOrders.length}</div>
                                 </div>
-
                                 <div className={'row d-flex justify-content-between align-items-center'}>
                                     <div className={'font-weight-bold'}>Yesterday's Orders</div>
                                     <div className={'text-monospace'}>{yesterdayOrders.length}</div>
                                 </div>
                                 <div className={'row d-flex justify-content-between align-items-center'}>
-
                                     <div className={'font-weight-bold'}>Total Orders</div>
                                     <div className={'text-monospace'}>{ordersCount}</div>
                                 </div>
-
-
                                 <div className={'row d-flex justify-content-between align-items-center'}>
 
                                     <div className={'font-weight-bold'}>Total BTC</div>
@@ -189,15 +184,12 @@ class Admin extends React.Component {
                                         {fmt(msatoshiTotal, "msat", "btc")}
                                     </div>
                                 </div>
-
                                 <div className={'row'}>
                                     <small className={'text-monospace mx-auto small'}>
                                         {btc_usd.toLocaleString()}
                                     </small>
                                 </div>
-
                             </div>
-
                         </div>
                         <div className={'row my-2 d-flex justify-content-center align-items-center'}>
                             <div className={'col-md-10'} style={{maxHeight: 500, maxWidth: 700, overflowY: 'scroll'}}>
@@ -209,7 +201,6 @@ class Admin extends React.Component {
                                 <OrderGraph orders={orders}/></div>
                         </div>
                     </div>
-
                 </div>
             );
         }
