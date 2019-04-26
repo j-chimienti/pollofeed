@@ -18,7 +18,7 @@ describe('app', function(){
                     assert(res)
                     done()
                 });
-        })
+        }).skip()
 
         it("should return 200 for healthCheck", function (done) {
 
@@ -32,6 +32,6 @@ describe('app', function(){
                     assert(res)
                     done()
                 })
-        })
+        }).skip()
     })
 })
