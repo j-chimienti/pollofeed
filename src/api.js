@@ -38,12 +38,12 @@ export async function getOrders() {
 
 export async function logout () {
 
-    return fetch(host + 'admin/logout', {method: "post"})
+    return fetch(`${host}admin/logout`, {method: "post"})
 }
 
 
 export async function orderCount() {
-    return fetch(`/orders/count`, {
+    return fetch(`${host}orders/count`, {
         headers: {
             credentials: "include"
         }
@@ -55,7 +55,6 @@ export async function login({email, password} = {}) {
 
     return fetch(`${host}admin/login`, {
         method: 'post',
-        credentials: 'include',
         body: JSON.stringify({email, password})
     })
 }
