@@ -63,18 +63,18 @@ class Admin extends React.Component {
     async refreshData() {
 
         this.setState({
-        refreshing: true
+        refreshingData: true
     }, () =>
 
             getOrders().then(orders =>
                 this.setState({
                     orders,
-                    refreshing: false
+                    refreshingData: false
                 })
             ).catch(err =>
 
                 this.setState({
-                    refreshing: false
+                    refreshingData: false
                 })
             )
         )
