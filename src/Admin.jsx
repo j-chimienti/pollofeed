@@ -87,9 +87,9 @@ class Admin extends React.Component {
             })
     }
 
-    getOrdersOnDate(date = new Date()) {
+    getOrdersOnDate(orders, date = new Date()) {
 
-        return this.state.orders.filter(order => Admin.filterByDate(order, date))
+        return orders.filter(order => Admin.filterByDate(order, date))
     }
 
     static filterByDate = (order, date) => {
@@ -108,8 +108,8 @@ class Admin extends React.Component {
 
         const {orders, refreshingData, btc_usd, ordersCount} = this.state;
 
-        let todayOrders = this.getOrdersOnDate(new Date())
-        let yesterdayOrders = this.getOrdersOnDate(new Date().getTime() - (86400000))
+        let todayOrders = this.getOrdersOnDate(orders, new Date())
+        let yesterdayOrders = this.getOrdersOnDate(orders, new Date().getTime() - (86400000))
 
         const msatoshis = orders.map(o => parseInt(o.msatoshi))
 
@@ -121,22 +121,22 @@ class Admin extends React.Component {
 
                 <div className={'row w-10 h-10 d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
 
-                    <Link to={'/'} className={'mx-2'}>
+                    <Link to={'/'} className={'mx-2 btn btn-secondary'}>
                         <i className={'fa-2x fa fa-home'}>
                         </i>
                     </Link>
-                    <a onClick={this.refreshData} className={'mx-2 btn btn-sm'}>
+                    <a onClick={this.refreshData} className={'mx-2 btn btn-secondary btn-sm'}>
                         <i className={refreshingData ? 'fa-2x fa fa-refresh fa-spin' : 'fa-2x fa fa-refresh'}>
 
                         </i>
                     </a>
                     <a
-                        className={'mx-2 btn btn-sm'} onClick={this.logout}
+                        className={'mx-2 btn btn-sm btn-secondary'}
+                        onClick={this.logout}
                     >
-                        <i className={'fa-2x fa fa-user-o'}>
+                        <i className={'fa-2x fa fa-sign-out'}>
 
                         </i>
-                        Logout
                     </a>
 
                 </div>
