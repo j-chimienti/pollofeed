@@ -138,7 +138,7 @@ class Admin extends React.Component {
         if (!(orders && orders.length)) {
 
             return (
-                <div className={'admin w-100 h-100'}>
+                <div className={'admin w-100 h-100'} style={{opacity: '0.5'}}>
                     {Nav}
                     <div className={'w-90 h-90 d-flex justify-content-center align-items-center'}>
                         <div className={'donut'}>
