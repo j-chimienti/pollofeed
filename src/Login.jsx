@@ -64,27 +64,31 @@ export default class Login extends Component {
                 </Link>
                 <h1 className={'mb-2'}>Login Below!</h1>
                 <form onSubmit={this.onSubmit} className={'text-center'}>
-                    <div className={'input-group'} style={{maxWidth: '300px'}}>
-                        <input
-                            type="text"
-                            name="username"
-                            className={'form-control'}
-                            placeholder="Enter username"
-                            value={this.state.username}
-                            onChange={this.handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className={'input-group'} style={{maxWidth: '300px'}}>
-                        <input
-                            type="password"
-                            name="password"
-                            className={'form-control'}
-                            placeholder="Enter password"
-                            value={this.state.password}
-                            onChange={this.handleInputChange}
-                            required
-                        />
+                   <div className={'form-group'}>
+                       <div className={'input-group'} style={{maxWidth: '300px'}}>
+                           <input
+                               type="text"
+                               name="username"
+                               className={'form-control'}
+                               placeholder="Enter username"
+                               value={this.state.username}
+                               onChange={this.handleInputChange}
+                               required
+                           />
+                       </div>
+                   </div>
+                    <div className={'form-group'}>
+                        <div className={'input-group'} style={{maxWidth: '300px'}}>
+                            <input
+                                type="password"
+                                name="password"
+                                className={'form-control'}
+                                placeholder="Enter password"
+                                value={this.state.password}
+                                onChange={this.handleInputChange}
+                                required
+                            />
+                        </div>
                     </div>
                     <button className={'my-2 btn btn-block btn-primary'} type="submit" >
                         Login

@@ -39,12 +39,14 @@ class CopyToClipboard extends React.Component{
 
         const {id} = this.props
 
+       const klass = `fa fa-copy fa-2x`
+
         return (
             <button
                 className={'btn btn-warning'}
                 onClick={() => this.copy(id)}
             >
-                <i className={this.state.copied ? 'fa fa-copy fa-2x text-success' : 'fa fa-copy text-light'}>
+                <i className={this.state.copied ? `${klass} text-success` : `${klass} text-light`}>
                 </i>
             </button>
         );
