@@ -91,7 +91,7 @@ class Admin extends React.Component {
                 )
             ])
 
-            g
+
         )
 
     }
