@@ -1,8 +1,9 @@
 const path = require('path')
-require('dotenv').load({path: path.join('./', '..', '.env.development')})
+require('dotenv').load({path: path.join(__dirname, '..', '.env.development')})
 const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
 const {getBtcPrice} = require("../lib/btcPrice");
+const moment = require('moment')
 
 
 async function main() {
@@ -17,19 +18,20 @@ async function main() {
 
     const count = await orderDao.count()
 
-    // const yesterday = moment().subtract(1, 'day').toDate();
+    const yesterday = moment().subtract(1, 'day').toDate();
     const todayOrders = await orderDao.getOrdersByDate()
-    // const yesterDayOrders = await orderDao.getOrdersByDate(yesterday)
+    const yesterDayOrders = await orderDao.getOrdersByDate(yesterday)
 
 
     const price = await getBtcPrice()
     let t = getTotals(todayOrders);
-   // let y = getTotals(yesterDayOrders);
+    let y = getTotals(yesterDayOrders);
 
 
     t = totalUSD(t, price)
-    // y = totalUSD(y, price)
-    console.table([t])
+    y = totalUSD(y, price)
+    console.table([t, y])
+    console.log(`ORDERS: ${count}`)
     return true;
 
 

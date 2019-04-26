@@ -6,6 +6,7 @@ import Admin from './Admin'
 import Login from './Login'
 import Home from './Home'
 import About from "./About";
+import {invoiceWait} from "./api";
 
 
 const initState = {
@@ -27,22 +28,6 @@ class App extends Component {
     }
 
 
-    static postData(url = '', data = {}) {
-
-        return fetch(url, {
-
-            method: 'post',
-            mode: 'cors', // no-cors, cors, *same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
-            headers: {
-                'Content-Type': 'application/json',
-                // "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: JSON.stringify(data)
-        }).then(response => response.json())
-            .catch(console.error)
-    }
 
 
 
@@ -73,7 +58,7 @@ class App extends Component {
 
     listen(invId) {
 
-        return fetch(`/orders/invoice/${invId}/wait`, {method: 'get'})
+        invoiceWait(invId)
         //.then(response => response.json())
             .then(async (result) => {
 

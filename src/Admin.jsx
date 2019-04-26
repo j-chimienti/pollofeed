@@ -7,9 +7,7 @@ import OrderGraph from "./OrderGraph";
 import _throttle from 'lodash/throttle'
 import {Link} from "react-router-dom";
 import {fmt} from "fmtbtc";
-
-const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
-
+import {currentExchangeRate, getOrders, logout, orderCount} from './api'
 
 
 class Admin extends React.Component {
@@ -32,31 +30,17 @@ class Admin extends React.Component {
     }
 
 
-    async currentExchangeRate() {
+    async handleCurrentExchangeRate() {
 
-        const uri = `https://dev-api.opennode.co/v1/rates`
-
-        fetch(uri, {
-            headers: {
-                accept: "application/json"
-            }
+        currentExchangeRate().then(result => {
+            return this.setState({btc_usd: result.data.BTCUSD.USD})
         })
-            .then(res => res.json())
-            .then(result => {
-                return this.setState({btc_usd: result.data.BTCUSD.USD})
-            })
 
     }
 
     async orderCount() {
 
-        fetch(`/orders/count`, {
-            headers: {
-                accept: "application/json",
-                credentials: "include"
-            }
-        })
-            .then(res => res.json())
+        orderCount()
             .then(result => {
 
                 console.log(result)
@@ -73,7 +57,7 @@ class Admin extends React.Component {
     async componentDidMount() {
 
         await Promise.all([
-            this.currentExchangeRate(),
+            this.handleCurrentExchangeRate(),
             this.fetchOrderData(),
             this.orderCount()
         ])
@@ -93,14 +77,12 @@ class Admin extends React.Component {
     async fetchOrderData() {
 
 
-            fetch(`${host}orders?offset=0`, {credentials: "include"})
-                .then(response => response.json())
-                .then(orders => {
-                    this.setState({
-                        orders,
-                        refreshing: false
-                    })
-        }).catch(console.error);
+        getOrders().then(orders => {
+              this.setState({
+                  orders,
+                  refreshing: false
+              })
+          })
     }
 
 
@@ -108,7 +90,7 @@ class Admin extends React.Component {
 
     logout() {
 
-        return fetch(host + 'admin/logout', {method: 'POST'})
+        return logout()
             .finally(() => {
                 this.props.history.push('/')
             })

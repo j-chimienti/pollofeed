@@ -43,7 +43,10 @@ class NewOrder extends React.Component {
         const CurrencyDisplay = quoted_currency && quoted_currency !== 'BTC' ? <p className="font-weight-light small">
                 #{quoted_amount} #{quoted_currency} ≈ #{msat2sat(msatoshi, true)} satoshis
             </p>
-            : <p className="font-weight-light">{msat2sat(msatoshi, true)} satoshis</p>
+            : <p className="font-weight-light text-monospace">
+                    {msat2sat(msatoshi, true)}
+                satoshis
+            </p>
 
         const timeLeft = expires_at - (time / 1000 | 0)
 
@@ -61,34 +64,35 @@ class NewOrder extends React.Component {
                 <div className={'row'}>
                     <div className={'mx-auto'} style={{maxWidth: '400px'}}>
                         <div className={'row d-flex justify-content-between align-items-center'}>
-                            <button onClick={closeModal} className={'d-block ml-auto btn btn-sm my-4'}>
+                            <button onClick={closeModal} className={'d-block ml-auto btn btn-secondary btn-sm my-4'}>
                                 <i className={'fa fa-close fa-2x'}>
                                 </i>
                             </button>
                         </div>
                         {CurrencyDisplay}
                         <div className="input-group">
-                            <input className="form-control" type="text"  readOnly value={payreq} id={'payreq'}/>
+                            <input className="form-control form-control-lg" type="text"  readOnly value={payreq} id={'payreq'}/>
                             <div className="input-group-append">
                                 <a className="btn btn-warning text-light"
                                    href={`lightning:${payreq}`}>
-                                    <span role={'img'}>⚡</span>
+                                    <i className={'fa fa-bolt fa-2x'}>
+                                    </i>
                                 </a>
 
                             </div>
                             <div className={'input-group-append'}>
-                                <CopyToClipboard/>
+                                <CopyToClipboard id={'payreq'}/>
                             </div>
                         </div>
                         <QrCode payreq={payreq}/>
                         {<p className={'small font-weight-light mb-0'}>
                             Invoice expires in
-                            <span className={30 > timeLeft ? 'text-warning mx-1' : 'mx-1'}>{timeFmt}</span>
+                            <span className={30 > timeLeft ? 'text-warning mx-1 text-monospace' : 'mx-1 text-monospace'}>{timeFmt}</span>
                         </p>}
                         <div className={'form-group'}>
                             <label>Node</label>
                             <textarea
-                                rows={5}
+                                rows={4}
                                 className={'form-control'}
                                 readOnly="readOnly"
                                 value={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8@198.58.99.169:9735'}

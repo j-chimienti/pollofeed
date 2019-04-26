@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 
 
-const id = 'payreq'
 
 class CopyToClipboard extends React.Component{
 
@@ -38,6 +37,8 @@ class CopyToClipboard extends React.Component{
 
    render() {
 
+        const {id} = this.props
+
         return (
             <button
                 className={'btn btn-warning'}
@@ -50,7 +51,9 @@ class CopyToClipboard extends React.Component{
     }
 }
 
-CopyToClipboard.propTypes = {};
+CopyToClipboard.propTypes = {
+    id: PropTypes.string.isRequired
+};
 CopyToClipboard.defaultProps = {};
 
 export default CopyToClipboard;

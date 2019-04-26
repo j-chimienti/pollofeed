@@ -7,6 +7,7 @@ const feed = require('./feed')
 const send = require('../lib/email/email.controller').send
 
 const calcFeedTimes = require('./calcFeedTimes')
+const moment = require('moment')
 
 async function main() {
 
@@ -19,7 +20,10 @@ async function main() {
 
     const todayOrders = await orderDao.getOrdersByDate()
 
-    const feedTimes = calcFeedTimes(new Date().getHours(), todayOrders.length)
+    const yesterday = moment().subtract(1, 'day').toDate();
+    const yesterDayOrders = await orderDao.getOrdersByDate(yesterday)
+
+    const feedTimes = calcFeedTimes(new Date().getHours(), todayOrders.length, yesterDayOrders.length)
 
     const shouldFeed = feedTimes > 0
     if (shouldFeed) await feed(feedTimes)

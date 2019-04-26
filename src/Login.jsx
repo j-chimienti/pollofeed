@@ -1,9 +1,7 @@
 // Login.jsx
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-
-const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
-
+import {login} from "./api";
 
 export default class Login extends Component {
     constructor(props) {
@@ -42,22 +40,13 @@ export default class Login extends Component {
             return this.props.history.push('/')
         }
 
-        return fetch(`${host}admin/login`, {
-            method: 'POST',
-            credentials: "include",
-            body: JSON.stringify({email, password}),
-            headers: {
-                'Content-Type': 'application/json',
-                // 'Access-Control-Allow-Origin': "http://localhost:4321"
-            }
-        })
+        return login({email, password})
             .then(res => {
 
                 if (res.status === 200) {
                     this.props.history.push('/admin');
                 } else {
-                    const error = new Error(res.error);
-                    throw error;
+                    throw res
                 }
             })
             .catch(err => {

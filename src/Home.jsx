@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import SocialShare from "./SocialShare";
 import NewOrder from "./NewOrder";
 import Modal from "react-modal";
+import {invoice} from "./api";
 
 
 
@@ -54,8 +55,7 @@ export class Home extends Component {
 
     // post a new invoice request from lighting client BE
     async postOrder() {
-        return fetch(`/orders/invoice`, {method: 'POST'})
-            .then(response => response.json())
+        invoice()
             .then(inv => {
                 this.setState({
                     submittingLightningInvoice: false,
@@ -80,7 +80,7 @@ export class Home extends Component {
             paymentSuccess
         } = this.props;
 
-        const {submittingLightningInvoice, userInput} = this.state;
+        const {submittingLightningInvoice} = this.state;
 
         return (
             <div className={'App'}>

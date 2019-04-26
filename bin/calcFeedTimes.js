@@ -1,4 +1,4 @@
-function calcFeedTimes(hours = new Date().getHours(), numOfOrders = 0) {
+function calcFeedTimes(hours = new Date().getHours(), todayFeedCount = 0, yesterdayFeedCount = 0) {
 
     const thresholds = {
         "9": 5,
@@ -9,14 +9,18 @@ function calcFeedTimes(hours = new Date().getHours(), numOfOrders = 0) {
     let feedTimes = 0
 
     if (hours >= 17) {
-        feedTimes = thresholds['17'] - numOfOrders
+        feedTimes = thresholds['17'] - todayFeedCount
 
     } else if (hours >= 13) {
-        feedTimes = thresholds['13'] - numOfOrders
+        feedTimes = thresholds['13'] - todayFeedCount
 
     } else if (hours >= 9) {
 
-        feedTimes = thresholds['9'] - numOfOrders
+        if (yesterdayFeedCount >= 30) {
+
+            feedTimes = 0
+        }
+        else feedTimes = thresholds['9'] - todayFeedCount
 
     }
     feedTimes = Math.min(5, Math.max(0, feedTimes))
