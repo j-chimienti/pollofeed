@@ -162,7 +162,7 @@ class Admin extends React.Component {
                 <div className={'admin w-100 h-100'}>
                     {Nav}
                     <div>
-                        <div className={'row mb-3'}>
+                        <div className={'row mb-3'} style={{opacity: refreshingData ? '0.5' : 1}}>
                             <div className={'col-xs-10 col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
 
                                 <div className={'row d-flex justify-content-between align-items-center'}>
