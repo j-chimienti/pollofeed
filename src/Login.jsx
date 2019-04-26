@@ -23,12 +23,8 @@ export default class Login extends Component {
         });
     }
 
-    incLoginAttempts() {
+    incLoginAttempts = () => this.setState({loginAttempts: this.state.loginAttempts + 1})
 
-        return this.setState({
-            loginAttempts: this.state.loginAttempts + 1
-        })
-    }
     onSubmit = (event) => {
         event.preventDefault();
         this.incLoginAttempts();
@@ -91,7 +87,7 @@ export default class Login extends Component {
                         </div>
                     </div>
                     <button className={'my-2 btn btn-block btn-primary'} type="submit" >
-                        Login
+                        <i className={'fa fa-sign-in fa-2x'}></i>
                     </button>
                 </form>
             </div>
