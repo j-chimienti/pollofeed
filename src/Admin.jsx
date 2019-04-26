@@ -23,7 +23,6 @@ class Admin extends React.Component {
 
         super(props);
         this.getOrdersOnDate = this.getOrdersOnDate.bind(this)
-        this.fetchOrderData = this.fetchOrderData.bind(this)
         this.logout = this.logout.bind(this)
         this.handleOrderCount = this.handleOrderCount.bind(this)
         this.refreshData = this.refreshData.bind(this)
@@ -54,7 +53,7 @@ class Admin extends React.Component {
 
     async componentDidMount() {
 
-        await Promise.all([
+        return await Promise.all([
             this.handleCurrentExchangeRate(),
             this.fetchOrderData(),
             this.handleOrderCount()
@@ -66,23 +65,17 @@ class Admin extends React.Component {
 
         this.setState({
         refreshing: true
-    }, async () => {
-        await this.fetchOrderData();
-    })
+    }, () =>
+
+            getOrders().then(orders => {
+                this.setState({
+                    orders,
+                    refreshing: false
+                })
+            })
+        )
 
     }
-
-    async fetchOrderData() {
-
-
-        getOrders().then(orders => {
-              this.setState({
-                  orders,
-                  refreshing: false
-              })
-          })
-    }
-
 
 
 
