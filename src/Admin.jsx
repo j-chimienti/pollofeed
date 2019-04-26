@@ -113,7 +113,7 @@ class Admin extends React.Component {
         const Nav = (
             <div className={'row w-10 h-10 d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
 
-                <Link to={'/'} className={'mx-2 btn btn-secondary'}>
+                <Link to={'/'} className={'mx-2 btn btn-secondary btn-sm'}>
                     <i className={'fa-2x fa fa-home'}>
                     </i>
                 </Link>
