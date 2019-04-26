@@ -44,8 +44,7 @@ class NewOrder extends React.Component {
                 #{quoted_amount} #{quoted_currency} ≈ #{msat2sat(msatoshi, true)} satoshis
             </p>
             : <p className="font-weight-light text-monospace">
-                    {msat2sat(msatoshi, true)}
-                satoshis
+                {msat2sat(msatoshi, true)} satoshis
             </p>
 
         const timeLeft = expires_at - (time / 1000 | 0)
@@ -85,15 +84,15 @@ class NewOrder extends React.Component {
                             </div>
                         </div>
                         <QrCode payreq={payreq}/>
-                        {<p className={'small font-weight-light mb-0'}>
-                            Invoice expires in
+                        {<p className={'font-weight-light mb-0'}>
+                             Expires in
                             <span className={30 > timeLeft ? 'text-warning mx-1 text-monospace' : 'mx-1 text-monospace'}>{timeFmt}</span>
                         </p>}
                         <div className={'form-group'}>
                             <label>Node</label>
                             <textarea
                                 rows={4}
-                                className={'form-control'}
+                                className={'form-control form-control-lg text-monospace'}
                                 readOnly="readOnly"
                                 value={'03902356d26efdc0812726c31a1a2e0d721f26063dd252ac89ded8280037e9ece8@198.58.99.169:9735'}
                             >
