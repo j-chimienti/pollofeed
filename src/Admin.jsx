@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './Admin.css'
 import OrderTable from "./OrderTable";
 import OrderGraph from "./OrderGraph";
-import _throttle from 'lodash/throttle'
 import {Link} from "react-router-dom";
 import {fmt} from "fmtbtc";
 import {currentExchangeRate, getOrders, logout, orderCount} from './api'
@@ -72,6 +71,11 @@ class Admin extends React.Component {
                     orders,
                     refreshing: false
                 })
+            }).catch(err => {
+
+                this.setState({
+                    refreshing: false
+                })
             })
         )
 
@@ -79,12 +83,10 @@ class Admin extends React.Component {
 
 
 
-    logout() {
+    async logout() {
 
-        return logout()
-            .finally(() => {
-                this.props.history.push('/')
-            })
+        await logout()
+        this.props.history.push('/')
     }
 
     getOrdersOnDate(orders, date = new Date()) {
@@ -133,7 +135,7 @@ class Admin extends React.Component {
         )
 
 
-        if (!orders && orders.length) {
+        if (!(orders && orders.length)) {
 
             return (
                 <div className={'admin w-100 h-100'}>
@@ -156,7 +158,7 @@ class Admin extends React.Component {
 
             return (
                 <div className={'admin w-100 h-100'}>
-
+                    {Nav}
                     <div>
                         <div className={'row mb-3'}>
                             <div className={'col-xs-10 col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
