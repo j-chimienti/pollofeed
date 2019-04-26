@@ -7,13 +7,9 @@ import QrCode from "./QrCode";
 function LightningNode({node}) {
     return (
         <div>
-
             <QrCode payreq={node}/>
-            <p>Create a direct channel with the shop by scanning the QR code with your phone or add a channel manually with the following uri:</p>
-
+            <p>Open a channel by scanning the QR code with your phone or add a channel manually with the following uri:</p>
             {node}
-
-            <p>If you connect with me and your node is up 24/7, I will open a channel to match your funds (max. 500.000 sat) to keep things in balance, but only if your node is reliable.</p>
         </div>
     );
 }
