@@ -18,6 +18,8 @@ class Admin extends React.Component {
         ordersCount: 0
     }
 
+    interval = null
+
     constructor(props) {
 
         super(props);
@@ -50,12 +52,19 @@ class Admin extends React.Component {
     }
 
 
+    componentWillUnmount() {
+        clearInterval(this.interval)
+    }
+
     async componentDidMount() {
+
+        this.interval = setInterval(() => this.handleCurrentExchangeRate(), 1000 * 60)
 
         return await Promise.all([
             this.handleCurrentExchangeRate(),
             this.handleOrderCount(),
-            getOrders().then(orders => this.setState(({orders})))
+            getOrders().then(orders => this.setState(({orders}))),
+
         ])
     }
 
@@ -64,19 +73,25 @@ class Admin extends React.Component {
 
         this.setState({
         refreshingData: true
-    }, () =>
+    }, async () =>
 
-            getOrders().then(orders =>
-                this.setState({
-                    orders,
-                    refreshingData: false
-                })
-            ).catch(err =>
+            await Promise.all([
+                this.handleCurrentExchangeRate(),
+                this.handleOrderCount(),
+                getOrders().then(orders =>
+                    this.setState({
+                        orders,
+                        refreshingData: false
+                    })
+                ).catch(err =>
 
-                this.setState({
-                    refreshingData: false
-                })
-            )
+                    this.setState({
+                        refreshingData: false
+                    })
+                )
+            ])
+
+            g
         )
 
     }
