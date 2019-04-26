@@ -51,11 +51,16 @@ export async function orderCount() {
 }
 
 
-export async function login({email, password} = {}) {
+export async function login({email, password}) {
 
     return fetch(`${host}admin/login`, {
-        method: 'post',
-        body: JSON.stringify({email, password})
+        method: 'POST',
+        credentials: "include",
+        body: JSON.stringify({email, password}),
+        headers: {
+            'Content-Type': 'application/json',
+            // 'Access-Control-Allow-Origin': "http://localhost:4321"
+        }
     })
 }
 

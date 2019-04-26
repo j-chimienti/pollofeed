@@ -40,7 +40,7 @@ export default class Login extends Component {
             return this.props.history.push('/')
         }
 
-        return login({email, password})
+        else return login({email, password})
             .then(res => {
 
                 if (res.status === 200) {
