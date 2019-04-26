@@ -25,8 +25,8 @@ class Admin extends React.Component {
         this.getOrdersOnDate = this.getOrdersOnDate.bind(this)
         this.fetchOrderData = this.fetchOrderData.bind(this)
         this.logout = this.logout.bind(this)
+        this.handleOrderCount = this.handleOrderCount.bind(this)
         this.refreshData = this.refreshData.bind(this)
-        this.throttleRefresh = _throttle(this.refreshData, 1000)
     }
 
 
@@ -38,18 +38,16 @@ class Admin extends React.Component {
 
     }
 
-    async orderCount() {
+    async handleOrderCount() {
 
         orderCount()
             .then(result => {
-
                 console.log(result)
 
-                this.setState({
+                return this.setState({
                     ordersCount: result
                 })
 
-                return result
             }).catch(console.error)
     }
 
@@ -59,7 +57,7 @@ class Admin extends React.Component {
         await Promise.all([
             this.handleCurrentExchangeRate(),
             this.fetchOrderData(),
-            this.orderCount()
+            this.handleOrderCount()
         ])
     }
 
@@ -134,7 +132,7 @@ class Admin extends React.Component {
                         <i className={'fa fa-home'}>
                         </i>
                     </Link>
-                    <a onClick={this.throttleRefresh} className={'mx-2 btn btn-sm'}>
+                    <a onClick={this.refreshData} className={'mx-2 btn btn-sm'}>
                         <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
 
                         </i>

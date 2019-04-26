@@ -47,7 +47,7 @@ export async function orderCount() {
         headers: {
             credentials: "include"
         }
-    })
+    }).then(response => response.json())
 }
 
 
