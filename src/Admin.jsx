@@ -66,17 +66,17 @@ class Admin extends React.Component {
         refreshing: true
     }, () =>
 
-            getOrders().then(orders => {
+            getOrders().then(orders =>
                 this.setState({
                     orders,
                     refreshing: false
                 })
-            }).catch(err => {
+            ).catch(err =>
 
                 this.setState({
                     refreshing: false
                 })
-            })
+            )
         )
 
     }

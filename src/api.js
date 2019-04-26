@@ -55,7 +55,7 @@ export async function login({email, password} = {}) {
 
     return fetch(`${host}admin/login`, {
         method: 'post',
-        credentials: 'same-origin',
+        credentials: 'include',
         body: JSON.stringify({email, password})
     })
 }
