@@ -116,30 +116,35 @@ class Admin extends React.Component {
         const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
 
         return (
-            <div className={'admin'}>
+            <div className={'admin w-100 h-100'}>
 
 
-                <div className={'row d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
+                <div className={'row w-10 h-10 d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
 
                     <Link to={'/'} className={'mx-2'}>
-                        <i className={'fa fa-home'}>
+                        <i className={'fa-2x fa fa-home'}>
                         </i>
                     </Link>
                     <a onClick={this.refreshData} className={'mx-2 btn btn-sm'}>
-                        <i className={refreshingData ? 'fa fa-refresh fa-spin' : 'fa fa-refresh'}>
+                        <i className={refreshingData ? 'fa-2x fa fa-refresh fa-spin' : 'fa-2x fa fa-refresh'}>
 
                         </i>
                     </a>
                     <a
                         className={'mx-2 btn btn-sm'} onClick={this.logout}
                     >
-                        <i className={'fa fa-user-o'}>
+                        <i className={'fa-2x fa fa-user-o'}>
 
                         </i>
                         Logout
                     </a>
 
                 </div>
+
+                {!orders.length && <div className={'w-90 h-90 d-flex justify-content-center align-items-center'}>
+                    <div className={'donut'}>
+                    </div>
+                </div>}
 
                 {orders && orders.length && <div>
                     <div className={'row mb-3'}>
@@ -180,19 +185,16 @@ class Admin extends React.Component {
 
                 </div>
                     <div className={'row my-2 d-flex justify-content-center align-items-center'}>
-                    <div className={'col-md-10'} style={{maxHeight: 500, maxWidth: 700, overflowY: 'scroll'}}>
-                    <OrderTable orders={orders}/>
-                    </div>
+                        <div className={'col-md-10'} style={{maxHeight: 500, maxWidth: 700, overflowY: 'scroll'}}>
+                            <OrderTable orders={orders}/>
+                        </div>
                     </div>
                     <div className={'row my-2 d-flex justify-content-center align-items-center'}>
-                        <div className={'col-md-10'}><OrderGraph orders={orders}/></div>
+                        <div className={'col-md-10'}>
+                            <OrderGraph orders={orders}/></div>
+                        </div>
                     </div>
-                </div>}
-                {!orders.length && <div className={'w-100 h-100 d-flex justify-content-center align-items-center'}>
-                    <div className={'donut'}>
-
-                    </div>
-                </div>}
+                }
             </div>
         );
     }
