@@ -55,7 +55,7 @@ class Admin extends React.Component {
         return await Promise.all([
             this.handleCurrentExchangeRate(),
             this.handleOrderCount(),
-            this.refreshData()
+            getOrders().then(orders => this.setState(({orders})))
         ])
     }
 
