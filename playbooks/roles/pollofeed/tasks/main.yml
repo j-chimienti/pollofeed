@@ -8,10 +8,11 @@
 
 - name: cron
   include: cron.yml
+  when: false
 
 
 - name: env files
-  when: true
+  when: false
   include: copyEnv.yml
 
 
