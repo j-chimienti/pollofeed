@@ -27,6 +27,13 @@ app.set('host', '0.0.0.0')
 app.use(limiter)
 app.use(helmet())
 app.use(compression())
+
+const cookieSecret = process.env.COOKIE_SECRET
+
+if (!cookieSecret) {
+
+	throw new Error('invalid env')
+}
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({strict: true}))
