@@ -16,7 +16,7 @@ function calcFeedTimes(hours = new Date().getHours(), todayFeedCount = 0, yester
 
     } else if (hours >= 9) {
 
-        if (yesterdayFeedCount >= 30) {
+        if (yesterdayFeedCount >= 37) {
 
             feedTimes = 0
         }

@@ -34,7 +34,7 @@ if (!cookieSecret) {
 
 	throw new Error('invalid env')
 }
-app.use(cookieParser())
+app.use(cookieParser(cookieSecret))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({strict: true}))
 
