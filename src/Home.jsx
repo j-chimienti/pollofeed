@@ -161,7 +161,6 @@ export class Home extends Component {
 
                     <div className={'d-inline d-md-none'}>
                         <SocialShare
-                            title={'feed chickens through automated chicken feeder, powered by bitcoin lightning payments 🐔⚡'}
                             hashtags={['#pollofeed']}
                             klass={'d-flex justify-content-center align-items-center'}
                         />

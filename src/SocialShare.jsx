@@ -28,7 +28,7 @@ function SocialShare({title = "", hashtags = [], klass = null}) {
 
             <TwitterShareButton
                 url={url}
-                title={title}
+                title={'@pollofeed'}
                 className={'social-share-icon__share-button'}
             >
                 <TwitterIcon
@@ -37,7 +37,7 @@ function SocialShare({title = "", hashtags = [], klass = null}) {
             </TwitterShareButton>
             <div className={'social-share-icon'}>
                 <FacebookShareButton
-                    quote={title}
+                    quote={url}
                     url={url}
                     className={'social-share-icon__share-button'}
                 >
@@ -53,7 +53,7 @@ function SocialShare({title = "", hashtags = [], klass = null}) {
             <div>
                 <RedditShareButton
                     url={url}
-                    title={title}
+                    title={url}
                     className={'social-share-icon__share-button'}
 
                 >
@@ -65,7 +65,7 @@ function SocialShare({title = "", hashtags = [], klass = null}) {
                 {/*<RedditShareCount url={url}/>*/}
             </div>
                <EmailShareButton
-                   subject={title}
+                   subject={url}
                    url={url}
                    className={'social-share-icon__share-button'}
                    body={title}
