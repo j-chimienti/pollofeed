@@ -8,15 +8,11 @@ const send = require('../lib/email/email.controller').send
 
 const calcFeedTimes = require('./calcFeedTimes')
 const moment = require('moment')
+const dbconnect = require('./dbconnect')
 
 async function main() {
 
-    const client = await mongoConnect()
-    console.log('Connected successfully to server')
-
-    const dbName = process.env.DB_NAME || (console.error('no db'), process.exit(1))
-
-    global.db = client.db(dbName)
+   await dbconnect()
 
     const todayOrders = await orderDao.getOrdersByDate()
 

@@ -11,7 +11,7 @@
 
 
 - name: env files
-  when: false
+  when: true
   include: copyEnv.yml
 
 

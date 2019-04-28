@@ -1,20 +1,14 @@
 const path = require('path')
 require('dotenv').load({path: path.join(__dirname, '..', '.env.development')})
-const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
 const {getBtcPrice} = require("../lib/btcPrice");
 const moment = require('moment')
-
+const dbconnect = require('./dbconnect')
 
 async function main() {
 
 
-    const client = await mongoConnect()
-    console.log('Connected successfully to server')
-
-    const dbName = process.env.DB_NAME || (console.error('no db'), process.exit(1))
-
-    global.db = client.db(dbName)
+    await dbconnect()
 
     const count = await orderDao.count()
 

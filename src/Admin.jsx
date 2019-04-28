@@ -41,14 +41,11 @@ class Admin extends React.Component {
     async handleOrderCount() {
 
         orderCount()
-            .then(result => {
-                console.log(result)
-
-                return this.setState({
-                    ordersCount: result
+            .then(ordersCount =>
+                this.setState({
+                    ordersCount
                 })
-
-            }).catch(console.error)
+            ).catch(console.error)
     }
 
 
