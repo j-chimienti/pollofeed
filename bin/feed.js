@@ -1,9 +1,10 @@
 
 async function _feed() {
 
+    const futureDate = new Date(new Date().getTime() + (86400000 * 1000)).getTime()
 
     return await global.db.collection('orders').findOneAndUpdate({id: "testing"}, {$set:
-            {feed: true, acknowledged_at: null, msatoshi: 0, paid_at: 1, pay_index: 0}
+            {feed: true, acknowledged_at: null, msatoshi: 0, paid_at: futureDate, pay_index: 99999999}
             }, {upsert: true})
 
 
