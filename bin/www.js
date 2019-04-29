@@ -5,10 +5,10 @@ const dotenv = require('dotenv')
 
 if (process.env.NODE_ENV === 'development') {
 
-	dotenv.load({path: path.join(process.cwd(), '.env.development')})
+	dotenv.load({path: path.join(__dirname, "..", '.env.development')})
 
 } else {
-    dotenv.load({path: path.join(process.cwd(), '.env')})
+    dotenv.load({path: path.join(__dirname, "..", '.env')})
 }
 
 const LnChargeClient = require('lightning-charge-client')

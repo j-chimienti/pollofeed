@@ -48,7 +48,9 @@
     "lint:fix": "eslint --fix --ext .jsx,.js src lib",
     "be": "node bin/www.js",
     "be:dev": "NODE_ENV=development nodemon --ignore src bin/www",
-    "orders": "node bin/ordersByDay"
+    "orders": "node bin/ordersByDay",
+    "totals": "node bin/totals.js",
+    "feed": "node bin/manfeed.js"
   },
   "eslintConfig": {
     "extends": "react-app"

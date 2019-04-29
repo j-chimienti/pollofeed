@@ -16,14 +16,16 @@ services:
     container_name: pollofeed
     build: .
     restart: unless-stopped
+    depends_on:
+      - db
     networks:
-    - nginxproxy
+      - nginxproxy
     env_file:
-    - .env
+      - .env
     environment:
       MONGO_URI: "mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@db/admin"
     ports:
-    - "${VIRTUAL_PORT}:${VIRTUAL_PORT}"
+      - "${VIRTUAL_PORT}:${VIRTUAL_PORT}"
 
 networks:
   nginxproxy:
