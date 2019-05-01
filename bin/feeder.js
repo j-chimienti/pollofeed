@@ -23,6 +23,7 @@ async function main() {
     const shouldFeed = feedTimes > 0
     if (shouldFeed) await feed(feedTimes)
 
+
     let text = `pollofeed - fed ${todayOrders.length} times today.`
 
     if (shouldFeed) text += `\tjust fed ${feedTimes} times.`
