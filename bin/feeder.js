@@ -1,7 +1,6 @@
 const path = require('path')
 require('dotenv').load({path: path.resolve(__dirname, '../.env.development')})
 
-const mongoConnect = require('../lib/mongo/connect').connect
 const orderDao = require('../lib/orders/dao')
 const feed = require('./feed')
 const send = require('../lib/email/email.controller').send
