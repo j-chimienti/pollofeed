@@ -32,7 +32,7 @@ export async function currentExchangeRate() {
 
 export async function totalMsats() {
 
-    return fetch(`${host}orders/totalMsats`, {method: 'get'})
+    return fetch(`${host}orders/totalMsats`, {method: 'get', credentials: 'same-origin', accept: 'application/json'})
         .then(res => res.json())
 }
 
