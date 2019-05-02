@@ -32,7 +32,7 @@ export async function currentExchangeRate() {
 
 export async function getOrders() {
 
-    return fetch(`${host}orders?offset=0`, {credentials: "same-origin", accept: "application/json"})
+    return fetch(`${host}orders?limit=100&offset=0`, {credentials: "same-origin", accept: "application/json"})
         .then(response => response.json())
 }
 
