@@ -7,6 +7,6 @@ USER node
 COPY --chown=node:node package*.json  ./
 RUN npm install && npm cache clean --force
 COPY --chown=node:node . .
-RUN yarn run build
+RUN npm run build
 EXPOSE ${APP_PORT}
 CMD node ./bin/www.js
