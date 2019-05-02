@@ -94,7 +94,6 @@ class App extends Component {
             <div>
                 <BrowserRouter>
                     <Switch>
-                        <Route path={'/about'} exact component={About}/>
                         <Route path="/" exact
                                render={(props) => <Home
                                    {...props}

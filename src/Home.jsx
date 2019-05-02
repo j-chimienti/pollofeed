@@ -103,9 +103,6 @@ export class Home extends Component {
                             </i>
                             Pollo Feed
                         </h1>
-                    <Link to={'/about'}  className={'small text-muted about-link'}>
-                        About
-                    </Link>
                         <p className={'small font-weight-light text-muted mb-2'}>
                             Bitcoin Lightning Powered Chicken Feeder
                         </p>
