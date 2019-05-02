@@ -148,7 +148,11 @@ export class Home extends Component {
 
                                 <iframe
                                     title={'pollofeed live feed'}
-                                    src={'https://pollofeed.ngrok.io'} width={'100%'} height={'480'} className={'rounded'}>
+                                    src={'https://pollofeed.ngrok.io'}
+                                    width={'100%'}
+                                    height={'480'}
+                                    className={'rounded'}
+                                >
 
                                 </iframe>
                         </div>
