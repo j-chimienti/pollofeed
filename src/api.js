@@ -30,6 +30,12 @@ export async function currentExchangeRate() {
 
 }
 
+export async function totalMsats() {
+
+    return fetch(`${host}orders/totalMsats`, {method: 'get'})
+        .then(res => res.json())
+}
+
 export async function getOrders() {
 
     return fetch(`${host}orders?limit=100&offset=0`, {credentials: "same-origin", accept: "application/json"})

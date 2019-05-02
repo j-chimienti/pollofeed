@@ -6,7 +6,7 @@ import OrderTable from "./OrderTable";
 import OrderGraph from "./OrderGraph";
 import {Link} from "react-router-dom";
 import {fmt} from "fmtbtc";
-import {currentExchangeRate, getOrders, logout, orderCount} from './api'
+import {currentExchangeRate, getOrders, logout, orderCount, totalMsats} from './api'
 
 
 class Admin extends React.Component {
@@ -15,6 +15,7 @@ class Admin extends React.Component {
         orders: [],
         refreshing: false,
         btc_usd: 5000,
+        totalMsats: 0,
         ordersCount: 0
     }
 
@@ -27,6 +28,8 @@ class Admin extends React.Component {
         this.logout = this.logout.bind(this)
         this.handleOrderCount = this.handleOrderCount.bind(this)
         this.refreshData = this.refreshData.bind(this)
+        this._totalMsats = this._totalMsats.bind(this)
+        this._getOrders = this._getOrders.bind(this)
     }
 
 
@@ -34,7 +37,7 @@ class Admin extends React.Component {
 
         currentExchangeRate().then(result => {
             return this.setState({btc_usd: result.data.BTCUSD.USD})
-        })
+        }).catch(console.error)
 
     }
 
@@ -54,15 +57,29 @@ class Admin extends React.Component {
     }
 
     async componentDidMount() {
-
-        this.interval = setInterval(() => this.handleCurrentExchangeRate(), 1000 * 60)
-
         return await Promise.all([
             this.handleCurrentExchangeRate(),
             this.handleOrderCount(),
-            getOrders().then(orders => this.setState(({orders}))),
+            this._totalMsats(),
+            this._getOrders(),
+        ]).then(() => {
+            this.interval = setInterval(() => this.handleCurrentExchangeRate(), 1000 * 60)
+        })
+    }
 
-        ])
+    _getOrders() {
+
+        getOrders().then(orders => this.setState(({orders})))
+            .catch(console.error)
+
+    }
+
+    _totalMsats() {
+
+        totalMsats().then(totalMsats => {
+
+            this.setState({totalMsats})
+        }).catch(console.error)
     }
 
 
@@ -120,7 +137,7 @@ class Admin extends React.Component {
 
     render() {
 
-        const {orders, refreshingData, btc_usd, ordersCount} = this.state;
+        const {orders, refreshingData, btc_usd, ordersCount, totalMsats} = this.state;
 
         const Nav = (
             <div className={'row w-10 h-10 d-flex justify-content-end align-items-center p-4 mb-3 admin-nav-links'}>
@@ -166,9 +183,6 @@ class Admin extends React.Component {
             let todayOrders = this.getOrdersOnDate(orders, new Date())
             let yesterdayOrders = this.getOrdersOnDate(orders, new Date().getTime() - (86400000))
 
-            const msatoshis = orders.map(o => parseInt(o.msatoshi))
-
-            const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
 
             return (
                 <div className={'admin w-100 h-100'}>
@@ -193,7 +207,7 @@ class Admin extends React.Component {
                                     <div className={'font-weight-bold'}>Total BTC</div>
                                     <div className={'text-monospace'}>
 
-                                        {fmt(msatoshiTotal, "msat", "btc")}
+                                        {fmt(totalMsats, "msat", "btc")}
                                     </div>
                                 </div>
                                 <div className={'row'}>
