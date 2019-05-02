@@ -1,8 +1,8 @@
 FROM node:carbon
 MAINTAINER joe chimienti <jchimien@gmail.com>
-RUN mkdir /usr/src/app/pollofeed
-RUN chown -R node:node /usr/src/app/pollofeed
-WORKDIR /usr/src/app/pollofeed
+RUN mkdir /pollofeed
+RUN chown -R node:node /pollofeed
+WORKDIR /pollofeed
 #ARG NODE_ENV=production
 #ENV NODE_ENV $NODE_ENV
 USER node
