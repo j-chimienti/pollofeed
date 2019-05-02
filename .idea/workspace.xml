@@ -495,7 +495,7 @@
       <workItem from="1556709655696" duration="1886000" />
       <workItem from="1556713114249" duration="602000" />
       <workItem from="1556716567127" duration="767000" />
-      <workItem from="1556765779134" duration="370000" />
+      <workItem from="1556765779134" duration="862000" />
     </task>
     <task id="LOCAL-00001" summary="t">
       <created>1554334227123</created>
@@ -568,11 +568,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275706000" />
+    <option name="totallyTimeSpent" value="276198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="23" width="1126" height="777" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.19557196" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -590,7 +589,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.20756458" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.20756458" />
       <window_info anchor="right" id="Run" order="4" weight="0.4050179" />
       <window_info anchor="right" id="Debug" order="5" weight="0.33512545" />
     </layout>
