@@ -51,7 +51,7 @@ export async function logout () {
 export async function orderCount() {
     return fetch(`${host}orders/count`, {
         headers: {
-            credentials: "include"
+            credentials: "same-origin"
         }
     }).then(response => response.json())
 }
