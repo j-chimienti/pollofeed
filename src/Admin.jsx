@@ -76,9 +76,19 @@ class Admin extends React.Component {
 
     _totalMsats() {
 
-        totalMsats().then(totalMsats => {
+        totalMsats().then(result => {
 
-            this.setState({totalMsats})
+
+            if (!(result.length && result[0].hasOwnProperty('msatoshiTotal'))) {
+
+                console.error("invalid response")
+                console.log(result)
+
+            } else {
+
+                const totalMsats = result[0].msatoshiTotal
+                this.setState({totalMsats})
+            }
         }).catch(console.error)
     }
 
