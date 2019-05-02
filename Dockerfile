@@ -5,7 +5,7 @@ WORKDIR /usr/src/app/pollofeed
 #ENV NODE_ENV $NODE_ENV
 USER node
 COPY --chown=node:node package*.json  ./
-RUN npm install && npm cache clean --force
+RUN npm install
 COPY --chown=node:node . .
 RUN npm run build
 EXPOSE ${APP_PORT}
