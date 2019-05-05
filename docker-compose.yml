@@ -14,6 +14,8 @@ services:
       - nginxproxy
   pollofeed:
     container_name: pollofeed
+    volumes:
+      - /var/log/docker:/var/log
     build: .
     restart: unless-stopped
     depends_on:
