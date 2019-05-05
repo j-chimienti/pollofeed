@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import QrCode from "./QrCode";
+import {node} from "./constants";
 
 
 
@@ -14,9 +15,11 @@ function LightningNode({node}) {
     );
 }
 
-LightningNode.propTypes = {};
+LightningNode.propTypes = {
+    node: PropTypes.string.isRequired
+};
 LightningNode.defaultProps = {
-    node: ' 02600e4f3b1c93c930314ddf236129cb15d81d211bd80a3c74b02b0241e31db63e@212.24.102.21:9735'
+    node
 };
 
 export default LightningNode;
