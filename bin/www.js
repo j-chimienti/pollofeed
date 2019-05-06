@@ -17,15 +17,8 @@ const http = require('http')
 const createIndexes = require('../lib/mongo/createIndex').createIndexes
 const mongoConnect = require('../lib/mongo/connect').connect
 
-/**
- * Module dependencies.
- */
-//process.env.NODE_ENV = 'development';
 
-
-
-
-const dbName = process.env.DB_NAME || 'registration'
+const dbName = process.env.POLLOFEED_DB_NAME || 'btcstore'
 
 
 
