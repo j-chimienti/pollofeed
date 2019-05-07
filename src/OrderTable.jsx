@@ -24,10 +24,10 @@ function OrderRow(
 
     return (<tr>
         <td className={'text-left'}>
+            {paidAtTime.toLocaleString()}
             <span className={`mx-1 badge badge-${badge}`}>
                 {(acknowledgedTime - paidAtTime) / 1000}
             </span>
-            {paidAtTime.toLocaleString()}
         </td>
         <td className={'text-monospace font-weight-bold text-right'}>{(fmt(msatoshi, "msat", "sat")).toLocaleString()}</td>
     </tr>
@@ -60,10 +60,10 @@ function OrderTable ({orders: _orders}) {
 
         // const msatoshiTotal = msatoshis.reduce((total, msat) => total + msat, 0);
         return (
-            <table className={'table'}>
+            <table className={'table table-striped'}>
                 <thead>
                 <tr>
-                    <th className={'text-left'}>Date / Time</th>
+                    <th className={'text-left'}>{'Date / Time'}</th>
                     <th className={'text-right text-capitalize'}
                     >Sats</th>
                 </tr>

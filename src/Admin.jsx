@@ -199,7 +199,7 @@ class Admin extends React.Component {
                     {Nav}
                     <div style={{opacity: refreshingData ? '0.5' : 1}}>
                         <div className={'row mb-3'}>
-                            <div className={'col-xs-10 col-sm-8 card bg-warning mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
+                            <div className={'col-xs-10 col-sm-8 card bg-light mx-auto p-4'} style={{maxWidth: 400, fontSize: '1.2rem'}}>
                                 <div className={'row d-flex justify-content-between align-items-center'}>
                                     <div className={'font-weight-bold'}>Today's Orders</div>
                                     <div className={'text-monospace'}>{todayOrders.length}</div>

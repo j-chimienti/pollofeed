@@ -72,12 +72,24 @@ class App extends Component {
                 })
             })
             .catch(err => {
-                    return err.status === 402 ? this.listen(invId)
-                        : err.status === 410 ? false
-                            : err.status === 'abort' ? null
-                                : setTimeout(() => this.listen(invId), 10000)
+
+                if (err.status === 402) {
+
+                    return this.listen(invId)
+
+                } else if (err.status === 410) {
+
+                    return false
+
+                } else if (err.status === "abort") {
+
+                    return null
+
+                } else {
+
+                    setTimeout(() => this.listen(invId), 10000)
                 }
-            )
+            })
 
 
     }
