@@ -9,9 +9,16 @@ const helmet = require('helmet')
 const cors = require('cors')
 const compression = require('compression')
 const bodyParser = require('body-parser')
-const rateLimit = require("express-rate-limit");
+const rateLimit = require("express-rate-limit")
 
 const orderRouter = require('./lib/orders/router')
+const cookieSecret = process.env.COOKIE_SECRET
+
+if (!cookieSecret) {
+
+	throw new Error('invalid env')
+}
+
 
 const app = express()
 
@@ -23,17 +30,13 @@ const limiter = rateLimit({
 app.enable('trust proxy')
 app.set('currency', 'BTC')
 app.set('host', '0.0.0.0')
+app.set("url", process.env.POLLOFEED_URL || "https://pollofeed.com")
 
 app.use(limiter)
 app.use(helmet())
 app.use(compression())
 
-const cookieSecret = process.env.COOKIE_SECRET
 
-if (!cookieSecret) {
-
-	throw new Error('invalid env')
-}
 app.use(cookieParser(cookieSecret))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({strict: true}))

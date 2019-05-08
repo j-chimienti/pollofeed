@@ -2,6 +2,7 @@
 
 const path = require('path')
 const dotenv = require('dotenv')
+const http = require('http')
 
 if (process.env.NODE_ENV === 'development') {
 
@@ -11,56 +12,37 @@ if (process.env.NODE_ENV === 'development') {
     dotenv.load({path: path.join(__dirname, "..", '.env')})
 }
 
-const LnChargeClient = require('lightning-charge-client')
+
 const app = require('../app')
-const http = require('http')
+const LnChargeClient = require('lightning-charge-client')
 const createIndexes = require('../lib/mongo/createIndex').createIndexes
 const mongoConnect = require('../lib/mongo/connect').connect
-
-
-const dbName = process.env.POLLOFEED_DB_NAME || 'btcstore'
-
-
-
-/**
- * Get port from environment and store in Express.
- */
 let port = normalizePort(process.env.VIRTUAL_PORT || '4321')
-
-/**
- * Create HTTP server.
- */
 let server = http.createServer(app)
 
-//let io = require('socket.io')(server)
+
+global.lnCharge = LnChargeClient(process.env.CHARGE_URL, process.env.CHARGE_TOKEN)
 
 
+main()
+async function main() {
+	const mongo = await mongoConnect()
+	const dbName = process.env.POLLOFEED_DB_NAME || 'btcstore'
+	console.log('Connected successfully to server')
+	global.db = mongo.db(dbName)
 
-const charge = LnChargeClient(process.env.CHARGE_URL, process.env.CHARGE_TOKEN)
+	try {
+		await createIndexes()
+	} catch (e) {
+		console.error(e)
+	}
 
-global.lnCharge = charge
-
-
-//global.io = io
-
-//
-// global.io.on('connection', function (socket) {
-//
-//
-// 	// socket.on('join', orderId => {
-// 	// 	socket.join(orderId)
-// 	// })
-//
-// })
-
-/**
- * Listen on provided port, on all network interfaces.
- */
+	server.listen(port, app.get('host'))
+	server.on('error', onError)
+	server.on('listening', onListening)
 
 
-/**
- * Normalize a port into a number, string, or false.
- */
+}
 
 function normalizePort(val) {
 	const port = parseInt(val, 10)
@@ -78,10 +60,6 @@ function normalizePort(val) {
 	return false
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
-
 function onError(error) {
 	if (error.syscall !== 'listen') {
 		throw error
@@ -93,22 +71,18 @@ function onError(error) {
 
 	// handle specific listen errors with friendly messages
 	switch (error.code) {
-	case 'EACCES':
-		console.error(bind + ' requires elevated privileges')
-		process.exit(1)
-		break
-	case 'EADDRINUSE':
-		console.error(bind + ' is already in use')
-		process.exit(1)
-		break
-	default:
-		throw error
+		case 'EACCES':
+			console.error(bind + ' requires elevated privileges')
+			process.exit(1)
+			break
+		case 'EADDRINUSE':
+			console.error(bind + ' is already in use')
+			process.exit(1)
+			break
+		default:
+			throw error
 	}
 }
-
-/**
- * Event listener for HTTP server "listening" event.
- */
 
 function onListening() {
 	const addr = server.address()
@@ -119,28 +93,3 @@ function onListening() {
 	app.emit('ready')
 	console.log('listening on port' + bind)
 }
-
-
-async function main() {
-
-
-	const client = await mongoConnect()
-	console.log('Connected successfully to server')
-
-
-	global.db = client.db(dbName)
-
-	try {
-		await createIndexes()
-	} catch (e) {
-		console.error(e)
-	}
-	server.listen(port, app.get('host'))
-	server.on('error', onError)
-	server.on('listening', onListening)
-
-
-}
-
-main()
-
