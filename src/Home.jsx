@@ -149,15 +149,15 @@ export class Home extends Component {
                         <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
 
 
-                                {/*<iframe*/}
-                                {/*    title={'pollofeed live feed'}*/}
-                                {/*    src={'https://pollofeed.ngrok.io'}*/}
-                                {/*    width={'100%'}*/}
-                                {/*    height={'480'}*/}
-                                {/*    className={'rounded'}*/}
-                                {/*>*/}
+                                <iframe
+                                    title={'pollofeed live feed'}
+                                    src={'https://pollofeed.ngrok.io'}
+                                    width={'100%'}
+                                    height={'480'}
+                                    className={'rounded'}
+                                >
 
-                                {/*</iframe>*/}
+                                </iframe>
                         </div>
 
                     </div>
