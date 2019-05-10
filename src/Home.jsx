@@ -30,7 +30,7 @@ export class Home extends Component {
     state = {
         submittingLightningInvoice: false,
         userInput: {
-            feedCount: 1
+            feedTimes: 1
         }
     }
 
@@ -55,7 +55,7 @@ export class Home extends Component {
 
     // post a new invoice request from lighting client BE
     async postOrder() {
-        invoice()
+        invoice(this.state.userInput.feedTimes)
             .then(inv => {
                 this.setState({
                     submittingLightningInvoice: false,
@@ -80,7 +80,7 @@ export class Home extends Component {
             paymentSuccess
         } = this.props;
 
-        const {submittingLightningInvoice} = this.state;
+        const {submittingLightningInvoice, userInput: {feedTimes}} = this.state;
 
         return (
             <div className={'App'}>
@@ -106,27 +106,30 @@ export class Home extends Component {
                         <p className={'small font-weight-light text-muted mb-2'}>
                             Bitcoin Lightning Powered Chicken Feeder
                         </p>
-                        <button
-                            onClick={this.handlePostOrder}
-                            type="submit"
-                            className="btn mx-auto mb-3 btn-feed btn-primary font-weight-bold text-gray text-uppercase d-flex justify-content-center">
-                            {submittingLightningInvoice ? (<div className={'donut'}>
 
-                            </div>) : 'Feed'}
-                        </button>
-                    {/*<input*/}
-                    {/*    value={userInput.feedCount}*/}
-                    {/*    onChange={e => this.setState({*/}
-                    {/*        ...this.state,*/}
-                    {/*        userInput: {*/}
-                    {/*            ...this.state.userInput,*/}
-                    {/*            feedCount: e.target.value*/}
-                    {/*        }*/}
-                    {/*    })}*/}
-                    {/*    type="number" min={1} max={100} step={1}*/}
-                    {/*    className={'form-control-sm text-monospace'}*/}
+                        <div className={'row d-flex align-items-center justify-content-center'}>
+                            <button
+                                onClick={this.handlePostOrder}
+                                type="submit"
+                                className="btn btn-lg btn-feed btn-primary font-weight-bold text-gray text-uppercase d-flex justify-content-center">
+                                {submittingLightningInvoice ? (<div className={'donut'}>
 
-                    {/*/>*/}
+                                </div>) : 'Feed'}
+                            </button>
+                            <input
+                                value={feedTimes}
+                                onChange={e => this.setState({
+                                    ...this.state,
+                                    userInput: {
+                                        ...this.state.userInput,
+                                        feedTimes: e.target.value
+                                    }
+                                })}
+                                type="number" min={1} max={100} step={1}
+                                className={'form-control-lg text-monospace'}
+
+                            />
+                        </div>
                     {paymentSuccess && <div className={'row d-flex'}>
                         <div className={'alert alert-success mx-auto'}>
                             Payment Successful!
@@ -146,15 +149,15 @@ export class Home extends Component {
                         <div className={'col mx-auto'} style={{maxWidth: '680px'}}>
 
 
-                                <iframe
-                                    title={'pollofeed live feed'}
-                                    src={'https://pollofeed.ngrok.io'}
-                                    width={'100%'}
-                                    height={'480'}
-                                    className={'rounded'}
-                                >
+                                {/*<iframe*/}
+                                {/*    title={'pollofeed live feed'}*/}
+                                {/*    src={'https://pollofeed.ngrok.io'}*/}
+                                {/*    width={'100%'}*/}
+                                {/*    height={'480'}*/}
+                                {/*    className={'rounded'}*/}
+                                {/*>*/}
 
-                                </iframe>
+                                {/*</iframe>*/}
                         </div>
 
                     </div>

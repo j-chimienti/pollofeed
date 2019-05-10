@@ -1,9 +1,9 @@
 const host = process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:4321/'
 
 
-export async function invoice() {
+export async function invoice(feedTimes = 1) {
 
-    return fetch(`/orders/invoice`, {method: 'POST'})
+    return fetch(`/orders/invoice`, {method: 'POST', body: JSON.stringify({feedTimes})})
         .then(response => response.json())
 }
 
