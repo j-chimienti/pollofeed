@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Footer from "./Footer";
-import {Link} from "react-router-dom";
 import SocialShare from "./SocialShare";
 import NewOrder from "./NewOrder";
 import Modal from "react-modal";

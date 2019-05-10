@@ -40,17 +40,12 @@ class NewOrder extends React.Component {
         const {time} = this.state
 
         const {inv: {msatoshi, expires_at, payreq}, closeModal} = this.props
-        const CurrencyDisplay =  <p className="font-weight-light text-monospace">
-                {msat2sat(msatoshi, true)} satoshis
-            </p>
 
         const timeLeft = expires_at - (time / 1000 | 0)
 
         const timeFmt = formatDur(timeLeft)
 
         if (!(timeLeft > 0)) {
-
-
             closeModal()
             return null;
         }
@@ -65,7 +60,9 @@ class NewOrder extends React.Component {
                                 </i>
                             </button>
                         </div>
-                        {CurrencyDisplay}
+                        <p className="font-weight-light text-monospace">
+                            {msat2sat(msatoshi, true)} satoshis
+                        </p>
                         <div className="input-group">
                             <input className="form-control form-control-lg" type="text"  readOnly value={payreq} id={'payreq'}/>
                             <div className="input-group-append">
