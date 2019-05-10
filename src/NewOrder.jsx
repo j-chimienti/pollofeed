@@ -39,11 +39,8 @@ class NewOrder extends React.Component {
     render() {
         const {time} = this.state
 
-        const {inv: {msatoshi, quoted_currency, quoted_amount, expires_at, payreq}, closeModal} = this.props
-        const CurrencyDisplay = quoted_currency && quoted_currency !== 'BTC' ? <p className="font-weight-light small">
-                #{quoted_amount} #{quoted_currency} ≈ #{msat2sat(msatoshi, true)} satoshis
-            </p>
-            : <p className="font-weight-light text-monospace">
+        const {inv: {msatoshi, expires_at, payreq}, closeModal} = this.props
+        const CurrencyDisplay =  <p className="font-weight-light text-monospace">
                 {msat2sat(msatoshi, true)} satoshis
             </p>
 

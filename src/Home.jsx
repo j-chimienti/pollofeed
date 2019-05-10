@@ -156,7 +156,6 @@ export class Home extends Component {
                                     height={'480'}
                                     className={'rounded'}
                                 >
-
                                 </iframe>
                         </div>
 
