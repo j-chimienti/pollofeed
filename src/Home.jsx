@@ -29,7 +29,7 @@ export class Home extends Component {
     state = {
         submittingLightningInvoice: false,
         userInput: {
-            feedTimes: 1
+            feedTimes: null
         }
     }
 
@@ -54,7 +54,7 @@ export class Home extends Component {
 
     // post a new invoice request from lighting client BE
     async postOrder() {
-        invoice(this.state.userInput.feedTimes)
+        invoice(this.state.userInput.feedTimes || 1)
             .then(inv => {
                 this.setState({
                     submittingLightningInvoice: false,
@@ -116,6 +116,7 @@ export class Home extends Component {
                                 </div>) : 'Feed'}
                             </button>
                             <input
+                                placeholder={1}
                                 value={feedTimes}
                                 onChange={e => this.setState({
                                     ...this.state,
@@ -124,7 +125,10 @@ export class Home extends Component {
                                         feedTimes: e.target.value
                                     }
                                 })}
-                                type="number" min={1} max={100} step={1}
+                                type="number"
+                                min={1}
+                                max={100}
+                                step={1}
                                 className={'form-control-lg text-monospace'}
 
                             />
