@@ -1,0 +1,13 @@
+- name: service
+  copy:
+    src: pollofeed.service
+    dest: /etc/systemd/system/pollofeed.service
+
+- name: reload
+  command: sudo systemctl daemon-reload
+
+- name: create service
+  command: systemctrl start pollofeed
+
+- name: enable on boot
+  command: systemctrl enable pollofeed

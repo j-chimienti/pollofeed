@@ -10,7 +10,8 @@ bin/*.sh
 */ngrok.yml
 # testing
 /coverage
-
+hosts
+*/hosts
 # production
 /build
 

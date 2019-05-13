@@ -1,0 +1,14 @@
+[Unit]
+Description=pollofeed
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/bin/python3 ${HOME}/Documents/pollofeed/pi/pollofeed.py
+KillMode=process
+Restart=on-failure
+RestartSec=60s
+
+[Install]
+WantedBy=multi-user.target

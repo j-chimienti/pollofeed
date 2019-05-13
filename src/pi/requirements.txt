@@ -1,0 +1,6 @@
+gpiozero
+bson
+setuptools
+wheel
+pyyaml
+pymongo==3.5.1
