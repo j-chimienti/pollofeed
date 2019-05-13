@@ -1,24 +1,19 @@
 const ChickenFeedOrder = require('./ChickenFeedOrder')
-
 const express = require('express')
 const orderDao = require('./dao')
 const router = express.Router()
 
 const webhookToken = require('crypto')
     .createHmac('sha256', process.env.CHARGE_TOKEN)
-    .update('pollofeed')
+    .update("pollofeed")
     .digest('hex')
-
-
 
 function msatoshiFromSatoshi(satoshi) {
 
     return parseInt(satoshi * 1000)
 }
 
-
-
-const tenMinutes = 600
+const tenMinutes = 600 // seconds
 router.post('/invoice', async (req, res) => {
 
     const feedTimes = req.body.feedTimes || 1

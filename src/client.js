@@ -10,6 +10,11 @@ const payDialog  = require('../views/payment.pug')
 const csrf = $('meta[name=csrf]').attr('content')
     , show_bolt11 = !!$('meta[name=show-bolt11]').attr('content')
 
+
+$("#pollofeed_livestream").load(() => {
+  alert("load")
+}).show()
+
 $('[data-buy-item]').click(e => {
   e.preventDefault()
   pay({})

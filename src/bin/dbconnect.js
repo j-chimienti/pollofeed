@@ -1,9 +1,12 @@
-const path = require('path')
-require('dotenv').load({path: path.resolve(__dirname, '../.env.development')})
-const mongoConnect = require('../lib/mongo/connect').connect
+const {MongoClient} = require('mongodb')
 
 module.exports = async function() {
-    const client = await mongoConnect()
+
+    const client = await MongoClient.connect(process.env.POLLOFEED_MONGO_URI, {poolSize: 5, useNewUrlParser: true}).catch(err => {
+        console.error('error connecting to server @', process.env.POLLOFEED_MONGO_URI)
+        console.error(err)
+        process.exit(1)
+    })
     console.log('Connected successfully to server')
 
     const dbName = process.env.POLLOFEED_DB_NAME || (console.error('no POLLOFEED_DB_NAME env'), process.exit(1))
