@@ -48,7 +48,7 @@ const listen = (invid, cb) => {
 
 const success = _ => {
   const diag = $(paidDialog()).modal()
-  setTimeout(_ => diag.modal('hide'), 5000)
+  setTimeout(_ => diag.modal('hide'), 2000)
 }
 
 const updateExp = el => {
