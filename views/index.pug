@@ -1,6 +1,6 @@
 doctype html
 
-html.h-100
+html
   title= settings.title
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -10,11 +10,9 @@ html.h-100
   link(rel='stylesheet', href='bootswatch/'+settings.theme+'/bootstrap.min.css')
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
 
-
-  body.h-100
-    .container.d-flex.h-100: .justify-content-center.align-self-center.text-center.mx-auto.w-100
-
-      h1.mb-4.text-uppercase.font-weight-bold= settings.title
+  body
+    .container.d-flex: .justify-content-center.align-self-center.text-center.mx-auto.w-100
+      h1.mt-2.mb-4.text-uppercase.font-weight-bold= settings.title
       h4.mb-4 Bitcoin Lightning Powered Chicken Feeder
       .row
         button(style="max-width: 300px" class="btn btn-primary btn-block mx-auto mb-4 font-weight-bold text-large"
@@ -25,6 +23,5 @@ html.h-100
           style="border: none;"
           width="640"
           class='rounded mx-auto shadow')
-
   include footer.pug
   script(src='script.js')
