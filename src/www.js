@@ -6,19 +6,18 @@ const http = require('http')
 
 if (process.env.NODE_ENV === 'development') {
 
-	dotenv.load({path: path.join(__dirname, "..", '.env.development')})
+	dotenv.config({path: path.join(__dirname, "..", '.env.development')})
 
 } else {
-    dotenv.load({path: path.join(__dirname, "..", '.env')})
+    dotenv.config({path: path.join(__dirname, "..", '.env')})
 }
 
 
-const app = require('../app')
+const app = require('./app')
 const LnChargeClient = require('lightning-charge-client')
-const createIndexes = require('../lib/mongo/createIndex').createIndexes
-const mongoConnect = require('../lib/mongo/connect').connect
 let port = normalizePort(process.env.VIRTUAL_PORT || '4321')
 let server = http.createServer(app)
+const MongoClient = require('mongodb').MongoClient
 
 
 global.lnCharge = LnChargeClient(process.env.CHARGE_URL, process.env.CHARGE_TOKEN)
@@ -26,16 +25,28 @@ global.lnCharge = LnChargeClient(process.env.CHARGE_URL, process.env.CHARGE_TOKE
 
 main()
 async function main() {
-	const mongo = await mongoConnect()
-	const dbName = process.env.POLLOFEED_DB_NAME || 'btcstore'
-	console.log('Connected successfully to server')
-	global.db = mongo.db(dbName)
+	const mongo = await MongoClient.connect(process.env.POLLOFEED_MONGO_URI, {poolSize: 5, useNewUrlParser: true}).catch(err => {
+			console.error('error connecting to server @', process.env.POLLOFEED_MONGO_URI)
+			console.error(err)
+			process.exit(1)
+		})
 
-	try {
-		await createIndexes()
-	} catch (e) {
-		console.error(e)
-	}
+	const dbName = process.env.POLLOFEED_DB_NAME || 'btcstore'
+	global.db = mongo.db(dbName)
+	console.log('Connected successfully to server')
+
+	await Promise.all([
+
+		global.db.collection("orders").createIndex({
+			id: 1,
+		}, {unique: true}),
+		global.db.collection('orders').createIndex({
+			feed: 1
+		}),
+		global.db.collection('orders').createIndex({
+			paid_at: 1
+		}),
+	])
 
 	server.listen(port, app.get('host'))
 	server.on('error', onError)
@@ -91,5 +102,4 @@ function onListening() {
 		: 'port ' + addr.port
 	console.log('Listening on ' + bind)
 	app.emit('ready')
-	console.log('listening on port' + bind)
 }

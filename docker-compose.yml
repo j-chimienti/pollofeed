@@ -25,9 +25,9 @@ services:
     env_file:
       - .env
     environment:
-      POLLOFEED_MONGO_URI: "mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@db/${DB_NAME}"
+      POLLOFEED_MONGO_URI: "mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@db/${POLLOFEED_DB_NAME}"
     ports:
-      - "${VIRTUAL_PORT}:${VIRTUAL_PORT}"
+      - "${PORT}:${PORT}"
 
 networks:
   nginxproxy:

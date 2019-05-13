@@ -1,5 +1,5 @@
 process.env.NODE_ENV = "production"
-var app = require('../app')
+var app = require('../src/app')
     , request = require('supertest'),
     assert = require('assert');
 

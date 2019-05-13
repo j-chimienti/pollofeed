@@ -1,2 +1,4 @@
+[pi]
+192.168.1.1
 [myhostname]
 127.0.0.1 ansible_become_pass=super_secret

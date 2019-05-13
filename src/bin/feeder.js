@@ -3,10 +3,10 @@ require('dotenv').load({path: path.resolve(__dirname, '../.env.development')})
 
 const orderDao = require('../lib/orders/dao')
 const feed = require('./feed')
-const send = require('../lib/email/email.controller').send
+const send = require('../src/server/email/email.controller').send
 
 const calcFeedTimes = require('./calcFeedTimes')
-const moment = require('moment')
+const moment = require('moment/moment')
 const dbconnect = require('./dbconnect')
 
 async function main() {

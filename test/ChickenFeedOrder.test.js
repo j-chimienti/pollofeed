@@ -1,5 +1,5 @@
 const assert = require('assert')
-const ChickenFeedOrder = require('../lib/orders/ChickenFeedOrder')
+const ChickenFeedOrder = require('../src/lib/orders/ChickenFeedOrder')
 
 
 

@@ -1,4 +1,4 @@
-const calcFeedTimes = require('../bin/calcFeedTimes')
+const calcFeedTimes = require('../src/bin/calcFeedTimes')
 const assert = require('assert')
 
 

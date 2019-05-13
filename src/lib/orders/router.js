@@ -2,9 +2,7 @@ const ChickenFeedOrder = require('./ChickenFeedOrder')
 
 const express = require('express')
 const orderDao = require('./dao')
-const rateLimit = require("express-rate-limit")
 const router = express.Router()
-const requireAdmin = require("../auth").requireAdmin;
 
 const webhookToken = require('crypto')
     .createHmac('sha256', process.env.CHARGE_TOKEN)
@@ -30,7 +28,7 @@ router.post('/invoice', async (req, res) => {
         description: 'Feed Chickies @ pollofeed.com',
         expiry: tenMinutes,
         metadata: {feedTimes},
-        webhook: `${process.env.POLLOFEED_URL}/orders/webhook/${webhookToken}`
+        webhook: `${process.env.URL}/orders/webhook/${webhookToken}`
     }).catch(err => {
         console.error("Invoice error:", err);
         return err;
@@ -44,12 +42,8 @@ router.post('/invoice', async (req, res) => {
 })
 
 
-const apiLimiter = rateLimit({
-    windowMs: 5 * 60 * 1000, // 5 minutes
-    max: 50
-});
 
-router.get('/invoice/:invoice/wait', apiLimiter, async (req, res) => {
+router.get('/invoice/:invoice/wait', async (req, res) => {
 
     const {invoice} = req.params
     if (!(invoice && invoice !== 'undefined')) {
@@ -93,30 +87,6 @@ function log(order) {
 
     console.log(`Invoice ${order.status}: { id : ${order.id}, paidAt: ${new Date(order.paid_at * 1000)}, payreq: ${order.payreq}, msatoshi: ${order.msatoshi}`)
 }
-
-
-router.get('/count', requireAdmin, async (req, res) => {
-
-
-    res.status(200).json(await orderDao.count())
-})
-
-router.get('/totalMsats', requireAdmin, async (req, res) => {
-
-    res.status(200).send(await orderDao.totalMsats())
-})
-
-router.get('/', requireAdmin , async (req, res) => {
-    const offset = req.query.offset ? parseInt(req.query.offset) : 0;
-    const limit = req.query.limit ? parseInt(req.query.limit) : 2000
-
-    const options = {
-        offset,
-        limit
-    }
-    res.send(await orderDao.getOrders(options))
-})
-
 
 
 

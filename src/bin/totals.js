@@ -1,5 +1,5 @@
 const path = require('path')
-const {getBtcPrice} = require("../lib/btcPrice");
+const {getBtcPrice} = require("../btcPrice");
 require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
 const dbconnect = require('./dbconnect')
 // get total balance of all orders

@@ -1,5 +1,6 @@
 ---
 - name: fetch latest git version
+  tags: git
   git:
     repo: "https://github.com/j-chimienti/pollofeed.git"
     update: yes
@@ -8,14 +9,14 @@
 
 - name: cron
   include: cron.yml
-  when: false
+  tags: cron
 
 
 - name: env files
-  when: true
+  tags: env_files
   include: copyEnv.yml
 
 
 - name: reboot
-  when: true
+  tags: reboot
   include: reboot.yml

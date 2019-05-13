@@ -1,8 +1,8 @@
 const path = require('path')
 require('dotenv').load({path: path.join(__dirname, '..', '.env.development')})
 const orderDao = require('../lib/orders/dao')
-const {getBtcPrice} = require("../lib/btcPrice");
-const moment = require('moment')
+const {getBtcPrice} = require("../btcPrice");
+const moment = require('moment/moment')
 const dbconnect = require('./dbconnect')
 
 async function main() {
