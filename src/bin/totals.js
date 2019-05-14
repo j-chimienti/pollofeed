@@ -1,6 +1,5 @@
 const path = require('path')
-const {getBtcPrice} = require("../btcPrice");
-require('dotenv').load({path: path.join(process.cwd(), '.env.development')})
+require('dotenv').config({path: path.join(__dirname, "..", "..", '.env.development')})
 const dbconnect = require('./dbconnect')
 // get total balance of all orders
 async function main() {
@@ -18,16 +17,8 @@ async function main() {
     , 0)
 
 
-    const btcusd = await getBtcPrice()
-
-    console.log('btcusd', btcusd.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    }))
-
     const btc = satsTotal / 1e8
 
-    const usd = btc * btcusd
 
     const newestOrder = orders[0]
     const oldestOrder = orders[orders.length - 1]
@@ -44,7 +35,6 @@ async function main() {
     console.log('days', parseInt(days))
 
     const avgDay = orders.length / days
-    const usdDay = usd / days
     const byDay = orders.reduce((accum, order) => {
 
         const day = new Date(order.paid_at * 1000).toLocaleDateString()
@@ -84,19 +74,11 @@ async function main() {
     console.log("\n")
     console.log("AVG")
     console.log("avg orders per day: ", parseInt(avgDay))
-    console.log("avg USD per day: ", usdDay.toLocaleString('en-US', {
-        style: 'currency',
-        currency: "USD"
-    }))
 
     console.log("\n")
     console.log("TOTALS")
     console.log('sats', satsTotal.toLocaleString())
     console.log('btc', btc.toPrecision(8))
-    console.log('usd', usd.toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    }))
     return true
 
 

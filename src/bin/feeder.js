@@ -7,14 +7,7 @@ const moment = require('moment')
 const calcFeedTimes = require('./calcFeedTimes')
 const dbconnect = require('./dbconnect')
 
-const nodemailer = require('nodemailer')
-const transporter = nodemailer.createTransport({
- service: 'gmail',
- auth: {
-  user: process.env.GMAIL_USER,
-  pass: process.env.GMAIL_PASS
- }
-});
+const {send} = require('./email')
 
 async function main() {
 
@@ -43,18 +36,6 @@ async function main() {
 
 }
 
-function send(mailOptions) {
-
- return new Promise((resolve, reject) => {
-
-  transporter.sendMail(mailOptions, function (err, info) {
-   if(err)
-    return reject(err)
-   else
-    return resolve(info)
-  });
- })
-}
 
 
 main()
