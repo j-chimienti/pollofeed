@@ -44,26 +44,25 @@ router.get('/invoice/:invoice/wait', async (req, res) => {
     if (!(invoice && invoice !== 'undefined')) {
         return res.sendStatus(410)
     }
-    const orderAlreadyExists = await orderDao.findById(invoice)
-    if (orderAlreadyExists)  {
-        return res.status(200).json(orderAlreadyExists)
+    const orderOpt = await orderDao.findById(invoice)
+    if (orderOpt) {
+        return res.status(200).json(orderOpt)
     }
-
-    const order = await global.lnCharge.wait(invoice, 60).catch(err => {
+    const inv = await global.lnCharge.wait(invoice, 60).catch(err => {
         console.log(`Invoice Error: ${err}`);
         return null
     })
+    if (inv === null) {
 
-    if (order === null) {
         return res.sendStatus(402);
-    } else if (order === false) {
+    } else if (inv === false) {
+        // inv lost
         return res.sendStatus(410);
     }
-    const newOrder = new ChickenFeedOrder(order)
+    const newOrder = new ChickenFeedOrder(inv)
     await orderDao.insert(newOrder)
     log(newOrder)
     return res.status(201).json(newOrder)
-
 })
 
 router.post(`/webhook/${webhookToken}`, async (req, res) => {
