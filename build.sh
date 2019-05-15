@@ -4,7 +4,9 @@ set -xeo pipefail
 
 rm -rf ./dist/*
 
-babel -d dist src
+node_modules/.bin/babel --version
+
+node_modules/.bin/babel -d dist src
 
 browserify ./src/client.js | uglifyjs -cm > dist/client.bundle.min.js
 #browserify ./src/client.js -o ./dist/client.js
