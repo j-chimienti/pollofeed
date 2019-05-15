@@ -31,12 +31,17 @@ app.use(bodyParser.json({strict: true}))
 app.use(logger('dev'))
 // app.use(require('csurf')({ cookie: true }))
 app.use('/invoice', invoicesRouter)
+// app.use("/orders/invoice", invoicesRouter)
 app.use(express.static(path.join(__dirname, "..", 'dist')))
 app.get('/', (req, res) => res.render("index", {req}))
 
 
 // use pre-compiled browserify bundle when available, or live-compile for dev
 const compiledBundle = path.join(__dirname, 'client.bundle.min.js')
+
+console.log('dist', express.static(path.join(__dirname, "..", 'dist')))
+console.log('bundle', compiledBundle)
+
 if (fs.existsSync(compiledBundle)) app.get('/script.js', (req, res) => res.sendFile(compiledBundle))
 else app.get('/script.js', require('browserify-middleware')(require.resolve('./client')))
 
