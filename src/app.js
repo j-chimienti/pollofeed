@@ -37,10 +37,12 @@ app.get('/', (req, res) => res.render("index", {req}))
 
 
 // use pre-compiled browserify bundle when available, or live-compile for dev
-const compiledBundle = path.join(__dirname, 'client.bundle.min.js')
+const compiledBundle = path.join(__dirname, "..", "dist", 'client.bundle.min.js')
 
-console.log('dist', express.static(path.join(__dirname, "..", 'dist')))
+console.log('dist', path.join(__dirname, "..", 'dist'))
 console.log('bundle', compiledBundle)
+
+console.log("compiled exists", fs.existsSync(compiledBundle))
 
 if (fs.existsSync(compiledBundle)) app.get('/script.js', (req, res) => res.sendFile(compiledBundle))
 else app.get('/script.js', require('browserify-middleware')(require.resolve('./client')))
