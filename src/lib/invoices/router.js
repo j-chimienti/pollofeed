@@ -1,4 +1,4 @@
-const ChickenFeedOrder = require('./ChickenFeedOrder')
+const ChickenFeedOrder = require('./PolloFeedInvoice')
 const express = require('express')
 const orderDao = require('./dao')
 const router = express.Router()
@@ -14,7 +14,7 @@ function msatoshiFromSatoshi(satoshi) {
 }
 
 const tenMinutes = 600 // seconds
-router.post('/invoice', async (req, res) => {
+router.post('/', async (req, res) => {
 
     const feedTimes = req.body.feedTimes || 1
     const msatoshi = msatoshiFromSatoshi(2000 * feedTimes)
@@ -23,12 +23,11 @@ router.post('/invoice', async (req, res) => {
         description: 'Feed Chickies @ pollofeed.com',
         expiry: tenMinutes,
         metadata: {feedTimes},
-        webhook: `${process.env.URL}/orders/webhook/${webhookToken}`
+        webhook: `${process.env.URL}/invoice/webhook/${webhookToken}`
     }).catch(err => {
         console.error("Invoice error:", err);
         return err;
     })
-
     if (!(inv && inv.id && inv.rhash && inv.payreq)) {
         return res.sendStatus(400)
     }
@@ -38,7 +37,7 @@ router.post('/invoice', async (req, res) => {
 
 
 
-router.get('/invoice/:invoice/wait', async (req, res) => {
+router.get('/:invoice/wait', async (req, res) => {
 
     const {invoice} = req.params
     if (!(invoice && invoice !== 'undefined')) {

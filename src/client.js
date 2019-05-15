@@ -21,7 +21,7 @@ const pay = async data => {
   $('[data-buy-item], [data-buy] :input').prop('disabled', true)
 
   try {
-    const inv  = await $.post('orders/invoice',  Object.assign({}, data, {_csrf: csrf}) )
+    const inv  = await $.post('invoice',  Object.assign({}, data, {_csrf: csrf}) )
         , qr   = await qrcode.toDataURL(`lightning:${ inv.payreq }`.toUpperCase(), { margin: 2, width: 300 })
         , diag = $(payDialog(Object.assign({}, inv, {  qr, show_bolt11 }))).modal()
 
@@ -35,7 +35,7 @@ const pay = async data => {
 
 const listen = (invid, cb) => {
   let retry = _ => listen(invid, cb)
-  const req = $.get(`orders/invoice/${ invid }/wait`)
+  const req = $.get(`invoice/${ invid }/wait`)
 
   req.then(_ => cb(true))
     .catch(err =>

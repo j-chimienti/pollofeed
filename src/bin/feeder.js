@@ -1,7 +1,7 @@
 const path = require('path')
 require('dotenv').config({path: path.resolve(__dirname, '../../.env.development')})
 
-const orderDao = require('../lib/orders/dao')
+const orderDao = require('../lib/invoices/dao')
 const feed = require('./feed')
 const moment = require('moment')
 const calcFeedTimes = require('./calcFeedTimes')

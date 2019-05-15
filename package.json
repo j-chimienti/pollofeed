@@ -35,11 +35,14 @@
     "start": "node src/www.js",
     "start:dev": "NODE_ENV=development node src/www.js",
     "build": "./build.sh",
-    "test": "node ./node_modules/mocha/bin/mocha --ui bdd",
-    "lint:fix": "eslint --fix --ext .jsx,.js src src/server"
+    "test": "node ./node_modules/.bin/tape test/**/*.js",
+    "lint:fix": "eslint --fix --ext .jsx,.js src src/server",
+    "totals": "node src/bin/totals.js",
+    "today": "node src/bin/ordersByDay.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "babel-cli": "^6.26.0",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -53,7 +56,9 @@
     "nodemailer": "^6.1.1",
     "nodemon": "^1.19.0",
     "pugify": "^2.2.0",
-    "qrcode": "^1.2.0"
+    "qrcode": "^1.2.0",
+    "supertest": "^4.0.2",
+    "tape": "^4.10.1"
   },
   "browserify": {
     "transform": [

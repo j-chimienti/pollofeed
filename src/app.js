@@ -8,7 +8,7 @@ const helmet = require('helmet')
 const compression = require('compression')
 const bodyParser = require('body-parser')
 
-const orderRouter = require('./lib/orders/router')
+const invoicesRouter = require('./lib/invoices/router')
 const cookieSecret = process.env.COOKIE_SECRET
 const app = express()
 
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json({strict: true}))
 app.use(logger('dev'))
 // app.use(require('csurf')({ cookie: true }))
-app.use('/orders', orderRouter)
+app.use('/invoice', invoicesRouter)
 app.use(express.static(path.join(__dirname, "..", 'dist')))
 app.get('/', (req, res) => res.render("index", {req}))
 

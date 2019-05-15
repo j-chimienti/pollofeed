@@ -1,6 +1,5 @@
-class ChickenFeedOrder {
-    constructor({
-                    id,
+class LightningInvoice {
+    constructor({ id,
                     msatoshi,
                     quoted_currency,
                     quoted_amount,
@@ -8,20 +7,18 @@ class ChickenFeedOrder {
                     payreq,
                     pay_index,
                     description,
-                    metadata,
+                    metadata = {},
                     created_at,
                     expires_at,
                     paid_at,
                     msatoshi_received,
                     status
                 } = {}) {
-        if (!(id && payreq && status && rhash && pay_index && paid_at)) {
+
+        if (!(id && payreq && status && rhash && pay_index)) {
             throw new Error("Invalid order")
         }
-        // order params
-        this.feed = true;
-        this.acknowledged_at = null;
-        // payment params
+
         this.id = id
         this.status = status
         this.msatoshi = msatoshi
@@ -36,10 +33,7 @@ class ChickenFeedOrder {
         this.expires_at = expires_at
         this.paid_at = paid_at
         this.msatoshi_received = msatoshi_received
-
     }
-
 }
 
-
-module.exports = ChickenFeedOrder
+module.exports = LightningInvoice

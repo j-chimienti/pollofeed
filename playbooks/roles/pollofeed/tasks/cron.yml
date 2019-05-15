@@ -1,7 +1,18 @@
 - name: cron feeder
+  # The “name” parameter should be unique,
+  # and changing the “name” value will result in a new cron task being created (or a different one being removed).
+  # remove via state: absent
   cron:
     name: feed chickens if underfed
-    hour: "9,13,17"
-    minute: "0"
+    hour: 9,13,17
+    minute: 0
     state: present
-    job: "node /home/joe/pollofeed/bin/feeder.js"
+    job: "node /home/joe/pollofeed/src/bin/feeder.js"
+
+- name: report sender
+  cron:
+    name: feed report
+    hour: 12,17,23
+    minute: 59
+    state: present
+    job: "node /home/joe/pollofeed/src/bin/report.js"
