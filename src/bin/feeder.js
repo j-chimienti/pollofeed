@@ -20,20 +20,39 @@ async function main() {
 
     const feedTimes = calcFeedTimes(new Date().getHours(), todayOrders.length, yesterDayOrders.length)
 
+    const totals = getTotals(todayOrders)
+    const yTotals = getTotals(yesterDayOrders)
     const shouldFeed = feedTimes > 0
     if (shouldFeed) await feed(feedTimes)
+
     let text = `pollofeed - fed ${todayOrders.length} times today.`
     if (shouldFeed) text += `\tjust fed ${feedTimes} times.`
     const mailOptions = {
-       from: process.env.GMAIL_USER, // sender address
-       to: process.env.GMAIL_USER, // list of receivers
-       subject: text
-       //html: '<p>Your html here</p>'// plain text body
-      };
+        from: process.env.GMAIL_USER, // sender address
+        to: process.env.GMAIL_USER, // list of receivers
+        subject: text,
+        html: `<div>
+<p>
+    Today Orders : ${JSON.stringify(totals, null, 2)}  
+</p>
+<p>
+    Yesterday's Orders: ${JSON.stringify(yTotals, null, 2)}
+</p>
+</div>`
+    };
     await send(mailOptions)
     console.log(`orders: ${todayOrders.length}`)
     process.exit(0)
 
+}
+
+function getTotals(orders) {
+    const totalMSats = orders.reduce((accum, order) => {
+        const {msatoshi} = order;
+        return parseInt(msatoshi) + accum;
+    }, 0)
+    const totalSats = totalMSats / 1000;
+    return {orders: orders.length, satsoshis: totalSats}
 }
 
 

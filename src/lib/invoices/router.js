@@ -1,4 +1,4 @@
-const ChickenFeedOrder = require('./PolloFeedInvoice')
+const PolloFeedInvoice = require('./PolloFeedInvoice')
 const express = require('express')
 const orderDao = require('./dao')
 const router = express.Router()
@@ -47,31 +47,30 @@ router.get('/:invoice/wait', async (req, res) => {
     if (orderOpt) {
         return res.status(200).json(orderOpt)
     }
-    const inv = await global.lnCharge.wait(invoice, 60).catch(err => {
+    const invoiceResult = await global.lnCharge.wait(invoice, 60).catch(err => {
         console.log(`Invoice Error: ${err}`);
         return null
     })
-    if (inv === null) {
-
+    if (invoiceResult === null) {
         return res.sendStatus(402);
-    } else if (inv === false) {
+    } else if (invoiceResult === false) {
         // inv lost
         return res.sendStatus(410);
     }
-    const newOrder = new ChickenFeedOrder(inv)
-    await orderDao.insert(newOrder)
-    log(newOrder)
-    return res.status(201).json(newOrder)
+    const pfInvoice = new PolloFeedInvoice(invoiceResult)
+    await orderDao.insert(pfInvoice)
+    log(pfInvoice)
+    return res.status(201).json(pfInvoice)
 })
 
 router.post(`/webhook/${webhookToken}`, async (req, res) => {
 
     const foundOrder = await orderDao.findById(req.body.id)
     if (foundOrder) {
-        console.log("webhook", "found order", foundOrder.id)
+        console.log("Webhook", foundOrder.id, `invoice processed`)
         return res.sendStatus(204)
     }
-    console.log('webhook', 'insert', req.body.id)
+    console.log('Webhook', req.body.id, 'insert')
     await orderDao.insert(new ChickenFeedOrder(req.body))
     return res.sendStatus(201)
 })
