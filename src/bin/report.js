@@ -23,14 +23,14 @@ async function main() {
     } = await totals()
 
     const rawText = `
-    ### Summary
-    
-    Total = ${btc} btc
-    Days = ${parseInt(days)}
-    Start = ${oldestOrderDate.toLocaleString()}
-    End = ${newEstOrderDate.toLocaleString()}
-    Min = ${min.date.toLocaleString()} ${min.fed}
-    Max = ${max.date.toLocaleString()} ${max.fed}
+    ### Summary\n
+    Today = ${t.orders}, sats = ${t.satsoshis.toLocaleString()}\n
+    Total = ${btc} btc, sats = ${satsTotal}\n
+    Days = ${parseInt(days)}\n
+    Start = ${oldestOrderDate.toLocaleString()}\n
+    End = ${newEstOrderDate.toLocaleString()}\n
+    Min = ${min.date.toLocaleString()} ${min.fed}\n
+    Max = ${max.date.toLocaleString()} ${max.fed}\n
     Avg = ${avgDay}
     `
     const html = marked(rawText)
@@ -41,6 +41,7 @@ async function main() {
         subject: text,
         html
     };
+
     await send(mailOptions)
     return t;
 }
