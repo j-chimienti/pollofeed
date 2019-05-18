@@ -10,5 +10,5 @@ COPY --chown=node:node package.json yarn.lock  ./
 RUN yarn install
 COPY --chown=node:node . .
 RUN yarn run build
-EXPOSE ${PORT}
+EXPOSE ${PORT:-4321}
 CMD node ./src/www.js
