@@ -57,10 +57,10 @@ router.get('/:invoice/wait', async (req, res) => {
         // inv lost
         return res.sendStatus(410);
     }
-    const pfInvoice = new PolloFeedInvoice(invoiceResult)
-    await orderDao.insert(pfInvoice)
-    log(pfInvoice)
-    return res.status(201).json(pfInvoice)
+    const inv = new PolloFeedInvoice(invoiceResult)
+    await orderDao.insert(inv)
+    log(inv)
+    return res.status(201).json(inv)
 })
 
 router.post(`/webhook/${webhookToken}`, async (req, res) => {
@@ -71,12 +71,11 @@ router.post(`/webhook/${webhookToken}`, async (req, res) => {
         return res.sendStatus(204)
     }
     console.log('Webhook', req.body.id, 'insert')
-    await orderDao.insert(new ChickenFeedOrder(req.body))
+    await orderDao.insert(new PolloFeedInvoice(req.body))
     return res.sendStatus(201)
 })
 
 function log(order) {
-
     console.log(`Invoice ${order.status}: { id : ${order.id}, paidAt: ${new Date(order.paid_at * 1000)}, payreq: ${order.payreq}, msatoshi: ${order.msatoshi}`)
 }
 
