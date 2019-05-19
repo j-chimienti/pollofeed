@@ -1,0 +1,10 @@
+- name: copy docker compose file
+  tags: copy_docker_compose
+  copy:
+    src: ./nginx-docker-compose.yml
+    dest: ./nginx/docker-compose.yml
+
+- name: up
+  args:
+    chdir: ./nginx
+  command: docker-compose up --build -d

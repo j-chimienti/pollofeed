@@ -1,29 +1,27 @@
 ---
 
 - name: pull repo
-  tags: pull_repo
-  register: repo_pull
+  tags: git
   git:
     repo: "https://github.com/j-chimienti/pollofeed.git"
     update: yes
     dest: "{{ pollofeed_dir }}"
 
 - name: install requirements
+  tags: install
   args:
     chdir: "{{ pollofeed_dir }}"
   shell: pip install -r requirements.txt
 
 
 - name: copy config
-  tags: copy_config
+  tags: config
   copy:
     src: config.yml
     dest: "{{ pollofeed_dir }}/config.yml"
 
 - include: tunnel.yml
   tags: tunnel
-  when: false
 
 - include: service.yml
-  tags: pollofeed_service
-  when: false
+  tags: service

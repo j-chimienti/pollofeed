@@ -12,7 +12,7 @@
 - name: report sender
   cron:
     name: feed report
-    hour: 12,17,23
+    hour: 23
     minute: 59
     state: present
     job: "node /home/joe/pollofeed/src/bin/report.js"

@@ -18,12 +18,12 @@ A Raspberry Pi recieves event that invoice is paid, and controls the feeder
   
 **deploy**
 
-  You can deploy the webapp and to the Pi
+  Deploy the webapp to remote server 
   
   requirements:
    - ansible
    
-   cp ./playbooks/hosts.example ./playbooks/hosts
+   copy hosts.example file to hosts
    
   ./deploy.sh
   

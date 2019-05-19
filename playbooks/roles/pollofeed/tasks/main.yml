@@ -1,6 +1,9 @@
 ---
 - name: fetch latest git version
   tags: git
+#  register: repo
+#  set_fact:
+#    repo_changed: repo.changed
   git:
     repo: "https://github.com/j-chimienti/pollofeed.git"
     update: yes
@@ -19,4 +22,5 @@
 
 - name: reboot
   tags: reboot
+  #when: repo_changed
   include: reboot.yml

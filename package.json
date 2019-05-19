@@ -38,7 +38,7 @@
     "deploy": "./deploy.sh",
     "test": "node ./node_modules/.bin/tape test/**/*.js",
     "lint:fix": "eslint --fix --ext .jsx,.js src src/server",
-    "totals": "node src/bin/totals.js",
+    "totals": "node src/bin/runTotals.js",
     "today": "node src/bin/ordersByDay.js"
   },
   "devDependencies": {

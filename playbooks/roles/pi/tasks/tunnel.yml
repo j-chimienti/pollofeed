@@ -5,9 +5,8 @@
     src: ngrok.service
     dest: /etc/systemd/system/ngrok.service
 
-- name: create service
-  command: systemctrl start ngrok
-
-- name: enable on boot
-  command: systemctrl enable ngrok
-
+- name: ngrok service
+  service:
+    name: ngrok
+    started: yes
+    enabled: yes
