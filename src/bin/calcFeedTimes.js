@@ -4,9 +4,10 @@ function calcFeedTimes(hours = new Date().getHours(), todayFeedCount = 0, yester
     if (hours >= 17) feedTimes = threshold3 - todayFeedCount
     else if (hours >= 13) feedTimes = threshold2 - todayFeedCount
     else if (hours >= 8) {
-        if (yesterdayFeedCount >= 35) feedTimes = 0
+        if (yesterdayFeedCount >= 35) feedTimes = 2
         else feedTimes = threshold1 - todayFeedCount
     }
+    // feed b/w 0 - 4 times
     return Math.min(4, Math.max(0, feedTimes))
 }
 

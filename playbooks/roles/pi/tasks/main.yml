@@ -11,7 +11,8 @@
   tags: install
   args:
     chdir: "{{ pollofeed_dir }}"
-  shell: pip install -r requirements.txt
+  pip:
+    requirements: requirements.txt
 
 
 - name: copy config

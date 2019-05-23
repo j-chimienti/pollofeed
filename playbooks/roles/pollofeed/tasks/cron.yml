@@ -14,5 +14,6 @@
     name: feed report
     hour: 23
     minute: 59
+    second: 30
     state: present
     job: "node /home/joe/pollofeed/src/bin/report.js"
