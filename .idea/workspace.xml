@@ -4,10 +4,12 @@
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="Replace mocha w/ tape&#10;Add Ln inv class&#10;Update manfeed to insert 1 obj w/ feedTime">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/cron.yml" beforeDir="false" afterPath="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/cron.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bin/calcFeedTimes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/bin/calcFeedTimes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/footer.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/footer.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,10 +23,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bin/calcFeedTimes.js">
+        <entry file="file://$PROJECT_DIR$/views/index.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+            <state relative-caret-position="206">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -33,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/views/footer.pug">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="128">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -112,13 +123,10 @@
         <option value="$PROJECT_DIR$/src/bin/dbconnect.js" />
         <option value="$PROJECT_DIR$/src/lib/orders/router.js" />
         <option value="$PROJECT_DIR$/playbooks/deploy.yml" />
-        <option value="$PROJECT_DIR$/views/index.pug" />
         <option value="$PROJECT_DIR$/src/bin/ordersByDay.js" />
         <option value="$PROJECT_DIR$/playbooks/roles/pi/files/pollofeed.service" />
         <option value="$PROJECT_DIR$/src/bin/feed.js" />
         <option value="$PROJECT_DIR$/test/app.test.js" />
-        <option value="$PROJECT_DIR$/src/client.js" />
-        <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/test/calcFeedTimes.test.js" />
         <option value="$PROJECT_DIR$/test/PolloFeedInvoice.test.js" />
         <option value="$PROJECT_DIR$/src/lib/invoices/LightningInvoice.js" />
@@ -126,7 +134,6 @@
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/nginx.yml" />
         <option value="$PROJECT_DIR$/views/success.pug" />
-        <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/src/bin/email.js" />
         <option value="$PROJECT_DIR$/src/bin/feeder.js" />
         <option value="$PROJECT_DIR$/src/bin/totals.js" />
@@ -137,7 +144,6 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/bin/runTotals.js" />
         <option value="$PROJECT_DIR$/src/lib/invoices/router.js" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -146,8 +152,13 @@
         <option value="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" />
         <option value="$PROJECT_DIR$/src/bin/report.js" />
         <option value="$PROJECT_DIR$/src/bin/calcFeedTimes.js" />
-        <option value="$PROJECT_DIR$/deploy.sh" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/cron.yml" />
+        <option value="$PROJECT_DIR$/deploy.sh" />
+        <option value="$PROJECT_DIR$/src/app.js" />
+        <option value="$PROJECT_DIR$/views/index.pug" />
+        <option value="$PROJECT_DIR$/src/client.js" />
         <option value="$PROJECT_DIR$/views/footer.pug" />
       </list>
     </option>
@@ -187,12 +198,6 @@
             <path>
               <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
               <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -208,7 +213,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ECMAScript 6" />
     <property name="javascript.nodejs.core.library.configured.version" value="11.1.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dist" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -225,19 +230,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/pi" />
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$/playbooks/roles" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/playbooks/roles/pollofeed/files" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/lib" />
       <recent name="$PROJECT_DIR$/src/server" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dist" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/pi" />
+      <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -519,7 +524,8 @@
       <workItem from="1558317962874" duration="1121000" />
       <workItem from="1558353215184" duration="601000" />
       <workItem from="1558575331979" duration="5000" />
-      <workItem from="1558575786873" duration="302000" />
+      <workItem from="1558575786873" duration="1975000" />
+      <workItem from="1558580534922" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="t">
       <created>1554334227123</created>
@@ -584,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557920748527</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add node URI">
+      <created>1558576551286</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558576551286</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -620,13 +633,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="336970000" />
+    <option name="totallyTimeSpent" value="339063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="44" y="68" width="1236" height="697" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.025125628" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2847571" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -642,8 +655,8 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.03685092" />
-      <window_info anchor="right" id="Run" order="4" weight="0.3559464" />
+      <window_info anchor="right" id="Terminal" order="3" weight="0.30234507" />
+      <window_info active="true" anchor="right" id="Run" order="4" visible="true" weight="0.21859297" />
       <window_info anchor="right" id="Debug" order="5" weight="0.4247405" />
     </layout>
     <layout-to-restore>
@@ -689,7 +702,8 @@
     <MESSAGE value="feed times as placeholder" />
     <MESSAGE value="replace react w/ ssr app" />
     <MESSAGE value="Replace mocha w/ tape&#10;Add Ln inv class&#10;Update manfeed to insert 1 obj w/ feedTime" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace mocha w/ tape&#10;Add Ln inv class&#10;Update manfeed to insert 1 obj w/ feedTime" />
+    <MESSAGE value="Add node URI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add node URI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -772,13 +786,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/bin/dbconnect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.development">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -872,13 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bin/feeder.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -895,13 +895,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/m.js" />
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -923,13 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/app.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -948,13 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1070,24 +1049,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/cron.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="24" column="3" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="110" selection-start-line="2" selection-start-column="110" selection-end-line="2" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1098,10 +1077,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.pug">
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/cron.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/footer.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="27" />
         </state>
       </provider>
     </entry>
