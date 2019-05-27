@@ -39,7 +39,6 @@ app.get('/', (req, res) => res.render("index", {req}))
 const compiledBundle = path.join(__dirname, "..", "dist", 'client.bundle.min.js')
 if (fs.existsSync(compiledBundle)) app.get('/script.js', (req, res) => res.sendFile(compiledBundle))
 else app.get('/script.js', require('browserify-middleware')(require.resolve('./client')))
-
 app.use('/bootswatch', require('express').static(path.resolve(require.resolve('bootswatch/package'), '..', 'dist')))
 
 

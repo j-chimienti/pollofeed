@@ -8,13 +8,14 @@ from setup import settings
 url = settings['mongo']['url'] or 'mongodb://localhost:27017'
 client = MongoClient(url)
 
-print("connected to server")
+print("connected to db")
 
 db = client[settings['mongo']['db'] or 'btcstore']
 order_collection = db.orders
 
 
 def activate(pin=18, seconds=7, timeout=0):
+
     try:
         vending_machine = LED(pin)
         if timeout > 0:

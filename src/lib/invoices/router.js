@@ -17,7 +17,7 @@ const tenMinutes = 600 // seconds
 router.post('/', async (req, res) => {
 
     const feedTimes = req.body.feedTimes || 1
-    const msatoshi = msatoshiFromSatoshi(2000 * feedTimes)
+    const msatoshi = msatoshiFromSatoshi(1500 * feedTimes)
     const inv = await global.lnCharge.invoice({
         msatoshi,
         description: 'Feed Chickies @ pollofeed.com',

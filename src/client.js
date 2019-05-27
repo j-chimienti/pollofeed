@@ -7,6 +7,8 @@ const $ = require('jquery')
 const payDialog  = require('../views/payment.pug')
     , paidDialog = require('../views/success.pug')
 
+
+
 const csrf = $('meta[name=csrf]').attr('content')
     , show_bolt11 = !!$('meta[name=show-bolt11]').attr('content')
 
@@ -29,6 +31,7 @@ const pay = async data => {
 
     const unlisten = listen(inv.id, paid => (diag.modal('hide'), paid && success()))
     diag.on('hidden.bs.modal', unlisten)
+
   }
   finally { $(':disabled').attr('disabled', false) }
 }
