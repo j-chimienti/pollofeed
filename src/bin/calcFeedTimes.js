@@ -1,5 +1,5 @@
 function calcFeedTimes(hours = new Date().getHours(), todayFeedCount = 0, yesterdayFeedCount = 0) {
-    const [threshold1, threshold2, threshold3] = [10,10,15]
+    const [threshold1, threshold2, threshold3] = [10,10,12]
     let feedTimes = 0
     if (hours >= 17) feedTimes = threshold3 - todayFeedCount
     else if (hours >= 13) feedTimes = threshold2 - todayFeedCount
