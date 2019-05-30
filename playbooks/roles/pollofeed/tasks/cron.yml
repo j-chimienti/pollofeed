@@ -4,7 +4,7 @@
   # remove via state: absent
   cron:
     name: feed chickens if underfed
-    hour: 9,13,17
+    hour: 7,13,17
     minute: 0
     state: present
     job: "node /home/joe/pollofeed/src/bin/feeder.js"

@@ -2,8 +2,9 @@ const PolloFeedInvoice = require('./PolloFeedInvoice')
 const express = require('express')
 const orderDao = require('./dao')
 const router = express.Router()
+const crypto = require('crypto')
 
-const webhookToken = require('crypto')
+const webhookToken = crypto
     .createHmac('sha256', process.env.CHARGE_TOKEN)
     .update("pollofeed")
     .digest('hex')
@@ -20,7 +21,7 @@ router.post('/', async (req, res) => {
     const msatoshi = msatoshiFromSatoshi(1500 * feedTimes)
     const inv = await global.lnCharge.invoice({
         msatoshi,
-        description: 'Feed Chickies @ pollofeed.com',
+        description: 'Feed Chickens @ pollofeed.com',
         expiry: tenMinutes,
         metadata: {feedTimes},
         webhook: `${process.env.URL}/invoice/webhook/${webhookToken}`
@@ -31,7 +32,7 @@ router.post('/', async (req, res) => {
     if (!(inv && inv.id && inv.rhash && inv.payreq)) {
         return res.sendStatus(400)
     }
-    console.log(`invoice ${ inv.id } created with rhash=${ inv.rhash }, payreq=${ inv.payreq }`)
+    console.log(`[INVOICE] - ${ inv.id } created`)
     return res.send(inv)
 })
 
@@ -64,19 +65,20 @@ router.get('/:invoice/wait', async (req, res) => {
 })
 
 router.post(`/webhook/${webhookToken}`, async (req, res) => {
-
     const foundOrder = await orderDao.findById(req.body.id)
     if (foundOrder) {
-        console.log("Webhook", foundOrder.id, `invoice processed`)
+        console.log(`[WEBHOOK] - order ${foundOrder.id} found`)
         return res.sendStatus(204)
     }
-    console.log('Webhook', req.body.id, 'insert')
+        console.log(`[WEBHOOK] - order ${foundOrder.id} NOT found`)
     await orderDao.insert(new PolloFeedInvoice(req.body))
     return res.sendStatus(201)
 })
 
 function log(order) {
-    console.log(`Invoice ${order.status}: { id : ${order.id}, paidAt: ${new Date(order.paid_at * 1000)}, payreq: ${order.payreq}, msatoshi: ${order.msatoshi}`)
+    console.log(`[INVOICE] ${order.status}: { id : ${order.id}, 
+    timeToPay: ${new Date(order.paid_at * 1000) - new Date(order.created_at * 1000)}
+    , payreq: ${order.payreq}, msatoshi: ${order.msatoshi}`)
 }
 
 
