@@ -42,6 +42,7 @@
     "today": "node src/bin/ordersByDay.js"
   },
   "devDependencies": {
+    "@sendgrid/mail": "^6.4.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
