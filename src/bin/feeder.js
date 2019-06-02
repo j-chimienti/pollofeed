@@ -23,17 +23,17 @@ async function main() {
     const totals = getTotals(todayOrders)
     const yTotals = getTotals(yesterDayOrders)
     const shouldFeed = feedTimes > 0
-    //if (shouldFeed) await feed(feedTimes)
+    if (shouldFeed) await feed(feedTimes)
 
     let text = `pollofeed - fed ${todayOrders.length} times today.`
     if (shouldFeed) text += `\tjust fed ${feedTimes} times.`
-    const mailOptions = {
-        from: "b33rdyfeed@gmail.com", // sender address
+    iconst mailOptions = {
+        from: process.env.GMAIL_USER, // sender address
         to: process.env.GMAIL_USER, // list of receivers
         subject: text,
         html: `<div>
 <p>
-    Today Orders : ${JSON.stringify(totals, null, 2)}  
+    Today Orders : ${JSON.stringify(totals, null, 2)}
 </p>
 <p>
     Yesterday's Orders: ${JSON.stringify(yTotals, null, 2)}
