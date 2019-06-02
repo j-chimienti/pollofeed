@@ -27,7 +27,7 @@ async function main() {
 
     let text = `pollofeed - fed ${todayOrders.length} times today.`
     if (shouldFeed) text += `\tjust fed ${feedTimes} times.`
-    iconst mailOptions = {
+    const mailOptions = {
         from: process.env.GMAIL_USER, // sender address
         to: process.env.GMAIL_USER, // list of receivers
         subject: text,
