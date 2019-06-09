@@ -17,6 +17,9 @@ async function main() {
     const days = (newEstOrderDate.getTime() - oldestOrderDate.getTime()) / 86400000
     console.log('days', parseInt(days))
     const avgDay = orders.length / days
+
+
+
     const byDay = orders.reduce((accum, order) => {
         const day = new Date(order.paid_at * 1000).toLocaleDateString()
         if (!accum[day]) {
@@ -26,6 +29,20 @@ async function main() {
         }
         return accum
     }, {})
+
+
+    function median(orders) {
+
+        var ordersInDay = Object.values(orders).map(o => o.length)
+        var sorted = ordersInDay.sort((a, b) => a - b)
+        return sorted[parseInt(sorted.length / 2)]
+
+
+    }
+
+    var med = median(byDay)
+
+
     let max = {date: null, fed: 0}
     let min = {date: null, fed: Infinity}
     Object.values(byDay).forEach(day => {
@@ -44,6 +61,8 @@ async function main() {
     })
     console.log("max day", max.date.toLocaleDateString(), max.fed)
     console.log("min day", min.date.toLocaleDateString(), min.fed)
+    console.log("\n")
+    console.log("MEDIAN = ", med)
     console.log("\n")
     console.log("AVG")
     console.log("avg orders per day: ", parseInt(avgDay))
