@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-ansible-playbook --limit 45.56.122.140 \
+ansible-playbook --limit ${POLLOFEED_HOST} \
 playbooks/deploy.yml \
---tags git,cron,reboot #,reboot # ,cron,env_files,
+--tags git,reboot #,cron,env_files,
 
-
+#ansible-playbook --limit $PI_HOST \
+#playbooks/pi.yml \
+#--tags git,install,config,tunnel,service
