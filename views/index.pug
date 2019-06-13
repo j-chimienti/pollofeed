@@ -12,20 +12,25 @@ html
   body
     div.container.mb-4(style="font-size: 1.5rem; min-height: 90vh;")
       .row
-        h1.my-4.mx-auto.text-uppercase.font-weight-bold.text-warning(style="letter-spacing: 0.3rem;")= settings.title
+        h1.my-4.mx-auto.text-uppercase.font-weight-bold.text-warning(
+          style="letter-spacing: 0.3rem;"
+          title="Bitcoin Lightning Powered Chicken Feeder"
+          )= settings.title
       .row
         button(
           style="max-width: 300px; font-size: 1.6rem; letter-spacing: .2rem;"
           class="btn btn-primary btn-block mx-auto mb-4"
           type="submit" data-buy-item="pollofeed"
-          ) FEED
+          )
+          i.fa.fa-bolt
+          span FEED
       .row.mb-4
         iframe.rounded.mx-auto.shadow(
           title='live stream'
           src='https://pollofeed.ngrok.io'
-          height='480'
+          height='485'
           style="border: none;"
-          width="640"
-        )
+          width="645"
+        ) LOADING
   include footer.pug
   script(src='script.js')
