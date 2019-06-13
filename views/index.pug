@@ -9,14 +9,16 @@ html
   meta(name='apple-mobile-web-app-capable', content='yes')
   link(rel='stylesheet', href='bootswatch/'+settings.theme+'/bootstrap.min.css')
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-
   body
-    .container.d-flex: .justify-content-center.align-self-center.text-center.mx-auto.w-100
-      div(id="loadingMessage")
-      h1.mt-2.mb-4.text-uppercase.font-weight-bold.text-warning(style="letter-spacing: 0.3rem;")= settings.title
+    div.container.mb-4(style="font-size: 1.5rem; min-height: 90vh;")
       .row
-        button(style="max-width: 300px" class="btn btn-primary btn-block mx-auto mb-4 font-weight-bold text-large"
-          type="submit" data-buy-item="pollofeed") FEED
+        h1.my-4.mx-auto.text-uppercase.font-weight-bold.text-warning(style="letter-spacing: 0.3rem;")= settings.title
+      .row
+        button(
+          style="max-width: 300px; font-size: 1.6rem; letter-spacing: .2rem;"
+          class="btn btn-primary btn-block mx-auto mb-4"
+          type="submit" data-buy-item="pollofeed"
+          ) FEED
       .row.mb-4
         iframe.rounded.mx-auto.shadow(
           title='live stream'
@@ -25,5 +27,5 @@ html
           style="border: none;"
           width="640"
         )
-    include footer.pug
+  include footer.pug
   script(src='script.js')
