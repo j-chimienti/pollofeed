@@ -18,8 +18,6 @@ async function main() {
     console.log('days', parseInt(days))
     const avgDay = orders.length / days
 
-
-
     const byDay = orders.reduce((accum, order) => {
         const day = new Date(order.paid_at * 1000).toLocaleDateString()
         if (!accum[day]) {

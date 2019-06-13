@@ -1,0 +1,7 @@
+{
+  "name": "POLLO FEED",
+  "short_name": "pollofeed",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone"
+}
