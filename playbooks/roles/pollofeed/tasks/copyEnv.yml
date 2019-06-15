@@ -1,15 +1,11 @@
-- name: copy env file
+- name: copy env files
+  with_items:
+    - .env
+    - .env.mongo
+    - .env.development
   tags:
     copy_env_file
   copy:
-    src: ../../../../.env
-    dest: "./{{APP_DIR}}/.env"
-
-
-- name: copy env file (mongo)
-  tags:
-    copy_env_file
-  copy:
-    src: ../../../../.env.mongo
-    dest: "./{{APP_DIR}}/.env.mongo"
+    src: "../../../../{{ item }}"
+    dest: "./{{APP_DIR}}/{{ item }}"
 
