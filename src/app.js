@@ -9,7 +9,7 @@ const compression = require('compression')
 const bodyParser = require('body-parser')
 
 const invoicesRouter = require('./lib/invoices/router')
-const cookieSecret = process.env.COOKIE_SECRET
+const cookieSecret = process.env.COOKIE_SECRET || require('crypto').randomBytes(32).toString('hex')
 const app = express()
 
 app.set('view engine', 'pug')
