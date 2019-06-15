@@ -1,6 +1,5 @@
 // get total balance of all orders
 async function main() {
-
     const orders = await global.db.collection('orders').find().sort({paid_at: -1}).toArray()
     const msatoshis = orders.map(o => o.msatoshi)
     const satsTotal = msatoshis.reduce((accum, msat) => (parseInt(msat) / 1000) + accum, 0)

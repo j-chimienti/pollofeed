@@ -1,7 +1,7 @@
 
-async function _feed(feedTimes = 1) {
+async function feed(feedTimes = 1) {
 
-    const futureDate = new Date(new Date().getTime() + (86400000 * 1000)).getTime()
+    const futureDate = new Date(new Date().getTime() + (86400000 + 100)).getTime()
     const options = {upsert: true, returnNewDocument: true, returnOriginal: false}
     const testOrder  = {
         feed: true,
@@ -20,10 +20,12 @@ const sleep = (ms = 1000) => new Promise(r => setTimeout(r, ms))
 
 async function main(times = 2) {
     console.log("feed %s", times)
-    const result = await _feed(times);
-    console.log(JSON.stringify(result.value, null, 4))
+    await feed(times);
     await sleep(7000)
-    return await global.db.collection('orders').deleteMany({id: "testing"})
+    const orderOpt = await global.db.collection('orders').find({id: /test/, feed: false})
+    // The feeder can be offline, so only delete if chickens actually fed
+    if (orderOpt)
+        return await global.db.collection('orders').deleteMany({id: /test/})
 }
 
 

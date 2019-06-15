@@ -5,11 +5,8 @@ const totals = require('./totals')
 
 
 async function main() {
-
     await dbconnect()
     await totals()
-
-
 }
 
 main().then(process.exit)
