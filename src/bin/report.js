@@ -1,6 +1,6 @@
 const path = require('path')
 require('dotenv').config({path: path.join(__dirname, '..', "..", '.env.development')})
-const orderDao = require('../lib/invoices/dao')
+const orderDao = require('../invoices/dao')
 const dbconnect = require('./dbconnect')
 const {send} = require('./email')
 // const totals = require('./totals')

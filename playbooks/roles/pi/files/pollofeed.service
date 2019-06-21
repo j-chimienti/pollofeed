@@ -1,11 +1,12 @@
 [Unit]
 Description=pollofeed
-After=multi-user.target
+After=network.service
 
 [Service]
 Type=simple
 User=pi
-ExecStart=/usr/bin/python3 ${HOME}/Documents/pollofeed/pi/pollofeed.py
+WorkingDirectory=/home/pi/Documents/pollofeed
+ExecStart=/usr/bin/python3 /home/pi/Documents/pollofeed/pollofeed.py
 KillMode=process
 Restart=on-failure
 RestartSec=30s

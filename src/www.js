@@ -31,7 +31,7 @@ async function main() {
 			process.exit(1)
 		})
 
-	const dbName = process.env.POLLOFEED_DB_NAME || 'btcstore'
+	const dbName = process.env.MONGO_DB_NAME
 	global.db = mongo.db(dbName)
 	console.log('Connected successfully to server')
 

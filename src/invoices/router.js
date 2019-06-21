@@ -8,16 +8,13 @@ const webhookToken = crypto
     .createHmac('sha256', process.env.CHARGE_TOKEN)
     .update("pollofeed")
     .digest('hex')
-
-function msat2sat(satoshi) {
-    return parseInt(satoshi * 1000)
-}
-
+const msat2sat = (satoshi) => parseInt(satoshi * 1000)
 const tenMinutes = 600 // seconds
-router.post('/', async (req, res) => {
+const feedPrice = process.env.FEED_PRICE || 1500
 
+router.post('/', async (req, res) => {
     const feedTimes = req.body.feedTimes || 1
-    const msatoshi = msat2sat(1500 * feedTimes)
+    const msatoshi = msat2sat(feedPrice * feedTimes)
     const inv = await global.lnCharge.invoice({
         msatoshi,
         description: 'Feed Chickens @ pollofeed.com',
@@ -34,16 +31,13 @@ router.post('/', async (req, res) => {
     return res.send(inv)
 })
 
-
-
 router.get('/:invoice/wait', async (req, res) => {
-
     const {invoice} = req.params
     if (!(invoice && invoice !== 'undefined')) return res.sendStatus(410)
     const orderOpt = await orderDao.findById(invoice)
     if (orderOpt) return res.status(200).json(orderOpt)
     const invoiceResult = await global.lnCharge.wait(invoice, 60).catch(err => {
-        console.log(`Invoice Error: ${err}`);
+        console.error(`[INVOICE] Error: ${err}`);
         return null
     })
     if (invoiceResult === null) return res.sendStatus(402)

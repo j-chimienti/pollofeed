@@ -1,4 +1,4 @@
-const PolloFeedInvoice = require('../src/lib/invoices/PolloFeedInvoice')
+const PolloFeedInvoice = require('../src/invoices/PolloFeedInvoice')
 
 const test = require('tape')
 

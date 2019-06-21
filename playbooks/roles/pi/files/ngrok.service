@@ -3,11 +3,12 @@ Description=Ngrok
 After=network.service
 
 [Service]
-type=simple
+Type=simple
 User=pi
-WorkingDirectory=/home/pi/Documents/pollofeed/pi
-ExecStart=/usr/bin/ngrok start pollofeed --config="/home/pi/Documents/pollofeed/pi/ngrok.yml"
+WorkingDirectory=/home/pi/Documents/pollofeed
+ExecStart=/home/pi/Downloads/ngrok start pollofeed --config="/home/pi/Documents/pollofeed/ngrok.yml"
 Restart=on-failure
+RestartSec=30s
 
 [Install]
 WantedBy=multi-user.target

@@ -9,7 +9,7 @@ module.exports = async function() {
     })
     console.log('Connected successfully to server')
 
-    const dbName = process.env.POLLOFEED_DB_NAME || (console.error('no POLLOFEED_DB_NAME env'), process.exit(1))
+    const dbName = process.env.MONGO_DB_NAME || (console.error('no MONGO_DB_NAME env'), process.exit(1))
 
     global.db = client.db(dbName)
 

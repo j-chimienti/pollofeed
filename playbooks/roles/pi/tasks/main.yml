@@ -1,28 +1,48 @@
 ---
 
-- name: pull repo
-  tags: git
-  git:
-    repo: "https://github.com/j-chimienti/pollofeed.git"
-    update: yes
-    dest: "{{ pollofeed_dir }}"
+- name: apt install
+  become: yes
+  become_method: sudo
+  vars:
+    packages:
+      - vim
+      - motion
+      - nodejs
+      - npm
+  apt:
+    name: "{{ packages }}"
+    update_cache: yes
+
+- name: copy files
+  tags: copy_files
+  with_items:
+    - pollofeed.py
+    - requirements.txt
+    - ngrok.yml
+    - update-hostname.py
+    - setup.py
+    - config.yml
+  copy:
+    src: "{{ item }}"
+    dest: "{{ pollofeed_dir }}/{{ item }}"
 
 - name: install requirements
-  tags: install
+  tags: install_requirements
   args:
     chdir: "{{ pollofeed_dir }}"
   pip:
     requirements: requirements.txt
 
 
-- name: copy config
-  tags: config
-  copy:
-    src: config.yml
-    dest: "{{ pollofeed_dir }}/config.yml"
+- name: update npm
+  become: yes
+  tags: update npm
+  command: npm i -g npm
 
-- include: tunnel.yml
-  tags: tunnel
+- name: install ngrok
+  become: yes
+  tags: install_ngrok
+  command: npm i --unsafe-perm -g ngrok
 
-- include: service.yml
-  tags: service
+
+### TODO: ENABLE SERVICES

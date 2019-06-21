@@ -4,6 +4,5 @@
   gather_facts: yes
   vars:
     pollofeed_dir: /home/pi/Documents/pollofeed
-  become: yes
   roles:
     - pi
