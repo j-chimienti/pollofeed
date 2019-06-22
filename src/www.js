@@ -33,7 +33,7 @@ async function main() {
 
 	const dbName = process.env.MONGO_DB_NAME
 	global.db = mongo.db(dbName)
-	console.log('Connected successfully to server')
+	console.log('Connected to db')
 
 	await Promise.all([
 

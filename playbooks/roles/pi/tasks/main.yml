@@ -1,8 +1,14 @@
 ---
 
-- name: apt install
+- name: Update profile timezone
   become: yes
-  become_method: sudo
+  lineinfile:
+    dest: ~/.profile
+    state: present
+    line: "TZ='America/New_York'; export TZ"
+
+- name: Install packages
+  become: yes
   vars:
     packages:
       - vim
@@ -13,36 +19,86 @@
     name: "{{ packages }}"
     update_cache: yes
 
-- name: copy files
+- name: Copy pollofeed app files
   tags: copy_files
   with_items:
     - pollofeed.py
-    - requirements.txt
-    - ngrok.yml
-    - update-hostname.py
+    - pin.py
     - setup.py
     - config.yml
+    - ngrok.yml
+    - requirements.txt
   copy:
     src: "{{ item }}"
     dest: "{{ pollofeed_dir }}/{{ item }}"
 
-- name: install requirements
-  tags: install_requirements
-  args:
-    chdir: "{{ pollofeed_dir }}"
-  pip:
-    requirements: requirements.txt
-
-
-- name: update npm
+- name: Copy motion.conf
+  tags: copy_motion_conf
   become: yes
-  tags: update npm
-  command: npm i -g npm
+  copy:
+    src: motion.conf
+    dest: /etc/motion/motion.conf
 
-- name: install ngrok
+
+
+- name: Install python requirements
+  tags: install_requirements
+  pip:
+    requirements: "{{ pollofeed_dir }}/requirements.txt"
+
+
+### NPM GLOBAL PACKAGES
+
+- name: Update npm global version 6.9.0
+  become: yes
+  tags: npm_1
+  npm:
+    global: yes
+    name: npm
+    version: "6.9.0"
+
+
+
+- name: Install ngrok globally
   become: yes
   tags: install_ngrok
-  command: npm i --unsafe-perm -g ngrok
+  npm:
+    global: yes
+    name: ngrok
+    unsafe_perm: yes
 
 
-### TODO: ENABLE SERVICES
+### SERVICES
+
+- name: Set variable - services
+  tags: set_facts
+  set_fact:
+    services:
+      - ngrok.service
+      - pollofeed.service
+
+- name: Copy service files
+  #Service is saved to pi user
+  #become: yes
+  tags: copy_services
+  with_items: "{{ services }}"
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/systemd/system/{{ item }}"
+
+
+- name: Enable and start services
+  with_items: "{{services}}"
+  tags: enable_services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+
+
+- name: Reload systemd
+  with_items: "{{services}}"
+  tags: reload_systemd
+  become: yes
+  systemd:
+    daemon_reload: yes

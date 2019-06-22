@@ -9,18 +9,24 @@
     update: yes
     dest: "./{{APP_DIR}}"
 
+- name: env files
+  tags: env_files
+  with_items:
+    - .env
+    - .env.mongo
+    - .env.development
+  copy:
+    src: "../../../../{{ item }}"
+    dest: "./{{APP_DIR}}/{{ item }}"
+
+
+- name: build docker container
+  command: docker-compose up --build -d
+  tags: reboot
+  args:
+    chdir: "./{{APP_DIR}}"
+
 
 - name: cron
   include: cron.yml
   tags: cron
-
-
-- name: env files
-  tags: env_files
-  include: copyEnv.yml
-
-
-- name: reboot
-  tags: reboot
-  #when: repo_changed
-  include: reboot.yml

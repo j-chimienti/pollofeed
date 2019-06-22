@@ -15,8 +15,10 @@ html
   meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
   link(rel='stylesheet', href='bootswatch/'+settings.theme+'/bootstrap.min.css')
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+
+
   body
-    div.container.mb-4(style="font-size: 1.5rem; min-height: 90vh;")
+    div.container.mb-4(style="font-size: 1.5rem; height: 90vh; min-height: 500px;")
       .row
         h1.my-4.mx-auto.text-uppercase.font-weight-bold.text-warning(
           style="letter-spacing: 0.3rem;"
@@ -30,9 +32,9 @@ html
           )
           i.fa.fa-bolt
           span FEED
-      .row.mb-2.text-center
+      .row.mb-2.d-flex.justify-content-center
         h3 Note: Lightning Bolt destroyed power relay
-      .row.my-2.text-center
+      .row.my-2.d-flex.justify-content-center
         p Replacement coming 24/Jun/2019
       .row.mb-4
         iframe.rounded.mx-auto.shadow(

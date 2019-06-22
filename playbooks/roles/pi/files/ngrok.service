@@ -6,7 +6,7 @@ After=network.service
 Type=simple
 User=pi
 WorkingDirectory=/home/pi/Documents/pollofeed
-ExecStart=/home/pi/Downloads/ngrok start pollofeed --config="/home/pi/Documents/pollofeed/ngrok.yml"
+ExecStart=/usr/bin/ngrok start pollofeed --config="/home/pi/Documents/pollofeed/ngrok.yml"
 Restart=on-failure
 RestartSec=30s
 

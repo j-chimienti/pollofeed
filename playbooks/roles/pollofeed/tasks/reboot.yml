@@ -1,4 +1,0 @@
-- name: build docker container
-  command: docker-compose up --build -d
-  args:
-    chdir: "./{{APP_DIR}}"
