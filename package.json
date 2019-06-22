@@ -1,6 +1,7 @@
 {
   "name": "pollofeed",
   "version": "0.1.0",
+  "description": "Bitcoin Lightning Powered Chicken Feeder",
   "repository": "https://github.com/j-chimienti/pollofeed",
   "issues": "https://github.com/j-chimienti/pollofeed/issues",
   "homepage": "https://pollofeed.com",
@@ -39,7 +40,9 @@
     "test": "node ./node_modules/.bin/tape test/**/*.js",
     "lint:fix": "eslint --fix --ext .jsx,.js src src/server",
     "totals": "node src/bin/runTotals.js",
-    "today": "node src/bin/ordersByDay.js"
+    "today": "node src/bin/ordersByDay.js",
+    "build::readme": "npx readme-md-generator",
+    "build::readme::default": "npx readme-md-generator -y"
   },
   "devDependencies": {
     "@sendgrid/mail": "^6.4.0",

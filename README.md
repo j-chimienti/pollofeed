@@ -1,29 +1,33 @@
-# pollofeed.com
+<h1 align="center">Welcome to pollofeed 👋</h1>
+<p>
+  <img src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+</p>
 
-Pollofeed is a bitcoin lightning powered chicken feeder.
+> Bitcoin Lightning Powered Chicken Feeder
 
-A Raspberry Pi recieves event that invoice is paid, and controls the feeder
+### 🏠 [Homepage](https://pollofeed.com)
 
+## Install
 
+```sh
+npm install
+```
 
-### Develop
+## Usage
 
-**build**
+```sh
+npm run start
+```
 
-  ./build.sh
-  
-**start**
+## Run tests
 
-  ./start.sh
-  
-**deploy**
+```sh
+npm run test
+```
 
-  Deploy the webapp to remote server 
-  
-  requirements:
-   - ansible
-   
-   copy hosts.example file to hosts
-   
-  ./deploy.sh
-  
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
