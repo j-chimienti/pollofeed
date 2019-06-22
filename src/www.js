@@ -35,6 +35,10 @@ async function main() {
 	global.db = mongo.db(dbName)
 	console.log('Connected to db')
 
+	server.listen(port, app.get('host'))
+	server.on('error', onError)
+	server.on('listening', onListening)
+
 	await Promise.all([
 
 		global.db.collection("orders").createIndex({
@@ -48,9 +52,6 @@ async function main() {
 		}),
 	])
 
-	server.listen(port, app.get('host'))
-	server.on('error', onError)
-	server.on('listening', onListening)
 
 
 }
