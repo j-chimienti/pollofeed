@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to pollofeed 👋</h1>
+<h1 align="center">Pollofeed</h1>
 <p>
   <img src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
@@ -9,21 +9,42 @@
 
 ## Install
 
-```sh
+```bash
 npm install
 ```
 
 ## Usage
 
+**Dev**
 ```sh
-npm run start
+npm run start:dev
 ```
+
+**Prod**
+
+```bash
+npm start
+```
+
+**Docker**
+
+```bash
+docker-compose up
+```
+
+**Deployment**
+
+see [README.md](playbooks/README.md)
 
 ## Run tests
 
 ```sh
 npm run test
 ```
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/j-chimienti/pollofeed/issues).
 
 ## Show your support
 
