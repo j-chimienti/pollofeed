@@ -1,16 +1,13 @@
 [Unit]
 Description=Motion daemon
-After=local-fs.target network.target
+After=network.service
 
 [Service]
-PIDFile=/var/run/motion.pid
-ExecStart=/usr/bin/motion -c /etc/motion/motion.conf
 Type=simple
-StandardError=null
-Restart=always
-# RestartSec=30s
+ExecStart=/usr/bin/motion -c /etc/motion/motion.conf
+KillMode=process
+Restart=on-failure
 User=root
-# Group is needed to set root vars
 Group=root
 
 [Install]

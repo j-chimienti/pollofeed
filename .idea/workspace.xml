@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="Replace mocha w/ tape&#10;Add Ln inv class&#10;Update manfeed to insert 1 obj w/ feedTime">
-      <change afterPath="$PROJECT_DIR$/playbooks/roles/pi/files/motion.service" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playbooks/roles/pi/files/motion.service" beforeDir="false" afterPath="$PROJECT_DIR$/playbooks/roles/pi/files/motion.service" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start.sh" beforeDir="false" afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,19 +20,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.pug">
+        <entry file="file://$PROJECT_DIR$/update.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="34" column="15" lean-forward="true" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+            <state relative-caret-position="96">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/pollofeed.py">
+        <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/start_motion.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="19" selection-end-line="55" />
+            <state relative-caret-position="32">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="75" column="4" lean-forward="true" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -40,34 +49,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/motion.service">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+            <state relative-caret-position="224">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/footer.pug">
+        <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/ngrok.service">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="2" column="74" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
-              <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+            <state relative-caret-position="128">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="13" column="11" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/update.yml">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -133,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/src/bin/report.js" />
         <option value="$PROJECT_DIR$/src/pi/pollofeed.py" />
@@ -172,7 +165,6 @@
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/main.yml" />
         <option value="$PROJECT_DIR$/playbooks/roles/pi/files/motion.conf" />
         <option value="$PROJECT_DIR$/playbooks/roles/pi/files/ngrok.service" />
-        <option value="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" />
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/cron.yml" />
         <option value="$PROJECT_DIR$/.env.development" />
         <option value="$PROJECT_DIR$/src/www.js" />
@@ -183,6 +175,8 @@
         <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/views/index.pug" />
+        <option value="$PROJECT_DIR$/playbooks/roles/pi/files/start_motion.sh" />
+        <option value="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" />
         <option value="$PROJECT_DIR$/playbooks/roles/pi/files/motion.service" />
       </list>
     </option>
@@ -207,7 +201,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,38 +210,13 @@
             </path>
             <path>
               <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="pi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="pi" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -603,7 +571,8 @@
       <workItem from="1561206802769" duration="4901000" />
       <workItem from="1561222175850" duration="426000" />
       <workItem from="1561256321604" duration="831000" />
-      <workItem from="1561404471783" duration="2601000" />
+      <workItem from="1561404471783" duration="2807000" />
+      <workItem from="1561424713002" duration="2656000" />
     </task>
     <task id="LOCAL-00001" summary="t">
       <created>1554334227123</created>
@@ -759,7 +728,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561211918469</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add motion service">
+      <created>1561411589013</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1561411589013</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -795,13 +771,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="384273000" />
+    <option name="totallyTimeSpent" value="387135000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="25" y="23" width="1255" height="777" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.143446" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21846661" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -817,7 +792,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.30832645" />
+      <window_info anchor="right" id="Terminal" order="3" visible="true" weight="0.36108822" />
       <window_info anchor="right" id="Run" order="4" weight="0.3165705" />
       <window_info anchor="right" id="Debug" order="5" weight="0.4223847" />
     </layout>
@@ -879,7 +854,8 @@
     <MESSAGE value="Update playbooks, lower feed price" />
     <MESSAGE value="Create indexes after server listen to req" />
     <MESSAGE value="Add readme gen script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add readme gen script" />
+    <MESSAGE value="Add motion service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add motion service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -984,13 +960,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/invoices/LightningInvoice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/invoices/dao.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -1133,13 +1102,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/motion.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/ngrok.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1161,20 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-93">
-          <caret line="43" column="23" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/ngrok.service">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/playbooks/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1190,13 +1138,6 @@
             <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/pollofeed.service">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1228,21 +1169,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/pollofeed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/update.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="2" column="74" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
-          <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -1253,17 +1183,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/pollofeed.py">
+    <entry file="file://$PROJECT_DIR$/views/footer.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="19" selection-end-line="55" />
+        <state relative-caret-position="80">
+          <caret line="2" column="74" selection-start-line="2" selection-start-column="74" selection-end-line="2" selection-end-column="74" />
+          <caret line="5" column="74" selection-start-line="5" selection-start-column="74" selection-end-line="5" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/start_motion.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/pollofeed.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="75" column="4" lean-forward="true" selection-start-line="75" selection-start-column="4" selection-end-line="75" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/motion.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/ngrok.service">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/motion.service">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state relative-caret-position="224">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>

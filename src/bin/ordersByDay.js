@@ -8,12 +8,13 @@ async function main() {
     await dbconnect()
     const count = await orderDao.count()
     console.log(`ORDERS: ${count}`)
-    // const yesterday = moment().subtract(1, 'day').toDate();
+    const yesterday = moment().subtract(1, 'day').toDate();
     const todayOrders = await orderDao.getOrdersByDate()
+    const yesterdayOrders = await orderDao.getOrdersByDate(yesterday)
     let t = getTotals(todayOrders);
-    //let y = getTotals(yesterDayOrders);
+    let y = getTotals(yesterdayOrders);
     console.log("today", t)
-    // console.log("yesterday", y)
+    console.log("yesterday", y)
     return t;
 
 }

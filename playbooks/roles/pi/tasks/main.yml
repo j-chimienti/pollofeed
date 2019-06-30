@@ -68,37 +68,47 @@
     unsafe_perm: yes
 
 
+
+- name: cron motion
+  tags: motion_reboot
+  become: yes
+  cron:
+    state: absent
+    name: motion_reboot
+    special_time: reboot
+    job: "sudo motion -c /etc/motion/motion.conf"
+
 ### SERVICES
 
-- name: Set variable - services
-  tags: set_facts
-  set_fact:
-    services:
-      - ngrok.service
-      - pollofeed.service
+#- name: Set variable - services
+#  tags: set_facts
+#  set_fact:
+#    services:
+#      - ngrok.service
+#      - pollofeed.service
 
-- name: Copy service files
-  #Service is saved to pi user
-  #become: yes
-  tags: copy_services
-  with_items: "{{ services }}"
-  copy:
-    src: "{{ item }}"
-    dest: "/etc/systemd/system/{{ item }}"
+#- name: Copy service files
+#  #Service is saved to pi user
+#  #become: yes
+#  tags: copy_services
+#  with_items: "{{ services }}"
+#  copy:
+#    src: "{{ item }}"
+#    dest: "/etc/systemd/system/{{ item }}"
 
-
-- name: Enable and start services
-  with_items: "{{services}}"
-  tags: enable_services
-  systemd:
-    name: "{{ item }}"
-    enabled: yes
-    state: started
-
-
-- name: Reload systemd
-  with_items: "{{services}}"
-  tags: reload_systemd
-  become: yes
-  systemd:
-    daemon_reload: yes
+#
+#- name: Enable and start services
+#  with_items: "{{services}}"
+#  tags: enable_services
+#  systemd:
+#    name: "{{ item }}"
+#    enabled: yes
+#    state: started
+#
+#
+#- name: Reload systemd
+#  with_items: "{{services}}"
+#  tags: reload_systemd
+#  become: yes
+#  systemd:
+#    daemon_reload: yes

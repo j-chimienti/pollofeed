@@ -242,3 +242,4 @@ client_secret.json
 ngrok.yml
 
 
+*.retry
