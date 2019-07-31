@@ -33,7 +33,7 @@
     "pug": "^2.0.0-rc.4"
   },
   "scripts": {
-    "start": "node src/www.js",
+    "start": "cross-env NODE_ENV=development node src/www.js",
     "start:dev": "./start.sh",
     "build": "./build.sh",
     "deploy": "./deploy.sh",
@@ -41,6 +41,7 @@
     "lint:fix": "eslint --fix --ext .jsx,.js src src/server",
     "totals": "node src/bin/runTotals.js",
     "today": "node src/bin/ordersByDay.js",
+    "feed": "node src/bin/manfeed",
     "build::readme": "npx readme-md-generator",
     "build::readme::default": "npx readme-md-generator -y"
   },
