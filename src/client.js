@@ -3,7 +3,6 @@ require('babel-polyfill')
 const $ = require('jquery')
     , B = require('bootstrap')
     , qrcode = require('qrcode')
-    , fmtbtc = require('fmtbtc')
 
 const payDialog  = require('../views/payment.pug')
     , paidDialog = require('../views/success.pug')
@@ -73,28 +72,4 @@ setInterval(_ =>
 
 $(document).on('hidden.bs.modal', '.modal', e => $(e.target).remove())
 
-
-const sat = 1500
-function getExRate() {
-  const uri = `https://api.opennode.co/v1/rates`
-  return fetch(uri)
-      .then(response => response.json())
-      .then(result => {
-        try {
-          const usd = result.data.BTCUSD.USD
-          console.log(usd)
-          const b = fmtbtc(sat)
-          const dollars = b * usd
-          var USD = dollars.toLocaleString('en-US', {
-            style: 'currency',
-            currency: "USD"
-          })
-          console.log(b, typeof b, dollars, USD)
-          $("#usd").text(USD)
-          return usd
-        } catch (e) {
-          console.error(e)
-        }
-  })
-}
 

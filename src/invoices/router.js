@@ -3,6 +3,8 @@ const express = require('express')
 const orderDao = require('./dao')
 const router = express.Router()
 const crypto = require('crypto')
+const csrf = require('csurf')
+var csrfProtection = csrf({ cookie: true })
 
 const webhookToken = crypto
     .createHmac('sha256', process.env.CHARGE_TOKEN)
@@ -12,7 +14,7 @@ const msat2sat = (satoshi) => parseInt(satoshi * 1000)
 const tenMinutes = 600 // seconds
 const feedPrice = process.env.FEED_PRICE || 1500
 
-router.post('/', async (req, res) => {
+router.post('/', csrfProtection, async (req, res) => {
     const feedTimes = req.body.feedTimes || 1
     const msatoshi = msat2sat(feedPrice * feedTimes)
     const inv = await global.lnCharge.invoice({

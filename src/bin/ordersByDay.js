@@ -6,10 +6,9 @@ const dbconnect = require('./dbconnect')
 
 async function main() {
     await dbconnect()
-    const count = await orderDao.count()
-    console.log(`ORDERS: ${count}`)
     const yesterday = moment().subtract(1, 'day').toDate();
     const todayOrders = await orderDao.getOrdersByDate()
+    console.log(todayOrders)
     const yesterdayOrders = await orderDao.getOrdersByDate(yesterday)
     let t = getTotals(todayOrders);
     let y = getTotals(yesterdayOrders);

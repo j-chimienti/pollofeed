@@ -4,7 +4,7 @@ html
   title= settings.title
   meta(charset='utf-8')
   meta(name='viewport', content='width=device-width, initial-scale=1')
-  //meta(name='csrf', content=req.csrfToken())
+  meta(name='csrf', content=req.csrfToken())
   meta(name='show-bolt11', content=settings.show_bolt11?1:'')
   meta(name='apple-mobile-web-app-capable', content='yes')
   meta(name="mobile-web-app-capable" content="yes")
@@ -13,9 +13,8 @@ html
   meta(name="apple-mobile-web-app-title" content="pollofeed")
   meta(name="msapplication-starturl" content="/")
   meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
-  link(rel='stylesheet', href='bootswatch/'+settings.theme+'/bootstrap.min.css')
+  link(rel='stylesheet', href='bootswatch/'+ settings.theme +'/bootstrap.min.css')
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-
 
   body
     div.container.mb-4(style="font-size: 1.5rem; height: 90vh; min-height: 700px;")

@@ -6,9 +6,9 @@ WORKDIR /pollofeed
 #ARG NODE_ENV=production
 #ENV NODE_ENV $NODE_ENV
 USER node
-COPY --chown=node:node package.json yarn.lock  ./
-RUN yarn install
+COPY --chown=node:node package.json package-lock.json  ./
+RUN npm install
 COPY --chown=node:node . .
-RUN yarn run build
+RUN npm run build
 EXPOSE ${PORT:-4321}
 CMD node ./src/www.js
