@@ -1,7 +1,9 @@
 <h1 align="center">Pollofeed</h1>
 <p>
+<img src="https://travis-ci.com/j-chimienti/pollofeed.svg?branch=master"/>
   <img src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 </p>
+
 
 > Bitcoin Lightning Powered Chicken Feeder
 
