@@ -1,5 +1,6 @@
 class LightningInvoice {
-    constructor({ id,
+    constructor({
+                    id,
                     msatoshi,
                     quoted_currency,
                     quoted_amount,

@@ -8,12 +8,13 @@ html
   meta(name='show-bolt11', content=settings.show_bolt11?1:'')
   meta(name='apple-mobile-web-app-capable', content='yes')
   meta(name="mobile-web-app-capable" content="yes")
-  link(rel="manifest" href="manifest.json")
+  link(rel="shortcut icon" href="pollofeed.png")
   meta(name="application-name" content="pollofeed")
   meta(name="apple-mobile-web-app-title" content="pollofeed")
   meta(name="msapplication-starturl" content="/")
   meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
   link(rel='stylesheet', href='bootswatch/'+ settings.theme +'/bootstrap.min.css')
+  link(rel='stylesheet', href="style.css")
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
 
   body
@@ -21,16 +22,15 @@ html
       .row
         h1.my-4.mx-auto.text-uppercase.font-weight-bold.text-warning(
           style="letter-spacing: 0.3rem;"
-          title="Bitcoin Lightning Powered Chicken Feeder"
-          )= settings.title
+          title="Bitcoin Lightning Powered Chicken Feeder")= settings.title
       .row
         button(
           style="max-width: 300px; font-size: 1.6rem; letter-spacing: .2rem;"
           class="btn btn-primary btn-block mx-auto mb-4"
           type="submit" data-buy-item="pollofeed"
           )
-          i.fa.fa-bolt
-          span FEED
+          i.fa.fa-bolt.font-weight-bold
+          span.font-weight-bold FEED
       .row.mb-4
         iframe.rounded.mx-auto.shadow(
           title='live stream'
@@ -39,5 +39,6 @@ html
           style="border: none;"
           width="640"
         )
+
   include footer.pug
   script(src='script.js')

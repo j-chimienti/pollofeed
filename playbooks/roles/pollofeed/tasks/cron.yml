@@ -4,15 +4,23 @@
   # remove via state: absent
   cron:
     name: feed chickens if underfed
-    hour: 7,13,17
-    minute: 0
+    hour: "7,13,17"
+    minute: "0"
     state: present
-    job: "node /home/joe/pollofeed/src/bin/feeder.js"
+    job: "node {{ BIN_DIR }}/feeder.js"
 
-- name: report sender
+- name: daily reporting
   cron:
     name: feed report
-    hour: 23
-    minute: 59
+    hour: "23"
+    minute: "59"
     state: present
-    job: "node /home/joe/pollofeed/src/bin/report.js"
+    job: "node {{ BIN_DIR }}/report.js"
+
+- name: update btcpayserver
+  cron:
+    name: update btcpayserver
+    hour: "1"
+    minute: "0"
+    state: present
+    job: btcpay-update.sh
