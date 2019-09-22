@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-ansible-playbook --limit ${POLLOFEED_HOST} \
-playbooks/deploy.yml \
---tags git,reboot #,cron,env_files,
+ansible-playbook playbooks/deploy.yml --tags git,reboot #,cron,env_files,
 
 #ansible-playbook --limit $PI_HOST \
 #playbooks/pi.yml \
