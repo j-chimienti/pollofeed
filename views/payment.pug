@@ -6,7 +6,7 @@
      .modal-body.text-center
        h5 Pay with Lightning
        if msatoshi
-           p.font-weight-light.small #{ msat2sat(msatoshi, true) } satoshi
+           p.font-weight-light.small.text-monospace #{ msat2sat(msatoshi, true) } satoshi
        div
            img.pollofeed_logo(src="pollofeed.png")
            img.d-block.w-100.mb-3(src=qr)
@@ -16,4 +16,4 @@
            .input-group-append
              a.btn.btn-primary(href='lightning:'+payreq)
                i.fa.fa-bolt.text-warning.font-weight-bold
-       p.text-muted.small.font-weight-light.mb-0 Invoice expires in #[span(data-countdown-to=expires_at)]
+       p.text-muted.small.font-weight-light.mt-1.mb-0 Invoice expires in #[span(data-countdown-to=expires_at)]

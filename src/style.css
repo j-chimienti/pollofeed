@@ -5,7 +5,24 @@
     top: 175px;
 }
 
+@media all and (max-width: var(--breakpoint-sm)) {
 
+    .pollofeed_logo {
+
+        left: 150px;
+        top: 200px;
+    }
+}
+
+
+@media all and (max-width: 576px) {
+
+    .pollofeed_logo {
+
+        left: 150px;
+        top: 200px;
+    }
+}
 /*.header {*/
 
 /*    height: 200px;*/
