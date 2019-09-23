@@ -23,11 +23,11 @@
         top: 200px;
     }
 }
-/*.header {*/
+.header {
 
-/*    height: 200px;*/
-/*    background: url(pollofeed_banner.png);*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-/*}*/
+    height: 200px;
+    background: url(banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
