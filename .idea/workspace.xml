@@ -292,11 +292,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.totals.js" />
       <item itemvalue="Node.js.runTotals.js" />
+      <item itemvalue="Node.js.totals.js" />
+      <item itemvalue="npm.build" />
       <item itemvalue="npm.start" />
       <item itemvalue="npm.start:dev" />
-      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list>
