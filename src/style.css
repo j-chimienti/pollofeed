@@ -5,6 +5,14 @@
     top: 175px;
 }
 
+.btn_feed {
+
+    max-width: 275px;
+    font-size: 1.6rem;
+    letter-spacing: .2rem;
+
+}
+
 @media all and (max-width: var(--breakpoint-sm)) {
 
     .pollofeed_logo {
@@ -23,11 +31,11 @@
         top: 200px;
     }
 }
-/*.header {*/
+.header {
 
-/*    height: 150px;*/
-/*    background: url(banner_sm.png);*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-/*}*/
+    height: 100px;
+    background: url(banner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
