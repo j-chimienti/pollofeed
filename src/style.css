@@ -10,18 +10,15 @@
     max-width: 275px;
     font-size: 1.6rem;
     letter-spacing: .2rem;
+    background-color: #99d9ea;
+    transition: background-color 0.2s linear;
 
 }
 
-@media all and (max-width: var(--breakpoint-sm)) {
+.btn_feed:hover {
 
-    .pollofeed_logo {
-
-        left: 150px;
-        top: 200px;
-    }
+    background-color: #2185a0;
 }
-
 
 @media all and (max-width: 576px) {
 
