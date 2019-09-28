@@ -1,8 +1,8 @@
 .pollofeed_logo {
-    width: 50px;
+    width: 65px;
     position: absolute;
-    left: 125px;
-    top: 175px;
+    left: 118px;
+    top: 160px;
 }
 
 .btn_feed {
@@ -21,11 +21,9 @@
 }
 
 @media all and (max-width: 576px) {
-
     .pollofeed_logo {
-
-        left: 150px;
-        top: 200px;
+        left: 155px;
+        top: 205px;
     }
 }
 .header {
