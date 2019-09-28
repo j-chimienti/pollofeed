@@ -22,8 +22,7 @@
 
 @media all and (max-width: 576px) {
     .pollofeed_logo {
-        left: 155px;
-        top: 205px;
+        visibility: hidden;
     }
 }
 .header {
