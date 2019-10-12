@@ -19,6 +19,8 @@ $('[data-buy-item]').click(e => {
 })
 
 
+
+
 const pay = async data => {
   $('[data-buy-item], [data-buy] :input').prop('disabled', true)
 

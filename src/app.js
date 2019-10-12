@@ -32,6 +32,7 @@ app.use(logger('dev'))
 app.use('/invoice', invoicesRouter)
 app.use(express.static(path.join(__dirname, "..", 'dist')))
 app.get('/', csrfProtection, (req, res) => res.render("index", {req}))
+app.get('/about', (req, res) => res.render("about", {req}))
 
 // use pre-compiled browserify bundle when available, or live-compile for dev
 const compiledBundle = path.join(__dirname, "..", "dist", 'client.bundle.min.js')

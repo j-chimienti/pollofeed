@@ -1,0 +1,43 @@
+doctype html
+
+html
+    title= settings.title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='show-bolt11', content=settings.show_bolt11?1:'')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name="mobile-web-app-capable" content="yes")
+    link(rel="shortcut icon" href="pollofeed.png")
+    meta(name="application-name" content="pollofeed")
+    meta(name="apple-mobile-web-app-title" content="pollofeed")
+    meta(name="msapplication-starturl" content="/")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel='stylesheet', href='bootswatch/'+ settings.theme +'/bootstrap.min.css')
+    link(rel='stylesheet', href="style.css")
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+
+body.text-center
+    h1.text-center About Us
+        a.ml-2(href="/")
+            i.fa.fa-home
+    .container.mb-4
+        h2.my-2 Daisy
+        p.my-1 Because she's lazy. Digs holes and lays in them
+        img.my-1(class="img-fluid" src="daisy.jpg")
+
+        h2.my-2 Parkour
+        p.my-1 Always jump and hit pen with both feet
+        img.my-1(class="img-fluid" src="Parkour.jpg")
+
+        h2.my-2 RED
+        p.my-1 Retired Extremely Dangerous to your toes and legs
+        img.my-1(class="img-fluid" src="RED.jpg")
+
+        h2.my-2 Big black
+        p.my-1 The alpha hen
+        img.my-1(class="img-fluid" src="BigBlack.jpg")
+
+        h2.my-2 Karen and Lori
+        p.my-1 Always together. The oldest 2 Rhode Island Reds. Hatched 15/Aug/2016
+        img.my-1(class="img-fluid" src="KarenLori.jpg")
+

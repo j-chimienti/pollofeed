@@ -8,4 +8,5 @@ browserify ./src/client.js | uglifyjs -cm > dist/client.bundle.min.js
 #cp src/manifest.json dist
 cp src/*.css dist
 cp src/*.png dist
+cp src/*.jpg dist
 # cp src/pollofeed_banner.png dist
