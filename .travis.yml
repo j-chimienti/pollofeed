@@ -1,4 +1,2 @@
 language: minimal
 script: docker build -t pollofeed .
-
-if: type = pull_request
