@@ -6,7 +6,7 @@ WORKDIR /pollofeed
 USER node
 COPY --chown=node:node package.json package-lock.json  ./
 RUN npm install
-RUN npm run build
 COPY --chown=node:node . .
+RUN npm run build
 EXPOSE ${PORT:-4321}
 CMD node ./src/www.js
