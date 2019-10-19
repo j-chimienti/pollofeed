@@ -1,3 +1,19 @@
+
+:root {
+
+    --pollofeed_blue: #67c6df;
+    --pollofeed_blue_dark: #1f7c95;
+}
+
+a {
+    color: var(--pollofeed_blue);
+}
+
+a:hover {
+
+    color: var(--pollofeed_blue_dark);
+}
+
 .pollofeed_logo {
     width: 65px;
     position: absolute;
@@ -10,14 +26,14 @@
     max-width: 275px;
     font-size: 1.6rem;
     letter-spacing: .2rem;
-    background-color: #67c6df;
+    background-color: var(--pollofeed_blue);
     transition: background-color 0.2s linear;
 
 }
 
 .btn_feed:hover {
 
-    background-color: #1f7c95;
+    background-color: var(--pollofeed_blue_dark);
 }
 
 @media all and (max-width: 576px) {
