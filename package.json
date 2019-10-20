@@ -13,6 +13,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
     "bootswatch": "^4.0.0-beta.3",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.3",
@@ -23,12 +24,14 @@
     "fmtbtc": "0.0.2",
     "helmet": "^3.18.0",
     "http-errors": "^1.7.2",
+    "jquery": "^3.3.1",
     "lightning-charge-client": "^0.1.7",
     "mongodb": "^3.2.4",
     "morgan": "^1.9.0",
     "only": "0.0.2",
     "popper.js": "^1.15.0",
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.0-rc.4",
+    "qrcode": "^1.2.0"
   },
   "scripts": {
     "start": "node src/www.js",
@@ -52,14 +55,11 @@
     "babel-preset-env": "^1.6.1",
     "babel-watch": "^2.0.7",
     "babelify": "^8.0.0",
-    "bootstrap": "^4.0.0",
     "browserify-middleware": "^8.0.0",
-    "jquery": "^3.3.1",
     "marked": "^0.7.0",
     "moment": "^2.24.0",
     "nodemon": "^1.19.0",
     "pugify": "^2.2.0",
-    "qrcode": "^1.2.0",
     "supertest": "^4.0.2",
     "tape": "^4.10.1"
   },

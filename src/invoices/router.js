@@ -4,7 +4,7 @@ const orderDao = require('./dao')
 const router = express.Router()
 const crypto = require('crypto')
 const csrf = require('csurf')
-var csrfProtection = csrf({ cookie: true })
+const csrfProtection = csrf({cookie: true});
 
 const webhookToken = crypto
     .createHmac('sha256', process.env.CHARGE_TOKEN)
