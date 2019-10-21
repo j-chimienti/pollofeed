@@ -12,10 +12,14 @@ services:
     restart: always
     networks:
       - nginxproxy
+    healthcheck:
+      test: "[ `echo 'db.runCommand(\"ping\").ok' | mongo localhost/${MONGO_DB_NAME} --quiet` ] && echo 0 || echo 1"
+      interval: 5s
+      start_period: 10s
+      timeout: 4s
+      retries: 3
   pollofeed:
     container_name: pollofeed
-#    volumes:
-#      - /var/log/docker:/var/log
     build: .
     restart: unless-stopped
     depends_on:
@@ -24,8 +28,6 @@ services:
       - nginxproxy
     env_file:
       - .env
-    environment:
-      POLLOFEED_MONGO_URI: "mongodb://${MONGO_APP_USER}:${MONGO_APP_PASSWORD}@db/${MONGO_DB_NAME}"
     ports:
       - "${PORT}:${PORT}"
 
