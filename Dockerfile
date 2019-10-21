@@ -1,7 +1,7 @@
 FROM node:carbon
 MAINTAINER joe chimienti <jchimien@gmail.com>
-#ARG NODE_ENV=production
-#ENV NODE_ENV $NODE_ENV
+ARG NODE_ENV=production
+ENV NODE_ENV $NODE_ENV
 ARG PORT=4321
 ENV PORT $PORT
 EXPOSE $PORT
