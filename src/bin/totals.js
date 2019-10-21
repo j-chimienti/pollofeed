@@ -6,12 +6,12 @@ async function main() {
     const btc = satsTotal / 1e8
     const newestOrder = orders[0]
     const oldestOrder = orders[orders.length - 1]
-    const newEstOrderDate = new Date(newestOrder.paid_at * 1000)
-    const oldestOrderDate = new Date(oldestOrder.paid_at * 1000)
+    const newEstOrderDate = new Date(newestOrder.paid_at)
+    const oldestOrderDate = new Date(oldestOrder.paid_at)
     const days = (newEstOrderDate.getTime() - oldestOrderDate.getTime()) / 86400000
     const avgDay = orders.length / days
     const byDay = orders.reduce((accum, order) => {
-        const day = new Date(order.paid_at * 1000).toLocaleDateString()
+        const day = new Date(order.paid_at).toLocaleDateString()
         if (!accum[day]) accum[day] = [order]
          else accum[day].push(order)
         return accum
@@ -28,7 +28,7 @@ async function main() {
     let max = {date: null, fed: 0}
     let min = {date: null, fed: Infinity}
     Object.values(byDay).forEach(day => {
-        const date = new Date(day[0].paid_at * 1000)
+        const date = new Date(day[0].paid_at)
         const data = {date, fed: day.length}
         if (day.length > max.fed) max = data
         if (day.length < min.fed) min = data
