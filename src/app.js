@@ -35,7 +35,7 @@ app.get('/', csrfProtection, (req, res) => res.render("index", {req}))
 app.get('/about', (_, res) => res.render("about"))
 
 
-app.get("/health", (_, res) => res.status(200).send("OK"))
+app.get("/health", (_, res) => res.send("OK"))
 
 // use pre-compiled browserify bundle when available, or live-compile for dev
 const compiledBundle = path.join(__dirname, "..", "dist", 'client.bundle.min.js')
