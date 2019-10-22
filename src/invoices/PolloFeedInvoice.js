@@ -5,7 +5,7 @@ class PolloFeedInvoice extends LightningInvoice {
         Object.assign(this.metadata,
             {feedTimes: this.metadata && 'feedTimes' in this.metadata && this.metadata.feedTimes || 1})
         this.feed = true
-        this.acknowledged_at = null
+        this.acknowledged_at = false
 
         // manual overrides of
         this.msatoshi = parseInt(this.msatoshi)
