@@ -33,8 +33,25 @@ const pay = async data => {
 
     const unlisten = listen(inv.id, paid => (diag.modal('hide'), paid && success()))
     diag.on('hidden.bs.modal', unlisten)
+    setTimeout(() => {
+      const $copyPayReq = document.getElementById('copyPayReq')
+      $copyPayReq.addEventListener('click', e => {
+        e.preventDefault()
+        const $payReq = document.getElementById('payreq')
+        $payReq.select()
+        document.execCommand('copy')
+        const $icon = $copyPayReq.firstElementChild
+        $icon.classList.remove('text-white')
+        $icon.classList.add("text-success")
+        setTimeout(() => {
+          $icon.classList.remove('text-success')
+          $icon.classList.add("text-white")
+        }, 2000)
+      })
+    }, 500)
   }
   finally { $(':disabled').attr('disabled', false) }
+
 }
 
 const listen = (invid, cb) => {

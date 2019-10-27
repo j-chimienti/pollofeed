@@ -51,7 +51,8 @@
   },
   "scripts": {
     "start": "node src/www.js",
-    "start:dev": "./start.sh",
+    "start:dev": "./dev.sh",
+    "dev": "./dev.sh",
     "build": "./build.sh",
     "deploy": "./deploy.sh",
     "predeploy": "npm run build",

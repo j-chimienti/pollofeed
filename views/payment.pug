@@ -12,8 +12,11 @@
            img.d-block.w-100.mb-3(src=qr)
        if show_bolt11
          .input-group
-           input.form-control(type='text', value=payreq, readonly)
+           input.form-control(type='text', value=payreq, readonly id="payreq")
            .input-group-append
-             a.btn.btn-primary(href='lightning:'+payreq)
+             a.btn.btn-outline-dark(href='lightning:'+payreq)
                i.fa.fa-bolt.text-warning.font-weight-bold
+           .input-group-append
+               a.btn.btn-outline-dark(id="copyPayReq")
+                   i.fa.fa-copy.text-white.font-weight-bold
        p.text-muted.small.font-weight-light.mt-1.mb-0 Invoice expires in #[span(data-countdown-to=expires_at)]
