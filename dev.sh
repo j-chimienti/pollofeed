@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-./build.sh
-npm start
+nodemon -w ./src/ -w ./views/ -e js,css,pug --exec "./build.sh && npm start"

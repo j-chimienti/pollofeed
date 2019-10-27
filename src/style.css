@@ -12,6 +12,7 @@ a {
 a:hover {
 
     color: var(--pollofeed_blue_dark);
+    cursor: pointer;
 }
 
 .pollofeed_logo {
