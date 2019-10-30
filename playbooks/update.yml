@@ -1,0 +1,6 @@
+---
+- hosts: btcpayserver
+  become: yes
+  tasks:
+   - name: update btcpay
+     shell: btcpay-update.sh
