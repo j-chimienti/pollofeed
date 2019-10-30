@@ -24,3 +24,10 @@
     minute: "0"
     state: present
     job: btcpay-update.sh
+
+- name: pi unresponsive check
+  cron:
+    name: pi unresponsive check
+    job: "node {{BIN_DIR}}/checkOrders.js"
+    hour: "*"
+    minute: "0"
