@@ -28,6 +28,6 @@
 - name: pi unresponsive check
   cron:
     name: pi unresponsive check
-    job: "node {{BIN_DIR}}/checkOrders.js"
+    job: "node {{BIN_DIR}}/unresponsiveCheck.js >> /unresponsiveCheck.log 2>&1"
     hour: "*"
     minute: "0"
