@@ -41,7 +41,6 @@ async function main() {
 </div>`
     };
     await send(mailOptions)
-    console.log(`orders: ${todayOrders.length}`)
     process.exit(0)
 
 }

@@ -19,6 +19,9 @@ async function main() {
 
     if (nonAcknowledged.length) {
         notify(nonAcknowledged)
+    } else {
+
+        console.log("responsive")
     }
 
 }
@@ -49,4 +52,9 @@ function notResponsive(order) {
 }
 
 
-
+main()
+    .then(() => process.exit(0))
+    .catch(e => {
+        console.log(e)
+        process.exit(1)
+    })
