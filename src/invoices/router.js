@@ -10,13 +10,13 @@ const webhookToken = crypto
     .createHmac('sha256', process.env.CHARGE_TOKEN)
     .update("pollofeed")
     .digest('hex')
-const msat2sat = (satoshi) => parseInt(satoshi * 1000)
+const satoshi2millisatoshi = (satoshi) => parseInt(satoshi * 1000)
 const tenMinutes = 600 // seconds
 const feedPrice = process.env.FEED_PRICE || 1500
 
 router.post('/', csrfProtection, async (req, res) => {
-    const feedTimes = req.body.feedTimes || 1
-    const msatoshi = msat2sat(feedPrice * feedTimes)
+    const feedTimes = 1
+    const msatoshi = satoshi2millisatoshi(feedPrice * feedTimes)
     const inv = await global.lnCharge.invoice({
         msatoshi,
         description: 'Feed Chickens @ pollofeed.com',
