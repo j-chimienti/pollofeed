@@ -19,6 +19,9 @@ services:
       timeout: 4s
       retries: 3
   pollofeed:
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
     container_name: pollofeed
     build: .
     restart: unless-stopped
@@ -36,6 +39,4 @@ networks:
     external:
       name: nginxproxy
 
-volumes:
-  - "/etc/timezone:/etc/timezone:ro"
-  - "/etc/localtime:/etc/localtime:ro"
+
