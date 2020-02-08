@@ -18,6 +18,8 @@ const feedTimes = 1
 router.post('/', csrfProtection, async (req, res) => {
     const timesFedToday = await orderDao.countOrdersByDate()
     const feedSatoshis = feedCost(timesFedToday)
+    console.log('fed today', timesFedToday)
+    console.log('satoshis', feedSatoshis)
     const msatoshi = satoshi2millisatoshi(feedSatoshis)
     const inv = await global.lnCharge.invoice({
         msatoshi,
