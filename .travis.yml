@@ -1,4 +1,9 @@
-language: minimal
+language: node_js
+node_js:
+  - 11
+cache: npm
+services:
+  - docker
 script:
   - npm test
   - docker build -t pollofeed .
