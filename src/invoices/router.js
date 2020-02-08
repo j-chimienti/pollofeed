@@ -5,6 +5,7 @@ const router = express.Router()
 const crypto = require('crypto')
 const csrf = require('csurf')
 const csrfProtection = csrf({cookie: true});
+const feedCost = require('./feedCost')
 
 const webhookToken = crypto
     .createHmac('sha256', process.env.CHARGE_TOKEN)
@@ -12,11 +13,12 @@ const webhookToken = crypto
     .digest('hex')
 const satoshi2millisatoshi = (satoshi) => parseInt(satoshi * 1000)
 const tenMinutes = 600 // seconds
-const feedPrice = process.env.FEED_PRICE || 1500
+const feedTimes = 1
 
 router.post('/', csrfProtection, async (req, res) => {
-    const feedTimes = 1
-    const msatoshi = satoshi2millisatoshi(feedPrice * feedTimes)
+    const timesFedToday = await orderDao.countOrdersByDate()
+    const feedSatoshis = feedCost(timesFedToday)
+    const msatoshi = satoshi2millisatoshi(feedSatoshis)
     const inv = await global.lnCharge.invoice({
         msatoshi,
         description: 'Feed Chickens @ pollofeed.com',

@@ -36,17 +36,24 @@ async function main() {
     })
     console.log("\n")
     console.log("### Orders")
-    console.log("First Order = ", oldestOrderDate.toLocaleString())
-    console.log("Last Order = ", newEstOrderDate.toLocaleString())
-    console.log('Days =', parseInt(days))
-    console.log("Max =", max.feed, max.date.toLocaleDateString())
-    console.log("Min =", min.feed, min.date.toLocaleDateString())
-    console.log("Median = ", med)
-    console.log("Avg = ", parseInt(avgDay))
+    console.table({
+        days: parseInt(days),
+        first: oldestOrderDate.toLocaleString(),
+        newest: newEstOrderDate.toLocaleString(),
+        max: `${max.fed}, ${max.date.toLocaleDateString()}`,
+        min: `${min.fed}, ${min.date.toLocaleDateString()}`,
+        median: med,
+        avg: parseInt(avgDay)
+
+    })
     console.log("\n")
     console.log("### TOTALS")
-    console.log('sats', satsTotal.toLocaleString())
-    console.log('btc', btc.toPrecision(8))
+    console.table({
+        orders: orders.length.toLocaleString(),
+        sats: satsTotal.toLocaleString(),
+        btc: btc.toPrecision(8)
+    }
+        )
     return {
         oldestOrderDate,
         newEstOrderDate,

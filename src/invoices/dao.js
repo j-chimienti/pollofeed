@@ -13,6 +13,16 @@ module.exports = {
             .toArray()
     },
 
+    countOrdersByDate: async (date = new Date()) => {
+
+        const left = new Date(new Date(date).setHours(0, 0, 0, 0));
+
+        const right = new Date(new Date(date).setHours(23, 59, 59, 99));
+
+        return await global.db.collection('orders')
+            .countDocuments({paid_at: {$gte: left, $lte: right}})
+    },
+
     getOrders: async ({offset = 0, limit = 2000} = {}) => {
       return await global.db.collection('orders')
             .find()

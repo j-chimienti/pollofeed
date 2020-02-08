@@ -12,7 +12,7 @@ test("Creates order", function (t) {
     t.equal(_inv.status, invoice.status)
     t.equal(_inv.payreq, invoice.payreq)
     t.equal(invoice.feed, true)
-    t.equal(invoice.acknowledged_at, null)
+    t.equal(invoice.acknowledged_at, false)
     t.end()
 
 })
@@ -20,12 +20,12 @@ test("Creates order", function (t) {
 test("Throws error with missing LN fields", function (t) {
 
     const _order = {id: "hello"}
-    t.throws(() => new ChickenFeedOrder(_order))
-    t.throws(() => new ChickenFeedOrder({payreq: "i"}))
-    t.throws(() => new ChickenFeedOrder({status: "one"}))
-    t.throws(() => new ChickenFeedOrder({payreq: "i", status: "o"}))
-    t.throws(() => new ChickenFeedOrder({id: "i", status: "o"}))
-    t.throws(() => new ChickenFeedOrder({id: "i", payreq: "o"}))
+    t.throws(() => new PolloFeedInvoice(_order))
+    t.throws(() => new PolloFeedInvoice({payreq: "i"}))
+    t.throws(() => new PolloFeedInvoice({status: "one"}))
+    t.throws(() => new PolloFeedInvoice({payreq: "i", status: "o"}))
+    t.throws(() => new PolloFeedInvoice({id: "i", status: "o"}))
+    t.throws(() => new PolloFeedInvoice({id: "i", payreq: "o"}))
 
     t.end()
 })
