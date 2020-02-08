@@ -36,4 +36,6 @@ networks:
     external:
       name: nginxproxy
 
-
+volumes:
+  - "/etc/timezone:/etc/timezone:ro"
+  - "/etc/localtime:/etc/localtime:ro"
