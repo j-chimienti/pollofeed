@@ -68,16 +68,6 @@
     unsafe_perm: yes
 
 
-
-- name: cron motion
-  tags: motion_reboot
-  become: yes
-  cron:
-    state: absent
-    name: motion_reboot
-    special_time: reboot
-    job: "sudo motion -c /etc/motion/motion.conf"
-
 ### SERVICES
 
 - name: Set variable - services

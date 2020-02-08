@@ -1,4 +1,6 @@
 language: minimal
-script: docker build -t pollofeed .
+script:
+  - npm test
+  - docker build -t pollofeed .
 
 if: type = pull_request || branch = master

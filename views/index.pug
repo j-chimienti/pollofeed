@@ -3,7 +3,6 @@ doctype html
 html
   title= settings.title
   meta(charset='utf-8')
-  meta(name="who")
   meta(name='viewport', content='width=device-width, initial-scale=1')
   meta(name='csrf', content=req.csrfToken())
   meta(name='show-bolt11', content=settings.show_bolt11?1:'')
@@ -19,17 +18,7 @@ html
   link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
 
   body
-    div
-        nav.navbar.mb-4
-          a.d-none.d-sm-block.nav-link.nav-link-text-lg.font-weight-bold(href='https://btcpal.online/apps/ZTDhnT9yQ52MLG9qqgT2hG8q1Uu/pos')
-            | Swag
-          a.d-none.d-sm-block.nav-link.nav-link-text-lg.font-weight-bold(href='/about')
-            | About
-    div.row.mb-1.d-block.d-sm-none.d-flex.justify-content-center.align-items-center
-      a.nav-link.nav-link-text-md.font-weight-bold(href='https://btcpal.online/apps/ZTDhnT9yQ52MLG9qqgT2hG8q1Uu/pos')
-        | Swag
-      a.nav-link.nav-link-text-md.font-weight-bold.ml-2(href='/about')
-        | About
+    include header.pug
     div.container.mb-4(style="font-size: 1.5rem; height: 90vh; min-height: 700px;")
       .row
         button(
@@ -37,14 +26,14 @@ html
           type="submit" data-buy-item="pollofeed"
           )
           i.fa.fa-bolt.font-weight-bold.mr-1
-          span.font-weight-bold FEED
+          span.font-weight-bold.text-uppercase feed
       .row.mb-4
-        iframe.rounded.mx-auto.shadow(
-          title='live stream'
-          src='https://pollofeed.ngrok.io'
-          height='480'
-          style="border: none;"
-          width="640"
-        )
+        //iframe.rounded.mx-auto.shadow(
+        //  title='live stream'
+        //  src='https://pollofeed.ngrok.io'
+        //  height='480'
+        //  style="border: none;"
+        //  width="640"
+        //)
   include footer.pug
   script(src='script.js')

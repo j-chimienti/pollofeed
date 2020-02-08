@@ -59,3 +59,7 @@ a:hover {
     font-size: 1.25rem;
     padding: 0;
 }
+
+.img-fluid {
+    max-width: 800px;
+}
