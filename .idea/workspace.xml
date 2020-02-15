@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="Add pi unresponsive alert">
+    <list default="true" id="b2a139a0-5a01-405a-8559-f581228a5d7e" name="Default Changelist" comment="init service worker and pwa">
+      <change afterPath="$PROJECT_DIR$/src/loadServiceWorker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/about.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/about.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.pug" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,51 +25,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client.js">
+        <entry file="file://$PROJECT_DIR$/views/index.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+            <state relative-caret-position="249">
+              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/about.pug">
+        <entry file="file://$PROJECT_DIR$/src/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="36" column="49" lean-forward="true" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+            <state relative-caret-position="165">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deploy.sh">
+        <entry file="file://$PROJECT_DIR$/src/loadServiceWorker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+            <state relative-caret-position="105">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+        <entry file="file://$PROJECT_DIR$/build.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="33" column="77" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/main.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/payment.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="37" />
+            <state relative-caret-position="210">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -73,18 +66,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Pug File" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>POLLOFEED_DB_NAME</find>
-      <find>activate</find>
-      <find>start_motion_daemon</find>
-      <find>yarn</find>
-      <find>cookieSecret</find>
-      <find>COOKIE_SECRET</find>
       <find>NODE_ENV</find>
       <find>URL</find>
       <find>qrcode</find>
@@ -109,6 +97,12 @@
       <find>client.bundle.min.js</find>
       <find>BIN_DIR</find>
       <find>640</find>
+      <find>abset</find>
+      <find>banner</find>
+      <find>img</find>
+      <find>joe</find>
+      <find>font:</find>
+      <find>googleapi</find>
     </findStrings>
     <replaceStrings>
       <replace>URL</replace>
@@ -121,6 +115,7 @@
       <dir>$PROJECT_DIR$/node_modules/twilio</dir>
       <dir>$PROJECT_DIR$/node_modules/mocha</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$/views</dir>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
@@ -130,32 +125,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/copyEnv.yml" />
-        <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/reboot.yml" />
-        <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/playbooks/roles/pi/files/motion.conf" />
-        <option value="$PROJECT_DIR$/src/www.js" />
-        <option value="$PROJECT_DIR$/playbooks/roles/pi/files/start_motion.sh" />
-        <option value="$PROJECT_DIR$/playbooks/roles/pi/files/motion.service" />
-        <option value="$PROJECT_DIR$/src/bin/feed.js" />
-        <option value="$PROJECT_DIR$/.env.development" />
-        <option value="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/playbooks/roles/pi/files/ngrok.service" />
-        <option value="$PROJECT_DIR$/playbooks/deploy.yml" />
-        <option value="$PROJECT_DIR$/src/bin/ordersByDay.js" />
-        <option value="$PROJECT_DIR$/article.md" />
-        <option value="$PROJECT_DIR$/playbooks/group_vars/pollofeed" />
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/defaults/main.yml" />
-        <option value="$PROJECT_DIR$/dist/style.css" />
         <option value="$PROJECT_DIR$/start.sh" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/healtchcheck.js" />
-        <option value="$PROJECT_DIR$/src/invoices/router.js" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.babelrc" />
-        <option value="$PROJECT_DIR$/build.sh" />
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/src/bin/migrate_null.js" />
@@ -166,21 +141,41 @@
         <option value="$PROJECT_DIR$/src/invoices/PolloFeedInvoice.js" />
         <option value="$PROJECT_DIR$/src/bin/migrations/setMsatNum.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/test/lnCli.test.js" />
-        <option value="$PROJECT_DIR$/src/invoices/dao.js" />
-        <option value="$PROJECT_DIR$/src/bin/totals.js" />
         <option value="$PROJECT_DIR$/views/footer.pug" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/style.css" />
         <option value="$PROJECT_DIR$/views/payment.pug" />
         <option value="$PROJECT_DIR$/dev.sh" />
-        <option value="$PROJECT_DIR$/views/index.pug" />
         <option value="$PROJECT_DIR$/src/bin/unresponsiveCheck.js" />
         <option value="$PROJECT_DIR$/src/bin/feeder.js" />
         <option value="$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/cron.yml" />
         <option value="$PROJECT_DIR$/deploy.sh" />
-        <option value="$PROJECT_DIR$/src/client.js" />
+        <option value="$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/src/bin/totals.js" />
+        <option value="$PROJECT_DIR$/src/invoices/feedCost.js" />
+        <option value="$PROJECT_DIR$/src/bin/calcFeedTimes.js" />
+        <option value="$PROJECT_DIR$/test/app.test.js" />
+        <option value="$PROJECT_DIR$/test/lnCli.test.js" />
+        <option value="$PROJECT_DIR$/test/PolloFeedInvoice.test.js" />
+        <option value="$PROJECT_DIR$/views/header.pug" />
+        <option value="$PROJECT_DIR$/dist/style.css" />
         <option value="$PROJECT_DIR$/views/about.pug" />
+        <option value="$PROJECT_DIR$/test/calcFeedTimes.test.js" />
+        <option value="$PROJECT_DIR$/test/calcFeedCost.test.js" />
+        <option value="$PROJECT_DIR$/src/invoices/dao.js" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/invoices/feedCost.ts" />
+        <option value="$PROJECT_DIR$/test/feedCost.test.js" />
+        <option value="$PROJECT_DIR$/src/www.js" />
+        <option value="$PROJECT_DIR$/.env.development" />
+        <option value="$PROJECT_DIR$/src/invoices/router.js" />
+        <option value="$PROJECT_DIR$/src/manifest.json" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/src/client.js" />
+        <option value="$PROJECT_DIR$/src/serviceWorker.js" />
+        <option value="$PROJECT_DIR$/src/loadServiceWorker.js" />
+        <option value="$PROJECT_DIR$/build.sh" />
+        <option value="$PROJECT_DIR$/views/index.pug" />
+        <option value="$PROJECT_DIR$/src/style.css" />
       </list>
     </option>
   </component>
@@ -193,10 +188,11 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="14" />
     <option name="y" value="23" />
     <option name="width" value="1233" />
-    <option name="height" value="777" />
+    <option name="height" value="697" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -213,12 +209,7 @@
             <path>
               <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
               <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pollofeed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pollofeed" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -232,37 +223,41 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ECMAScript 6" />
-    <property name="javascript.nodejs.core.library.configured.version" value="12.8.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="11.1.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/img" />
+      <recent name="$PROJECT_DIR$/src/bin/migrations" />
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/playbooks" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/dist" />
       <recent name="$PROJECT_DIR$/playbooks/roles/pi/files" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/pi" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/bin/migrations" />
-      <recent name="$PROJECT_DIR$/views" />
-      <recent name="$PROJECT_DIR$/playbooks" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/playbooks/roles/pollofeed/files" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -277,24 +272,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.lnCli.test.js">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="PolloFeedInvoice.test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="PolloFeedInvoice.test.js" working-dir="$PROJECT_DIR$/test">
+      <method v="2" />
+    </configuration>
+    <configuration name="calcFeedTimes.test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="calcFeedTimes.test.js" working-dir="$PROJECT_DIR$/test">
+      <method v="2" />
+    </configuration>
+    <configuration name="feedCost.test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/test/feedCost.test.js" working-dir="$PROJECT_DIR$/test">
+      <method v="2" />
+    </configuration>
     <configuration name="lnCli.test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="lnCli.test.js" working-dir="$PROJECT_DIR$/test">
-      <method v="2" />
-    </configuration>
-    <configuration name="runTotals.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="runTotals.js" working-dir="$PROJECT_DIR$/src/bin">
-      <method v="2" />
-    </configuration>
-    <configuration name="totals.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="totals.js" working-dir="$PROJECT_DIR$/src/bin">
-      <method v="2" />
-    </configuration>
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -308,19 +296,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.totals.js" />
-      <item itemvalue="Node.js.runTotals.js" />
       <item itemvalue="Node.js.lnCli.test.js" />
+      <item itemvalue="Node.js.calcFeedTimes.test.js" />
+      <item itemvalue="Node.js.PolloFeedInvoice.test.js" />
+      <item itemvalue="Node.js.feedCost.test.js" />
       <item itemvalue="npm.start" />
-      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.lnCli.test.js" />
         <item itemvalue="npm.start" />
-        <item itemvalue="Node.js.runTotals.js" />
-        <item itemvalue="Node.js.totals.js" />
-        <item itemvalue="npm.build" />
+        <item itemvalue="Node.js.feedCost.test.js" />
+        <item itemvalue="Node.js.calcFeedTimes.test.js" />
+        <item itemvalue="Node.js.PolloFeedInvoice.test.js" />
+        <item itemvalue="Node.js.lnCli.test.js" />
       </list>
     </recent_temporary>
   </component>
@@ -613,70 +601,15 @@
       <workItem from="1572805027800" duration="21000" />
       <workItem from="1574214919796" duration="270000" />
       <workItem from="1575772825206" duration="101000" />
-      <workItem from="1575866911480" duration="688000" />
-    </task>
-    <task id="LOCAL-00003" summary="test bal">
-      <created>1555126444518</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1555126444518</updated>
-    </task>
-    <task id="LOCAL-00004" summary="feed on schedule">
-      <created>1555160964551</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1555160964551</updated>
-    </task>
-    <task id="LOCAL-00005" summary="separate api">
-      <created>1556240820718</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1556240820718</updated>
-    </task>
-    <task id="LOCAL-00006" summary="separate api">
-      <created>1557237290601</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1557237290601</updated>
-    </task>
-    <task id="LOCAL-00007" summary="feed times as placeholder">
-      <created>1557579307529</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1557579307530</updated>
-    </task>
-    <task id="LOCAL-00008" summary="replace react w/ ssr app">
-      <created>1557762373778</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1557762373778</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Replace mocha w/ tape&#10;Add Ln inv class&#10;Update manfeed to insert 1 obj w/ feedTime">
-      <created>1557920748527</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1557920748527</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Add node URI">
-      <created>1558576551286</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1558576551286</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Hide URI mobile">
-      <created>1558581002297</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1558581002297</updated>
+      <workItem from="1575866911480" duration="912000" />
+      <workItem from="1576941802096" duration="34000" />
+      <workItem from="1581037603226" duration="478000" />
+      <workItem from="1581046440466" duration="515000" />
+      <workItem from="1581177235662" duration="1411000" />
+      <workItem from="1581178730972" duration="4760000" />
+      <workItem from="1581392644502" duration="50000" />
+      <workItem from="1581645356205" duration="1039000" />
+      <workItem from="1581722399174" duration="8310000" />
     </task>
     <task id="LOCAL-00012" summary="Lower price to 1500 sats">
       <created>1558962518785</created>
@@ -958,7 +891,70 @@
       <option name="project" value="LOCAL" />
       <updated>1572398121388</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Update about and add btn hightlighting">
+      <created>1575869264113</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1575869264113</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Handle overfeed">
+      <created>1581181406517</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1581181406519</updated>
+    </task>
+    <task id="LOCAL-00054" summary="debug feed cost in prod">
+      <created>1581182138327</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1581182138327</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fix volume mapping">
+      <created>1581182968805</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1581182968805</updated>
+    </task>
+    <task id="LOCAL-00056" summary="remove console">
+      <created>1581183108725</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1581183108726</updated>
+    </task>
+    <task id="LOCAL-00057" summary="init service worker and pwa">
+      <created>1581782994858</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1581782994858</updated>
+    </task>
+    <task id="LOCAL-00058" summary="init service worker and pwa">
+      <created>1581783004948</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1581783004948</updated>
+    </task>
+    <task id="LOCAL-00059" summary="fix feed price">
+      <created>1581783904152</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1581783904152</updated>
+    </task>
+    <task id="LOCAL-00060" summary="fix price calc">
+      <created>1581784227323</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1581784227323</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -994,13 +990,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="446835000" />
+    <option name="totallyTimeSpent" value="463656000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1233" height="777" extended-state="0" />
+    <frame x="0" y="23" width="1233" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17632242" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1536524" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -1016,9 +1012,9 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" weight="0.59445846" />
-      <window_info anchor="right" id="Run" order="4" weight="0.2617057" />
-      <window_info anchor="right" id="Debug" order="5" weight="0.25443786" />
+      <window_info active="true" anchor="right" id="Terminal" order="3" visible="true" weight="0.3190596" />
+      <window_info anchor="right" id="Run" order="4" weight="0.33501258" />
+      <window_info anchor="right" id="Debug" order="5" weight="0.33669186" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16442953" />
@@ -1044,6 +1040,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/invoices/feedCost.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -1058,14 +1059,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="csfr" />
-    <MESSAGE value="Add img to qr code, update css" />
-    <MESSAGE value="fix logo in qr code for mobile" />
-    <MESSAGE value="remove banner" />
-    <MESSAGE value="Add banner" />
-    <MESSAGE value="Update btn color" />
-    <MESSAGE value="Increase qr logo size" />
-    <MESSAGE value="Add video back" />
     <MESSAGE value="hide on mobile" />
     <MESSAGE value="Add swag link" />
     <MESSAGE value="fix padding link xs screen" />
@@ -1083,7 +1076,15 @@
     <MESSAGE value="Add copy button" />
     <MESSAGE value="Add pi unresponsive alert" />
     <MESSAGE value="fix filename ref" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix filename ref" />
+    <MESSAGE value="Update about and add btn hightlighting" />
+    <MESSAGE value="Handle overfeed" />
+    <MESSAGE value="debug feed cost in prod" />
+    <MESSAGE value="fix volume mapping" />
+    <MESSAGE value="remove console" />
+    <MESSAGE value="init service worker and pwa" />
+    <MESSAGE value="fix feed price" />
+    <MESSAGE value="fix price calc" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix price calc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1102,16 +1103,6 @@
           <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.es6</url>
           <line>14</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/bin/totals.js</url>
-          <line>48</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/lnCli.test.js</url>
-          <line>17</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1188,275 +1179,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="48">
-            <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/http-errors/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/payment.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/mongodb/lib/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="168" column="37" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/www.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/invoices/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.babelrc" />
-    <entry file="file://$PROJECT_DIR$/dist/client.bundle.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3013" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env.development">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="159" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env.mongo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="87" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metabase.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/migrations/migrate_null.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.dockerignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/invoices/LightningInvoice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/migrations/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/migrations/setMsatNum.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/migrations/setDates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/lightning-charge-client/lib/client.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/invoices/PolloFeedInvoice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/PolloFeedInvoice.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/healthcheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/lightning-charge-client/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SECOND">
-          <first_editor relative-caret-position="576">
-            <caret line="36" column="72" selection-start-line="36" selection-start-column="72" selection-end-line="36" selection-end-column="72" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/lnCli.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/invoices/dao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="66" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/start.sh" />
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="43" column="97" selection-start-line="43" selection-start-column="97" selection-end-line="43" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="108" selection-start-line="2" selection-start-column="108" selection-end-line="2" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@sendgrid/mail/src/mail.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="n#Client#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@sendgrid/mail/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/email.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@sendgrid/helpers/classes/mail.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="116" column="17" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/unresponsiveCheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!block;n#notify#0" />
-            <element signature="n#!!block;n#notResponsive#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bin/feeder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -1474,13 +1200,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="55" column="26" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/files/motion.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1488,41 +1207,312 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy.sh">
+    <entry file="file://$PROJECT_DIR$/playbooks/roles/pi/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+        <state relative-caret-position="114">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/src/bin/runTotals.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bin/totals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="33" column="77" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="77" />
+        <state relative-caret-position="509">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bin/feeder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bin/feed.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lnCli.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/PolloFeedInvoice.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/playbooks/roles/pollofeed/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/app.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/header.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/style.css" />
+    <entry file="file://$PROJECT_DIR$/views/about.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/calcFeedTimes.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bin/calcFeedTimes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bin/unresponsiveCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!block;n#notify#0" />
+            <element signature="n#!!block;n#notResponsive#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bin/ordersByDay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/src/client.js" />
+    <entry file="file://$PROJECT_DIR$/healthcheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="37" column="46" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/feedCost.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/invoices/feedCost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/invoices/LightningInvoice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/invoices/dao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/invoices/feedCost.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/article.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/invoices/PolloFeedInvoice.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="73" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/fmtbtc/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="230">
+            <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env.development">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/fmtbtc/dist/fmtbtc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/invoices/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/payment.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="37" />
+        <state relative-caret-position="120">
+          <caret line="8" column="72" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="10" selection-start-line="1" selection-end-line="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/webworkify/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+        <state relative-caret-position="534">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/about.pug">
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="36" column="49" lean-forward="true" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/loadServiceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
       </provider>
     </entry>

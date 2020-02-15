@@ -6,6 +6,12 @@
 
 }
 
+.app {
+    font-size: 1.5rem;
+    height: 90vh;
+    min-height: 700px;
+}
+
 a {
     color: var(--pollofeed_blue);
 }
