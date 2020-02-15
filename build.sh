@@ -7,7 +7,9 @@ rm -rf dist
 # minify es6
 ./node_modules/.bin/terser -c -o dist/client.bundle.min.js dist/client.bundle.js
 rm dist/client.bundle.js
-#cp src/manifest.json dist
+cp src/manifest.json dist
+cp src/serviceWorker.js dist
 cp src/*.css dist
 cp src/img/*.png dist
 cp src/img/*.jpg dist
+cp -R src/img/icons dist
