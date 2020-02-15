@@ -11,6 +11,7 @@ const assets = [
     "pollofeed.png",
 ]
 
+
 self.addEventListener("install", installEvent =>
     installEvent.waitUntil(
         caches.open(pollofeedStatic).then(cache =>

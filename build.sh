@@ -9,6 +9,7 @@ rm -rf dist
 rm dist/client.bundle.js
 cp src/manifest.json dist
 cp src/serviceWorker.js dist
+cp src/loadServiceWorker.js dist
 cp src/*.css dist
 cp src/img/*.png dist
 cp src/img/*.jpg dist

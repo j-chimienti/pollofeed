@@ -31,7 +31,7 @@ html
 
     body
         include header.pug
-        div.container.mb-4(style="font-size: 1.5rem; height: 90vh; min-height: 700px;")
+        div.app.container.mb-4
             .row
                 button(
                     class="btn btn-primary btn-block btn_feed mx-auto mb-4"
@@ -48,4 +48,5 @@ html
                     width="640"
                 )
     include footer.pug
+    script(src="loadServiceWorker.js")
     script(src='script.js')
