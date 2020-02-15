@@ -6,19 +6,20 @@ const crypto = require('crypto')
 const csrf = require('csurf')
 const csrfProtection = csrf({cookie: true});
 const feedCost = require('./feedCost')
+const {sat2msat} = require('fmtbtc')
+const feedPrice = Math.floor(process.env.FEED_PRICE || 1000)
 
 const webhookToken = crypto
     .createHmac('sha256', process.env.CHARGE_TOKEN)
     .update("pollofeed")
     .digest('hex')
-const satoshi2millisatoshi = (satoshi) => parseInt(satoshi * 1000)
 const tenMinutes = 600 // seconds
 const feedTimes = 1
 
 router.post('/', csrfProtection, async (req, res) => {
     const timesFedToday = await orderDao.countOrdersByDate()
-    const feedSatoshis = feedCost(timesFedToday)
-    const msatoshi = satoshi2millisatoshi(feedSatoshis)
+    const feedSatoshis = feedCost(feedPrice, timesFedToday)
+    const msatoshi = sat2msat(feedSatoshis)
     const inv = await global.lnCharge.invoice({
         msatoshi,
         description: 'Feed Chickens @ pollofeed.com',

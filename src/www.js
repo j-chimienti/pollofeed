@@ -5,9 +5,7 @@ const dotenv = require('dotenv')
 const http = require('http')
 
 if (process.env.NODE_ENV === 'development') {
-
 	dotenv.config({path: path.join(__dirname, "..", '.env.development')})
-
 } else {
     dotenv.config({path: path.join(__dirname, "..", '.env')})
 }
