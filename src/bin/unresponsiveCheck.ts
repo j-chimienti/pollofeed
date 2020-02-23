@@ -3,9 +3,10 @@ require('dotenv').config({path: path.join(__dirname, '..', "..", '.env.developme
 const orderDao = require('../invoices/dao')
 const dbconnect = require('./dbconnect')
 const {sendFromDefaultUser} = require('./email')
-import {ClientResponse} from "@sendgrid/client/src/response";
 
 const MS_PER_MINUTE = 60000;
+
+const lnCharge = require("lightning-charge-client")(process.env.CHARGE_URL, process.env.CHARGE_TOKEN)
 
 
 async function main() {
@@ -27,14 +28,14 @@ async function main() {
     if (!lnActive) {
         const subject = "Lightning Client unresponsive"
         const text = `unresponsive @ ${new Date().toLocaleString()}`
-        await sendFromDefaultUser(subject, text)
+        return await sendFromDefaultUser(subject, text)
     } else {
         console.log("lightning client active")
     }
 
 }
 
-async function notify(nonAcknowledged) : Promise<[ClientResponse, {}]> {
+async function notify(nonAcknowledged) {
     const text = `unresponsive orders = ${nonAcknowledged.length}, since = ${nonAcknowledged[0].paid_at.toLocaleString()}`
     const subject = "Raspberry pi unresponsive"
     return sendFromDefaultUser(subject, text)
@@ -53,12 +54,7 @@ function notResponsive(order, minutes = 5): boolean {
     return paidAtPlus5min < now
 }
 
-async function lightningClientActive() : Promise<boolean> {
-    const lnCharge = require("lightning-charge-client")(process.env.CHARGE_URL, process.env.CHARGE_TOKEN)
-
-    const invoices = await lnCharge.fetchAll()
-    const fs = require('fs')
-    fs.writeFileSync("./invoices.json", JSON.stringify(invoices))
+async function lightningClientActive() {
     return lnCharge.info().then(result => {
         return true
     }).catch(err => {
@@ -69,7 +65,7 @@ async function lightningClientActive() : Promise<boolean> {
 
 
 main()
-    .then(() => process.exit(0))
+    .then(_ => process.exit(0))
     .catch(e => {
         console.log(e)
         process.exit(1)
