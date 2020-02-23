@@ -10,7 +10,7 @@ function feedCost(baseCost: number, timesFedToday: number): number {
     return Math.floor(baseCost * factor)
 }
 
-function getFactor( timesFedToday: number) : number {
+function getFactor(timesFedToday: number) : number {
     if (timesFedToday < 20) return pricingFactor.under20
     else if (timesFedToday < 30) return pricingFactor.under30
     else if (timesFedToday < 40) return pricingFactor.under40

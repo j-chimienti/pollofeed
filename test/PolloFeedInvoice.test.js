@@ -1,4 +1,6 @@
-const PolloFeedInvoice = require('../src/invoices/PolloFeedInvoice')
+const {LightningInvoice} = require("../src/invoices/models/LightningInvoice");
+
+const {PolloFeedOrder} = require('../src/invoices/models/PolloFeedOrder')
 
 const test = require('tape')
 
@@ -6,7 +8,7 @@ const test = require('tape')
 test("Creates order", function (t) {
 
     const _inv = {id: "hello", payreq: "payreq", status: "paid", rhash: "rhash", pay_index: 999}
-    const invoice = new PolloFeedInvoice(_inv)
+    const invoice = new PolloFeedOrder(_inv)
     t.equal(_inv.id, invoice.id)
     t.equal(_inv.id, invoice.id)
     t.equal(_inv.status, invoice.status)
@@ -20,12 +22,12 @@ test("Creates order", function (t) {
 test("Throws error with missing LN fields", function (t) {
 
     const _order = {id: "hello"}
-    t.throws(() => new PolloFeedInvoice(_order))
-    t.throws(() => new PolloFeedInvoice({payreq: "i"}))
-    t.throws(() => new PolloFeedInvoice({status: "one"}))
-    t.throws(() => new PolloFeedInvoice({payreq: "i", status: "o"}))
-    t.throws(() => new PolloFeedInvoice({id: "i", status: "o"}))
-    t.throws(() => new PolloFeedInvoice({id: "i", payreq: "o"}))
+    t.throws(() => new PolloFeedOrder(_order))
+    t.throws(() => new PolloFeedOrder({payreq: "i"}))
+    t.throws(() => new PolloFeedOrder({status: "one"}))
+    t.throws(() => new PolloFeedOrder({payreq: "i", status: "o"}))
+    t.throws(() => new PolloFeedOrder({id: "i", status: "o"}))
+    t.throws(() => new PolloFeedOrder({id: "i", payreq: "o"}))
 
     t.end()
 })

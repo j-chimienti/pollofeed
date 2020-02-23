@@ -15,7 +15,7 @@ const csrf = $('meta[name=csrf]').attr('content')
 
 $('[data-buy-item]').click(e => {
   e.preventDefault()
-  pay({})
+  return pay({})
 })
 
 
