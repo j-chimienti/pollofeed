@@ -28,6 +28,11 @@
 - name: pi unresponsive check
   cron:
     name: pi unresponsive check
+    state: absent
+
+- name: pi and lightning health check
+  cron:
+    name: pi and lightning health check
     job: "node {{BIN_DIR}}/unresponsiveCheck.js >> /unresponsiveCheck.log 2>&1"
     hour: "*"
-    minute: "0"
+    minute: "*/5"
