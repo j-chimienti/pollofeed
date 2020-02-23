@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -34,13 +33,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '..', "..", '.env.development') });
 var orderDao = require('../invoices/dao');
 var dbconnect = require('./dbconnect');
 var sendFromDefaultUser = require('./email').sendFromDefaultUser;
 var MS_PER_MINUTE = 60000;
+var lnCharge = require("lightning-charge-client")(process.env.CHARGE_URL, process.env.CHARGE_TOKEN);
 function main() {
     return __awaiter(this, void 0, void 0, function () {
         var todayOrders, nonAcknowledged, lnActive, subject, text;
@@ -71,9 +70,7 @@ function main() {
                     subject = "Lightning Client unresponsive";
                     text = "unresponsive @ " + new Date().toLocaleString();
                     return [4 /*yield*/, sendFromDefaultUser(subject, text)];
-                case 7:
-                    _a.sent();
-                    return [3 /*break*/, 9];
+                case 7: return [2 /*return*/, _a.sent()];
                 case 8:
                     console.log("lightning client active");
                     _a.label = 9;
@@ -104,28 +101,18 @@ function notResponsive(order, minutes) {
 }
 function lightningClientActive() {
     return __awaiter(this, void 0, void 0, function () {
-        var lnCharge, invoices, fs;
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    lnCharge = require("lightning-charge-client")(process.env.CHARGE_URL, process.env.CHARGE_TOKEN);
-                    return [4 /*yield*/, lnCharge.fetchAll()];
-                case 1:
-                    invoices = _a.sent();
-                    fs = require('fs');
-                    fs.writeFileSync("./invoices.json", JSON.stringify(invoices));
-                    return [2 /*return*/, lnCharge.info().then(function (result) {
-                            return true;
-                        }).catch(function (err) {
-                            console.error(err);
-                            return false;
-                        })];
-            }
+            return [2 /*return*/, lnCharge.info().then(function (result) {
+                    return true;
+                }).catch(function (err) {
+                    console.error(err);
+                    return false;
+                })];
         });
     });
 }
 main()
-    .then(function () { return process.exit(0); })
+    .then(function (_) { return process.exit(0); })
     .catch(function (e) {
     console.log(e);
     process.exit(1);
