@@ -1,4 +1,4 @@
-const PolloFeedInvoice = require('./PolloFeedInvoice')
+const {PolloFeedOrder} = require('./models/PolloFeedOrder')
 const express = require('express')
 const orderDao = require('./dao')
 const router = express.Router()
@@ -8,13 +8,14 @@ const csrfProtection = csrf({cookie: true});
 const feedCost = require('./feedCost')
 const {sat2msat} = require('fmtbtc')
 const feedPrice = Math.floor(process.env.FEED_PRICE || 1000)
-
+const only = require('only')
 const webhookToken = crypto
     .createHmac('sha256', process.env.CHARGE_TOKEN)
     .update("pollofeed")
     .digest('hex')
 const tenMinutes = 600 // seconds
 const feedTimes = 1
+const publicFields = "id msatoshi status payreq expires_at"
 
 router.post('/', csrfProtection, async (req, res) => {
     const timesFedToday = await orderDao.countOrdersByDate()
@@ -33,7 +34,7 @@ router.post('/', csrfProtection, async (req, res) => {
     if (!(inv && inv.id && inv.rhash && inv.payreq))
         return res.sendStatus(400)
     console.log(`[INVOICE] - ${ inv.id } created`)
-    return res.send(inv)
+    return res.json(only(inv, publicFields))
 })
 
 router.get('/:invoice/wait', async (req, res) => {
@@ -48,16 +49,16 @@ router.get('/:invoice/wait', async (req, res) => {
     if (invoiceResult === null) return res.sendStatus(402)
     const invoiceExpired = invoiceResult === false
     if (invoiceExpired) return res.sendStatus(410)
-    const inv = new PolloFeedInvoice(invoiceResult)
+    const inv = new PolloFeedOrder(invoiceResult)
     await orderDao.insert(inv)
     log(inv)
-    return res.status(201).json(inv)
+    return res.status(201).json(only(inv, publicFields))
 })
 
 router.post(`/webhook/${webhookToken}`, async (req, res) => {
     const foundOrder = await orderDao.findById(req.body.id)
     if (foundOrder) return res.sendStatus(204)
-    await orderDao.insert(new PolloFeedInvoice(req.body))
+    await orderDao.insert(new PolloFeedOrder(req.body))
     return res.sendStatus(201)
 })
 

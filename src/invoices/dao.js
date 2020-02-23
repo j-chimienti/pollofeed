@@ -61,5 +61,6 @@ module.exports = {
 
         return await global.db.collection('orders')
             .findOne({id})
+
     }
 }
