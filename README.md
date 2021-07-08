@@ -9,9 +9,13 @@
 
 ### 🏠 [Homepage](https://pollofeed.com)
 
+
+
+
 ## Install
 
 ```bash
+cp .env.example .env
 npm install
 ```
 
