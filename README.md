@@ -15,7 +15,7 @@
 ## Install
 
 ```bash
-cp .env.example .env
+cp example.env .env
 npm install
 ```
 
