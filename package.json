@@ -43,7 +43,7 @@
     "qrcode": "^1.2.0",
     "supertest": "^4.0.2",
     "tape": "^4.10.1",
-    "terser": "^4.6.3",
+    "terser": "^4.8.1",
     "only": "latest"
   },
   "scripts": {
