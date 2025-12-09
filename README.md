@@ -1,60 +1,32 @@
-<h1 align="center">⚡ Pollofeed ⚡ 🐔 😂</h1>
-<p>
-<img src="https://travis-ci.com/j-chimienti/pollofeed.svg?branch=master"/>
-  <img src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
-</p>
+# ⚡ Pollofeed ⚡ 🐔😂
+**Bitcoin Lightning-powered chicken feeder on Raspberry Pi**  
+Real BTC payment → chickens get fed in <3 seconds. 100 % automated, zero disputes ever.
 
+![Pollofeed in action](demo.gif)  
 
-> Bitcoin Lightning Powered Chicken Feeder
+### Live demos
+- https://www.youtube.com/watch?v=a0_dqDxx7Oo  
+- https://www.youtube.com/watch?v=jXC39uCSrfA  
 
-### 🏠 [Homepage](https://pollofeed.com)
-
-
-
-
-## Install
-
-```bash
-cp example.env .env
-npm install
+### Production RabbitMQ flow (async + live broadcast)
+```mermaid
+graph TD
+    A[Lightning Invoice Paid] --> B[order_new queue]
+    B --> C[Worker picks up]
+    C --> D[order_processing queue]
+    D --> E[Servo drops feed + ffmpeg records]
+    E --> F[order_complete queue]
+    F --> G[WebSocket broadcast → every viewer sees chickens go nuts]
+    style A fill:#f9f,stroke:#333
+    style G fill:#bbf,stroke:#333
 ```
 
-## Usage
-
-**Dev**
-```sh
+Queues: order_new → order_processing → order_complete
+Tech stack
+Scala • WebSockets • RabbitMQ • Bitcoin Lightning • Raspberry Pi • Arduino • Docker • Cloudflare • ffmpeg
+Run locally (<5 min)
+```
+Bashcp example.env .env
+npm install
 npm run start:dev
 ```
-
-**Prod**
-
-```bash
-npm start
-```
-
-**Docker**
-
-```bash
-docker-compose up
-```
-
-**Deployment**
-
-see [README.md](playbooks/README.md)
-
-## Run tests
-
-```sh
-npm run test
-```
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/j-chimienti/pollofeed/issues).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
