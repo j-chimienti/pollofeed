@@ -32,7 +32,7 @@
     "fmtbtc": "0.0.2",
     "helmet": "^3.21.1",
     "http-errors": "^1.7.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "lightning-charge-client": "^0.1.7",
     "moment": "^2.24.0",
     "mongodb": "^3.2.4",
